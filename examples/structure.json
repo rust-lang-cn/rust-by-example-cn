@@ -1,6 +1,6 @@
 [
     { "id": "hello", "title": "Hello World", "children": [
-        { "id": "comment", "title": "Comments", "children": null },
+        { "id": "comment", "title": "注释", "children": null },
         { "id": "print", "title": "Formatted print", "children": [
             { "id": "print_debug", "title": "Debug", "children": null },
             { "id": "print_display", "title": "Display", "children": [

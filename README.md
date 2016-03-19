@@ -1,35 +1,34 @@
-# 通过例子学Rust(Rust by Example)——中文翻译
+# 通过例子学Rust——Translate from [Rust by Example][rust-by-example] into Chinese
 
 [![Build Status][travis-image]][travis-link]
 
-## What's this?
+## 这是什么？
 
-This is the source code of the [Rust by Example][website] website!
+这是 [Rust by Example-CN][website-cn]（原英文网站[Rust by Example][website]） 网站的源代码！
 
-## How to contribute
+## 如何贡献
 
-See [CONTRIBUTING.md][how-to-contribute].
+参考 [CONTRIBUTING.md][how-to-contribute].
 
-## How to generate the static site
+## 如何生成静态网站
 
-### Debian (Ubuntu) prerequisites
+### Debian (Ubuntu) 发行版
 
-Install [Rust](http://www.rust-lang.org/install.html) and
-run:
+安装 [Rust](http://www.rust-lang.org/install.html) 并执行以下命令：
 
 ```
 sudo apt-get install nodejs npm subversion
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
-### Non-Debian prerequisites
+### 非 Debian 类型的发行版
 
-Install Rust [nightly](http://www.rust-lang.org/install.html),
-`node`, `npm`, and `subversion`.
+安装 Rust [nightly](http://www.rust-lang.org/install.html),
+`node`, `npm`, 和 `subversion`.
 
-### Build instructions
+### 编译指示
 
-Run:
+运行：
 
 ```
 make all
@@ -37,76 +36,67 @@ make book
 make test
 ```
 
-View the results with `make serve`.
+使命 `make serve` 来查看结果。
 
-### Details
+### 详情
 
-We use these tools to generate the static site:
+我们使用下述工具来生成静态页：
 
 * [Rust][rust-lang] \o/
 * [GitBook][gitbook]
 
-`gitbook` will generate the site from Markdown files (see details about how it
-works [here][gitbook-format]).
+`gitbook` 把 Markdown 文件生成静态页面 (查阅工作原理 [这里][gitbook-format]).
 
-Before running `gitbook`, we do a preprocessing step using
-[src/main.rs][main-rs].
+在运行 `gitbook` 之前，我们先使用[src/main.rs][main-rs]进行预处理。
 
-This preprocessing has two steps:
+这个预处理过程有两个步骤：
 
-### Generating the `SUMMARY.md`
+### 生成 `SUMMARY.md` 文件
 
-`SUMMARY.md` is generated from the
-[examples/structure.json][structure] file. This JSON file
-contains a tree-like structure of "examples".
+`SUMMARY.md` 是由
+[examples/structure.json][structure] 文件生成得到。这个 JSON 文件对每个“示例”都包含类树形的结构。
 
-Each example has:
+每个示例包括：
 
-* an id, e.g. `hello`
-* a title, e.g. `Hello World`
-* optionally, children, which is a vector of sub-examples, e.g. `null`
-* a directory under `examples`, e.g. [examples/hello][hello-folder]
-* an entry in examples/structure.json, e.g.
-  `{ "id": "hello", "title": "Hello World", "children": null }`
-* some source file(s), e.g. [examples/hello/hello.rs][hello-rs]
-* an input markdown file, e.g.
-  [examples/hello/input.md][hello-md]
+* 一个 id, 如 `hello`
+* 一个标题（title）, 如 `Hello World`
+* 子节点（children），为可选项， 指向子节点，如 `null`
+* 一个在 `examples` 下的子目录，如 [examples/hello][hello-folder]
+* 一个在 examples/structure.json 里面的入口点，如 `{ "id": "hello", "title": "Hello World", "children": null }`
+* 一些源文件，如 [examples/hello/hello.rs][hello-rs]
+* 一个输入 Markdown 文件，如 [examples/hello/input.md][hello-md]
 
-When dealing with a child example, the path will have to include the id of its
-ancestors; e.g. `examples/variable/mut/input.md`, implies that a `mut` example
-lives under the `variable` example.
+在处子级示例时，其目录必须包含父级示例的 id 值，如 `examples/variable/mut/input.md` 表明 `mut` 示例是在分级 `variable` 下。
 
-### Processing `input.md`
+### 处理 `input.md`
 
-Instead of including the Rust code directly in `input.md`, the code lives in
-separate source files; the preprocessing step will insert the source code
-into the Markdown file.
+我们没有将代码直接编辑在 `input.md` 文件里面，而将代码放到单独的源文件中。然后在预处理阶段将会把代码代码插入到 Markdown 文件中。
 
-For example, to insert the source code of the `hello.rs` file, the following
-syntax is used in the Markdown file:
+举个例子，为了插入源码文件 `hello.rs`，我们在 Markdown 文件中采用以下语法：
 
-* `{hello.play}` expands the source code embedded in a live code editor
-* `{hello.rs}` expands to static/plain source code.
-* `{hello.out}` expands to the output of executing the source code.
+* `{hello.play}` 会把代码嵌入到一个在线编辑器中。
+* `{hello.rs}` 会插入到静态文本中。
+* `{hello.out}` 展示源程序的输出结果。
 
-The Makefile provides the following recipes:
+Makefile 提供了以下指令：
 
-* `make`: builds `update.rs` and does the preprocessing step
-* `make book`: runs `gitbook` to generate the book
-* `make serve`: runs `gitbook --serve` to generate the book and publishes it
-  under `localhost:4000`
-* `make test`: will check all the rust source files for compilation errors
+* `make`：构建 `update.rs` 并执行上述的前置步骤
+* `make book`： 运行 `gitbook` 来生成书籍
+* `make serve`： 运行 `gitbook --serve` 来生成书籍内容并发布到 `localhost:4000` 进行预览
+* `make test`：检查所有的 rust 源文件是否有编译错误
 
-## License
+## 授权协议
 
-Rust by Example is dual-licensed under the Apache 2.0 license and the MIT
-license.
+《通过例子学Rust》（英文版Rust by Example） 使用 Apache 2.0 license 和 MIT
+license 两种协议进行授权。
 
-See LICENSE-APACHE and LICENSE-MIT for more details.
+参见 LICENSE-APACHE 和 LICENSE-MIT 详情。
 
+[rust-by-example]: https://github.com/rust-lang/rust-by-example
 [travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
 [travis-link]: https://travis-ci.org/rust-lang/rust-by-example
 [website]: http://rustbyexample.com
+[website-cn]: http://rust.aaklo.com
 [how-to-contribute]: CONTRIBUTING.md
 [rust-lang]: http://www.rust-lang.org/
 [gitbook]: http://www.gitbook.io
