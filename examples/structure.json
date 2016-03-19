@@ -1,12 +1,12 @@
 [
     { "id": "hello", "title": "Hello World", "children": [
         { "id": "comment", "title": "注释", "children": null },
-        { "id": "print", "title": "Formatted print", "children": [
-            { "id": "print_debug", "title": "Debug", "children": null },
-            { "id": "print_display", "title": "Display", "children": [
-                { "id": "testcase_list", "title": "Testcase: List", "children": null }
+        { "id": "print", "title": "格式化输出", "children": [
+            { "id": "print_debug", "title": "调试", "children": null },
+            { "id": "print_display", "title": "显示", "children": [
+                { "id": "testcase_list", "title": "测试实例： List", "children": null }
             ] },
-            { "id": "fmt", "title": "Formatting", "children": null }
+            { "id": "fmt", "title": "格式化", "children": null }
         ] }
     ] },
     { "id": "primitives", "title": "Primitives", "children": [

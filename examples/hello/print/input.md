@@ -1,35 +1,29 @@
-Printing is handled by a series of [`macros`][macros] defined in [`std::fmt`][fmt]
-some of which include:
+打印操作由[`std::fmt`][fmt]里面所定义的一系列[`宏`][macros]来处理，其中包括：
 
-* `format!`: write formatted text to [`String`][string]
-* `print!`: same as `format!` but the text is printed to the console.
-* `println!`: same as `print!` but a newline is appended.
+* `format!`：将格式化文本写到[`字符串`][string]（String）。
+* `print!`：和 `format!`类似，但将文本输出到控制台。
+* `println!`: 和 `print!`类似，但输出结果追加一个换行符。
 
-All parse text in the same fashion. A plus is that the formatting correctness will
-be checked at compile time.
+所有的解析文本都以相同的方式进行。另外一点是格式化的正确性在编译时检查。
 
 {print.play}
 
-[`std::fmt`][fmt] contains many [`traits`][traits] which govern the display
-of text. The base form of two important ones are listed below:
+[`std::fmt`][fmt]包含多种[`特性`][traits]（traits）来控制文字显示。这里面有两个重要的基
+本格式类型如下：
 
-* `fmt::Debug`: Uses the `{:?}` marker. Format text for debugging purposes.
-* `fmt::Display`: Uses the `{}` marker. Format text in a more elegant, user
-friendly fashion.
+* `fmt::Debug`：使用 `{:?}` 作标记。格式化文本以便调试。
+* `fmt::Display`：使用 `{}` 作标记。以优雅和友好的方式来格式文本。
 
-Here, `fmt::Display` was used because the std library provides implementations
-for these types. To print text for custom types, more steps are required.
+在本书中我们使用`fmt::Display`，因为标准库提供了这些类型的实现。若要打印自定义类型的文本，
+需要更多的步骤。
 
-### Activities
+### 动手试一试
 
- * Fix the two issues in the above code (see FIXME) so that it runs without
-   error.
- * Add a `println!` macro that prints: `Pi is roughly 3.143`, using twenty-two
-   divided by seven to generate the estimate for Pi. (Hint: you may need to
-   check the [`std::fmt`][fmt] documentation for setting the number of
-   decimals to display)
+ * 改正上面代码中的两个错误（见 FIXME），使得运行不会报错。
 
-### See also
+ * 添加一个 `println!` 宏来打印：`Pi is roughly 3.143`（Pi约等于3.143），使用22除以7得到 Pi 的近似值。（提示：设置小数位的显示格式可以参考文档[`std::fmt`][fmt]）。
+
+### 参考
 
 [`std::fmt`][fmt], [`macros`][macros], [`struct`][structs],
 and [`traits`][traits]
