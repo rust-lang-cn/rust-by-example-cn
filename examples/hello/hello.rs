@@ -9,6 +9,6 @@
 fn main() {
     // The statements here will be executed when the compiled binary is called
 
-    // Print text to the console
+    // Print text to the console, 你好
     println!("Hello World!");
 }

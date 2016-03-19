@@ -1,18 +1,16 @@
-Any program requires comments and indeed Rust supports
-a few different varieties:
+注释对任何程序都不可缺少，同样 Rust 支持几种不同的注释方式。
 
-* *Regular comments* which are ignored by the compiler:
- - `// Line comments which go to the end of the line.`
- - `/* Block comments which go to the closing delimiter. */`
-* *Doc comments* which are parsed into HTML library
-[documentation][docs]:
- - `/// Generate library docs for the following item.`
- - `//! Generate library docs for the enclosing item.`
+* *常规注释*，其注释内容将编译器忽略掉：
+ - `// 单行注释，注释内容直到行尾。 `
+ - `/* 块注释， 注释内容一直到结束分隔符。 */`
+* *文档注释*，其注释内容将被解析成 HTML 帮助[文档][docs]:
+ - `/// 对接下来的项目生成帮助文档。`
+ - `//! 在项目结束处生成帮助文档。`
 
 {comment.play}
 
-### See also:
+### 参考:
 
-[Library documentation][docs]
+[文档注释][docs]
 
 [docs]: /meta/doc.html

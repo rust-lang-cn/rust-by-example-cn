@@ -1,3 +1,2 @@
-The chapters in this section are being worked on. These chapters are likely to
-contain valid information, but may be unsorted or some of the concepts used
-in them may have not been explained yet.
+本节的章节正在编辑中。这些章节的内容很可能包含有效信息，但编排顺序未优化或者使用到一些前面未解释过的
+概念。
