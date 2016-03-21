@@ -1,25 +1,24 @@
-// Derive the `fmt::Debug` implementation for `Structure`. `Structure`
-// is a structure which contains a single `i32`.
+// 从 `fmt::Debug` 获得实现给 `Structure`。
+// `Structure` 是一个包含`i32`基本类型的结构体。
 #[derive(Debug)]
 struct Structure(i32);
 
-// Put a `Structure` inside of the structure `Deep`. Make it printable
-// also.
+// 将 `Structure` 放到结构体 `Deep` 中。使 `Deep` 也能够打印。
 #[derive(Debug)]
 struct Deep(Structure);
 
 fn main() {
-    // Printing with `{:?}` is similar to with `{}`.
+    // 打印操作使用 `{:?}` 和使用 `{}` 类似。
     println!("{:?} months in a year.", 12);
     println!("{1:?} {0:?} is the {actor:?} name.",
              "Slater",
              "Christian",
              actor="actor's");
 
-    // `Structure` is printable!
+    // `Structure` 是能够打印的类型。
     println!("Now {:?} will print!", Structure(3));
     
-    // The problem with `derive` is there is no control over how
-    // the results look. What if I want this to just show a `7`?
+    // 使用 `derive` 的一个问题是不能控制输出的形式。
+    // 假如我只想展示一个 `7`？
     println!("Now {:?} will print!", Deep(Structure(7)));
 }
