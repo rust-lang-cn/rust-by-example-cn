@@ -8,8 +8,8 @@
 
 {print.play}
 
-[`std::fmt`][fmt]包含多种[`特性`][traits]（traits）来控制文字显示。这里面有两个重要的基
-本格式类型如下：
+[`std::fmt`][fmt]包含多种[`traits`][traits]（traits字面上翻译成中
+文是：特征，特性）来控制文字显示。这里面有两个重要的基本格式类型如下：
 
 * `fmt::Debug`：使用 `{:?}` 作标记。格式化文本以便调试。
 * `fmt::Display`：使用 `{}` 作标记。以优雅和友好的方式来格式文本。
@@ -19,7 +19,7 @@
 
 ### 动手试一试
 
- * 改正上面代码中的两个错误（见 FIXME），使得运行不会报错。
+ * 改正上面代码中的两个错误（见 改正），使得运行不会报错。
 
  * 添加一个 `println!` 宏来打印：`Pi is roughly 3.143`（Pi约等于3.143），使用22除以7
  得到 Pi 的近似值。（提示：设置小数位的显示格式可以参考文档[`std::fmt`][fmt]）。
@@ -27,7 +27,7 @@
 ### 参考
 
 [`std::fmt`][fmt], [`macros`][macros], [`struct`][structs],
-and [`traits`][traits]
+和 [`traits`][traits]
 
 [fmt]: http://doc.rust-lang.org/std/fmt/
 [macros]: /macros.html
