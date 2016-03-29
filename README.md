@@ -96,7 +96,7 @@ license 两种协议进行授权。
 [travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
 [travis-link]: https://travis-ci.org/rust-lang/rust-by-example
 [website]: http://rustbyexample.com
-[website-cn]: http://rust.aaklo.com/rust-by-example
+[website-cn]: http://rustwiki.com/rust-by-example
 [how-to-contribute]: CONTRIBUTING.md
 [rust-lang]: http://www.rust-lang.org/
 [gitbook]: http://www.gitbook.io
