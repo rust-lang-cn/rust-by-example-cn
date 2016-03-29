@@ -1,20 +1,22 @@
-`fmt::Debug` hardly looks compact and clean, so it is often advantageous to
-customize the output appearance. This is done by manually implementing
-[`fmt::Display`][fmt], which uses the `{}` print marker. Implementing it
-looks like this:
+`fmt::Debug` 看起来并不简洁，然而它对自定义输出外观通常是有好处的。而[`fmt::Display`]
+[fmt]是通过手动的方式来实现，采用了`{}`来打印标记。实现方式看起来像这样：
 
 ```rust
-// Import (via `use`) the `fmt` module to make it available.
+// (使用 `use`)导入 `fmt` 模块使 `fmt::Display` 可用
 use std::fmt;
 
 // Define a structure which `fmt::Display` will be implemented for. This is simply
+// 定义一个结构体，使用 `fmt::Display` 来实现。这相当简单
 // a tuple struct containing an `i32` bound to the name `Structure`.
+// 包含绑定到名字`Structure`一个'i32`一个元组结构。
 struct Structure(i32);
 
 // In order to use the `{}` marker, the trait `fmt::Display` must be implemented
+// 为了用到 `{}` 标记，`fmt::Display` trait 必须手动实现来支持类型。
 // manually for the type.
 impl fmt::Display for Structure {
     // This trait requires `fmt` with this exact signature.
+    // 这个 trait 要求
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // Write strictly the first element into the supplied output
         // stream: `f`. Returns `fmt::Result` which indicates whether the
@@ -48,7 +50,7 @@ therefore cannot be used. `std::fmt` has many such [`traits`][traits] and
 each requires its own implementation. This is detailed further in
 [`std::fmt`][fmt].
 
-### Activity
+### 动手试一试
 
 After checking the output of the above example, use the `Point2` struct as
 guide to add a Complex struct to the example. When printed in the same
@@ -58,10 +60,10 @@ Display: 3.3 + 7.2i
 Debug: Complex { real: 3.3, imag: 7.2 }
 ```
 
-### See also
+### 参考
 
 [`derive`][derive], [`std::fmt`][fmt], [macros], [`struct`][structs],
-[`trait`][traits], and [use][use]
+[`trait`][traits], 和 [use][use]
 
 [derive]: /trait/derive.html
 [fmt]: http://doc.rust-lang.org/std/fmt/
