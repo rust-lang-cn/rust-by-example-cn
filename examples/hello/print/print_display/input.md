@@ -5,10 +5,8 @@
 // (使用 `use`)导入 `fmt` 模块使 `fmt::Display` 可用
 use std::fmt;
 
-// Define a structure which `fmt::Display` will be implemented for. This is simply
-// 定义一个结构体，使用 `fmt::Display` 来实现。这相当简单
-// a tuple struct containing an `i32` bound to the name `Structure`.
-// 包含绑定到名字`Structure`一个'i32`一个元组结构。
+// 定义一个结构体，使用 `fmt::Display` 来实现。这只是简单地给元组结构体`Structure` 包含
+// 一个 `i32` 元素。
 struct Structure(i32);
 
 // In order to use the `{}` marker, the trait `fmt::Display` must be implemented
