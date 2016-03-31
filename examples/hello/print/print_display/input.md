@@ -9,9 +9,7 @@ use std::fmt;
 // 一个 `i32` 元素。
 struct Structure(i32);
 
-// In order to use the `{}` marker, the trait `fmt::Display` must be implemented
-// 为了用到 `{}` 标记，`fmt::Display` trait 必须手动实现来支持类型。
-// manually for the type.
+// 为了使用 `{}` 标记，必须手动实现 `fmt::Display` trait 来支持相应类型。
 impl fmt::Display for Structure {
     // This trait requires `fmt` with this exact signature.
     // 这个 trait 要求
