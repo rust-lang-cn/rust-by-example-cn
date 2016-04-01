@@ -12,45 +12,38 @@ struct Structure(i32);
 // 为了使用 `{}` 标记，必须手动实现 `fmt::Display` trait 来支持相应类型。
 impl fmt::Display for Structure {
     // This trait requires `fmt` with this exact signature.
-    // 这个 trait 要求
+    // 这个 trait 要求 `tmt` 带有正确的标记
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Write strictly the first element into the supplied output
-        // stream: `f`. Returns `fmt::Result` which indicates whether the
-        // operation succeeded or failed. Note that `write!` uses syntax which
-        // is very similar to `println!`.
+        // 严格将第一个元素写入到给定的输出流 `f`。返回 `fmt:Result`，此结果表明操作成功
+        // 或失败。注意这里的 `write!` 用法和 `println!` 很相似。
         write!(f, "{}", self.0)
     }
 }
 ```
 
-`fmt::Display` may be cleaner than `fmt::Debug` but this presents
-a problem for the `std` library. How should ambiguous types be displayed?
-For example, if the `std` library implemented a single style for all
-`Vec<T>`, what style should it be? Either of these two?
+`fmt::display` 的使用形式可能比 `fmt::Debug` 简洁，但它对于标准库的处理有一个问题。模棱
+两可的类型该如何显示呢？举个例子，假设标准库对所有的 `Vec<T>` 都实现了单一样式，那么它应该
+是那种样式？随意一种或者包含两种？
 
 * `Vec<path>`: `/:/etc:/home/username:/bin` (split on `:`)
 * `Vec<number>`: `1,2,3` (split on `,`)
 
-No, because there is no ideal style for all types and the `std` library
-doesn't presume to dictate one. `fmt::Display` is not implemented for `Vec<T>`
-or for any other generic containers. `fmt::Debug` must then be used for these
-generic cases.
+答案是否定的，因为没有合适的样式适用于所有类型，标准库也没规定一种情况。对于 `Vec<T>` 或其
+他任意泛型容器(container)，`fmt::Display` 都没有实现形式。在这种含有泛型的情况下要用到
+ `fmt::Debug`。
 
-This is not a problem though because for any new *container* type which is
-*not* generic,`fmt::Display` can be implemented.
+而对于非泛型的容器类型的输出， `fmt::Display` 都能够实现。
 
 {display.play}
 
-So, `fmt::Display` has been implemented but `fmt::Binary` has not, and
-therefore cannot be used. `std::fmt` has many such [`traits`][traits] and
-each requires its own implementation. This is detailed further in
-[`std::fmt`][fmt].
+`fmt::Display` 都实现了，而 `fmt::Binary` 都没有，因此 `fmt::Binary` 不能使用。
+`std::fmt` 有很多这样的 [`traits`][traits]，使用这些 trait 都要有各自的实现。这些内容将
+在后面的 [`std::fmt`][fmt] 章节中详细介绍。
 
 ### 动手试一试
 
-After checking the output of the above example, use the `Point2` struct as
-guide to add a Complex struct to the example. When printed in the same
-way, the output should be:
+对上面程序的运行结果检验完毕后，在上述示例程序中，仿照 `Point2` 结构体增加一个复杂的结构体。
+使用一样的方式打印，输出结果要求这个样子：
 ```
 Display: 3.3 + 7.2i
 Debug: Complex { real: 3.3, imag: 7.2 }
