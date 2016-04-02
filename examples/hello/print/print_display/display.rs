@@ -1,29 +1,28 @@
-use std::fmt; // Import `fmt`
+use std::fmt; // 导入 `fmt`
 
-// A structure holding two numbers. `Debug` will be derived so the results can
-// be contrasted with `Display`.
+// 带有两个数字的结构体。`Debug` 将被派生，可以看到输出结果和 `Display` 的差异。
 #[derive(Debug)]
 struct MinMax(i64, i64);
 
-// Implement `Display` for `MinMax`.
+// 实现 `MinMax` 的 `Display`。
 impl fmt::Display for MinMax {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Use `self.number` to refer to each positional data point.
+        // 使用 `self.number` 方式来表示各个数据。
         write!(f, "({}, {})", self.0, self.1)
     }
 }
 
-// Define a structure where the fields are nameable for comparison.
+// 为了比较，定义一个含有字段的结构体。
 #[derive(Debug)]
 struct Point2 {
     x: f64,
     y: f64,
 }
 
-// Similarly, implement for Point2
+// 类似地对 Point2 进行实现
 impl fmt::Display for Point2 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Customize so only `x` and `y` are denoted.
+        // 自定义方式实现，仅让 `x` 和 `y` 标识出来。
         write!(f, "x: {}, y: {}", self.x, self.y)
     }
 }
@@ -48,7 +47,7 @@ fn main() {
     println!("Display: {}", point);
     println!("Debug: {:?}", point);
 
-    // Error. Both `Debug` and `Display` were implemented but `{:b}`
-    // requires `fmt::Binary` to be implemented. This will not work.
+    // 有错误。`Debug` 和 `Display` 都被实现了，但 `{:b}` 需要 `fmt::Binary`
+    // 得到实现。这语句不能运行。
     // println!("What does Point2D look like in binary: {:b}?", point);
 }
