@@ -1,25 +1,22 @@
-Implementing `fmt::Display` for a structure where the elements must each be
-handled sequentially is tricky. The problem is that each `write!` generates a
-`fmt::Result`. Proper handling of this requires dealing with *all* the
-results. Rust provides the `try!` macro for exactly this purpose.
+对一个结构体来说，须对各个元素逐个实现 `fmt::Display` 可能会很麻烦。问题在于每个 `write!`
+都要生成一个 `fmt::Result`。彻底地实现需要处理*所有*的结果。出于这方面考虑，Rust 提供了 `try!` 宏。
 
-Using `try!` on `write!` looks like this:
+在 `write!` 上使用 `try!`类似这样：
 
 ```rust
-// Try `write!` to see if it errors. If it errors, return
-// the error. Otherwise continue.
+// 对 `write!` 进行尝试（try），观察是否出错。若发生错误，返回相应的错误。
+// 否则（没有出错）继续执行后面的语句。
 try!(write!(f, "{}", value));
 ```
 
-With `try!` available, implementing `fmt::Display` for a `Vec` is
-straightforward:
+在有 `try!` 的基础上，对一个 `Vec` 实现 `fmt::Display` 是相当直接的：
 
 {testcase_list.play}
 
-### See also
+### 参考
 
 [`for`][for], [`ref`][ref], [`Result`][result], [`struct`][struct],
-[`try!`][try], and [`vec!`][vec]
+[`try!`][try], [`vec!`][vec]
 
 [for]: /flow_control/for.html
 [result]: /std/result.html
