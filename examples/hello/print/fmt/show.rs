@@ -2,20 +2,20 @@ use std::fmt::{self, Formatter, Display};
 
 struct City {
     name: &'static str,
-    // Latitude
+    // 纬度
     lat: f32,
-    // Longitude
+    // 经度
     lon: f32,
 }
 
 impl Display for City {
-    // `f` is a buffer, this method must write the formatted string into it
+    // `f` 是一个缓冲区（buffer），此方法必须将格式化的字符串写入其中
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
         let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
 
-        // `write!` is like `format!`, but it will write the formatted string
-        // into a buffer (the first argument)
+        // `write!` 和 `format!` 类似，但它会将格式化后的字符串写入到一个缓冲区
+        // 中（第一个除数f）
         write!(f, "{}: {:.3}°{} {:.3}°{}",
                self.name, self.lat.abs(), lat_c, self.lon.abs(), lon_c)
     }
@@ -41,8 +41,7 @@ fn main() {
         Color { red: 0, green: 3, blue: 254 },
         Color { red: 0, green: 0, blue: 0 },
     ].iter() {
-        // Switch this to use {} once you've added an implementation
-        // for fmt::Display
+        // 一旦添加了针对 fmt::Display 的实现，则要用 {} 对输出内容进行转换
         println!("{:?}", *color)
     }
 }
