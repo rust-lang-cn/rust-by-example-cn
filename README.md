@@ -1,4 +1,4 @@
-# 通过例子学Rust——Translate from [Rust by Example][rust-by-example] into Chinese
+# 通过例子学 Rust——Translate from [Rust by Example][rust-by-example] into Chinese
 
 [![Build Status][travis-image]][travis-link]
 
