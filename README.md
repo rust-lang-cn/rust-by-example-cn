@@ -1,10 +1,12 @@
-# 通过例子学 Rust——Translate from [Rust by Example][rust-by-example] into Chinese
+# 通过例子学 Rust
 
 [![Build Status][travis-image]][travis-link]
 
+——Translated into Chinese from [Rust by Example][rust-by-example] 
+
 ## 这是什么？
 
-这是 [Rust by Example-CN][website-cn]（原英文网站[Rust by Example][website]） 网站的源代码！
+这是 [Rust by Example-CN][website-cn]（Rust by Example 中文版）网站的源代码，翻译自原英文网站[Rust by Example][website]！
 
 ## 如何贡献
 
@@ -87,7 +89,7 @@ Makefile 提供了以下指令：
 
 ## 授权协议
 
-《通过例子学Rust》（英文版Rust by Example） 使用 Apache 2.0 license 和 MIT
+《通过例子学 Rust》（英文版Rust by Example） 使用 Apache 2.0 license 和 MIT
 license 两种协议进行授权。
 
 参见 LICENSE-APACHE 和 LICENSE-MIT 详情。
