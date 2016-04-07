@@ -9,10 +9,10 @@
             { "id": "fmt", "title": "格式化", "children": null }
         ] }
     ] },
-    { "id": "primitives", "title": "Primitives", "children": [
-        { "id": "literals", "title": "Literals and operators", "children": null },
-        { "id": "tuples", "title": "Tuples", "children": null },
-        { "id": "array", "title": "Arrays and Slices", "children": null }
+    { "id": "primitives", "title": "原生类型", "children": [
+        { "id": "literals", "title": "数据和运算符", "children": null },
+        { "id": "tuples", "title": "元组", "children": null },
+        { "id": "array", "title": "数组和 slice 类型", "children": null }
     ] },
     { "id": "custom_types", "title": "Custom types", "children": [
         { "id": "structs", "title": "Structures", "children": null },
