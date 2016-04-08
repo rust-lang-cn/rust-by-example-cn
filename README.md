@@ -2,7 +2,7 @@
 
 [![Build Status][travis-image]][travis-link]
 
-——Translated into Chinese from [Rust by Example][rust-by-example] 
+——Chinese Version--Translation of the [Rust by Example][rust-by-example] 
 
 ## 这是什么？
 
