@@ -1,16 +1,16 @@
-// A unit struct
+// 单元结构体
 struct Nil;
 
-// A tuple struct
+// 元组结构体
 struct Pair(i32, f64);
 
-// A struct with two fields
+// 带有两个字段的结构体
 struct Point {
     x: f64,
     y: f64,
 }
 
-// Structs can be reused as fields of another struct
+// 结构体可以作为另一个结构体的字段
 #[allow(dead_code)]
 struct Rectangle {
     p1: Point,
@@ -18,28 +18,28 @@ struct Rectangle {
 }
 
 fn main() {
-    // Instantiate a `Point`
+    // 实例化结构体 `Point`
     let point: Point = Point { x: 0.3, y: 0.4 };
 
-    // Access the fields of the point
+    // 访问 point 的字段
     println!("point coordinates: ({}, {})", point.x, point.y);
 
-    // Destructure the point using a `let` binding
+    // 使用 `let` 绑定来解构 point
     let Point { x: my_x, y: my_y } = point;
 
     let _rectangle = Rectangle {
-        // struct instantiation is an expression too
+        // 结构体的实例化也是一个表达式
         p1: Point { x: my_y, y: my_x },
         p2: point,
     };
 
-    // Instantiate a unit struct
+    // 实例化一个单元结构体
     let _nil = Nil;
 
-    // Instantiate a tuple struct
+    // 实例化一个元组结构体
     let pair = Pair(1, 0.1);
 
-    // Destructure a tuple struct
+    // 解构一个元组结构体
     let Pair(integer, decimal) = pair;
 
     println!("pair contains {:?} and {:?}", integer, decimal);

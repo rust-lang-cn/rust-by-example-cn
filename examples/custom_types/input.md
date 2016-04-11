@@ -1,6 +1,6 @@
-Rust custom data types are formed mainly through the two keywords:
+Rust 自定义数据类型主要是通过下面这两个关键字来创建：
 
-* `struct`: define a structure
-* `enum`: define an enumeration
+* `struct`： 定义一个结构体
+* `enum`： 定义一个枚举类型
 
-Constants can also be created via the `const` and `static` keywords.
+而常量的创建可以通过 `const` 和 `static` 关键字来创建。

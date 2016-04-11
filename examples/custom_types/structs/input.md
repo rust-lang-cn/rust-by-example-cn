@@ -1,16 +1,15 @@
-There are three types of structures ("structs") that can be created using the
-`struct` keyword:
+结构体（structure，缩写成 struct）有 3 种类型，使用 `struct` 关键字来创建：
 
-* Tuple structs, which are, basically, named tuples.
-* The classic [C structs][c_struct]
-* Unit structs, which are field-less, are useful for generics.
+* 元组结构体，总的来说是根据元组来命名。
+* C 语言传统的结构体[c_struct]。
+* 单元结构体，不带字段，在泛型中很有用。
 
 {structs.play}
 
-### See also:
+### 参考
 
-[`attributes`][attributes] and [destructuring][destructuring]
+[`attributes`][attributes] 和 [destructuring][destructuring]
 
-[attributes]: /attribute.html
+[attributes]: ../attribute.html
 [c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
-[destructuring]: /flow_control/match/destructuring.html
+[destructuring]: ../flow_control/match/destructuring.html

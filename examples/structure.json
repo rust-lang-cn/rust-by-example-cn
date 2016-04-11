@@ -14,14 +14,14 @@
         { "id": "tuples", "title": "元组", "children": null },
         { "id": "array", "title": "数组和 slice 类型", "children": null }
     ] },
-    { "id": "custom_types", "title": "Custom types", "children": [
-        { "id": "structs", "title": "Structures", "children": null },
-        { "id": "enum", "title": "Enums", "children": [
-            { "id": "enum_use", "title": "use", "children": null },
-            { "id": "c_like", "title": "C-like", "children": null },
-            { "id": "testcase_linked_list", "title": "Testcase: linked-list", "children": null }
+    { "id": "custom_types", "title": "自定义类型", "children": [
+        { "id": "structs", "title": "结构体", "children": null },
+        { "id": "enum", "title": "枚举 enum", "children": [
+            { "id": "enum_use", "title": "use声明", "children": null },
+            { "id": "c_like", "title": "类C用法", "children": null },
+            { "id": "testcase_linked_list", "title": "测试实例： linked-list", "children": null }
         ] },
-        { "id": "constants", "title": "constants", "children": null }
+        { "id": "constants", "title": "常量", "children": null }
     ] },
     { "id": "variable_bindings", "title": "Variable Bindings", "children": [
         { "id": "mut", "title": "Mutability", "children": null },
