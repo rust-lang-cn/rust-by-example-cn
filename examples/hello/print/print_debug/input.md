@@ -18,7 +18,7 @@ struct DebugPrintable(i32);
 
 所以 `fmt::Debug` 确实使这些内容可以打印，但是牺牲了美感。手动执行 `fmt::Display` 将能够弥补这些问题。
 
-### 参考
+### 参见：
 
 [attributes][attributes], [`derive`][derive], [`std::fmt`][fmt] 和 [`struct`][structs]
 

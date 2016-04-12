@@ -13,7 +13,7 @@ try!(write!(f, "{}", value));
 
 {testcase_list.play}
 
-### 参考
+### 参见：
 
 [`for`][for], [`ref`][ref], [`Result`][result], [`struct`][struct],
 [`try!`][try], [`vec!`][vec]

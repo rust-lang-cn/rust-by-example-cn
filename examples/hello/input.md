@@ -1,4 +1,4 @@
-这是经典的 Hello World 程序的源码。
+这是传统的 Hello World 程序的源码。
 
 {hello.play}
 

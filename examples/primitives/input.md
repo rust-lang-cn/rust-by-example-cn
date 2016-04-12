@@ -17,7 +17,7 @@ Rust 提供了多种原生类型，包括：
 
 {primitives.play}
 
-### 参考
+### 参见：
 
 [`std` 库][std]
 

@@ -22,7 +22,7 @@
  * 添加一个 `println!` 宏来打印：`Pi is roughly 3.143`（Pi约等于3.143），使用22除以7
  得到 Pi 的近似值。（提示：设置小数位的显示格式可以参考文档[`std::fmt`][fmt]）。
 
-### 参考
+### 参见：
 
 [`std::fmt`][fmt], [`macros`][macros], [`struct`][structs]
 和 [`traits`][traits]

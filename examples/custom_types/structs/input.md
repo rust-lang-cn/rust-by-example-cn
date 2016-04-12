@@ -6,7 +6,7 @@
 
 {structs.play}
 
-### 参考
+### 参见：
 
 [`attributes`][attributes] 和 [destructuring][destructuring]
 

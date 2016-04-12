@@ -26,7 +26,7 @@ RGB (0, 0, 0) 0x000000
  * 你[可能需要多次列出各种颜色][argument_types]，
  * 你可以使用 `:02` [补零使位数为2位]。
 
-### 参考
+### 参见：
 [`std::fmt`][fmt]
 
 [argument_types]: http://doc.rust-lang.org/std/fmt/#argument-types

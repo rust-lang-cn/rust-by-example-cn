@@ -2,7 +2,7 @@
 
 [![Build Status][travis-image]][travis-link]
 
-——Chinese Version--Translation of the [Rust by Example][rust-by-example] 
+——Chinese Version--Translation of the [Rust by Example][rust-by-example]
 
 ## 这是什么？
 
@@ -89,10 +89,10 @@ Makefile 提供了以下指令：
 
 ## 授权协议
 
-《通过例子学 Rust》（英文版Rust by Example） 使用 Apache 2.0 license 和 MIT
+《通过例子学 Rust》（原英文版Rust by Example 与本中文版均） 使用 Apache 2.0 license 和 MIT
 license 两种协议进行授权。
 
-参见 LICENSE-APACHE 和 LICENSE-MIT 详情。
+详情参见 LICENSE-APACHE 和 LICENSE-MIT。
 
 [rust-by-example]: https://github.com/rust-lang/rust-by-example
 [travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
