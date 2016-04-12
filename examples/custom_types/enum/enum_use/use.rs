@@ -1,4 +1,4 @@
-// An attribute to hide warnings for unused code.
+// 隐藏未使用代码警告的属性。
 #![allow(dead_code)]
 
 enum Status {
@@ -12,25 +12,24 @@ enum Work {
 }
 
 fn main() {
-    // Explicitly `use` each name so they are available without
-    // manual scoping.
+    // 明确地 `use` 各个名称使他们直接可用而不需要手动加上作用域。
     use Status::{Poor, Rich};
-    // Automatically `use` each name inside `Work`.
+    // 自动地 `use` `Work` 内部的各个名称。
     use Work::*;
 
-    // Equivalent to `Status::Poor`.
+    // 等价于 `Status::Poor`。
     let status = Poor;
-    // Equivalent to `Work::Civilian`.
+    // 等价于 `Work::Civilian`。
     let work = Civilian;
 
     match status {
-        // Note the lack of scoping because of the explicit `use` above.
+        // 注意这里少了作用域，因为上面显式地使用了 `use`。
         Rich => println!("The rich have lots of money!"),
         Poor => println!("The poor have no money..."),
     }
 
     match work {
-        // Note again the lack of scoping.
+        // 再次注意到这里没有作用域。
         Civilian => println!("Civilians work!"),
         Soldier  => println!("Soldiers fight!"),
     }

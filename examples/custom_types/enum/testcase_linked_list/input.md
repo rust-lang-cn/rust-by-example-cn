@@ -1,10 +1,10 @@
-A common use for `enums` is to create a linked-list:
+`enus` 的一个常见用法就是创建一个链表（linked-list）：
 
 {linked_list.play}
 
-### See also:
+### 参见：
 
-[`Box`][box] and [methods][methods]
+[`Box`][box] 和 [methods][methods]
 
-[box]: /std/box.html
-[methods]: /fn/methods.html
+[box]: ../../std/box.html
+[methods]: ../../fn/methods.html

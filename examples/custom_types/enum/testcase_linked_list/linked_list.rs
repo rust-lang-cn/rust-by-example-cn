@@ -1,47 +1,46 @@
 use List::*;
 
 enum List {
-    // Cons: Tuple struct that wraps an element and a pointer to the next node
+    // Cons： 元组结构体，包含一个元素和一个指向下一节点的指针
     Cons(u32, Box<List>),
-    // Nil: A node that signifies the end of the linked list
+    // Nil： 末结点，表明链表结束
     Nil,
 }
 
-// Methods can be attached to an enum
+// 方法可以在 enum 定义
 impl List {
-    // Create an empty list
+    // 创建一个空列表
     fn new() -> List {
-        // `Nil` has type `List`
+        // `Nil` 为 `List` 类型
         Nil
     }
 
-    // Consume a list, and return the same list with a new element at its front
+    // 处理一个列表，得到一个头部带上一个新元素的同样类型的列表并返回此值
     fn prepend(self, elem: u32) -> List {
-        // `Cons` also has type List
+        // `Cons` 同样为 List 类型
         Cons(elem, Box::new(self))
     }
 
-    // Return the length of the list
+    // 返回列表的长度
     fn len(&self) -> u32 {
-        // `self` has to be matched, because the behavior of this method
-        // depends on the variant of `self`
-        // `self` has type `&List`, and `*self` has type `List`, matching on a
-        // concrete type `T` is preferred over a match on a reference `&T`
+        // `self` 必须匹配，因为这个方法的行为取决于 `self` 的变化类型
+        // `self` 为 `&List` 类型，`*self` 为 `List` 类型，一个具体的 `T` 类型的匹配
+        // 要参考引用 `&T` 的匹配
         match *self {
-            // Can't take ownership of the tail, because `self` is borrowed;
-            // instead take a reference to the tail
+            // 不能得到 tail 的所有权，因为 `self` 是借用的；
+            // 而是得到一个 tail 引用
             Cons(_, ref tail) => 1 + tail.len(),
-            // Base Case: An empty list has zero length
+            // 基本情形：空列表的长度为 0
             Nil => 0
         }
     }
 
-    // Return representation of the list as a (heap allocated) string
+    // 将列表以字符串（堆分配的）的形式返回
     fn stringify(&self) -> String {
         match *self {
             Cons(head, ref tail) => {
-                // `format!` is similar to `print!`, but returns a heap
-                // allocated string instead of printing to the console
+                // `format!` 和 `print!` 类似，但返回的是一个堆分配的字符串，而不是
+                // 打印结果到控制台上
                 format!("{}, {}", head, tail.stringify())
             },
             Nil => {
@@ -52,15 +51,15 @@ impl List {
 }
 
 fn main() {
-    // Create an empty linked list
+    // 创建一个空链表
     let mut list = List::new();
 
-    // Append some elements
+    // 追加一些元素
     list = list.prepend(1);
     list = list.prepend(2);
     list = list.prepend(3);
 
-    // Show the final state of the list
+    // 显示链表的最后状态
     println!("linked list has length: {}", list.len());
     println!("{}", list.stringify());
 }

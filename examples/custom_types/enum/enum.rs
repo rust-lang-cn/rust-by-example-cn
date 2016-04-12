@@ -1,33 +1,32 @@
-// An attribute to hide warnings for unused code.
+// 隐藏未使用代码警告的属性。
 #![allow(dead_code)]
 
-// Create an `enum` to classify someone. Note how both names
-// and type information together specify the variant:
-// `Skinny != Fat` and `Height(i32) != Weight(i32)`. Each
-// is different and independent.
+// 创建一个 `enum` （枚举）来划分人的类别。注意命名和类型的信息是如何一起
+// 明确规定变量的：
+// `Skinny != Fat` 和 `Height(i32) != Weight(i32)`。每者都是不同的且
+// 相互独立。
 enum Person {
-    // An `enum` may either be `unit-like`,
+    // 一个 `enum` 可能是个 `unit-like`（类单元结构体），
     Skinny,
     Fat,
-    // like tuple structs,
+    // 或像一个元组结构体，
     Height(i32),
     Weight(i32),
-    // or like structures.
+    // 或像一个普通的结构体。
     Info { name: String, height: i32 }
 }
 
-// A function which takes a `Person` enum as an argument and
-// returns nothing.
+// 此函数将一个 `Person` enum 作为参数，无返回值。
 fn inspect(p: Person) {
-    // Usage of an `enum` must cover all cases (irrefutable)
-    // so a `match` is used to branch over it.
+    // `enum` 的使用必须覆盖所有情形（无可辩驳的），所以使用 `match`
+    // 以分支方式覆盖所有类型。
     match p {
         Person::Skinny    => println!("Is skinny!"),
         Person::Fat       => println!("Is fat!"),
-        // Destructure `i` from inside the `enum`.
+        // 从 `enum` 内部解构 `i`
         Person::Height(i) => println!("Has a height of {}.", i),
         Person::Weight(i) => println!("Has a weight of {}.", i),
-        // Destructure `Info` into `name` and `height`.
+        // 将 `Info` 解构成 `name` 和 `height`。
         Person::Info { name, height } => {
             println!("{} is {} tall!", name, height);
         },
@@ -37,7 +36,7 @@ fn inspect(p: Person) {
 fn main() {
     let person = Person::Height(18);
     let danny  = Person::Weight(10);
-    // `to_owned()` creates an owned `String` from a string slice.
+    // `to_owned()` 从一个字符串 slice 创建一个具有所有权的 `String`。
     let dave   = Person::Info { name: "Dave".to_owned(), height: 72 };
     let john   = Person::Fat;
     let larry  = Person::Skinny;

@@ -1,7 +1,8 @@
-// An attribute to hide warnings for unused code.
+// 隐藏未使用代码警告的属性。
 #![allow(dead_code)]
 
 // enum with implicit discriminator (starts at 0)
+// 没有明确赋值区分的 enum（计数从0开始）
 enum Number {
     Zero,
     One,
@@ -9,6 +10,7 @@ enum Number {
 }
 
 // enum with explicit discriminator
+// 明确给定值的 enum
 enum Color {
     Red = 0xff0000,
     Green = 0x00ff00,
@@ -16,7 +18,7 @@ enum Color {
 }
 
 fn main() {
-    // `enums` can be cast as integers.
+    // `enum` 可以转成整形。
     println!("zero is {}", Number::Zero as i32);
     println!("one is {}", Number::One as i32);
 
