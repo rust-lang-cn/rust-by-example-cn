@@ -17,15 +17,15 @@
     { "id": "custom_types", "title": "自定义类型", "children": [
         { "id": "structs", "title": "结构体", "children": null },
         { "id": "enum", "title": "枚举 enum", "children": [
-            { "id": "enum_use", "title": "use声明", "children": null },
-            { "id": "c_like", "title": "类C用法", "children": null },
+            { "id": "enum_use", "title": "使用 use", "children": null },
+            { "id": "c_like", "title": "类 C 用法", "children": null },
             { "id": "testcase_linked_list", "title": "测试实例： 链表", "children": null }
         ] },
         { "id": "constants", "title": "常量", "children": null }
     ] },
     { "id": "variable_bindings", "title": "变量绑定", "children": [
         { "id": "mut", "title": "可变变量", "children": null },
-        { "id": "scope", "title": "作用域和 shadowing", "children": null },
+        { "id": "scope", "title": "作用域和隐藏", "children": null },
         { "id": "declare", "title": "变量先声明", "children": null }
     ] },
     { "id": "cast", "title": "Casting", "children": [

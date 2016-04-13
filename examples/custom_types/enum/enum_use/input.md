@@ -1,4 +1,3 @@
-The `use` declaration can be used so manual scoping isn't needed:
 使用 `use` 声明，这样手动加上作用域就没必需了：
 
 {use.play}
