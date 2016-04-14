@@ -1,11 +1,11 @@
 fn main() {
-    // Declare a variable binding
+    // 声明一个变量绑定
     let a_binding;
 
     {
         let x = 2;
 
-        // Initialize the binding
+        // 初始化一个绑定
         a_binding = x * x;
     }
 
@@ -13,9 +13,9 @@ fn main() {
 
     let another_binding;
 
-    // Error! Use of uninitialized binding
+    // 报错！使用了未初始化的绑定
     println!("another binding: {}", another_binding);
-    // FIXME ^ Comment out this line
+    // 改正 ^ 注释掉此行
 
     another_binding = 1;
 

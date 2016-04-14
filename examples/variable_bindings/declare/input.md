@@ -1,8 +1,6 @@
-It's possible to declare variable bindings first, and initialize them later.
-However, this form is seldom used, as it may lead to the use of uninitialized
-variables.
+Rust 语言可以先声明变量绑定，后面才将它们初始化。但是这种情况用得很少，因为这样很可能导致使用未
+初始的变量。
 
 {declare.play}
 
-The compiler forbids use of uninitialized variables, as this would lead to
-undefined behavior.
+编译器禁止使用未经初始化的变量，因为这会产生无法确定的结果（undefined behavior）。
