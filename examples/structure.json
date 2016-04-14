@@ -28,12 +28,12 @@
         { "id": "scope", "title": "作用域和隐藏", "children": null },
         { "id": "declare", "title": "变量先声明", "children": null }
     ] },
-    { "id": "cast", "title": "Casting", "children": [
-        { "id": "literals", "title": "Literals", "children": null },
-        { "id": "inference", "title": "Inference", "children": null },
-        { "id": "alias", "title": "Alias", "children": null }
+    { "id": "cast", "title": "类型转换", "children": [
+        { "id": "literals", "title": "数据", "children": null },
+        { "id": "inference", "title": "类型推导", "children": null },
+        { "id": "alias", "title": "别名", "children": null }
     ] },
-    { "id": "expression", "title": "Expressions", "children": null },
+    { "id": "expression", "title": "表达式", "children": null },
     { "id": "flow_control", "title": "Flow Control", "children": [
         { "id": "if_else", "title": "if/else", "children": null },
         { "id": "loop", "title": "loop", "children": [
