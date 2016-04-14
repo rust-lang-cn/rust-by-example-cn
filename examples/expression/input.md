@@ -1,33 +1,32 @@
-A Rust program is (mostly) made up of a series of statements:
+Rust 程序（大部分）由一系列语句构成：
 
 
 ```
 fn main() {
-    // statement
-    // statement
-    // statement
+    // 语句
+    // 语句
+    // 语句
 }
 ```
 
-There are a few kinds of statements in Rust. The most common two are declaring
-a variable binding, and using a `;` with an expression:
+Rust 有多种语句。最普遍的语句类型有两种：一种是绑定变量，另一种是表达式带上分号：
 
 ```
 fn main() {
-    // variable binding
+    // 变量绑定
     let x = 5;
 
-    // expression;
+    // 表达式;
     x;
     x + 1;
     15;
 }
 ```
 
-Blocks are expressions too, so they can be used as [r-values][rvalue] in
-assignments. The last expression in the block will be assigned to the
-[l-value][lvalue]. However, if the last expression of the block ends with a
-semicolon, the return value will be `()`.
+代码块也是表达式，所以它们在赋值操作中可以充当[右值（r-values）][rvalue]。代码块中的最后一条
+表达式将赋给[左值（l-value）][lvalue]。需要注意的是，如果代码块最后一条表达式结尾处有分号，那
+么返回值将变成 `()`。（译注：代码块中的最后一条语句是代码块中**实际执行**的最后一条语句，而不一
+定是代码块中最后一行的语句。）
 
 {expression.play}
 

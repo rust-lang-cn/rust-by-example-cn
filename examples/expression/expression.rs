@@ -5,12 +5,12 @@ fn main() {
         let x_squared = x * x;
         let x_cube = x_squared * x;
 
-        // This expression will be assigned to `y`
+        // 将此表达式赋给 `y`
         x_cube + x_squared + x
     };
 
     let z = {
-        // The semicolon suppresses this expression and `()` is assigned to `z`
+        // 分号结束了这个表达式，于是将 `()` 赋给 `z`
         2 * x;
     };
 
