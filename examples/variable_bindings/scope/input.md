@@ -1,6 +1,5 @@
-Variable bindings have a scope, and are constrained to live in a *block*. A
-block is a collection of statements enclosed by braces `{}`. Also, [variable
-shadowing][variable-shadow] is allowed.
+变量绑定有一个作用域，并且限定在一个*代码块*(block)中存活（live）。代码块是一个被 `{}` 包围的
+语句集合。另外也允许[变量隐藏][variable-shadow]。
 
 {scope.play}
 
