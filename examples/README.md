@@ -1,4 +1,5 @@
 # 通过例子学 Rust
+>翻译正在进行中……  
 
 ——《通过例子学 Rust》(Rust by Example 中文版)翻译自 [Rust by Example][website]，中文版最后更新时间：2016-04-06。(Chinese Version -- Translation of the Rust by Example.)
 
