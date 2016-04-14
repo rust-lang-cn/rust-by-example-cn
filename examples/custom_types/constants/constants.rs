@@ -10,12 +10,12 @@ fn is_big(n: i32) -> bool {
 fn main() {
     let n = 16;
 
-    // 在 main 主函数中访问常量
+    // 在 main 函数(主函数)中访问常量
     println!("This is {}", LANGUAGE);
     println!("The threshold is {}", THRESHOLD);
     println!("{} is {}", n, if is_big(n) { "big" } else { "small" });
 
-    // 有错误！不能修改一个 `const` 常量。
+    // 报错！不能修改一个 `const` 常量。
     THRESHOLD = 5;
-    // 改正 ^ 将这条语句注释掉
+    // 改正 ^ 注释掉此行
 }

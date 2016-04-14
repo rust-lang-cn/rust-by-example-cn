@@ -11,6 +11,6 @@ fn main() {
 
     let mut mutable = 12; // 可变类型 `i32`。
 
-    // 错误！变量的类型不可改变。
+    // 报错！变量的类型不可改变。
     mutable = true;
 }
