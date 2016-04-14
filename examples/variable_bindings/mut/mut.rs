@@ -4,12 +4,12 @@ fn main() {
 
     println!("Before mutation: {}", mutable_binding);
 
-    // Ok
+    // 正确代码
     mutable_binding += 1;
 
     println!("After mutation: {}", mutable_binding);
 
-    // Error!
+    // 错误！
     _immutable_binding += 1;
-    // FIXME ^ Comment out this line
+    // 改正 ^ 将此行注释掉
 }

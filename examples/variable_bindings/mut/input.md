@@ -1,6 +1,5 @@
-Variable bindings are immutable by default, but this can be overridden using
-the `mut` modifier.
+变量绑定默认是不可变的，但加上 `mut` 修饰语后变量就可以改变。
 
 {mut.play}
 
-The compiler will throw a detailed diagnostic about mutability errors.
+编译器将会抛出一堆关于变量可变性的错误提示信息。
