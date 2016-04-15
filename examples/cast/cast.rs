@@ -1,49 +1,47 @@
-// Suppress all warnings from casts which overflow.
+// 消除会溢出的类型转换的所有警告。
 #![allow(overflowing_literals)]
 
 fn main() {
     let decimal = 65.4321_f32;
 
-    // Error! No implicit conversion
+    // 报错！不能隐式转换类型
     let integer: u8 = decimal;
-    // FIXME ^ Comment out this line
+    // 改正 ^ 注释掉此行
 
-    // Explicit conversion
+    // 显式转换类型
     let integer = decimal as u8;
     let character = integer as char;
 
     println!("Casting: {} -> {} -> {}", decimal, integer, character);
 
-    // when casting any value to an unsigned type, T, 
-    // std::T::MAX + 1 is added or subtracted until the value
-    // fits into the new type
+    // 当将任意整数值转成无符号类型（unsigned 类型） T 时，
+    // 将会加上或减去 std::T::MAX + 1，直到值符合新的类型
 
-    // 1000 already fits in a u16
+    // 1000 原本就符合 u16 类型
     println!("1000 as a u16 is: {}", 1000 as u16);
 
     // 1000 - 256 - 256 - 256 = 232
-    // Under the hood, the first 8 bits from the least significant bit (LSB) are used, 
-    // while the rest towards the most significant bit (MSB) get truncated.
+    // 在这种情况下会截取数字的低8位（the least significant bit，LSB），而高位（the most
+    // significant bit，MSB）数字会被抛掉（译注：此操作是按二进数存储的数字位进行）。
     println!("1000 as a u8 is : {}", 1000 as u8);
     // -1 + 256 = 255
     println!("  -1 as a u8 is : {}", (-1i8) as u8);
 
-    // For positive numbers, this is the same as the modulus
+    // 对正数来说，上面的类型转换操作和取模效果一样
     println!("1000 mod 256 is : {}", 1000 % 256);
 
-    // When casting to a signed type, the result is the same as 
-    // first casting to the corresponding unsigned type then 
-    // taking the two's complement.
+    // 当将整数值转成有符号类型（signed 类型）时，一样要先将数值转成相应的无符号类型（译注：
+    // 如 i32 和 u32 对应，i16 和 u16对应），然后再求此值的补码（two's complement）
 
-    // Unless it already fits, of course.
+    // 除非值本来就已经符合所要转的类型。
     println!(" 128 as a i16 is: {}", 128 as i16);
-    // 128 as u8 -> 128, whose two's complement in eight bits is:
+    // 128 as u8 -> 128，再求数字128的8位二进制补码得到：
     println!(" 128 as a i8 is : {}", 128 as i8);
 
-    // repeating the example above
+    // 重复上面的例子
     // 1000 as u8 -> 232
     println!("1000 as a i8 is : {}", 1000 as i8);
-    // and the two's complement of 232 is -24
+    // 232 的补码是 -24
     println!(" 232 as a i8 is : {}", 232 as i8);
 
 
