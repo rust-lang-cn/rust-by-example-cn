@@ -1,16 +1,14 @@
 // 隐藏未使用代码警告的属性。
 #![allow(dead_code)]
 
-// enum with implicit discriminator (starts at 0)
-// 没有明确赋值区分的 enum（计数从0开始）
+// 没有明确辨别标志字段（implicit discriminator）的 enum（计数从0开始）
 enum Number {
     Zero,
     One,
     Two,
 }
 
-// enum with explicit discriminator
-// 明确给定值的 enum
+// 拥有明确辨别标志字段（explicit discriminator）的 enum
 enum Color {
     Red = 0xff0000,
     Green = 0x00ff00,

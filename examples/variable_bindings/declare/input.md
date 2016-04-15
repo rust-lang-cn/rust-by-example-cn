@@ -3,4 +3,4 @@ Rust 语言可以先声明变量绑定，后面才将它们初始化。但是这
 
 {declare.play}
 
-编译器禁止使用未经初始化的变量，因为这会产生无法确定的结果（undefined behavior）。
+编译器禁止使用未经初始化的变量，因为这会产生未定义行为（undefined behavior）。
