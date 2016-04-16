@@ -29,7 +29,7 @@
         { "id": "declare", "title": "变量先声明", "children": null }
     ] },
     { "id": "cast", "title": "类型转换", "children": [
-        { "id": "literals", "title": "数据", "children": null },
+        { "id": "literals", "title": "字面量", "children": null },
         { "id": "inference", "title": "类型推导", "children": null },
         { "id": "alias", "title": "别名", "children": null }
     ] },
