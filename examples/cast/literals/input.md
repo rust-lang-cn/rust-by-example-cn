@@ -1,24 +1,19 @@
-Numeric literals can be type annotated by adding the type as a suffix, with the
-exception of `usize` that uses the `usize` suffix and `isize` that uses the
-`isize` suffix.
+数字字面量可以加上类型标记作为后缀来标注类型，例外的是 `usize` 类型使用 `usize` 后缀，例`isize`
+类型使用 `isize` 后缀。
 
-The type of unsuffixed numeric literals will depend on how they are used. If no
-constraint exists, the compiler will use `i32` for integers, and `f64` for
-floating-point numbers.
+未加上后缀的数字字面量的类型视使用它们的情况而定。如果没有限定，编译器会将整型定为 `i32` 类型，将
+浮点数定为 `f64` 类型。
 
 {literals.play}
 
-There are some concepts used in the previous code that haven't been explained
-yet, here's a brief explanation for the impatient readers:
+前面代码中用了一些尚未解释过的概念，这里列出一些简短的说明：
 
-* `fun(&foo)` is used to pass an argument to a function *by reference*, rather
-  than by value (`fun(foo)`). For more details see [borrowing][borrow].
-* `std::mem::size_of_val` is a function, but called with its *full path*. Code
-  can be split in logical units called *modules*. In this case, the
-  `size_of_val` function is defined in the `mem` module, and the `mem` module
-  is defined in the `std` *crate*. For more details, see
-  [modules][mod] and [crates][crate].
+* `fun(&foo)`  是*通过引用*传参给一个函数，而不是通过值来传参（`fun(foo)`）。更多内容参见
+  [借用][borrow]（borrowing）。
+* `std::mem::size_of_val` 是一个函数，不过是通过*完整的路径*调用的。代码可以划分到称为*模块*
+  （module）的逻辑单元中。在这个例子中，`size_of_val` 函数是定义在 `mem` 模块的，`mem` 模块
+  是定义在 `std` 包（crate）中。更多内容参考[模块][mod] 和 [crate][crate]。
 
-[borrow]: /scope/borrow.html
-[mod]: /mod.html
-[crate]: /crates.html
+[borrow]: ../scope/borrow.html
+[mod]: ../mod.html
+[crate]: ../crates.html
