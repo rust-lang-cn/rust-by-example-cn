@@ -21,7 +21,7 @@ fn main() {
     println!("1000 as a u16 is: {}", 1000 as u16);
 
     // 1000 - 256 - 256 - 256 = 232
-    // 在这种情况下会截取数字的低8位（the least significant bit，LSB），而高位（the most
+    // 在计算机底层会截取数字的低8位（the least significant bit，LSB），而高位（the most
     // significant bit，MSB）数字会被抛掉（译注：此操作是按二进数存储的数字位进行）。
     println!("1000 as a u8 is : {}", 1000 as u8);
     // -1 + 256 = 255
