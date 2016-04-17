@@ -4,7 +4,8 @@ fn main() {
 
     // 创建一个空 vector（可增长数组）。
     let mut vec = Vec::new();
-    // 此时编译器并未知道 `vec` 的确切类型，它只知道 `vec` 是一个含有某种类型的 vector（`Vec<_>`）。
+    // 此时编译器并未知道 `vec` 的确切类型，它只知道 `vec` 是一个含有某种类型
+    // 的 vector（`Vec<_>`）。
 
     // 将 `elem` 插入 vector。
     vec.push(elem);
