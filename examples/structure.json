@@ -34,22 +34,22 @@
         { "id": "alias", "title": "别名", "children": null }
     ] },
     { "id": "expression", "title": "表达式", "children": null },
-    { "id": "flow_control", "title": "Flow Control", "children": [
+    { "id": "flow_control", "title": "流程控制", "children": [
         { "id": "if_else", "title": "if/else", "children": null },
-        { "id": "loop", "title": "loop", "children": [
+        { "id": "loop", "title": "loop 循环", "children": [
             { "id": "nested", "title": "Nesting and labels", "children": null }
         ] },
-        { "id": "while", "title": "while", "children": null },
-        { "id": "for", "title": "for and range", "children": null },
-        { "id": "match", "title": "match", "children": [
-            { "id": "destructuring", "title": "Destructuring", "children": [
-                { "id": "destructure_tuple", "title": "tuples", "children": null },
-                { "id": "destructure_enum", "title": "enums", "children": null },
-                { "id": "destructure_pointers", "title": "pointers/ref", "children": null },
-                { "id": "destructure_structures", "title": "structs", "children": null }
+        { "id": "while", "title": "while 循环", "children": null },
+        { "id": "for", "title": "for 循环和区间", "children": null },
+        { "id": "match", "title": "match 匹配", "children": [
+            { "id": "destructuring", "title": "解构", "children": [
+                { "id": "destructure_tuple", "title": "元组", "children": null },
+                { "id": "destructure_enum", "title": "枚举", "children": null },
+                { "id": "destructure_pointers", "title": "指针和引用", "children": null },
+                { "id": "destructure_structures", "title": "结构体", "children": null }
             ] },
-            { "id": "guard", "title": "Guards", "children": null },
-            { "id": "binding", "title": "Binding", "children": null }
+            { "id": "guard", "title": "守卫", "children": null },
+            { "id": "binding", "title": "绑定", "children": null }
         ] },
         { "id": "if_let", "title": "if let", "children": null },
         { "id": "while_let", "title": "while let", "children": null }
