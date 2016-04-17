@@ -1,12 +1,10 @@
-The `type` statement can be used to give a new name to an existing type. Types
-must have `CamelCase` names, or the compiler will raise a warning. The
-exception to this rule are the primitive types: `usize`, `f32`, etc.
+`type` 语句可以给一个已存在类型起一个新的名字。类型必须要有 `CamelCase`（驼峰方式）的名称，否则
+编译器会产生一个警告。对规则为例外的是基本类型： `usize`，`f32`等等。
 
 {alias.play}
 
-The main use of aliases is to reduce typing; for example the `IoResult<T>` type
-is an alias for the `Result<T, IoError>` type.
+别名的主要作用是减少按键，举个例子，`IoResult<T>` 类型是 `Result<T, IoError>` 类型的别名。
 
-### See also:
+### 参见：
 
-[Attributes](/attribute.html)
+[属性](../attribute.html)
