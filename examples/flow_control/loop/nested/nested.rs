@@ -7,10 +7,10 @@ fn main() {
         'inner: loop {
             println!("Entered the inner loop");
 
-            // This would break only the inner loop
+            // 这只是中断内部的循环
             //break;
 
-            // This breaks the outer loop
+            // 这会中断外层循环
             break 'outer;
         }
 
