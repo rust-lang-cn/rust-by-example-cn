@@ -37,7 +37,7 @@
     { "id": "flow_control", "title": "流程控制", "children": [
         { "id": "if_else", "title": "if/else", "children": null },
         { "id": "loop", "title": "loop 循环", "children": [
-            { "id": "nested", "title": "Nesting and labels", "children": null }
+            { "id": "nested", "title": "嵌套循环和标签", "children": null }
         ] },
         { "id": "while", "title": "while 循环", "children": null },
         { "id": "for", "title": "for 循环和区间", "children": null },
