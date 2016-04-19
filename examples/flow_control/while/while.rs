@@ -1,8 +1,8 @@
 fn main() {
-    // A counter variable
+    // 计数器变量
     let mut n = 1;
 
-    // Loop while `n` is less than 101
+    // 当 `n` 小于 101 时进入循环操作
     while n < 101 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -14,7 +14,7 @@ fn main() {
             println!("{}", n);
         }
 
-        // Increment counter
+        // 计数器值加1
         n += 1;
     }
 }
