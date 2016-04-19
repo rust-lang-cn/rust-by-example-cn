@@ -1,7 +1,7 @@
 # 通过例子学 Rust
 >翻译正在进行中，[查看翻译进度或参与翻译][home]……  
 
->《通过例子学 Rust》(Rust by Example 中文版)翻译自 [Rust by Example][website]，中文版最后更新时间：2016-04-06。(Chinese Version -- Translation of the Rust by Example.)
+>《通过例子学 Rust》(Rust by Example 中文版)翻译自 [Rust by Example][website]，中文版最后更新时间：2016-04-19。(Chinese Version -- Translation of the Rust by Example.)
 
 [Rust][rust] 是一门注重安全、速度、以及并发的现代系统编程语言。Rust 通过内存安全来实现上述目标，但不使用垃圾回收机制（Garbage collection, GC)。
 
