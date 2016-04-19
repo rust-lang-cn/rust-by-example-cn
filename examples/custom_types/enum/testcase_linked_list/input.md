@@ -1,4 +1,4 @@
-`enus` 的一个常见用法就是创建一个链表（linked-list）：
+`enum` 的一个常见用法就是创建链表（linked-list）：
 
 {linked_list.play}
 
