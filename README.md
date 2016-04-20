@@ -39,7 +39,7 @@ make book
 make test
 ```
 
-使命 `make serve` 来查看结果。
+使用 `make serve` 来查看结果。
 
 ### 详情
 

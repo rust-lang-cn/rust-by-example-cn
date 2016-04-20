@@ -47,7 +47,7 @@ fn main() {
     println!("Display: {}", point);
     println!("Debug: {:?}", point);
 
-    // 有错误。`Debug` 和 `Display` 都被实现了，但 `{:b}` 需要 `fmt::Binary`
+    // 报错。`Debug` 和 `Display` 都被实现了，但 `{:b}` 需要 `fmt::Binary`
     // 得到实现。这语句不能运行。
     // println!("What does Point2D look like in binary: {:b}?", point);
 }
