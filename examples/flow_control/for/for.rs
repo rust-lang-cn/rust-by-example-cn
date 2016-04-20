@@ -1,5 +1,5 @@
 fn main() {
-    // `n` will take the values: 1, 2, ..., 100 in each iteration
+    // `n` 将会获得这些值：1, 2, ..., 100 依次在每次循环
     for n in 1..101 {
         if n % 15 == 0 {
             println!("fizzbuzz");

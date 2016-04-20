@@ -1,14 +1,12 @@
-The `for in` construct can be used to iterate through an `Iterator`. 
-One of the easiest ways to create an iterator is to use the range
-notation `a..b`. This yields values from `a` (inclusive) to `b` 
-(exclusive) in steps of one.
+`for in` 结构可以通过一个计数器来迭代。创建计算器的一个最简便的方法就是使用区间标记 `a..b`。这
+会生成从 `a`（包含此值） 到 `b` （不含此值）增幅为 1 的一系列值。
 
-Let's write FizzBuzz using `for` instead of `while`.
+让我们使用 `for` 代替 `while` 来写 FizzBuzz 程序。
 
 {for.play}
 
-###See also
+### 参见：
 
 [Iterator][iter]
 
-[iter]: /trait/iter.html
+[iter]: ../trait/iter.html
