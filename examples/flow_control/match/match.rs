@@ -1,26 +1,26 @@
 fn main() {
     let number = 13;
-    // TODO ^ Try different values for `number`
+    // 试一试 ^ 将不同的值赋给 `number`
 
     println!("Tell me about {}", number);
     match number {
-        // Match a single value
+        // 匹配单个值
         1 => println!("One!"),
-        // Match several values
+        // 匹配多个值
         2 | 3 | 5 | 7 | 11 => println!("This is a prime"),
-        // Match an inclusive range
+        // 匹配一个闭区间范围
         13...19 => println!("A teen"),
-        // Handle the rest of cases
+        // 处理其他情况
         _ => println!("Ain't special"),
     }
 
     let boolean = true;
-    // Match is an expression too
+    // match 也是一个表达式
     let binary = match boolean {
-        // The arms of a match must cover all the possible values
+        // match 分支必须覆盖所有可能的值
         false => 0,
         true => 1,
-        // TODO ^ Try commenting out one of these arms
+        // 试一试 ^ 试着将其中一条分支注释掉
     };
 
     println!("{} -> {}", boolean, binary);
