@@ -1,1 +1,1 @@
-A `match` block can destructure items in a variety of ways.
+`match` 代码块可以以多种方式解构内容。
