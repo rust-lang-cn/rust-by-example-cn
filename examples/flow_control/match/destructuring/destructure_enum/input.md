@@ -1,13 +1,12 @@
-An `enum` is destructured similarly:
+和前面相似，解构 `enum` 方式如下：
 
 {enum.play}
 
-### See also:
+### 参见：
 
-[`#[allow(...)]`][allow], [color models][color_models], [`enum`][enum],
-and [`#[derive(...)]`][derive]
+[`#[allow(...)]`][allow], [color models][color_models], [`enum`][enum] 和  [`#[derive(...)]`][derive]
 
-[allow]: /fn/unused.html
+[allow]: ../../../fn/unused.html
 [color_models]: http://en.wikipedia.org/wiki/Color_model
-[derive]: /trait/derive.html
-[enum]: /custom_types/enum.html
+[derive]: ../../../trait/derive.html
+[enum]: ../../../custom_types/enum.html
