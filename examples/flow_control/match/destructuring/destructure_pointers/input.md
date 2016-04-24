@@ -1,8 +1,7 @@
-For pointers, a distinction needs to be made between destructuring
-and dereferencing as they are different concepts which are used
-differently from a language like `C`.
+对指针来说，解构（destructuring）和解引用（dereferencing）要区分开，
+因为这两者的概念是不同的，和 `C` 那样的语言用法不一样。
 
- * Dereferencing uses `*`
- * Destructuring uses `&`, `ref`, and `ref mut`
-
-{pointers.play}
+ * 解引用使用 `*`
+ * 解构使用 `&`，`ref`， 和 `ref mut`
+ 
+ {pointers.play}
