@@ -1,10 +1,9 @@
-References and mutable references can be retrieved via
-`ref` and `ref mut`:
+引用和可变引用可以通过 `ref` 和 `ref mut` 获得：
 
 {ref.play}
 
-### See also:
+### 参见：
 
-[Borrowing (`&`)][borrow]
+[借用 (`&`)][borrow]
 
-[borrow]: /borrow.html
+[borrow]: ../../../borrow.html
