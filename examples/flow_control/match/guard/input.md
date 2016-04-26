@@ -1,7 +1,7 @@
-A `match` *guard* can be added to filter the arm.
+可以加上 `match` **守卫**（guard） 来过滤分支。
 
 {guard.play}
 
-### See also:
+### 参见：
 
-[Tuples](/primitives/tuples.html)
+[Tuples](../../primitives/tuples.html)
