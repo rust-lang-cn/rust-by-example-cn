@@ -1,34 +1,33 @@
 fn main() {
-    // All have type `Option<i32>`
+    // 全部都是 `Option<i32>` 类型
     let number = Some(7);
     let letter: Option<i32> = None;
     let emoticon: Option<i32> = None;
 
-    // The `if let` construct reads: "if `let` destructures `number` into
-    // `Some(i)`, evaluate the block (`{}`).
+    // `if let` 结构解读：若 `let` 将 `number` 解构成 `Some(i)`，则运行
+    // 语句块（`{}`）
     if let Some(i) = number {
         println!("Matched {:?}!", i);
     }
 
-    // If you need to specify a failure, use an else:
+    // 如果要指明失败情形，就使用 else：
     if let Some(i) = letter {
         println!("Matched {:?}!", i);
     } else {
-        // Destructure failed. Change to the failure case.
+        // 解构失败。换到失败情形（Change to the failure case）。
         println!("Didn't match a number. Let's go with a letter!");
     };
 
-    // Provide an altered failing condition.
+    // 提供一个改变的失败条件（Provide an altered failing condition）。
     let i_like_letters = false;
 
     if let Some(i) = emoticon {
         println!("Matched {:?}!", i);
-    // Destructure failed. Evaluate an `else if` condition to see if the
-    // alternate failure branch should be taken:
+    // 解构失败。执行 `else if` 条件来判断轮到的失败分支是否需要执行
     } else if i_like_letters {
         println!("Didn't match a number. Let's go with a letter!");
     } else {
-        // The condition evaluated false. This branch is the default:
+        // 条件执行错误。这是默认的分支：
         println!("I don't like letters. Let's go with an emoticon :)!");
     };
 }

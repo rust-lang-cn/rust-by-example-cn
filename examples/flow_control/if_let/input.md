@@ -1,31 +1,29 @@
-For some use cases, `match` is awkward. For example:
-
+在一些例子中，`match` 使用起来并不优雅。比如：
 ```rust
-// Make `optional` of type `Option<i32>`
+// 将 `optional` 定为 `Option<i32>` 类型
 let optional = Some(7);
 
 match optional {
     Some(i) => {
         println!("This is a really long string and `{:?}`", i);
-        // ^ Needed 2 indentations just so we could destructure
-        // `i` from the option.
+		// ^ 行首需要2个缩进，就这样可以从 option 类型中对 `i`
+		// 进行解构
     },
     _ => {},
-    // ^ Required because `match` is exhaustive. Doesn't it seem
-    // like wasted space?
+	// ^ 必需内容，因为 `match` 需要覆盖全部情况。难道不觉得冗余吗？
 };
 
 ```
 
-`if let` is cleaner for this use case and in addition allows various
-failure options to be specified:
+`if let` 对这样的用法要简洁得多，并且允许指明特定的各种不同的失败可选项
+内容（options）：
 
 {if_let.play}
 
-### See also:
+### 参见：
 
-[`enum`][enum], [`Option`][option], and the [RFC][if_let_rfc]
+[`枚举`][enum]，[`Option`][option]，和 [RFC][if_let_rfc]
 
-[enum]: /custom_types/enum.html
+[enum]: ../../custom_types/enum.html
 [if_let_rfc]: https://github.com/rust-lang/rfcs/pull/160
-[option]: /std/option.html
+[option]: ../../std/option.html
