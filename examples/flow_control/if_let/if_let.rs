@@ -4,7 +4,7 @@ fn main() {
     let letter: Option<i32> = None;
     let emoticon: Option<i32> = None;
 
-    // `if let` 结构解读：若 `let` 将 `number` 解构成 `Some(i)`，则运行
+    // `if let` 结构解读：若 `let` 将 `number` 解构成 `Some(i)`，则执行
     // 语句块（`{}`）
     if let Some(i) = number {
         println!("Matched {:?}!", i);
