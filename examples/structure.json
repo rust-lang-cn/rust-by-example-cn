@@ -54,20 +54,20 @@
         { "id": "if_let", "title": "if let", "children": null },
         { "id": "while_let", "title": "while let", "children": null }
     ] },
-    { "id": "fn", "title": "Functions", "children": [
-        { "id": "methods", "title": "Methods", "children": null },
-        { "id": "closures", "title": "Closures", "children": [
-            { "id": "capture", "title": "Capturing", "children": null },
-            { "id": "input_parameters", "title": "As input parameters", "children": null },
-            { "id": "anonymity", "title": "Type anonymity", "children": null },
-            { "id": "input_functions", "title": "Input functions", "children": null },
-            { "id": "output_parameters", "title": "As output parameters", "children": null },
-            { "id": "closure_examples", "title": "Examples in `std`", "children": [
+    { "id": "fn", "title": "函数", "children": [
+        { "id": "methods", "title": "方法", "children": null },
+        { "id": "closures", "title": "闭包", "children": [
+            { "id": "capture", "title": "捕获", "children": null },
+            { "id": "input_parameters", "title": "作为输入参数", "children": null },
+            { "id": "anonymity", "title": "类型匿名", "children": null },
+            { "id": "input_functions", "title": "输入函数", "children": null },
+            { "id": "output_parameters", "title": "作为输出参数", "children": null },
+            { "id": "closure_examples", "title": "`std` 中的例子", "children": [
                 { "id": "iter_any", "title": "Iterator::any", "children": null },
                 { "id": "iter_find", "title": "Iterator::find", "children": null }
             ] }
         ] },
-        { "id": "hof", "title": "Higher Order Functions", "children": null }
+        { "id": "hof", "title": "高阶函数", "children": null }
     ] },
     { "id": "macros", "title": "macro_rules!", "children": [
         { "id": "designators", "title": "Designators", "children": null },
