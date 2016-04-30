@@ -35,7 +35,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 ```
 make all
-make book
+make html pdf epub
 make test
 ```
 
