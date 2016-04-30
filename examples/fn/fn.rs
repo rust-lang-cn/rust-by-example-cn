@@ -1,21 +1,21 @@
-// Unlike C/C++, there's no restriction on the order of function definitions
+// 和 C/C++ 不一样，Rust 的函数定义位置是没有限制的
 fn main() {
-    // We can use this function here, and define it somewhere later
+    // 我们在这里使用函数，并在后面的其他位置定义它
     fizzbuzz_to(100);
 }
 
-// Function that returns a boolean value
+// 函数返回一个布尔（boolean）值
 fn is_divisible_by(lhs: u32, rhs: u32) -> bool {
-    // Corner case, early return
+    // 极端情况，提前返回（Corner case, early return）
     if rhs == 0 {
         return false;
     }
 
-    // This is an expression, the `return` keyword is not necessary here
+    // 这是一个表达式，这里可以不用 `return` 关键字
     lhs % rhs == 0
 }
 
-// Functions that "don't" return a value, actually return the unit type `()`
+// 函数**不返回**一个值，而实际上返回一个单元类型 `()`
 fn fizzbuzz(n: u32) -> () {
     if is_divisible_by(n, 15) {
         println!("fizzbuzz");
@@ -28,8 +28,7 @@ fn fizzbuzz(n: u32) -> () {
     }
 }
 
-// When a function returns `()`, the return type can be omitted from the
-// signature
+// 当函数返回 `()` 时，可以从标记中删除返回类型
 fn fizzbuzz_to(n: u32) {
     for n in 1..n + 1 {
         fizzbuzz(n);
