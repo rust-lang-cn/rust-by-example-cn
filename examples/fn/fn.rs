@@ -15,7 +15,7 @@ fn is_divisible_by(lhs: u32, rhs: u32) -> bool {
     lhs % rhs == 0
 }
 
-// 函数**不返回**一个值，而实际上返回一个单元类型 `()`
+// 函数不返回值，而实际上是返回一个单元类型 `()`
 fn fizzbuzz(n: u32) -> () {
     if is_divisible_by(n, 15) {
         println!("fizzbuzz");
