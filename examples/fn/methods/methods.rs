@@ -3,16 +3,16 @@ struct Point {
     y: f64,
 }
 
-// Implementation block, all `Point` methods go in here
+// 实现的代码块，所有的 `Point` 方法都在这里给出
 impl Point {
-    // This is a static method
-    // Static methods don't need to be called by an instance
-    // These methods are generally used as constructors
+    // 这是一个静态方法（static method）
+    // 静态方法不需要通过实例来调用
+    // 这类方法一般用作构造器（constructor）
     fn origin() -> Point {
         Point { x: 0.0, y: 0.0 }
     }
 
-    // Another static method, taking two arguments:
+    // 另外一个静态方法，带有两个参数：
     fn new(x: f64, y: f64) -> Point {
         Point { x: x, y: y }
     }
@@ -24,16 +24,15 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    // This is an instance method
-    // `&self` is sugar for `self: &Self`, where `Self` is the type of the
-    // caller object. In this case `Self` = `Rectangle`
+    // 这是实例方法（instance method）
+    // `&slef` 是 `self: &Self` 的语法糖（sugar），其中 `Self` 是所调用对象
+    // 的类型。在这个例子中 `Self` = `Rectangle`
     fn area(&self) -> f64 {
-        // `self` gives access to the struct fields via the dot operator
+        // `self` 通过点运算符来访问结构体字段
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
 
-        // `abs` is a `f64` method that returns the absolute value of the
-        // caller
+        // `abs` 是一个 `f64` 类型的方法，返回调用者的绝对值
         ((x1 - x2) * (y1 - y2)).abs()
     }
 
@@ -44,8 +43,8 @@ impl Rectangle {
         2.0 * ((x1 - x2).abs() + (y1 - y2).abs())
     }
 
-    // This method requires the caller object to be mutable
-    // `&mut self` desugars to `self: &mut Self`
+    // 这个方法要求调用者对象是可变的
+    // `&mut self` 为 `self: &mut Self` 的语法糖
     fn translate(&mut self, x: f64, y: f64) {
         self.p1.x += x;
         self.p2.x += x;
@@ -55,31 +54,31 @@ impl Rectangle {
     }
 }
 
-// `Pair` owns resources: two heap allocated integers
+// `Pair` 含有的资源：两个堆分配的整型
 struct Pair(Box<i32>, Box<i32>);
 
 impl Pair {
-    // This method "consumes" the resources of the caller object
-    // `self` desugars to `self: Self`
+    // 这个方法“消费”调用者对象的资源
+    // `self` 为 `self: Self` 的语法糖
     fn destroy(self) {
-        // Destructure `self`
+        // 解构 `self`
         let Pair(first, second) = self;
 
         println!("Destroying Pair({}, {})", first, second);
 
-        // `first` and `second` go out of scope and get freed
+        // `first` 和 `second` 离开作用域后释放
     }
 }
 
 fn main() {
     let rectangle = Rectangle {
-        // Static methods are called using double colons
+        // 静态方法使用双重冒号来调用
         p1: Point::origin(),
         p2: Point::new(3.0, 4.0),
     };
 
-    // Instance methods are called using the dot operator
-    // Note that the first argument `&self` is implicitly passed, i.e.
+    // 实例方法通过点运算符来调用
+    // 注意第一个参数 `&self` 是隐式传递的，比如：
     // `rectangle.perimeter()` === `perimeter(&rectangle)`
     println!("Rectangle perimeter: {}", rectangle.perimeter());
     println!("Rectangle area: {}", rectangle.area());
@@ -89,19 +88,18 @@ fn main() {
         p2: Point::new(1.0, 1.0),
     };
 
-    // Error! `rectangle` is immutable, but this method requires a mutable
-    // object
+    // 报错！ `rectangle` 是不可变的，但这方法需要一个可变对象
     //rectangle.translate(1.0, 0.0);
-    // TODO ^ Try uncommenting this line
+    // 试一试 ^ 将此行注释去掉
 
-    // Okay! Mutable objects can call mutable methods
+    // 正常运行！可变对象可以调用可变方法
     square.translate(1.0, 1.0);
 
     let pair = Pair(Box::new(1), Box::new(2));
 
     pair.destroy();
 
-    // Error! Previous `destroy` call "consumed" `pair`
+    // 报错！前面的 `destroy` 调用“消费了” `pair`
     //pair.destroy();
-    // TODO ^ Try uncommenting this line
+    // 试一试 ^ 将此行注释去掉
 }
