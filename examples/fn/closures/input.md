@@ -1,13 +1,10 @@
-Closures in Rust, also called lambdas, are functions 
-that can capture the enclosing environment. Their syntax and capabilities make them
-very convenient for on the fly usage. Some characteristics include:
+闭包（closure）在 Rust 中也称为 lambda，是一类捕获封闭环境的函数。
+它们的语法和能力使它们在临时（on the fly）使用相当方便。一些特点如下：
 
-* uses `||` instead of `()` around input variables.
-* *both* input and return *types* can be inferred.
-* input variable *names* must be specified.
-* body delimination (`{}`) is optional for a single expression. Mandatory
-otherwise.
-* the outer environment variables *may* be captured.
-* calling a closure is exactly like a function: `call(var)`.
+* 使用 `||` 替代 `()` 将输入变量括起来。
+* 输入和返回**类型**都可以自动推导。
+* 区块定界符（`{}`）对于单条表达式是可选的，其他情况必须加上。
+* 外部环境变量**可能**被捕获到。
+* 调用一个闭包和调用一个函数完全相同：`call(var)`。
 
 {closures.play}
