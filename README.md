@@ -2,8 +2,7 @@
 
 [![Build Status][travis-image]][travis-link]  
 > 翻译正在进行中……  
-
-——Chinese translation of the [Rust by Example][rust-by-example]
+> Chinese translation of the [Rust by Example][rust-by-example]
 
 ## 这是什么？
 
