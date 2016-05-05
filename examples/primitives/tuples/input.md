@@ -16,8 +16,8 @@
  2. 以 `reverse` 函数作为样本，添加一个 `transpose` 函数，使它可以接受一个 Matrix 的参数，并
     返回一个两个元素元素交换后 Matrix。举个例子：
 ```
-println!("Matrix:\n{}", matrix)
-println!("Transpose:\n{}", transpose(matrix))
+println!("Matrix:\n{}", matrix);
+println!("Transpose:\n{}", transpose(matrix));
 ```
 输出结果：
 ```

@@ -87,6 +87,11 @@ Makefile 提供了以下指令：
 * `make serve`： 运行 `gitbook --serve` 来生成书籍内容并发布到 `localhost:4000` 进行预览
 * `make test`：检查所有的 rust 源文件是否有编译错误
 
+## 其他语言版本
+
+* [English](https://github.com/rust-lang/rust-by-example)
+* [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
+
 ## 授权协议
 
 《通过例子学 Rust》（原英文版Rust by Example 与本中文版均） 使用 Apache 2.0 license 和 MIT
