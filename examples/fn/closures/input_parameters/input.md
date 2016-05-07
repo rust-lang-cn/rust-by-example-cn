@@ -1,27 +1,29 @@
-It has been noted that Rust chooses how to capture variables on the fly
-without annotation. This is all very convenient in normal usage however when
-writing functions, this ambiguity is not allowed. The closure's complete
-type, including which capturing type, must be annotated. The manner of capture
-a closure uses is annotated as one of the following `traits`:
+我们已经指出 Rust 在没有类型标注时选择怎样的方式去捕获临时的变量（原文：It has been
+noted that Rust chooses how to capture variables on the fly without annotation）。
+这在通常的使用中是相当方便的，然而无论何时编写函数这歧义都是不允许的。
+闭包的完整类型，包括捕获的类型，都必须类型标注。捕获闭包功能的方式是由下面的
+`traits` 来标注类型（原文：The manner of capture a closure uses is annotated as
+one of the following `traits`）：
 
-* `Fn`: takes captures by reference (`&T`)
-* `FnMut`: takes captures by mutable reference (`&mut T`)
-* `FnOnce`: takes captures by value (`T`)
+* `Fn`：通过引用（`&T`）
+* `FnMut`：通过可变引用（`&mut T`）
+* `FnOnce`：通过值（`T`）
+	
 
-Even annotated, these are very flexible: a parameter of `FnOnce` specifies
-the closure *may* capture by `T` or `&mut T` or `&T` at will (if a move is
-possible, any type of borrow should also be possible). The reverse is not
-true: if the parameter is `Fn`, then nothing lower is allowed. Therefore,
-the rule is:
+即使类型已经标注，这些用法也是相当灵活的：`FnOnce` 的参数明确规定了闭包**可能**通过
+`T` 或 `&mut T` 或 `&T` 的随意一种方式来捕获（若移动语义（move）可能的话，
+任意借用类型也应该是可行的）。反过来就不一定成立：如果参数是 `Fn`，那么其他情况就不允许了
+（原文：then nothing lower is allowed）。所以有如下规则：
 
-* any annotated parameter restricts capture to itself and above
+* 任何已标注的参数都限制捕获自身和上述内容（原文：any annotated parameter restricts capture to itself and above）
 
-In addition, Rust will preferentially capture variables in the least
-restrictive manner possible on a variable-by-variable basis:
+另外，Rust 在 variable-by-variable 基础上将更倾向以可能的最少限制方式来捕获变量（原文：Rust 
+will preferentially capture variables in the least restrictive manner possible on 
+a variable-by-variable basis）：
 
 {input_parameters.play}
 
-### See also:
+### 参见：
 
 [`std::mem::drop`][drop], [`Fn`][fn], [`FnMut`][fnmut], and [`FnOnce`][fnonce]
 
