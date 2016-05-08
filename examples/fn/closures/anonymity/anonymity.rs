@@ -1,6 +1,5 @@
-// `F` must implement `Fn` for a closure which takes no
-// inputs and returns nothing - exactly what is required
-// for `print`.
+// `F` 必须针对一个没有输入参数和返回值的闭包实现 `Fn`
+// —— 确切地讲是 `print` 要求的类型。
 fn apply<F>(f: F) where
     F: Fn() {
     f()
@@ -9,8 +8,8 @@ fn apply<F>(f: F) where
 fn main() {
     let x = 7;
 
-    // Capture `x` into an anonymous type and implement
-    // `Fn` for it. Store it in `print`.
+    // 捕获的 `x` 成为一个匿名类型并为它实现 `Fn`。
+    // 将它存储到 `print` 中。
     let print = || println!("{}", x);
 
     apply(print);
