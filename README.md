@@ -6,11 +6,11 @@
 
 ## 这是什么？
 
-这是 [Rust by Example-CN][website-cn]（Rust by Example 中文版）网站的源代码，翻译自原英文网站[Rust by Example][website]！
+这是 [Rust by Example-CN][website-cn]（Rust by Example 中文版）网站的源代码，翻译自原英文网站 [Rust by Example][website]！
 
 ## 如何贡献
 
-参考 [CONTRIBUTING.md][how-to-contribute].
+参考 [CONTRIBUTING.md][how-to-contribute]。
 
 ## 如何生成静态网站
 
@@ -25,8 +25,8 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 ### 非 Debian 类型的发行版
 
-安装 Rust [nightly](http://www.rust-lang.org/install.html),
-`node`, `npm`, 和 `subversion`.
+安装 Rust [nightly](http://www.rust-lang.org/install.html)，
+`node`, `npm`, 和 `subversion`。
 
 ### 编译指示
 
@@ -47,9 +47,9 @@ make test
 * [Rust][rust-lang] \o/
 * [GitBook][gitbook]
 
-`gitbook` 把 Markdown 文件生成静态页面 (查阅工作原理 [这里][gitbook-format]).
+`gitbook` 把 Markdown 文件生成静态页面 (查看工作原理[点击这里][gitbook-format])。
 
-在运行 `gitbook` 之前，我们先使用[src/main.rs][main-rs]进行预处理。
+在运行 `gitbook` 之前，我们先使用 [src/main.rs][main-rs] 进行预处理。
 
 这个预处理过程有两个步骤：
 
@@ -94,7 +94,7 @@ Makefile 提供了以下指令：
 
 ## 授权协议
 
-《通过例子学 Rust》（原英文版Rust by Example 与本中文版均） 使用 Apache 2.0 license 和 MIT
+《通过例子学 Rust》（中文版与英文版Rust by Example 均） 使用 Apache 2.0 license 和 MIT
 license 两种协议进行授权。
 
 详情参见 LICENSE-APACHE 和 LICENSE-MIT。

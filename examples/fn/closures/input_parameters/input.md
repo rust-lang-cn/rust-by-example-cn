@@ -10,9 +10,9 @@ one of the following `traits`）：
 * `FnOnce`：通过值（`T`）
 	
 
-即使类型已经标注，这些用法也是相当灵活的：`FnOnce` 的参数明确规定了闭包**可能**通过
+即使类型已经标注，这些用法也是相当灵活的：`FnOnce` 参量明确规定了闭包**可能**通过
 `T` 或 `&mut T` 或 `&T` 的随意一种方式来捕获（若移动语义（move）可能的话，
-任意借用类型也应该是可行的）。反过来就不一定成立：如果参数是 `Fn`，那么其他情况就不允许了
+任意借用类型也应该是可行的）。反过来就不一定成立：如果参量是 `Fn`，那么其他情况就不允许了
 （原文：then nothing lower is allowed）。所以有如下规则：
 
 * 任何已标注的参数都限制捕获自身和上述内容（原文：any annotated parameter restricts capture to itself and above）
