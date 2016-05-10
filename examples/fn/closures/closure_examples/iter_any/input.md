@@ -5,15 +5,15 @@ pub trait Iterator {
 	// 迭代相关的类型（原文：The type being iterated over）。
     type Item;
 
-	// `any` 接受 `&mut self` 作为调用者可能被借用或修改，但不会消费掉。
+	// `any` 接受 `&mut self` 作为调用者可能被借用和修改，但不会消费掉。
 	// （原文： `any` takes `&mut self` meaning the caller may be
 	// borrowed and modified, but not consumed.）
     fn any<F>(&mut self, f: F) -> bool where
-        // `FnMut` meaning any captured variable may at most be
-        // modified, not consumed. `Self::Item` states it takes
-        // arguments to the closure by value.
 		// `FnMut` 表示任意捕获变量很可能都被修改，而非消费。
-		// `Self::Item` 表明了通过值来接受参数转成闭包。
+		// `Self::Item` 表明了通过值来接受闭包类型参数。
+        // （原文：`FnMut` meaning any captured variable may at 
+		// most be modified, not consumed. `Self::Item` states it
+		// takes arguments to the closure by value.）
         F: FnMut(Self::Item) -> bool {}
 }
 ```
