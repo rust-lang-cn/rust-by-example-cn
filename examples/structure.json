@@ -69,12 +69,12 @@
         ] },
         { "id": "hof", "title": "高阶函数", "children": null }
     ] },
-    { "id": "mod", "title": "Modules", "children": [
-        { "id": "visibility", "title": "Visibility", "children": null },
-        { "id": "struct_visibility", "title": "Struct visibility", "children": null },
-        { "id": "use", "title": "The `use` declaration", "children": null },
-        { "id": "super", "title": "`super` and `self`", "children": null },
-        { "id": "split", "title": "File hierarchy", "children": null }
+    { "id": "mod", "title": "模块", "children": [
+        { "id": "visibility", "title": "可见性", "children": null },
+        { "id": "struct_visibility", "title": "结构体的可见性", "children": null },
+        { "id": "use", "title": "`use` 声明", "children": null },
+        { "id": "super", "title": "`super` 和 `self`", "children": null },
+        { "id": "split", "title": "文件分层", "children": null }
     ] },
     { "id": "crates", "title": "Crates", "children": [
         { "id": "lib", "title": "Library", "children": null },
