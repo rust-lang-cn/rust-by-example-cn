@@ -1,23 +1,22 @@
-// A module named `my`
+// 一个名为 `my` 的模块
 mod my {
-    // Items in modules default to private visibility.
+    // 在模块中的项默认带有私有可见性。
     fn private_function() {
         println!("called `my::private_function()`");
     }
-    
-    // Use the `pub` modifier to override default visibility.
+
+    // 使用 `pub` 修饰语来改变默认可见性。
     pub fn function() {
         println!("called `my::function()`");
     }
     
-    // Items can access other items in the same module,
-    // even when private.
+    // 在同一模块中，项可以访问其它项，即使是私有属性。
     pub fn indirect_access() {
         print!("called `my::indirect_access()`, that\n> ");
         private_function();
     }
 
-    // Modules can also be nested
+    // 项也可以嵌套。
     pub mod nested {
         pub fn function() {
             println!("called `my::nested::function()`");
@@ -29,7 +28,7 @@ mod my {
         }
     }
     
-    // Nested modules follow the same rules for visibility
+    // 嵌套项的可见性遵循相同的规则。
     mod private_nested {
         #[allow(dead_code)]
         pub fn function() {
@@ -43,27 +42,25 @@ fn function() {
 }
 
 fn main() {
-    // Modules allow disambiguation between items that have the same name.
+    // 模块允许在拥有相同名字的项之间消除歧义。
     function();
     my::function();
     
-    // Public items, including those inside nested modules, can be
-    // accessed from outside the parent module.
+    // 公开项，包括内部嵌套的公开项，可以在父级的模块中访问到。
     my::indirect_access();
     my::nested::function();
 
-    // Private items of a module cannot be directly accessed, even if
-    // nested in a public module:
-    
-    // Error! `private_function` is private
+    // 一个模块中的私有项不能被直接访问，即使私有项嵌套在公开的模块中：
+
+    // 报错！`private_function` 是私有的。
     //my::private_function();
-    // TODO ^ Try uncommenting this line
+    // 试一试 ^ 将此行注释去掉
 
-    // Error! `private_function` is private
+    // 报错！ `private_function` 是私有的。
     //my::nested::private_function();
-    // TODO ^ Try uncommenting this line
+    // 试一试 ^ 将此行注释去掉    
 
-    // Error! `private_nested` is a private module
+    // 报错！ `private_nested` 是私有的模块。
     //my::private_nested::function();
-    // TODO ^ Try uncommenting this line
+    // 试一试 ^ 将此行注释去掉    
 }
