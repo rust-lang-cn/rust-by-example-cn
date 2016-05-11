@@ -6,7 +6,7 @@
 
 ## 这是什么？
 
-这是 [Rust by Example-CN][website-cn]（Rust by Example 中文版）网站的源代码，翻译自原英文网站 [Rust by Example][website]！
+这是 [Rust by Example-CN][website-cn]（Rust by Example 中文版）网站的源代码，翻译自英文网站 [Rust by Example][website]！
 
 ## 如何贡献
 
@@ -51,7 +51,7 @@ make test
 
 在运行 `gitbook` 之前，我们先使用 [src/main.rs][main-rs] 进行预处理。
 
-这个预处理过程有两个步骤：
+此预处理过程有两个步骤：
 
 ### 生成 `SUMMARY.md` 文件
 
@@ -72,7 +72,7 @@ make test
 
 ### 处理 `input.md`
 
-我们没有将代码直接编辑在 `input.md` 文件里面，而将代码放到单独的源文件中。然后在预处理阶段将会把代码代码插入到 Markdown 文件中。
+我们将代码放到单独的源文件中，而不是在 `input.md` 文件中直接编辑。然后在预处理阶段将会把代码代码插入到 Markdown 文件中。
 
 举个例子，为了插入源码文件 `hello.rs`，我们在 Markdown 文件中采用以下语法：
 
@@ -94,7 +94,7 @@ Makefile 提供了以下指令：
 
 ## 授权协议
 
-《通过例子学 Rust》（中文版与英文版Rust by Example 均） 使用 Apache 2.0 license 和 MIT
+《通过例子学 Rust》（中文版与英文版 Rust by Example 均） 使用 Apache 2.0 license 和 MIT
 license 两种协议进行授权。
 
 详情参见 LICENSE-APACHE 和 LICENSE-MIT。
