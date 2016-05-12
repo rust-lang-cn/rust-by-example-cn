@@ -46,11 +46,11 @@ fn main() {
     function();
     my::function();
     
-    // 公开项，包括内部嵌套的公开项，可以在父级的模块中访问到。
+    // 公有项，包括内部嵌套的公有项，可以在父级的模块中访问到。
     my::indirect_access();
     my::nested::function();
 
-    // 一个模块中的私有项不能被直接访问，即使私有项嵌套在公开的模块中：
+    // 一个模块中的私有项不能被直接访问，即使私有项嵌套在公有的模块中：
 
     // 报错！`private_function` 是私有的。
     //my::private_function();
