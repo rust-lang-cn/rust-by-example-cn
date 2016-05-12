@@ -1,5 +1,5 @@
-// This declaration will look for a file named `my.rs` or `my/mod.rs` and will
-// insert its contents inside a module named `my` under this scope
+// 此声明将会查找名为 `my.rs` 或 `my/mod.rs` 的文件，并将该文件的内容插入到
+// 此作用域名为 `my` 的模块里面。
 mod my;
 
 fn function() {

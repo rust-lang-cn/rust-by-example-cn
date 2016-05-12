@@ -1,6 +1,5 @@
-// Similarly `mod inaccessible` and `mod nested` will locate the `nested.rs`
-// and `inaccessible.rs` files and insert them here under their respective
-// modules
+// 类似地，`mod inaccessible` 和 `mod nested` 将找到 `nested.rs` 和
+// `inaccessible.rs` 文件，并在它们各自的模块中插入它们的内容。
 mod inaccessible;
 pub mod nested;
 

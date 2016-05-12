@@ -1,5 +1,5 @@
-Modules can be mapped to a file/directory hierarchy. Let's break down the
-[visibility example][visibility] in files:
+模块可以分配到文件/目录的层次结构中。让我们将[可见性小节例子][visibility]
+的代码拆开分到多个文件中：
 
 ```
 $ tree .
@@ -19,7 +19,7 @@ $ tree .
 
 {my/inaccessible.rs}
 
-Let's check that things still work as before:
+我们看到代码仍然正常运行，就和前面的一样：
 
 ```
 $ rustc split.rs && ./split
@@ -30,4 +30,4 @@ called `my::indirect_access()`, that
 called `my::nested::function()`
 ```
 
-[visibility]: /mod/visibility.html
+[visibility]: ../mod/visibility.html
