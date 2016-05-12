@@ -20,23 +20,23 @@ mod my {
     }
     
     pub fn indirect_call() {
-        // Let's access all the functions named `function` from this scope!
+        // 让我们从这个作用域中访问所有名为 `function` 的函数！
         print!("called `my::indirect_call()`, that\n> ");
         
-        // The `self` keyword refers to the current module scope - in this case `my`.
-        // Calling `self::function()` and calling `function()` directly both give
-        // the same result, because they refer to the same function.
+        // `self` 关键字表示当前的模块作用域——在这个例子是 `my`。
+        // 调用 `self::function()` 和直接访问 `function()` 两者都得到相同的结果，
+        // 因为他们表示相同的函数。
         self::function();
         function();
         
-        // We can also use `self` to access another module inside `my`:
+        // 我们也可以使用 `self` 来访问 `my` 内部的另一个模块：
         self::cool::function();
         
-        // The `super` keyword refers to the parent scope (outside the `my` module).
+        // `super` 关键字表示父级作用域（在 `my` 模块外面）。
         super::function();
         
-        // This will bind to the `cool::function` in the *crate* scope.
-        // In this case the crate scope is the outermost scope.
+        // 这将在 *crate* 作用域内绑定 `cool::function` 。
+        // 在这个例子中，crate 作用域是最外面的作用域。
         {
             use cool::function as root_function;
             root_function();

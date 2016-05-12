@@ -1,4 +1,3 @@
-The `super` and `self` keywords can be used in the path to remove ambiguity
-when accessing items and to prevent unnecessary hardcoding of paths.
+在路径上使用 `super` （父级）和 `self`（自身）关键字，可以在访问项时消除歧义和防止不必要的路径的硬编码。
 
 {super.play}
