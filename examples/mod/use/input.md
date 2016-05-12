@@ -1,4 +1,3 @@
-The `use` declaration can be used to bind a full path to a new name, for easier
-access.
+`use` 声明可以将一个完整的路径绑定到一个新的名字，从而更容易访问。
 
 {use.play}
