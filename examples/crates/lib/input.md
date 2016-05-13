@@ -1,4 +1,4 @@
-Let's create a library, and then see how to link it to another crate.
+让我们创建一个库，然后看看如何把它链接到另一个 crate。
 
 {rary.rs}
 
@@ -8,8 +8,7 @@ $ ls lib*
 library.rlib
 ```
 
-Libraries get prefixed with "lib", and by default they get named after their
-crate file, but this default name can be overridden using the [`crate_name`
-attribute][crate-name].
+库的前缀为 “lib”，默认情况下它们在 crate 文件之后命名（原文：by default they get named after their
+crate file），但此默认名称可以使用 [`crate_name` 属性][crate-name] 覆盖。
 
-[crate-name]: /attribute/crate.html
+[crate-name]: ../attribute/crate.html
