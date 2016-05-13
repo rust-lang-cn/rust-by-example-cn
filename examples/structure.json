@@ -76,15 +76,15 @@
         { "id": "super", "title": "`super` 和 `self`", "children": null },
         { "id": "split", "title": "文件分层", "children": null }
     ] },
-    { "id": "crates", "title": "Crates", "children": [
-        { "id": "lib", "title": "Library", "children": null },
+    { "id": "crates", "title": "crate", "children": [
+        { "id": "lib", "title": "库", "children": null },
         { "id": "link", "title": "`extern crate`", "children": null }
     ] },
-    { "id": "attribute", "title": "Attributes", "children": [
-        { "id": "unused", "title": "`dead_code`", "children": null },
-        { "id": "crate", "title": "Crates", "children": null },
+    { "id": "attribute", "title": "属性", "children": [
+        { "id": "unused", "title": "死代码 `dead_code`", "children": null },
+        { "id": "crate", "title": "crate", "children": null },
         { "id": "cfg", "title": "`cfg`", "children": [
-            { "id": "custom", "title": "Custom", "children": null }
+            { "id": "custom", "title": "自定义方式", "children": null }
         ] }
     ] },
     { "id": "generics", "title": "Generics", "children": [
