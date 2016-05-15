@@ -1,13 +1,12 @@
-Some conditionals like `target_os` are implicitly provided by `rustc`, but
-custom conditionals must be passed to `rustc` using the `--cfg` flag.
+有部分条件如 `target_os` 在使用 `rustc` 时会隐式地提供，但是自定义条件必须使用 `--cfg` 标记来传给 `rustc`。
 
 {custom.rs}
 
-Without the custom `cfg` flag:
+不使用自定义的 `cfg` 标记：
 
 {custom.out}
 
-With the custom `cfg` flag:
+使用自定义的 `cfg` 标记：
 
 ```
 $ rustc --cfg some_condition custom.rs && ./custom
