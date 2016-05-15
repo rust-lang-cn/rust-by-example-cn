@@ -87,21 +87,21 @@
             { "id": "custom", "title": "自定义方式", "children": null }
         ] }
     ] },
-    { "id": "generics", "title": "Generics", "children": [
-        { "id": "gen_fn", "title": "Functions", "children": null },
-        { "id": "impl", "title": "Implementation", "children": null },
-        { "id": "gen_trait", "title": "Traits", "children": null },
-        { "id": "bounds", "title": "Bounds", "children": [
-            { "id": "testcase_empty", "title": "Testcase: empty bounds", "children": null }
+    { "id": "generics", "title": "泛型", "children": [
+        { "id": "gen_fn", "title": "函数", "children": null },
+        { "id": "impl", "title": "实现", "children": null },
+        { "id": "gen_trait", "title": "特征 trait", "children": null },
+        { "id": "bounds", "title": "限定", "children": [
+            { "id": "testcase_empty", "title": "测试实例：空限定", "children": null }
         ] },
-        { "id": "multi_bounds", "title": "Multiple bounds", "children": null },
-        { "id": "where", "title": "Where clauses", "children": null },
-        { "id": "assoc_items", "title": "Associated items", "children": [
-            { "id": "the_problem", "title": "The Problem", "children": null },
-            { "id": "types", "title": "Associated types", "children": null }
+        { "id": "multi_bounds", "title": "多重限定", "children": null },
+        { "id": "where", "title": "where 从句", "children": null },
+        { "id": "assoc_items", "title": "关联项", "children": [
+            { "id": "the_problem", "title": "存在问题", "children": null },
+            { "id": "types", "title": "关联类型", "children": null }
         ] },
-        { "id": "phantom", "title": "Phantom type parameters", "children": [
-            { "id": "testcase_units", "title": "Testcase: unit conversions", "children": null }
+        { "id": "phantom", "title": "虚类型参量", "children": [
+            { "id": "testcase_units", "title": "测试实例：单元转换", "children": null }
         ] }
     ] },
     { "id": "scope", "title": "Scoping rules", "children": [
