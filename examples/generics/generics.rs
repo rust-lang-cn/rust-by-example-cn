@@ -1,27 +1,27 @@
-// A concrete type `A`.
+// 具体的类型 `A`。
 struct A;
 
-// In defining the type `Single`, the first use of `A` is not preceded by `<A>`.
-// Therefore, `Single` is a concrete type, and `A` is defined as above.
+// 在定义类型 `Single` 时，`A` 的首次使用之前没有给出 `<A>` 实现。
+// 因此，`Single` 是一个具体的类型，`A` 在上面已经定义。
+// （原文：In defining the type `Single`, the first use of `A` is not preceded
+// by `<A>`. Therefore, `Single` is a concrete type, and `A` is defined as above.）
 struct Single(A);
-//            ^ Here is `Single`s first use of the type `A`.
+//            ^ 这里是 `Single` 对类型 `A` 的第一次使用。
 
-// Here, `<T>` precedes the first use of `T`, so `SingleGen` is a generic type.
-// Because the type parameter `T` is generic, it could be anything, including
-// the concrete type `A` defined at the top.
+// 此处 `<T>` 在第一次使用 `T` 前给出，所以 `SingleGen` 是一个泛型类型。
+// 因为类型参量 `T` 是泛型，所以它可以是任何类型，包括在上面定义的具体类型 `A`。
 struct SingleGen<T>(T);
 
 fn main() {
-    // `Single` is concrete and explicitly takes `A`.
+    // `Single` 是具体类型并显式地接受 `A`。
     let _s = Single(A);
     
-    // Create a variable `_char` of type `SingleGen<char>`
-    // and give it the value `SingleGen('a')`.
-    // Here, `SingleGen` has a type parameter explicitly specified.
+    // 创建一个 `SingleGen<char>` 类型的变量 `_char`，并给一个 `SingleGen('a') 值。
+    // 这里的 `SingleGen` 拥有显式指定的类型参量。
     let _char: SingleGen<char> = SingleGen('a');
 
-    // `SingleGen` can also have a type parameter implicitly specified:
-    let _t    = SingleGen(A); // Uses `A` defined at the top.
-    let _i32  = SingleGen(6); // Uses `i32`.
-    let _char = SingleGen('a'); // Uses `char`.
+    // `SingleGen` 也可以拥有隐式指定的类型参量：
+    let _t    = SingleGen(A); // 使用在上面定义的 `A`。
+    let _i32  = SingleGen(6); // 使用 `i32` 类型。
+    let _char = SingleGen('a'); // 使用 `char`。
 }
