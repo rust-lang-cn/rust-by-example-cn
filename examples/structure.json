@@ -90,7 +90,7 @@
     { "id": "generics", "title": "泛型", "children": [
         { "id": "gen_fn", "title": "函数", "children": null },
         { "id": "impl", "title": "实现", "children": null },
-        { "id": "gen_trait", "title": "特征 trait", "children": null },
+        { "id": "gen_trait", "title": "特性 trait", "children": null },
         { "id": "bounds", "title": "限定", "children": [
             { "id": "testcase_empty", "title": "测试实例：空限定", "children": null }
         ] },
