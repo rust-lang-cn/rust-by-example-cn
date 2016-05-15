@@ -1,10 +1,10 @@
-// This function only gets compiled if the target OS is linux
+// 这个函数仅当操作系统是 Linux 的时候才会编译
 #[cfg(target_os = "linux")]
 fn are_you_on_linux() {
     println!("You are running linux!")
 }
 
-// And this function only gets compiled if the target OS is *not* linux
+// 而这个函数仅当操作系统**不是** Linux 时才会编译
 #[cfg(not(target_os = "linux"))]
 fn are_you_on_linux() {
     println!("You are *not* running linux!")
