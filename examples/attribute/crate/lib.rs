@@ -1,6 +1,6 @@
-// This crate is a library
+// 这个 crate 是一个二进制可执行文件
 #![crate_type = "lib"]
-// The library is named "rary"
+// 库的名称为 “rary”
 #![crate_name = "rary"]
 
 pub fn public_function() {
