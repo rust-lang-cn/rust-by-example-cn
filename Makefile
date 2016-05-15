@@ -22,7 +22,7 @@ WHITELIST = examples/attribute/cfg/custom/custom.rs \
 
 srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
-.PHONY: all html epub pdf clean test serve
+.PHONY: all html epub mobi pdf clean test serve
 
 all:
 	./setup-stage.sh
@@ -35,6 +35,9 @@ html: node_modules/gitbook
 
 epub:	node_modules/gitbook
 	$(GITBOOK) epub stage
+
+mobi:	node_modules/gitbook
+	$(GITBOOK) mobi stage
 
 pdf:	node_modules/gitbook
 	$(GITBOOK) pdf stage

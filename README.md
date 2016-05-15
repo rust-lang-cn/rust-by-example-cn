@@ -34,7 +34,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 ```
 make all
-make html pdf epub
+make html pdf epub mobi
 make test
 ```
 
@@ -83,7 +83,10 @@ make test
 Makefile 提供了以下指令：
 
 * `make`：构建 `update.rs` 并执行上述的前置步骤
-* `make book`： 运行 `gitbook` 来生成书籍
+* `make html`： 运行 `gitbook` 来生成 HTML 格式的书籍
+* `make pdf`： 运行 `gitbook` 来生成 PDF 格式的电子书
+* `make epub`： 运行 `gitbook` 来生成 EPUB 格式的电子书
+* `make mobi`： 运行 `gitbook` 来生成 MOBI 格式的电子书
 * `make serve`： 运行 `gitbook --serve` 来生成书籍内容并发布到 `localhost:4000` 进行预览
 * `make test`：检查所有的 rust 源文件是否有编译错误
 
