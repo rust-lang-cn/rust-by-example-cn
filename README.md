@@ -88,7 +88,7 @@ Makefile 提供了以下指令：
 * `make epub`： 运行 `gitbook` 来生成 ePub 格式的电子书
 * `make mobi`： 运行 `gitbook` 来生成 Mobi 格式的电子书
 * `make serve`： 运行 `gitbook --serve` 来生成书籍内容并发布到 `localhost:4000` 进行预览
-* `make test`：检查所有的 rust 源文件是否有编译错误
+* `make test`：检查所有的 Rust 源文件是否有编译错误
 
 ## 其他语言版本
 
