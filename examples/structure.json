@@ -84,7 +84,7 @@
         { "id": "unused", "title": "死代码 `dead_code`", "children": null },
         { "id": "crate", "title": "crate", "children": null },
         { "id": "cfg", "title": "`cfg`", "children": [
-            { "id": "custom", "title": "自定义方式", "children": null }
+            { "id": "custom", "title": "自定义条件", "children": null }
         ] }
     ] },
     { "id": "generics", "title": "泛型", "children": [
