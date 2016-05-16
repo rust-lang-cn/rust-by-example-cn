@@ -70,7 +70,7 @@ make test
 
 在处子级示例时，其目录必须包含父级示例的 id 值，如 `examples/variable/mut/input.md` 表明 `mut` 示例是在分级 `variable` 下。
 
-### 处理 `input.md`
+### 处理 `input.md` 文件
 
 我们将代码放到单独的源文件中，而不是在 `input.md` 文件中直接编辑。然后在预处理阶段将会把代码代码插入到 Markdown 文件中。
 
@@ -83,10 +83,10 @@ make test
 Makefile 提供了以下指令：
 
 * `make`：构建 `update.rs` 并执行上述的前置步骤
-* `make html`： 运行 `gitbook` 来生成 HTML 格式的书籍
+* `make html`： 运行 `gitbook` 来生成 HTML 静态页文档
 * `make pdf`： 运行 `gitbook` 来生成 PDF 格式的电子书
-* `make epub`： 运行 `gitbook` 来生成 EPUB 格式的电子书
-* `make mobi`： 运行 `gitbook` 来生成 MOBI 格式的电子书
+* `make epub`： 运行 `gitbook` 来生成 ePub 格式的电子书
+* `make mobi`： 运行 `gitbook` 来生成 Mobi 格式的电子书
 * `make serve`： 运行 `gitbook --serve` 来生成书籍内容并发布到 `localhost:4000` 进行预览
 * `make test`：检查所有的 rust 源文件是否有编译错误
 
