@@ -1,19 +1,15 @@
-The same set of rules can be applied to functions: a type `T` becomes
-generic when preceded by `<T>`.
+同样的规则也可以适用于函数：在使用前给出 `<T>` 后，类型 `T` 就变成了泛型。
 
-Using generic functions sometimes requires explicitly specifying type 
-parameters. This may be the case if the function is called where the return type 
-is generic, or if the compiler doesn't have enough information to infer 
-the necessary type parameters.
+使用泛型函数有时需要显式地指明类型参量。这种可能的情况包括，调用返回类型是泛型的函数，或者编译器没有足够的信息来推导类型参量。
 
-A function call with explicitly specified type parameters looks like:
+函数调用使用显式指定的类型参量，如下所示：
 `fun::<A, B, ...>()`.
 
 {fn.play}
 
-### See also:
+### 参见：
 
-[functions][fn] and [`struct`s][structs]
+[函数][fn] 和 [`struct`s][structs]
 
-[fn]: /fn.html
-[structs]: /custom_types/structs.html
+[fn]: ../fn.html
+[structs]: ../custom_types/structs.html
