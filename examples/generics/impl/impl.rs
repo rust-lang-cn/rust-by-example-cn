@@ -1,12 +1,12 @@
 struct Val (f64,);
 struct GenVal<T>(T,);
 
-// impl of Val
+// Val 的实现（impl）
 impl Val {
     fn value(&self) -> &f64 { &self.0 }
 }
 
-// impl of GenVal for a generic type `T`
+// GenVal 针对泛型类型 `T` 的实现
 impl <T> GenVal<T> {
     fn value(&self) -> &T { &self.0 }
 }

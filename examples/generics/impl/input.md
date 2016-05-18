@@ -1,25 +1,26 @@
-Similar to functions, implementations require care to remain generic.
+和函数类似，实现（implementation）也需要关注保持泛型。（原文：Similar to functions, implementations require care to remain generic.）
 
 ```rust
-struct S; // Concrete type `S`
-struct GenericVal<T>(T,); // Generic type `GenericVal`
+struct S; // 具体类型 `S`
+struct GenericVal<T>(T,); // 泛型类型 `GenericVal`
 
-// impl of GenericVal where we explicitly specify type parameters:
-impl GenericVal<f32> {} // Specify `f32`
-impl GenericVal<S> {} // Specify `S` as defined above
+// GenericVal 的实现，此处我们显式地指定了类型参量：
+impl GenericVal<f32> {} // 指定 `f32` 类型
+impl GenericVal<S> {} // 指定为上面定义的 `S`
 
-// `<T>` Must precede the type to remain generic
+// `<T>` 必须在类型之前给出来以保持泛型。
+// （原文：`<T>` Must precede the type to remain generic）
 impl <T> GenericVal<T> {}
 ```
 
 {impl.play}
 
-### See also:
+### 参见：
 
-[functions returning references][fn], [`impl`][methods], and [`struct`][structs]
+[函数返回引用][fn], [`impl`][methods], 和 [`struct`][structs]
 
 
-[fn]: /scope/lifetime/fn.html
-[methods]: /fn/methods.html
+[fn]: ../scope/lifetime/fn.html
+[methods]: ../fn/methods.html
 [specialization_plans]: http://blog.rust-lang.org/2015/05/11/traits.html#the-future
-[structs]: /custom_types/structs.html
+[structs]: ../custom_types/structs.html
