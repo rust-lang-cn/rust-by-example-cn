@@ -8,8 +8,8 @@ trait Blue {}
 impl Red for Cardinal {}
 impl Blue for BlueJay {}
 
-// These functions are only valid for types which implement these
-// traits. The fact that the traits are empty is irrelevant.
+// 这些函数只对实现了相应的 trait 的类型有效。实际情况中 trait 内部
+// 是否为空都无所谓。
 fn red<T: Red>(_: &T)   -> &'static str { "red" }
 fn blue<T: Blue>(_: &T) -> &'static str { "blue" }
 
@@ -18,10 +18,10 @@ fn main() {
     let blue_jay = BlueJay;
     let _turkey   = Turkey;
 
-    // `red()` won't work on a blue jay nor vice versa
-    // because of the bounds.
+    // 由于限定，`red()` 不能调用 blue_jay （蓝松鸟），
+    // 反过来也一样。
     println!("A cardinal is {}", red(&cardinal));
     println!("A blue jay is {}", blue(&blue_jay));
     //println!("A turkey is {}", red(&_turkey));
-    // ^ TODO: Try uncommenting this line.
+    // ^ 试一试：将此行注释去掉。
 }
