@@ -1,11 +1,10 @@
-Multiple bounds can be applied with a `+`. Like normal, different types are
-separated with `,`.
+使用多重限定（multiple bounds）可以借助一个 `+`。和平常一样，不同的类型使用 `,` 隔开。
 
 {multi.play}
 
-### See also:
+### 参见：
 
-[`std::fmt`][fmt] and [`trait`s][traits]
+[`std::fmt`][fmt] 和 [`trait`][traits]
 
-[fmt]: /hello/print.html
-[traits]: /trait.html
+[fmt]: ../hello/print.html
+[traits]: ../trait.html

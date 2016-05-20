@@ -17,7 +17,7 @@ fn main() {
 
     compare_prints(&string);
     //compare_prints(&array);
-    // TODO ^ Try uncommenting this.
+    // 试一试 ^ 将此行注释去掉。
 
     compare_types(&array, &vec);
 }
