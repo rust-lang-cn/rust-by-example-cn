@@ -1,30 +1,26 @@
-A bound can also be expressed using a `where` clause immediately
-before the opening `{`, rather than at the type's first mention. 
-Additionally, `where` clauses can apply bounds to arbitrary types, 
-rather than just to type parameters.
+限定也可以使用 `where` 从句来表达，这样可以让限定写在 `{` 紧邻的前面，而不需写在类型第一次提到的位置上。另外 `where` 从句可以用于任意类型的限定，而不局限于类型参量。
 
-Some cases that a `where` clause is useful:
+`where` 在一些情况下有很用：
 
-* When specifying generic types and bounds separately is clearer:
+* 当分开指定泛型类型和限定时更清晰情况：
 
 ```rust
 impl <A: TraitB + TraitC, D: TraitE + TraitF> MyTrait<A, D> for YourType {}
 
-// Expressing bounds with a `where` clause
+// 使用 `where` 限定来表达限定
 impl <A, D> MyTrait<A, D> for YourType where
     A: TraitB + TraitC,
     D: TraitE + TraitF {}
 ```
 
-* When using a `where` clause is more expressive than using normal syntax. 
-The `impl` in this example cannot be directly expressed without a `where` clause:
+* 当使用 `where` 从句比正常语法更富表现力的情况。要是没有 `where` 从句的话，例子中的 `impl` 就不能直接表达出来：
 
 {where.play}
 
-### See also:
+### 参见：
 
 [RFC][where], [`struct`][struct], and [`trait`][trait]
 
-[struct]: /custom_types/structs.html
-[trait]: /trait.html
+[struct]: ../custom_types/structs.html
+[trait]: ../trait.html
 [where]: https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md
