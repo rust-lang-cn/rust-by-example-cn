@@ -2,7 +2,7 @@
 
 {hello.play}
 
-`println!` 是一个 [**宏**][macros]（macros），它可以将文本输出到控制台（console）。
+`println!` 是一个 [**宏**][macros]（macros），可以将文本输出到控制台（console）。
 
 使用 Rust 的编译器 `rustc` 可以将源程序生成可执行文件：
 
