@@ -1,28 +1,27 @@
 struct Container(i32, i32);
 
-// A trait which checks if 2 items are stored inside of container.
-// Also retrieves first or last value.
+// 这个 trait 检查 2 个项是否存到容器中。
+// 还会获得第一个值或最后一个值。
 trait Contains<A, B> {
-    fn contains(&self, &A, &B) -> bool; // Explicitly requires `A` and `B`.
-    fn first(&self) -> i32; // Doesn't explicitly require `A` or `B`.
-    fn last(&self) -> i32;  // Doesn't explicitly require `A` or `B`.
+    fn contains(&self, &A, &B) -> bool; // 显式指出需要 `A` 和 `B`
+    fn first(&self) -> i32; // 未显式指出需要 `A` 或 `B`
+    fn last(&self) -> i32;  // 未显式指出需要 `A` 或 `B`
 }
 
 impl Contains<i32, i32> for Container {
-    // True if the numbers stored are equal.
+    // 如果存储的数字相等则为真。
     fn contains(&self, number_1: &i32, number_2: &i32) -> bool {
         (&self.0 == number_1) && (&self.1 == number_2)
     }
 
-    // Grab the first number.
+    // 得到第一个数字。
     fn first(&self) -> i32 { self.0 }
 
-    // Grab the last number.
+    // 得到最后一个数字。
     fn last(&self) -> i32 { self.1 }
 }
 
-// `C` contains `A` and `B`. In light of that, having to express `A` and
-// `B` again is a nuisance.
+// `C` 包含 `A` 和 `B` 。鉴于此，必须重复表达 `A` 和 `B` 真麻烦。
 fn difference<A, B, C>(container: &C) -> i32 where
     C: Contains<A, B> {
     container.last() - container.first()
