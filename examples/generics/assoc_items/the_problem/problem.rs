@@ -1,6 +1,6 @@
 struct Container(i32, i32);
 
-// 这个 trait 检查 2 个项是否存到容器中。
+// 这个 trait 检查 2 个项是否存到 Container（容器）中。
 // 还会获得第一个值或最后一个值。
 trait Contains<A, B> {
     fn contains(&self, &A, &B) -> bool; // 显式指出需要 `A` 和 `B`
