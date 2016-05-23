@@ -1,8 +1,8 @@
 在运用泛型时，类型参量常常必须使用 trait 作为**限定**（bound）来明确规定一个类型实现了哪些功能。例如下面的例子用到了 `Display` trait 来打印，所以它要求 `T` 由 `Display` 限定，也就是说 `T` **必须**实现 `Display`。
 
 ```rust
-// 定义一个函数 `printer`，接受一个泛型类型 `T`，`T` 必须实现了
-// `Display` trait。
+// 定义一个函数 `printer`，接受一个泛型类型 `T`，其中 `T` 必须
+// 实现 `Display` trait。
 fn printer<T: Display>(t: T) {
     println!("{}", t);
 }

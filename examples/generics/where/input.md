@@ -7,7 +7,7 @@
 ```rust
 impl <A: TraitB + TraitC, D: TraitE + TraitF> MyTrait<A, D> for YourType {}
 
-// 使用 `where` 限定来表达限定
+// 使用 `where` 从句来表达限定
 impl <A, D> MyTrait<A, D> for YourType where
     A: TraitB + TraitC,
     D: TraitE + TraitF {}
@@ -19,7 +19,7 @@ impl <A, D> MyTrait<A, D> for YourType where
 
 ### 参见：
 
-[RFC][where], [`struct`][struct], and [`trait`][trait]
+[RFC][where], [`struct`][struct], 和 [`trait`][trait]
 
 [struct]: ../custom_types/structs.html
 [trait]: ../trait.html
