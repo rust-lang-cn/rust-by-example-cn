@@ -1,21 +1,19 @@
-A phantom type parameter is one that doesn't show up at runtime,
-but is checked statically (and only) at compile time.
+幻象类型参量（phantom type parameter）是一种在运行时（runtime）不会出现，但是会（且只会）在编译期进行静态方式检查的参量。
 
-Data types can use extra generic type parameters to act as markers
-or to perform type checking at compile time. These extra parameters 
-hold no storage values, and have no runtime behavior.
+数据类型可以使用额外的泛型类型参量来充当标记或在编译期执行类型检查。这些额外的参量没有存储值，且没有运行时行为（runtime behavior）。
 
 In the following example, we combine [std::marker::PhantomData]
 with the phantom type parameter concept to create tuples containing
 different data types.
+在下面例子中，我们将 [std::marker::PhantomData] 和幻象类型参量概念结合起来创建包含不同数据类型的元组。
 
 {phantom.play}
 
-### See also:
+### 参见：
 
-[Derive], [struct], and [TupleStructs]
+[Derive], [结构体][struct], 和 [元组结构体][TupleStructs]
 
-[Derive]: /trait/derive.html
-[struct]: /custom_types/structs.html
-[TupleStructs]: /custom_types/structs.html
+[Derive]: ../trait/derive.html
+[struct]: ../custom_types/structs.html
+[TupleStructs]: ../custom_types/structs.html
 [std::marker::PhantomData]: https://doc.rust-lang.org/std/marker/struct.PhantomData.html
