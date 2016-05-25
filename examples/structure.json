@@ -100,30 +100,30 @@
             { "id": "the_problem", "title": "存在问题", "children": null },
             { "id": "types", "title": "关联类型", "children": null }
         ] },
-        { "id": "phantom", "title": "虚类型参量", "children": [
-            { "id": "testcase_units", "title": "测试实例：单元转换", "children": null }
+        { "id": "phantom", "title": "幻象类型参量", "children": [
+            { "id": "testcase_units", "title": "测试实例：单位转换", "children": null }
         ] }
     ] },
-    { "id": "scope", "title": "Scoping rules", "children": [
+    { "id": "scope", "title": "作用域规则", "children": [
         { "id": "raii", "title": "RAII", "children": null },
-        { "id": "move", "title": "Ownership and moves", "children": [
-            { "id": "mut", "title": "Mutability", "children": null }
+        { "id": "move", "title": "所有权和移动", "children": [
+            { "id": "mut", "title": "可变性", "children": null }
         ] },
-        { "id": "borrow", "title": "Borrowing", "children": [
-            { "id": "mut", "title": "Mutability", "children": null },
-            { "id": "freeze", "title": "Freezing", "children": null },
-            { "id": "alias", "title": "Aliasing", "children": null },
-            { "id": "ref", "title": "The ref pattern", "children": null }
+        { "id": "borrow", "title": "借用", "children": [
+            { "id": "mut", "title": "可变性", "children": null },
+            { "id": "freeze", "title": "冻结", "children": null },
+            { "id": "alias", "title": "别名占用", "children": null },
+            { "id": "ref", "title": "ref 模式", "children": null }
         ] },
-        { "id": "lifetime", "title": "Lifetimes", "children": [
-            { "id": "explicit", "title": "Explicit annotation", "children": null },
-            { "id": "fn", "title": "Functions", "children": null },
-            { "id": "methods", "title": "Methods", "children": null },
-            { "id": "struct", "title": "Structs", "children": null },
-            { "id": "lifetime_bounds", "title": "Bounds", "children": null },
-            { "id": "lifetime_coercion", "title": "Coercion", "children": null },
-            { "id": "static_lifetime", "title": "static", "children": null },
-            { "id": "elision", "title": "elision", "children": null }
+        { "id": "lifetime", "title": "生命周期", "children": [
+            { "id": "explicit", "title": "显式标注", "children": null },
+            { "id": "fn", "title": "函数", "children": null },
+            { "id": "methods", "title": "方法", "children": null },
+            { "id": "struct", "title": "结构体", "children": null },
+            { "id": "lifetime_bounds", "title": "限定", "children": null },
+            { "id": "lifetime_coercion", "title": "强制转换", "children": null },
+            { "id": "static_lifetime", "title": "静态", "children": null },
+            { "id": "elision", "title": "省略", "children": null }
         ] }
     ] },
     { "id": "trait", "title": "Traits", "children": [
