@@ -2,10 +2,7 @@
 
 数据类型可以使用额外的泛型类型参量来充当标记或在编译期执行类型检查。这些额外的参量没有存储值，且没有运行时行为（runtime behavior）。
 
-In the following example, we combine [std::marker::PhantomData]
-with the phantom type parameter concept to create tuples containing
-different data types.
-在下面例子中，我们将 [std::marker::PhantomData] 和虚位类型参量概念结合起来创建包含不同数据类型的元组。
+在下面例子中，我们把 [std::marker::PhantomData] 和虚位类型参量概念结合起来创建包含不同数据类型的元组。
 
 {phantom.play}
 
