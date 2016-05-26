@@ -112,7 +112,7 @@
         { "id": "borrow", "title": "借用", "children": [
             { "id": "mut", "title": "可变性", "children": null },
             { "id": "freeze", "title": "冻结", "children": null },
-            { "id": "alias", "title": "别名占用", "children": null },
+            { "id": "alias", "title": "别名使用", "children": null },
             { "id": "ref", "title": "ref 模式", "children": null }
         ] },
         { "id": "lifetime", "title": "生命周期", "children": [
