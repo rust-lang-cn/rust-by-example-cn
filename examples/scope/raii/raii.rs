@@ -1,28 +1,28 @@
 // raii.rs
 fn create_box() {
-    // Allocate an integer on the heap
+    // 在堆上分配一个整型数据
     let _box1 = Box::new(3i32);
 
-    // `_box1` is destroyed here, and memory gets freed
+    // `_box1` 在这里销毁，而且内存得到释放
 }
 
 fn main() {
-    // Allocate an integer on the heap
+    // 在堆上分配一个整型数据    
     let _box2 = Box::new(5i32);
 
-    // A nested scope:
+    // 嵌套作用域：
     {
-        // Allocate an integer on the heap
+        // 在堆上分配一个整型数据
         let _box3 = Box::new(4i32);
 
-        // `_box3` is destroyed here, and memory gets freed
+        // `_box3` 在这里销毁，而且内存得到释放        
     }
 
-    // Creating lots of boxes just for fun
-    // There's no need to manually free memory!
+    // 创建很多 box，纯属娱乐。
+    // 完全不需要手动释放内存！
     for _ in 0u32..1_000 {
         create_box();
     }
 
-    // `_box2` is destroyed here, and memory gets freed
+    // `_box2` 在这里销毁，而且内存得到释放    
 }

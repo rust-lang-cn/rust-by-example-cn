@@ -1,14 +1,10 @@
-Variables in Rust do more than just hold data in the stack: they also *own*
-resources, e.g. `Box<T>` owns memory in the heap. Rust enforces [RAII][raii]
-(Resource Acquisition Is Initialization), so whenever an object goes out of 
-scope, its destructor is called and its owned resources are freed. 
+Rust 的变量不只是在栈中保存数据：它们也**占有**资源，比如 `Box<T>` 占有堆中的内存。Rust 强制实行 [RAII][trii]（Resource Acquisition Is Initiallization，资源获取即初始化），所以任何一个对象在离开作用域时，它的析构器（destructor）都被调用以及它的资源都被释放。
 
-This behavior shields against *resource leak* bugs, so you'll never have to 
-manually free memory or worry about memory leaks again! Here's a quick showcase:
+这种行为避免了**资源泄露**（*resource leak*）的错误，所以你再也不用手动释放内存或者担心内存泄露（memory leak）！下面是个快速入门示例：
 
 {raii.play}
 
-Of course, we can double check for memory errors using [`valgrind`][valgrind]:
+当然我们可以使用 [`valgrind`][valgrind] 对内存错误进行仔细检查：
 
 ```
 $ rustc raii.rs && valgrind ./raii
@@ -28,12 +24,12 @@ $ rustc raii.rs && valgrind ./raii
 ==26873== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
 ```
 
-No leaks here!
+完全没有泄露！
 
-### See also:
+### 参见：
 
 [Box][box]
 
 [raii]: http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization
-[box]: /std/box.html
+[box]: ../std/box.html
 [valgrind]: http://valgrind.org/info/
