@@ -1,6 +1,6 @@
 use std::marker::PhantomData;
 
-// 幻象元组结构体，这是一个带有 `A` 和隐藏参量（hidden parameter） `B` 的泛型。
+// 虚位元组结构体，这是一个带有 `A` 和隐藏参量（hidden parameter） `B` 的泛型。
 #[derive(PartialEq)] // 允许这种类型进行相等测试（equality test）。
 struct PhantomTuple<A, B>(A,PhantomData<B>);
 
@@ -13,9 +13,9 @@ struct PhantomStruct<A, B> { first: A, phantom: PhantomData<B> }
 
 fn main() {
     // 这里的 `f32` 和 `f64` 是隐藏参量。
-    // 被指定为 `<char, f32>` 的幻象元组（PhantomTuple）类型。
+    // 被指定为 `<char, f32>` 的虚位元组（PhantomTuple）类型。
     let _tuple1: PhantomTuple<char, f32> = PhantomTuple('Q', PhantomData);
-    // 被指定为 `<char, f64>` 的幻象元组。
+    // 被指定为 `<char, f64>` 的虚位元组。
     let _tuple2: PhantomTuple<char, f64> = PhantomTuple('Q', PhantomData);
 
     // 被指定为 `<char, f32>` 的类型。

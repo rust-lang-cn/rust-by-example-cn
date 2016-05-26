@@ -7,7 +7,7 @@ enum Inch {}
 #[derive(Debug, Clone, Copy)]
 enum Mm {}
 
-/// `Length` 是一个带有幻象类型参量的 `Unit`（单位）。
+/// `Length` 是一个带有虚位类型参量的 `Unit`（单位）。
 ///
 /// `f64` 已经实现了 `Clone` 和 `Copy` trait.
 #[derive(Debug, Clone, Copy)]
@@ -25,9 +25,9 @@ impl<Unit> Add for Length<Unit> {
 }
 
 fn main() {
-    // 指出 `one_foot` 拥有幻象类型参量 `Inch`。
+    // 指出 `one_foot` 拥有虚位类型参量 `Inch`。
     let one_foot:  Length<Inch> = Length(12.0, PhantomData);
-    // `one_meter` 拥有幻象类型参量 `Mm`。
+    // `one_meter` 拥有虚位类型参量 `Mm`。
     let one_meter: Length<Mm>   = Length(1000.0, PhantomData);
 
     // `+` 调用了 `add()` 方法，该方法对 `Length<Unit>` 进行了实现。
