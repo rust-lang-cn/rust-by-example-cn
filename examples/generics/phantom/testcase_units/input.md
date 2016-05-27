@@ -1,4 +1,4 @@
-单位转换（unit conversion）的一个有效方法，可以通过包含虚位类型参量而实现的 `Add` 来检验（原文：A useful method of unit conversions can be examined by implementing `Add` with a phantom type parameter）。检验 `Add` `trait` 的代码如下：
+单位转换（unit conversion）中的一个有效方法可以通过实现 `Add` trait 来检验，其中 `Add` 带有虚位类型参量（原文：A useful method of unit conversions can be examined by implementing `Add` with a phantom type parameter）。用作检验 `Add` `trait` 的代码如下：
 
 ```rust
 // 这个结构得到加强：`Self + RHS = Qutput`，其中 RHS 要
