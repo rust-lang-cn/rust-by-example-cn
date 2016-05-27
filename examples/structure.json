@@ -100,7 +100,7 @@
             { "id": "the_problem", "title": "存在问题", "children": null },
             { "id": "types", "title": "关联类型", "children": null }
         ] },
-        { "id": "phantom", "title": "幻象类型参量", "children": [
+        { "id": "phantom", "title": "虚位类型参量", "children": [
             { "id": "testcase_units", "title": "测试实例：单位转换", "children": null }
         ] }
     ] },
