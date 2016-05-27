@@ -1,15 +1,11 @@
-Because variables are in charge of freeing their own resources, 
-**resources can only have one owner**. This also prevents resources 
-from being freed more than once. Note that not all variables own 
-resources (e.g. [references]).
+因为变量要负责释放它们拥有的资源，所以**资源只能拥有一个所有者**。这也防止了资源的重复释放。注意并非所有变量都拥有资源（例如 [references]）。
 
-When doing assignments (`let x = y`) or passing function arguments by value
-(`foo(x)`), the *ownership* of the resources is transferred. In Rust-speak, 
-this is known as a *move*.
+在进行赋值（`let x = y`）或通过值来传递函数参数的时候，资源的**所有权**（*ownership*)会发生转移（transfer）。按照 Rust 的说法，这种方式被称为**移动**（*move*）。
 
 After moving resources, the previous owner can no longer be used. This avoids
 creating dangling pointers.
+在移动资源之后，原来的所有者可不可以再使用，这避免了悬垂指针的产生。
 
 {move.play}
 
-[references]: /flow_control/match/destructuring/destructure_pointers.html
+[references]: ../flow_control/match/destructuring/destructure_pointers.html
