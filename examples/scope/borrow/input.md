@@ -1,9 +1,5 @@
-Most of the time, we'd like to access data without taking ownership over
-it. To accomplish this, Rust uses a *borrowing* mechanism. Instead of
-passing objects by-value (`T`), objects can be passed by reference (`&T`).
+多数情况下，我们更希望访问数据本身而不需要取得它的所有权。为实现这点，Rust 使用了**借用**（*borrowing*）机制。对象可以通过引用（`&T`）来传递，从而取代通过值（`T`）来传递。
 
-The compiler statically guarantees (via its borrow checker) that references 
-*always* point to valid objects. That is, while references to an object
-exist, the object cannot be destroyed.
+编译器静态地保证了（通过借用检查器）引用**总是**（*always*）指向有效的对象。也就是说，当存在引用指向一个对象时，该对象不能被销毁。
 
 {borrow.play}
