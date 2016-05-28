@@ -2,16 +2,16 @@ fn main() {
     let mut _mutable_integer = 7i32;
 
     {
-        // Borrow `_mutable_integer`
+        // 借用 `_mutable_integer`
         let _large_integer = &_mutable_integer;
 
-        // Error! `_mutable_integer` is frozen in this scope
+        // 报错！`_mutable_integer` 在本作用域被冻结
         _mutable_integer = 50;
-        // FIXME ^ Comment out this line
+        // 改正 ^ 注释掉此行
 
-        // `_large_integer` goes out of scope
+        // `_large_integer` 离开作用域
     }
 
-    // Ok! `_mutable_integer` is not frozen in this scope
+    // 正常运行！`_mutable_integer` 在这作用域没有冻结
     _mutable_integer = 3;
 }
