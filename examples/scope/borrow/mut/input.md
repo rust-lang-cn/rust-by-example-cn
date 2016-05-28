@@ -1,11 +1,8 @@
-Mutable data can be mutably borrowed using `&mut T`. This is called 
-a *mutable reference* and gives read/write access to the borrower.
-In contrast, `&T` borrows the data via an immutable reference, and 
-the borrower can read the data but not modify it:
+可变数据可以使用 `&mut T` 进行可变借用。这叫做**可变引用**（*mutable reference*），并赋予了借用者读/写访问能力。相反，`&T` 通过不可变引用（immutable reference）来借用数据，借用者可以读数据而不能更改数据：
 
 {mut.play}
 
-### See Also
+### 参见：
 [`static`][static]
 
-[static]: scope/lifetime/static_lifetime.html
+[static]: ../../scope/lifetime/static_lifetime.html

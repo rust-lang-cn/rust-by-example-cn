@@ -1,45 +1,45 @@
 #[allow(dead_code)]
 #[derive(Clone, Copy)]
 struct Book {
-    // `&'static str` is a reference to a string allocated in read only memory
+    // `&'static str` 是一个指向分配在只读内存区的字符串的引用
     author: &'static str,
     title: &'static str,
     year: u32,
 }
 
-// This function takes a reference to a book
+// 此函数接受一个指向图书 Book 的引用
 fn borrow_book(book: &Book) {
     println!("I immutably borrowed {} - {} edition", book.title, book.year);
 }
 
-// This function takes a reference to a mutable book and changes `year` to 2014
+// 此函数接受一个指向不可变的图书 Book 的引用，同时把年份 `year` 改为 2004 年
 fn new_edition(book: &mut Book) {
     book.year = 2014;
     println!("I mutably borrowed {} - {} edition", book.title, book.year);
 }
 
 fn main() {
-    // Create an immutable Book named `immutabook`
+    // 创建一个名为 `immutabook` 的不可变的图书 Book
     let immutabook = Book {
-        // string literals have type `&'static str`
+        // 字符串字面量拥有 `&'static str` 类型
         author: "Douglas Hofstadter",
         title: "Gödel, Escher, Bach",
         year: 1979,
     };
 
-    // Create a mutable copy of `immutabook` and call it `mutabook`
+    // 创建一个 `immutabook` 的可变拷贝，命名为 `mutabook`
     let mut mutabook = immutabook;
     
-    // Immutably borrow an immutable object
+    // 不可变地借用一个不可变对象
     borrow_book(&immutabook);
 
-    // Immutably borrow a mutable object
+    // 不可变地借用一个可变对象
     borrow_book(&mutabook);
     
-    // Borrow a mutable object as mutable
+    // 借用一个可变对象作为可变类型
     new_edition(&mut mutabook);
     
-    // Error! Cannot borrow an immutable object as mutable
+    // 报错！不能借用一个不可变对象来充当可变类型
     new_edition(&mut immutabook);
-    // FIXME ^ Comment out this line
+    // 改正 ^ 注释掉此行
 }
