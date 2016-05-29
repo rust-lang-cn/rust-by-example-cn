@@ -7,39 +7,39 @@ fn main() {
         let borrowed_point = &point;
         let another_borrow = &point;
 
-        // Data can be accessed via the references and the original owner
+        // 通过引用和原始所有者来访问数据
         println!("Point has coordinates: ({}, {}, {})",
                  borrowed_point.x, another_borrow.y, point.z);
 
-        // Error! Can't borrow point as mutable because it's currently
-        // borrowed as immutable.
+        // 报错！不能借用 `point` 作为可变内容，因为目前已被借用成为
+        // 不可变内容。
         //let mutable_borrow = &mut point;
-        // TODO ^ Try uncommenting this line
+        // 动手试一试 ^ 将此行注释去掉。
 
-        // Immutable references go out of scope
+        // 不可变引用离开作用域
     }
 
     {
         let mutable_borrow = &mut point;
 
-        // Change data via mutable reference
+        // 通过可变引用来改变数据
         mutable_borrow.x = 5;
         mutable_borrow.y = 2;
         mutable_borrow.z = 1;
 
-        // Error! Can't borrow `point` as immutable because it's currently
-        // borrowed as mutable.
+        // 报错！不能借用 `point` 作为不可变内容，因为目前它已被借用成为
+        // 可变内容。
         //let y = &point.y;
-        // TODO ^ Try uncommenting this line
+        // 动手试一试 ^ 将此行注释去掉。
 
-        // Error! Can't print because `println!` takes an immutable reference.
+        // 报错！不能打印，因为 `println!` 接受了一个不可变引用。
         //println!("Point Z coordinate is {}", point.z);
-        // TODO ^ Try uncommenting this line
+        // 动手试一试 ^ 将此行注释去掉。
 
-        // Mutable reference goes out of scope
+        // 可变引用离开作用域
     }
 
-    // Immutable references to point are allowed again
+    // `point` 的不可变引用再次可用。
     println!("Point now has coordinates: ({}, {}, {})",
              point.x, point.y, point.z);
 }

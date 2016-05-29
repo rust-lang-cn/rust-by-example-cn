@@ -1,6 +1,3 @@
-Data can be immutably borrowed any number of times, but while immutably
-borrowed, the original data can't be mutably borrowed. On the other hand,
-only *one* mutable borrow is allowed at a time. The original data can be
-borrowed again only *after* the mutable reference goes out of scope.
+数据可以进行多次不可变借用，但是在不可变借用的期间，原始数据不可进行可变借用。也就是说，在同一段时间内只允许**单独一个**可变借用。原始数据在可变引用离开作用域**之后**可再次被借用。
 
 {alias.play}
