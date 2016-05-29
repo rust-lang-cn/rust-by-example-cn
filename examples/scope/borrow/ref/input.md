@@ -1,5 +1,3 @@
-When doing pattern matching or destructuring via the `let` binding, the `ref`
-keyword can be used to take references to the fields of a struct/tuple. The 
-example below shows a few instances where this can be useful:
+在通过 `let` 绑定来进行模式匹配或解构时，`ref` 关键字可用来接受结构体/元组的字段的引用。下面的例子展示了几个实例，可看到 `ref` 的作用：
 
 {ref.play}
