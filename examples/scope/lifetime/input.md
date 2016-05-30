@@ -1,17 +1,9 @@
-A *lifetime* is a construct the compiler (also called the borrow checker)
-uses to ensure all borrows are valid. Specifically, a variable's lifetime 
-begins when it is created and ends when it is destroyed. While lifetimes 
-and scopes are often referred to together, they are not the same. 
+**生命周期**（*lifetime*）是一个结构成分，编译器（也称为借用检查器）使用它来确保所有的借用都是有效的。确切地说，一个变量的生命周期在它创建的时候开始，在它销毁的时候结束。虽然命周期和作用域经常被一起提到，但它们并不相同。
 
-Take, for example, the case where we borrow a variable via `&`. The 
-borrow has a lifetime that is determined by where it is declared. As a result, 
-the borrow is valid as long as it ends before the lender is destroyed. However, 
-the scope of the borrow is determined by where the reference is used.
+例如考虑这种情况，我们通过 `&` 来借用一个变量。该借用拥有一个生命周期，此生命周期由它声明的所在地方决定。因此，只要在出借者（lender）被销毁前结束，借用都是有效的。而借用的作用域是由使用引用的位置决定的。
 
-In the following example and in the rest of this section, we will see how 
-lifetimes relate to scopes, as well as how the two differ.
+在下面的例子和本章节剩下的内容里，我们将看到生命周期和作用域的联系与区别。
 
 {lifetime.play}
 
-Note that no names or types are assigned to label lifetimes.
-This restricts how lifetimes will be able to be used as we will see.
+注意到这里没有用到名称或类型来标记生命周期，这限制了生命周期的表现能力，在后面我们将会看到生命周期更强大的功能。

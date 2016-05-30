@@ -1,22 +1,21 @@
-// Lifetimes are annotated below with lines denoting the creation
-// and destruction of each variable.
-// `i` has the longest lifetime because its scope entirely encloses 
-// both `borrow1` and `borrow2`. The duration of `borrow1` compared 
-// to `borrow2` is irrelevant since they are disjoint.
+// 下面使用连线来标注各个变量的生命周期的创建和销毁。
+// `i` 的生命周期最长，因为它的作用域完全覆盖了 `borrow1` 和
+// `borrow2` 两者。`borrow1` 和 `borrow2` 的周期没有关联，
+// 因为它们各不相交。
 fn main() {
-    let i = 3; // Lifetime for `i` starts. ────────────────┐
+    let i = 3; // `i` 的生命周期开始。─────────────────────┐
     //                                                     │
     { //                                                   │
-        let borrow1 = &i; // `borrow1` lifetime starts. ──┐│
+        let borrow1 = &i; // `borrow1` 的生命周期开始。 ──┐│
         //                                                ││
         println!("borrow1: {}", borrow1); //              ││
-    } // `borrow1 ends. ──────────────────────────────────┘│
+    } // `borrow1` 结束。─────────────────────────────────┘│
     //                                                     │
     //                                                     │
     { //                                                   │
-        let borrow2 = &i; // `borrow2` lifetime starts. ──┐│
+        let borrow2 = &i; // `borrow2` 生命周期开始。─────┐│
         //                                                ││
         println!("borrow2: {}", borrow2); //              ││
-    } // `borrow2` ends. ─────────────────────────────────┘│
+    } // `borrow2` 结束。─────────────────────────────────┘│
     //                                                     │
-}   // Lifetime ends. ─────────────────────────────────────┘
+}   // 生命周期结束。 ─────────────────────────────────────┘
