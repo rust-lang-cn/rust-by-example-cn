@@ -1,39 +1,32 @@
-The borrow checker uses explicit lifetime annotations to determine
-how long references should be valid. In cases where lifetimes are not
-elided[^1], Rust requires explicit annotations to determine what the 
-lifetime of a reference should be. The syntax for explicitly annotating 
-a lifetime uses an apostrophe character as follows: 
+借用检查器使用显式的生命周期来明确引用的有效时间应该持续多久。在生命周期没有省略[^1]的情况，Rust 需要显式标注来确定引用的生命周期应该是什么样的。对于显式地标注引用的生命周期的语法如下：
 
 ```rust
 foo<'a>
-// `foo` has a lifetime parameter `'a`
+// `foo` 带有一个生命周期参量 `'a`
 ```
 
-Similar to [closures][anonymity], using lifetimes requires generics. 
-Additionally, this lifetime syntax indicates that the lifetime of `foo` 
-may not exceed that of `'a`. Explicit annotation of a type has the form 
-`&'a T` where `'a` has already been introduced.
+和[闭包][annoymity]类似，使用生命周期需要泛型。另外这个生命周期的语法也表明了 `foo` 的生命周期不能超出 `'a` 的周期。类型的显式标注有 `&'a T` 这样的形式，其中 `'a` 已引入。
 
 In cases with multiple lifetimes, the syntax is similar:
+对于多个生命周期的情况，语法是类似的：
 
 ```rust
 foo<'a, 'b>
-// `foo` has lifetime parameters `'a` and `'b`
+// `foo` 带有生命周期参量 `'a` 和 `'b`
 ```
 
-In this case, the lifetime of `foo` cannot exceed that of either `'a` *or* `'b`.
+在这种情形中，`foo` 的生命周期不能超出 `'a` 或 `'b` 的周期。
 
-See the following example for explicit lifetime annotation in use:
+看下面的例子，了解显式生命周期标注的运用：
 
 {explicit.play}
 
-[^1]: [elision][elision] implicitly annotates lifetimes and so is different.
-
+[^1]: [省略][elision] 隐式地标注了生命周期，所以情况不同。
 ### See also:
 
-[generics][generics] and [closures][closures]
+[泛型][generics] 和 [闭包][closures]
 
-[anonymity]: /fn/closures/anonymity.html
-[closures]: /fn/closures.html
-[elision]: /scope/lifetime/elision.html
-[generics]: /generics.html
+[anonymity]: ../../fn/closures/anonymity.html
+[closures]: ../../fn/closures.html
+[elision]: elision.html
+[generics]: ../../generics.html
