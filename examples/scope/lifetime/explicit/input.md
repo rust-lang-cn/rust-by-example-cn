@@ -22,7 +22,8 @@ foo<'a, 'b>
 {explicit.play}
 
 [^1]: [省略][elision] 隐式地标注了生命周期，所以情况不同。
-### See also:
+
+### 参见：
 
 [泛型][generics] 和 [闭包][closures]
 
