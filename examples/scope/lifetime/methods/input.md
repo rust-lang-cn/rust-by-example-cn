@@ -1,10 +1,10 @@
-Methods are annotated similarly to functions:
+方法的标注和函数类似：
 
 {methods.play}
 
-### See also:
+### 参见：
 
 [methods][methods]
 
 
-[methods]: /fn/methods.html
+[methods]: ../../fn/methods.html
