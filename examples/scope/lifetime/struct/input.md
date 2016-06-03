@@ -1,10 +1,10 @@
-Annotation of lifetimes in structures are also similar to functions:
+在结构体中标注生命周期也和函数的类似：
 
 {struct.play}
 
-### See also:
+### 参见：
 
 [`structs`][structs]
 
 
-[structs]: /custom_types/structs.html
+[structs]: ../../custom_types/structs.html

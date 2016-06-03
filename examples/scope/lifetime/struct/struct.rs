@@ -1,16 +1,19 @@
-// A type `Borrowed` which houses a reference to an
-// `i32`. The reference to `i32` must outlive `Borrowed`.
+// 一个 `Borrowed` 类型，含有一个指向 `i32` 类型的引用。
+// 指向 `i32` 的引用必须比 `Borrowed` 寿命更长。
+// （原望：A type `Borrowed` which houses a reference to an
+// `i32`. The reference to `i32` must outlive `Borrowed`.）
 #[derive(Debug)]
 struct Borrowed<'a>(&'a i32);
 
-// Similarly, both references here must outlive this structure.
+// 和前面类似，这里的两个引用都必须比这个结构体长寿。
 #[derive(Debug)]
 struct NamedBorrowed<'a> {
     x: &'a i32,
     y: &'a i32,
 }
 
-// An enum which is either an `i32` or a reference to one.
+// 一个枚举类型，不是 `i32` 类型就是一个指向某个量的引用。
+//（原文： An enum which is either an `i32` or a reference to one.）
 #[derive(Debug)]
 enum Either<'a> {
     Num(i32),
