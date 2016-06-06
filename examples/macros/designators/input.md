@@ -1,16 +1,15 @@
-The arguments of a macro are prefixed by a dollar sign `$` and type annotated
-with a *designator*:
+宏里面的参数使用一个美元符号 `$` 作为前缀，并使用一个**指示符**（*designator*）来注明类型：
 
 {designators.play}
 
-This is a list of all the designators:
+这里列出全部指示符：
 
 * `block`
-* `expr` is used for expressions
-* `ident` is used for variable/function names
+* `expr` 用于表达式
+* `ident` 用于变量名或函数名
 * `item`
-* `pat` (*pattern*)
+* `pat` (**模式** *pattern*)
 * `path`
-* `stmt` (*statement*)
-* `tt` (*token tree*)
-* `ty` (*type*)
+* `stmt` (**语句** *statement*)
+* `tt` (**令牌树** *token tree*)
+* `ty` (**类型** *type*)

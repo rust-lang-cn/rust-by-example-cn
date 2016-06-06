@@ -1,26 +1,27 @@
 macro_rules! create_function {
-    // This macro takes an argument of designator `ident` and
-    // creates a function named `$func_name`.
-    // The `ident` designator is used for variable/function names.
+    // 此宏接受一个 `ident` 指示符参数，并创建一个名为 `$func_name`
+    // 的函数。
+    // `ident` 指示符用于变量名或函数名
     ($func_name:ident) => (
         fn $func_name() {
-            // The `stringify!` macro converts an `ident` into a string.
+            // `stringify!` 宏把 `ident` 转换成字符串。
             println!("You called {:?}()",
                      stringify!($func_name))
         }
     )
 }
 
-// Create functions named `foo` and `bar` with the above macro.
+// 借助上述宏来创建名为 `foo` 和 `bar` 的函数。
 create_function!(foo);
 create_function!(bar);
 
 macro_rules! print_result {
-    // This macro takes an expression of type `expr` and prints
-    // it as a string along with its result.
-    // The `expr` designator is used for expressions.
+    // 此宏接受一个 `expr` 类型的表达式，将它转换成一个字符串，
+    // 并伴随着表达式的结果。
+    // `expr` 指示符用于表达式。
     ($expression:expr) => (
-        // `stringify!` will convert the expression *as it is* into a string.
+        // `stringify!` 把表达式转换成一个字符串，正如 stringify
+        // （意思为“字符串化”） 所表达的意思那样。
         println!("{:?} = {:?}",
                  stringify!($expression),
                  $expression)
@@ -33,7 +34,7 @@ fn main() {
 
     print_result!(1u32 + 1);
 
-    // Recall that blocks are expressions too!
+    // 回想一下，代码块也是表达式！
     print_result!({
         let x = 1u32;
 
