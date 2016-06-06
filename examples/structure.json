@@ -133,7 +133,7 @@
         { "id": "iter", "title": "Iterator", "children": null },
         { "id": "clone", "title": "Clone", "children": null }
     ] },
-    { "id": "macros", "title": "创建宏 macro_rules!", "children": [
+    { "id": "macros", "title": "使用 macro_rules! 来创建宏", "children": [
         { "id": "designators", "title": "指示符", "children": null },
         { "id": "overload", "title": "重载", "children": null },
         { "id": "repeat", "title": "重复", "children": null },
