@@ -1,10 +1,10 @@
-// `min!` will calculate the minimum of any number of arguments.
+// `min!` 将求出任意数量的参数的最小值。
 macro_rules! find_min {
-    // Base case:
+    // 基本情形：
     ($x:expr) => ($x);
-    // `$x` followed by at least one `$y,`
+    // `$x` 后面跟着至少一个 `$y,`
     ($x:expr, $($y:expr),+) => (
-        // Call `find_min!` on the tail `$y`
+        // 对尾部的 `$y` 调用 `find_min!` 
         std::cmp::min($x, find_min!($($y),+))
     )
 }

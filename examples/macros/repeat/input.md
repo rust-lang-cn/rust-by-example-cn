@@ -1,9 +1,5 @@
-Macros can use `+` in the argument list to indicate that an argument may
-repeat at least once, or `*`, to indicate that the argument may repeat zero or
-more times.
+宏在参数列表中可以使用 `+` 来表示一个参数可能出现一次或多次，使用 `*` 来表示该参数可能出现零次或多次。
 
-In the following example, surrounding the matcher with `$(...),+` will
-match one or more expression, separated by commas.
-Also note that the semicolon is optional on the last case.
+在下面例子中，使用 `$(...),+` 包含的内容将匹配一个或多个表达式，使用逗号隔开。还注意到分号对于最后一种情形是可选的。
 
 {repeat.play}
