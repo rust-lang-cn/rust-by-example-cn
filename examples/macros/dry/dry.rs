@@ -1,8 +1,9 @@
 use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
-    // The `tt` (token tree) designator is used for
-    // operators and tokens.
+    // `tt` （token tree，令牌树）指示符用于运算符和令牌。
+    // （原文：The `tt` (token tree) designator is used for
+    // operators and tokens.）
     ($a:ident, $b: ident, $func:ident, $op:tt) => (
         assert!($a.len() == $b.len(),
                 "{:?}: dimension mismatch: {:?} {:?} {:?}",
@@ -26,7 +27,7 @@ macro_rules! op {
     )
 }
 
-// Implement `add_assign`, `mul_assign`, and `sub_assign` functions.
+// 实现 `add_assign`、`mul_assign` 和 `sub_assign` 等函数。
 op!(add_assign, Add, +=, add);
 op!(mul_assign, Mul, *=, mul);
 op!(sub_assign, Sub, -=, sub);
@@ -50,7 +51,7 @@ mod test {
         }
     }
 
-    // Test `add_assign`, `mul_assign` and `sub_assign`
+    // 测试 `add_assign`、`mul_assign` 和 `sub_assign`
     test!(add_assign, 1u32, 2u32, 3u32);
     test!(mul_assign, 2u32, 3u32, 6u32);
     test!(sub_assign, 3u32, 2u32, 1u32);
