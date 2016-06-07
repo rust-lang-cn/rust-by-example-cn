@@ -137,7 +137,7 @@
         { "id": "designators", "title": "指示符", "children": null },
         { "id": "overload", "title": "重载", "children": null },
         { "id": "repeat", "title": "重复", "children": null },
-        { "id": "dry", "title": "DRY (不要重复自己)", "children": null }
+        { "id": "dry", "title": "DRY (不要写重复代码)", "children": null }
     ] },
     { "id": "error", "title": "Error handling", "children": [
         { "id": "unwrap", "title": "Option & unwrap", "children": null },
