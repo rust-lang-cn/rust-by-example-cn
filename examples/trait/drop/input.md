@@ -1,13 +1,9 @@
-The [`Drop`][Drop] trait only has one method: `drop`, which is called automatically 
-when an object goes out of scope. The main use of the `Drop` trait is to free the
-resources that the implementor instance owns.
+[`Drop`][Drop] trait 只有一个方法：`drop`，当一个对象离开作用域时会自动调用该方法。`Drop` trait 的主要作用是释放实现者实例拥有的资源。
 
-`Box`, `Vec`, `String`, `File`, and `Process` are some examples of types that
-implement the `Drop` trait to free resources. The `Drop` trait can also be
-manually implemented for any custom data type.
+`Box`，`Vec`，`String`，`File`，以及 `Process` 是一些实现了 `Drop` trait 来释放资源的类型的例子。`Drop` trait 也可以针对任意自定义数据类型手动实现。
 
-The following example adds a print to console to the `drop` function to announce
-when it is called.
+下面示例给 `drop` 函数增加了打印到控制台的功能，用于宣布它在什么时候被调用。（原文：The following example adds a print to console to the `drop` function to announce
+when it is called.）
 
 {drop.play}
 
