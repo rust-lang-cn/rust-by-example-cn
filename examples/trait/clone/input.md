@@ -1,9 +1,6 @@
-When dealing with resources, the default behavior is to transfer them during
-assignments or function calls. However, sometimes we need to make a 
-copy of the resource as well.
+当处理资源时，默认的行为是在赋值或函数调用的同时将它们转移。但是我们有时候也需要得到一份资源的复制。
 
-The [`Clone`][clone] trait helps us do exactly this. Most commonly, we can 
-use the `.clone()` method defined by the `Clone` trait.
+[`Clone`][clone] trait 正好帮助我们完成这任务。更普遍地，我们可以使用由 `Clone` trait 定义的方法。
 
 {clone.play}
 
