@@ -1,22 +1,9 @@
-Error handling is the process of handling the possibility of failure. For 
-example, failing to read a file and then continuing to use that *bad* input 
-would clearly be problematic. Error handling allows us to notice and handle 
-those errors in an explicit fashion, saving the rest of the program from 
-potential issues.
+错误处理（error handling）是处理可能发生失败情况的过程。例如读取一个文件失败，然后继续使用这个**失效的**输入显然是有问题的。错误处理允许我们以一种显式的方式来发现并处理这类错误，避免了其余代码发生潜在的问题。
 
-The simplest error handling mechanism we will see is `panic`. It prints an 
-error message, starts unwinding the task, and usually exits the program. 
-Consider the following example:
+我们将要看到的最简单的错误处理机制就是 `panic`。它会打印一个错误消息，开始展开任务（译注：感觉此句翻译不好，望指正，原文为 starts unwinding the task），且通常退出程序。考虑下面的实例：
 
 {error.play}
 
-This shows that we can induce program failure at will, but raises a 
-question: what happens if the princess is *not* given a gift? We *could* 
-explicitly test this with a check against the null string (`""`) as we do
-with the snake, but this is not reliable. The problem is that programmers do 
-not habitually test these checks unless required to by the compiler.
+这表明我们可以根据自己的想法来引发程序失败，但会出现一个问题：要是公主（princess）**没**得到礼物会发生什么？就像处理蛇那样的方式，我们**可以**针对空字符串（`""`）的检查进行显式地测试。问题在于程序员并没有习惯测试这些检查，除非编译器指出这些检查是必需的。
 
-In order for this to be reliable, we'll want the compiler to point out 
-cases where there may not be a gift. In this chapter, we will learn to use
-`Option` to take care of this condition, as well as various functions to 
-deal with the results of one or more uses of `Option`.
+为了使这变得更可靠，我们需要编译器指出可能没有礼物的情形。在本章，我们将学习使用 `Option` 来应对这种情况，以及各种各样的函数来处理 `Option` 的一个或多个用法的结果。
