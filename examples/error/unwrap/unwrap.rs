@@ -1,7 +1,7 @@
-// The commoner has seen it all, and handles situations well.
-// All gifts are handled manually using `match`.
+// 平民（commoner）已经见过所有东西，并能妥善处理好各种情况。
+// 所有礼物都通过手动使用 `match` 来处理。
 fn give_commoner(gift: Option<&str>) {
-    // Specify a course of action for each case.
+    // 指出每种情况下的做法。
     match gift {
         Some("snake") => println!("Yuck! I'm throwing that snake in a fire."),
         Some(inner)   => println!("{}? How nice.", inner),
@@ -9,9 +9,9 @@ fn give_commoner(gift: Option<&str>) {
     }
 }
 
-// Our sheltered princess will `panic` at the sight of snakes.
+// 我们受保护的公主见到蛇将会 `panic`（恐慌）。
 fn give_princess(gift: Option<&str>) {
-    // Using `unwrap` returns a `panic` when it receives a `None`.
+    // 使用 `unwrap`，当接收到 `None` 时返回一个 `panic`。
     let inside = gift.unwrap();
     if inside == "snake" { panic!("AAAaaaaa!!!!"); }
 
