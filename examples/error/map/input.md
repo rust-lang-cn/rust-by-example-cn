@@ -1,18 +1,13 @@
-`match` is a valid method for handling `Option`s. However, you may eventually
-find heavy usage tedious; this is the case especially with operations that
-are only valid with an input.
+`match` 是处理 `Option` 的一个有效方法。但是你最终会发现很多用例都相当繁琐；操作只有一个有效输入的情况尤其如此。
 
-For situations where a simplistic mapping of `Some -> Some` and 
-`None -> None` is needed, `Option` has a built in method called `map()`.
+对于一些需要用到简单映射`Some -> Some` 和 `None -> None` 的情况，`Option` 有一个内置方法 `map()`。
 
-Multiple `map()` calls can be chained together for even more flexibility.
-In the following example, `process()` easily replaces all functions previous
-to it while staying compact.
+多个不同的 `map()` 调用为更灵活运用可以链式连接在一起。在下面例子中，`process()` 轻松取代了前面的所有函数，且更加紧凑。
 
 {map.play}
 
-### See also:
+### 参见：
 
-[closures][closures]
+[闭包][closures]
 
-[closures]: /fn/closures.html
+[closures]: ../fn/closures.html
