@@ -1,7 +1,7 @@
 fn double_number(number_str: &str) -> i32 {
-    // It might not always be possible to parse a string into the other type,
-    // so `parse()` returns a `Result` indicating possible failure. Let's
-    // try using `unwrap()` to get the number out. Will it bite us?
+    // 将一个字符串解析成其他类型并不一定就会成功。
+    // 所以 `parse()` 返回一个 `Result` 表明可能的失败。让我们尝试使用
+    // `unwrap()` 把数字取出来。它会咬我们吗？
     2 * number_str.parse::<i32>().unwrap()
 }
 
