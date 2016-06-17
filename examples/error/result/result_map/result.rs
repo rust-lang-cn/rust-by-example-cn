@@ -1,7 +1,7 @@
 use std::num::ParseIntError;
 
-// With the return type rewritten, we proceed to use pattern matching without
-// `unwrap()`, but it is tedious.
+// 返回类型重写之后，我们继续使用模式匹配，而不需要用到 `unwrap()`，
+// 但代码会显得冗余。
 fn double_number(number_str: &str) -> Result<i32, ParseIntError> {
     match number_str.parse::<i32>() {
         Ok(n)  => Ok(2 * n),
@@ -9,9 +9,9 @@ fn double_number(number_str: &str) -> Result<i32, ParseIntError> {
     }
 }
 
-// As with `Option`, we can use combinators such as `map()`.
-// This function is otherwise identical to the one above and reads:
-// Modify n if the value is valid, otherwise pass on the error.
+// 就像 `Option`，我们可以使用组合算子，如 `map()`。
+// 此函数在其他方面和上述的示例一样，并表示：
+// 若值有效则修改 n，否则传递错误。
 fn double_number_map(number_str: &str) -> Result<i32, ParseIntError> {
     number_str.parse::<i32>().map(|n| 2 * n)
 }
@@ -24,11 +24,11 @@ fn print(result: Result<i32, ParseIntError>) {
 }
 
 fn main() {
-    // This still presents a reasonable answer.
+    // 这里仍然给出一个合理的答案。
     let twenty = double_number("10");
     print(twenty);
 
-    // The following now provides a much more useful error message
+    // 下面提供了更加有用的错误消息。
     let tt = double_number_map("t");
     print(tt);
 }
