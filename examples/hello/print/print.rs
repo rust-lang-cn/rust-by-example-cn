@@ -31,6 +31,7 @@ fn main() {
     // 改正 ^ 补上漏掉的参数： "James"
 
     // 创建一个包含` I32 `类型结构体(structure)。命名为 `Structure`。
+    #[allow(dead_code)]
     struct Structure(i32);
 
     // 但是像结构体这样自定义类型需要更复杂的方式来处理。
