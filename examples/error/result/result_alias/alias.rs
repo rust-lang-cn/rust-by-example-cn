@@ -1,15 +1,15 @@
 use std::num::ParseIntError;
 use std::result;
 
-// Define a generic alias for a `Result` with the error type `ParseIntError`.
+// 为带有错误类型 `ParseIntError` 的 `Result` 定义一个泛型别名。
 type AliasedResult<T> = result::Result<T, ParseIntError>;
 
-// Use the alias defined above to refer to our specific `Result` type.
+// 使用上面定义过的别名来表示我们特指的 `Result` 类型。
 fn double_number(number_str: &str) -> AliasedResult<i32> {
     number_str.parse::<i32>().map(|n| 2 * n)
 }
 
-// Here, the alias again allows us to save some space.
+// 这里的别名又让我们节省了一些空间（save some space）。
 fn print(result: AliasedResult<i32>) {
     match result {
         Ok(n)  => println!("n is {}", n),
