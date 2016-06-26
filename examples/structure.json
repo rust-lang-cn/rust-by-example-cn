@@ -156,18 +156,18 @@
         { "id": "reenter_try", "title": "Re-enter try!", "children": null },
         { "id": "reenabling_box", "title": "Re-enabling box", "children": null }
     ] },
-    { "id": "std", "title": "Std library types", "children": [
-        { "id": "box", "title": "Box, stack and heap", "children": null },
-        { "id": "vec", "title": "Vectors", "children": null },
-        { "id": "str", "title": "Strings", "children": null },
-        { "id": "option", "title": "`Option`", "children": null },
-        { "id": "result", "title": "`Result`", "children": [
+    { "id": "std", "title": "标准库类型", "children": [
+        { "id": "box", "title": "Box, 以及栈和堆", "children": null },
+        { "id": "vec", "title": "动态数组 vector", "children": null },
+        { "id": "str", "title": "字符串 String", "children": null },
+        { "id": "option", "title": "`选项 Option`", "children": null },
+        { "id": "result", "title": "`结果 Result`", "children": [
             { "id": "try", "title": "`try!`", "children": null }
         ] },
         { "id": "panic", "title": "`panic!`", "children": null },
-        { "id": "hash", "title": "HashMap", "children": [
-            { "id": "alt_key_types", "title": "Alternate/custom key types", "children": null},
-            { "id": "hashset", "title": "HashSet", "children": null }
+        { "id": "hash", "title": "散列表 HashMap", "children": [
+            { "id": "alt_key_types", "title": "更改或自定义关键字类型", "children": null},
+            { "id": "hashset", "title": "散列集 HashSet", "children": null }
         ] }
     ] },
     { "id": "std_misc", "title": "Std misc", "children": [
