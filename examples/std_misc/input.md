@@ -1,15 +1,14 @@
-Many other types are provided by the std library to support
-things such as:
+标准库也提供了很多其他类型来支持某些功能，例如：
 
-* Threads
-* Channels
-* File I/O
+* 线程（Threads）
+* 信道（Channels）
+* 文件输入输出（File I/O）
 
-These expand beyond what the [primitives][primitives] provide.
+这些内容在[原生类型][primitives]之外进行了有效扩充。
 
-### See also:
+### 参见：
 
-[primitives][primitives] and [the std library][std]
+[原生类型][primitives] 和 [标准库类型][std]
 
-[primitives]: /primitives.html
+[primitives]: ./primitives.html
 [std]: http://doc.rust-lang.org/std/
