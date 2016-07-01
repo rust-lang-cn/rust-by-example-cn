@@ -101,7 +101,7 @@
             { "id": "types", "title": "关联类型", "children": null }
         ] },
         { "id": "phantom", "title": "虚位类型参量", "children": [
-            { "id": "testcase_units", "title": "测试实例：单位转换", "children": null }
+            { "id": "testcase_units", "title": "测试实例：单位阐明", "children": null }
         ] }
     ] },
     { "id": "scope", "title": "作用域规则", "children": [
