@@ -150,11 +150,11 @@
         { "id": "option_with_result", "title": "带有 Results 的 Options", "children": [
             { "id": "result_string_errors", "title": "字符串作为错误信息", "children": null },
             { "id": "combinator_combinations", "title": "结合不同的组合", "children": null },
-            { "id": "enter_try", "title": "Enter try!", "children": null }
+            { "id": "enter_try", "title": "使用 try!", "children": null }
         ] },
         { "id": "limits_of_strings", "title": "字符串的局限", "children": null },
-        { "id": "reenter_try", "title": "Re-enter try!", "children": null },
-        { "id": "reenabling_box", "title": "Re-enabling box", "children": null }
+        { "id": "reenter_try", "title": "再次使用 try!", "children": null },
+        { "id": "reenabling_box", "title": "重新启用 box", "children": null }
     ] },
     { "id": "std", "title": "标准库类型", "children": [
         { "id": "box", "title": "Box, 以及栈和堆", "children": null },
