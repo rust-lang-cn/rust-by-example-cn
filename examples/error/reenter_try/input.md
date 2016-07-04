@@ -1,42 +1,25 @@
-If you will notice from the previous example, when we call `parse`, the immediate reaction
-is to `map` the error from a library error into our new custom error type.
+从前面的例子可以看到，当我们调用 `parse` 时，直接反应就是从一个错误消息库中映射到一个新的自定义错误类型（原文：the immediate reaction is to `map` the error from a library error into our new custom error type）。
 
 ```rust
 .and_then(|s| s.parse::<i32>()
     .map_err(DoubleError::Parse)
 ```
 
-This is a very simple and also common operation so it would be convenient if eliding it
-would work but alas, it does not. `and_then` is not sufficiently flexible that it can handle
-this; `try!` is though.
+这是一个很简单且常见的操作，要是能够编辑它的话将会相当方便，可惜的是，不能编辑。`and_then` 并没有灵活到可以处理这种情况；但是 `try!` 可以。
 
-`try!` has previously been explained as either `unwrap` or `return Err(err)` which is only
-`93%` correct. It actually means `unwrap` or `return Err(From::from(err))`. Since `From::from`
-is a conversion utility between different types, this means if you `try!` something where the
-error is convertible to the return type, it will convert automatically. This means, if we
-rewrite this example with `try!` when `From::from` is implemented for our error type,
-the `map_err` will go away:
+`try!` 在前面已经解释过，它可以充当 `unwrap` 或 `return Err(err)`，这描述只有 `93%` 是正确的（原文：`try!` has previously been explained as either `unwrap` or `return Err(err)` which is only `93%` correct.）。实际上它意味着 `unwrap` 或者 `return Err(From::from(err))`。由于 `From::from` 是一个不同类型间相互转换的工具，所以如果你 `try!` 一些内容，里面的错误是能够转换成返回类型，这将会自动转换。这意味着如果当 `From::from` 已对我们的错误类型提供实现时，我们使用 `try!` 重写这个例子，`map_err` 将会消失不见：
 
 {rethink.play}
 
-This is actually fairly clean now. If you compare it with the original `panic`, it is very similar
-to replacing the `unwrap` calls with `try!` except that the return types are `Result` and so
-they must be destructured at the top level.
+现在变得整洁多了。如果和原始的 `panic` 进行比较，可以看到它好像就是使用 `try!` 替换 `unwrap`，除了返回类型是 `Result` 类型这点不同，所以它们必须在顶层被解构出来。
 
-However, do not expect error handling of this sort to replace all usage of `unwrap` in
-practice. Error handling of this sort tripled our code line count and cannot really be
-called simple even if this is heavily biased by the small code size. Indeed, moving a 1000 line
-library from `unwrap` to more proper error handling might be feasible in an additional
-100 lines of code though the necessary refractoring definitely would not be trivial.
+然而，不要指望这种错误处理在实际中完全取代 `unwrap` 的用法。这种错误处理会使代码行数扩大三倍，即便是很小的一段代码也不能称之为简单。实际中要是将 1000 行库代码从 `unwrap` 移动到更适当的错误处理，可能会导致代码量增加 100 行，但这做法是可取的，当然这重构的过程并非易事。
 
-This is a very reasonable place to be. Many libraries might get away with only
-implementing `Display` and then adding `From` on an as needed basis. A serious library
-though will have users with certain expections about how it should implement error handling.
-In those cases, the error handling will need to be taken one step further.
+这点非常合理。很多库可能只是抛弃了实现 `Display`，然后在所需的基础上增加 `From`（原文：Many libraries might get away with only implementing `Display` and then adding `From` on an as needed basis.）。正式的库甚至还包括了用户使用适当的期望方式来应对应该怎样实现错误处理（原文：A serious library though will have users with certain expections about how it should implement error handling.）。在这些情况下，错误处理需要被下一步操作来处理（原文：In those cases, the error handling will need to be taken one step further.）。
 
-### See also:
+### 参见：
 
-[`From::from`][from] and [`try!`][try]
+[`From::from`][from] 和 [`try!`][try]
 
 [from]: http://doc.rust-lang.org/std/convert/trait.From.html
 [try]: http://doc.rust-lang.org/std/macro.try!.html
