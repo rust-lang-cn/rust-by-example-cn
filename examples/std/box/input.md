@@ -1,9 +1,5 @@
-All values in Rust are stack allocated by default. Values can be *boxed*
-(allocated in the heap) by creating a `Box<T>`. A box is a smart pointer to a
-heap allocated value of type `T`. When a box goes out of scope, its destructor
-is called, the inner object is destroyed, and the memory in the heap is freed.
+在 Rust 中，所有值默认都由栈分配。值也可以通过创建 `Box<T>` 来**装箱**（boxed，分配在堆上）。装箱类型是一个智能指针，指向堆分配的 `T` 类型的值。当一个装箱类型离开作用域时，它的析构器会被调用，内部的对象会被销毁，分配在堆上内存会被释放。
 
-Boxed values can be dereferenced using the `*` operator; this removes one layer
-of indirection. 
+**装箱**的值可以使用 `*` 运算符进行解引用；这会移除掉一个间接层（this removes one layer of indirection. ）。
 
 {box.play}

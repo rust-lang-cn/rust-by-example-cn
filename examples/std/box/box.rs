@@ -17,29 +17,29 @@ fn origin() -> Point {
 }
 
 fn boxed_origin() -> Box<Point> {
-    // Allocate this point in the heap, and return a pointer to it
+    // 在堆上分配这个点（point），并返回一个指向它的指针
     Box::new(Point { x: 0.0, y: 0.0 })
 }
 
 fn main() {
-    // (all the type annotations are superfluous)
-    // Stack allocated variables
+    // （所有的类型标注都是可要可不要的）
+    // 栈分配的变量
     let point: Point = origin();
     let rectangle: Rectangle = Rectangle {
         p1: origin(),
         p2: Point { x: 3.0, y: 4.0 }
     };
 
-    // Heap allocated rectangle
+    // 堆分配的 rectangle（矩形）
     let boxed_rectangle: Box<Rectangle> = Box::new(Rectangle {
         p1: origin(),
         p2: origin()
     });
 
-    // The output of functions can be boxed
+    // 函数的输出可以装箱（boxed）
     let boxed_point: Box<Point> = Box::new(origin());
 
-    // Double indirection
+    // 双重间接装箱（Double indirection）
     let box_in_a_box: Box<Box<Point>> = Box::new(boxed_origin());
 
     println!("Point occupies {} bytes in the stack",
@@ -47,7 +47,7 @@ fn main() {
     println!("Rectangle occupies {} bytes in the stack",
              mem::size_of_val(&rectangle));
 
-    // box size = pointer size
+    // box 的大小 = 指针 大小（box size = pointer size）
     println!("Boxed point occupies {} bytes in the stack",
              mem::size_of_val(&boxed_point));
     println!("Boxed rectangle occupies {} bytes in the stack",
@@ -55,7 +55,7 @@ fn main() {
     println!("Boxed box occupies {} bytes in the stack",
              mem::size_of_val(&box_in_a_box));
 
-    // Copy the data contained in `boxed_point` into `unboxed_point`
+    // 将包含在 `boxed_point` 的数据复制到 `unboxed_point`
     let unboxed_point: Point = *boxed_point;
     println!("Unboxed point occupies {} bytes in the stack",
              mem::size_of_val(&unboxed_point));
