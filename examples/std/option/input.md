@@ -1,9 +1,8 @@
-Sometimes it's desirable to catch the failure of some parts of a program
-instead of calling `panic!`; this can be accomplished using the `Option` enum.
+有时候想要捕捉到程序某部分的失败信息，而不调用 `panic!`；这可使用 `Option` 枚举来完成。
 
-The `Option<T>` enum has two variants:
+`Option<T>` 枚举有两个变量：
 
-* `None`, to indicate failure or lack of value, and
-* `Some(value)`, a tuple struct that wraps a `value` with type `T`.
+* `None`，表明失败或缺少值
+* `Some(value)`，元组结构体，使用 `T` 类型装包了一个值 `value`
 
 {option.play}
