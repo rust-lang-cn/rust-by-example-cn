@@ -1,13 +1,10 @@
-The `panic!` macro can be used to generate a panic and start unwinding
-its stack. While unwinding, the runtime will take care of freeing all the
-resources *owned* by the thread by calling the destructor of all its objects.
+`panic!` 宏可用于产生一个 panic （恐慌），并开始展开它的栈。在展开栈的同时，运行时将会释放该线程所**拥有**的所有资源，是通过调用对象的析构函数完成。
 
-Since we are dealing with programs with only one thread, `panic!` will cause the
-program to report the panic message and exit.
+因为我们正在处理的程序只有一个线程，`panic!` 将会引发程序上报 panic 消息并退出。
 
 {panic.play}
 
-Let's check that `panic!` doesn't leak memory.
+由分析知道， panic!不会泄露内存
 
 ```
 $ rustc panic.rs && valgrind ./panic
