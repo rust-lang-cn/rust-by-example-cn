@@ -1,13 +1,8 @@
-We've seen that the `Option` enum can be used as a return value from functions
-that may fail, where `None` can be returned to indicate failure. However,
-sometimes it is important to express *why* an operation failed. To do this we 
-have the `Result` enum.
+我们前面已经看到 `Option` 枚举可以用于函数可能失败的返回值，其中 `None` 可以返回以表明失败。但是有时要强调**为什么**一个操作会失败。为达成这点，我们提供了 `Result` 枚举。
 
-The `Result<T, E>` enum has two variants:
+`Result<T, E>` 枚举拥有两个变量：
 
-* `Ok(value)` which indicates that the operation succeeded, and wraps the
-  `value` returned by the operation. (`value` has type `T`)
-* `Err(why)`, which indicates that the operation failed, and wraps `why`,
-  which (hopefully) explains the cause of the failure. (`why` has type `E`)
+* `Ok(value)` 表示操作成功，并装包操作返回的 `value`（`value` 拥有 `T` 类型）。
+* `Err(why)`，表示操作失败，并装包 `why`，它（能按照所希望的方式）解释了失败的原因（`why` 拥有 `E` 类型）。
 
 {result.play}
