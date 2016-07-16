@@ -3,8 +3,10 @@
 {executable.rs}
 
 ```
-# `-L .` 参数加上库搜索路径的当前目录
-$ rustc -L . executable.rs && ./executable
+# library.rlib 是已编译好的库的路径，可得知这里它在同一目录下：
+# （原文：Where library.rlib is the path to to the compiled library, 
+# assumed that it's in the same directory here:）
+$ rustc executable.rs --extern rary=library.rlib && ./executable
 called rary's `public_function()`
 called rary's `indirect_access()`, that
 > called rary's `private_function()`
