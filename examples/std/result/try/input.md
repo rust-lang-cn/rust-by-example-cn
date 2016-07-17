@@ -1,11 +1,7 @@
-Chaining results using match can get pretty untidy; luckily, the `try!` macro
-can be used to make things pretty again. The `try!` macro expands to a match
-expression, where the `Err(err)` branch expands to an early `return Err(err)`,
-and the `Ok(ok)` branch expands to an `ok` expression.
+使用匹配链接结果会得到极其繁琐的内容；幸运的是，`try!` 宏可以使事情再次变得干净漂亮。`try!` 宏展开一个匹配表达式，其中 `Err(err)` 分支扩展了提前（返回）`return Err(err)`，同时 `Ok(ok)` 分支扩展成 `ok` 表达式。
 
 {try.play}
 
-Be sure to check the [documentation][docs],
-as there are many methods to map/compose `Result`.
+记得查阅[文档][docs]，里面有很多匹配/组合 `Result`。
 
 [docs]: http://doc.rust-lang.org/std/result/index.html

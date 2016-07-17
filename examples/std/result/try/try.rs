@@ -32,12 +32,12 @@ mod checked {
         }
     }
 
-    // Intermediate function
+    // 中间函数
     fn op_(x: f64, y: f64) -> MathResult {
-        // if `div` "fails", then `DivisionByZero` will be `return`ed
+        // 如果 `div` “失败”了，那么 `DivisionByZero` 将被返回
         let ratio = try!(div(x, y));
 
-        // if `ln` "fails", then `NegativeLogarithm` will be `return`ed
+        // 如果 `ln` “失败”了，那么 `NegativeLogarithm` 将被返回
         let ln = try!(ln(ratio));
 
         sqrt(ln)
