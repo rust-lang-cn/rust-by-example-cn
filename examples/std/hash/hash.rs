@@ -18,14 +18,14 @@ fn main() {
     contacts.insert("Katie", "435-8291");
     contacts.insert("Robert", "956-1745");
 
-    // Takes a reference and returns Option<&V>
+    // 接受一个引用并返回 Option<&V>
     match contacts.get(&"Daniel") {
         Some(&number) => println!("Calling Daniel: {}", call(number)),
         _ => println!("Don't have Daniel's number."),
     }
 
-    // `HashMap::insert()` returns `None`
-    // if the inserted value is new, `Some(value)` otherwise
+    // 如果被插入的值为新内容，那么 `HashMap::insert()` 返回 `None`，
+    // 否则返回 `Some(value)`
     contacts.insert("Daniel", "164-6743");
 
     match contacts.get(&"Ashley") {
@@ -35,8 +35,10 @@ fn main() {
 
     contacts.remove(&("Ashley")); 
 
-    // `HashMap::iter()` returns an iterator that yields 
-    // (&'a key, &'a value) pairs in arbitrary order.
+    // `HashMap::iter()` 返回一个迭代器，该迭代器获得
+    // 任意顺序的 (&'a key, &'a value) 对。
+    // （原文：`HashMap::iter()` returns an iterator that yields 
+    // (&'a key, &'a value) pairs in arbitrary order.）
     for (contact, &number) in contacts.iter() {
         println!("Calling {}: {}", contact, call(number)); 
     }
