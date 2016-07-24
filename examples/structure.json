@@ -170,23 +170,23 @@
             { "id": "hashset", "title": "散列集 HashSet", "children": null }
         ] }
     ] },
-    { "id": "std_misc", "title": "Std misc", "children": [
-        { "id": "threads", "title": "Threads", "children": null },
-        { "id": "channels", "title": "Channels", "children": null },
-        { "id": "path", "title": "Path", "children": null },
-        { "id": "file", "title": "File I/O", "children": [
-            { "id": "open", "title": "`open`", "children": null },
-            { "id": "create", "title": "`create`", "children": null }
+    { "id": "std_misc", "title": "标准库更多介绍", "children": [
+        { "id": "threads", "title": "线程", "children": null },
+        { "id": "channels", "title": "通道", "children": null },
+        { "id": "path", "title": "路径 Path", "children": null },
+        { "id": "file", "title": "文件输入/输出（I/O）", "children": [
+            { "id": "open", "title": "`open` 打开文件", "children": null },
+            { "id": "create", "title": "`create` 创建文件", "children": null }
         ] },
-        { "id": "process", "title": "Child processes", "children": [
-            { "id": "pipe", "title": "Pipes", "children": null },
-            { "id": "wait", "title": "Wait", "children": null }
+        { "id": "process", "title": "子进程", "children": [
+            { "id": "pipe", "title": "管道", "children": null },
+            { "id": "wait", "title": "等待 Wait", "children": null }
         ] },
-        { "id": "fs", "title": "Filesystem Operations", "children": null },
-        { "id": "arg", "title": "Program arguments", "children": [
-            { "id": "matching", "title": "Argument parsing", "children": null }
+        { "id": "fs", "title": "文件系统操作", "children": null },
+        { "id": "arg", "title": "程序参数", "children": [
+            { "id": "matching", "title": "参数分析", "children": null }
         ] },
-        { "id": "ffi", "title": "Foreign Function Interface", "children": null  }
+        { "id": "ffi", "title": "外部语言接口", "children": null  }
     ] },
     { "id": "meta", "title": "Meta", "children": [
         { "id": "doc", "title": "Documentation", "children": null },
