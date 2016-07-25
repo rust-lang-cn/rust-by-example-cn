@@ -5,35 +5,35 @@ use std::thread;
 static NTHREADS: i32 = 3;
 
 fn main() {
-    // Channels have two endpoints: the `Sender<T>` and the `Receiver<T>`,
-    // where `T` is the type of the message to be transferred
-    // (type annotation is superfluous)
+    // 通道有两个端点：`Sender<T>` 和 `Receiver<T>`，其中 `T` 是要发送
+    // 消息的类型（类型标注是可有可无的）
     let (tx, rx): (Sender<i32>, Receiver<i32>) = mpsc::channel();
 
     for id in 0..NTHREADS {
-        // The sender endpoint can be copied
+        // sender 发送端可被复制
         let thread_tx = tx.clone();
 
-        // Each thread will send its id via the channel
+        // 每个线程都将通过通道来发送它的 id
         thread::spawn(move || {
-            // The thread takes ownership over `thread_tx`
-            // Each thread queues a message in the channel
+            // 此线程取得 `thread_tx` 所有权
+            // 每个线程都在通道中排队列出消息
+            // （原文：The thread takes ownership over `thread_tx`
+            // Each thread queues a message in the channel）
             thread_tx.send(id).unwrap();
 
-            // Sending is a non-blocking operation, the thread will continue
-            // immediately after sending its message
+            // 发送是一个非阻塞操作，线程将在发送完消息后继续进行
             println!("thread {} finished", id);
         });
     }
 
-    // Here, all the messages are collected
+    // 所有消息都在此处被收集
     let mut ids = Vec::with_capacity(NTHREADS as usize);
     for _ in 0..NTHREADS {
-        // The `recv` method picks a message from the channel
-        // `recv` will block the current thread if there no messages available
+        // `recv` 方法从通道中拿到一个消息
+        // 若无可用消息的话，`recv` 将阻止当前线程
         ids.push(rx.recv());
     }
 
-    // Show the order in which the messages were sent
+    // 显示已发送消息的次序
     println!("{:?}", ids);
 }
