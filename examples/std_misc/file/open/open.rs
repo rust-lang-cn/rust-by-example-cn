@@ -4,20 +4,19 @@ use std::io::prelude::*;
 use std::path::Path;
 
 fn main() {
-    // Create a path to the desired file
+    // 给所需的文件创建一个路径
     let path = Path::new("hello.txt");
     let display = path.display();
 
-    // Open the path in read-only mode, returns `io::Result<File>`
+    // 以只读方式打开路径，返回 `io::Result<File>`
     let mut file = match File::open(&path) {
-        // The `description` method of `io::Error` returns a string that
-        // describes the error
+        // `io::Error` 的 `description` 方法返回一个描述错误的字符串。
         Err(why) => panic!("couldn't open {}: {}", display,
                                                    why.description()),
         Ok(file) => file,
     };
 
-    // Read the file contents into a string, returns `io::Result<usize>`
+    // 读取文件内容到一个字符串，返回 `io::Result<usize>`
     let mut s = String::new();
     match file.read_to_string(&mut s) {
         Err(why) => panic!("couldn't read {}: {}", display,
@@ -25,5 +24,5 @@ fn main() {
         Ok(_) => print!("{} contains:\n{}", display, s),
     }
 
-    // `file` goes out of scope, and the "hello.txt" file gets closed
+    // `file` 离开作用域，并且 `hello.txt` 文件将被关闭。
 }
