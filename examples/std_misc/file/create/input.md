@@ -1,6 +1,4 @@
-The `create` static method opens a file in write-only mode. If the file
-already existed, the old content is destroyed. Otherwise, a new file is
-created.
+`create` 静态方法以只写模式（write-only mode）打开一个文件。若文件已经存在，则旧内容将被销毁。否则，将创建一个新文件。
 
 {create.rs}
 
@@ -19,8 +17,6 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
 
-(As in the previous example, you are encouraged to test this example under
-failure conditions.)
+（和前面例子一样，我们鼓励你在失败条件下测试这个例子。）
 
-There is also a more generic `open_mode` method that can open files in other
-modes like: read+write, append, etc.
+还有一个更通用的 `open_mode` 方法，这能够以其他方式来来打开文件，如：read+write（读+写），追加（append），等等。
