@@ -7,8 +7,6 @@ type Inch = u64;
 type u64_t = u64;
 // 试一试 ^ 试着删掉属性。
 
-// 使用一个属性来忽略警告。
-#[allow(trivial_numeric_casts)]
 fn main() {
     // `NanoSecond` = `Inch` = `u64_t` = `u64`.
     let nanoseconds: NanoSecond = 5 as u64_t;
