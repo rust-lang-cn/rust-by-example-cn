@@ -6,7 +6,7 @@ static PANGRAM: &'static str =
 "the quick brown fox jumped over the lazy dog\n";
 
 fn main() {
-    // Spawn the `wc` command
+    // 触发 `wc` 命令（原文：Spawn the `wc` command）
     let process = match Command::new("wc")
                                 .stdin(Stdio::piped())
                                 .stdout(Stdio::piped())
@@ -15,23 +15,23 @@ fn main() {
         Ok(process) => process,
     };
 
-    // Write a string to the `stdin` of `wc`.
+    // 将字符串写入 `wc` 的 `stdin`。
     //
-    // `stdin` has type `Option<ChildStdin>`, but since we know this instance
-    // must have one, we can directly `unwrap` it.
+    // `stdin` 拥有 `Option<ChildStdin>` 类型，不过既然我们已经知道这个实例
+    // 只能拥有一个，那么我们可以直接解包（`unwrap`）它。
+    // （原文：`stdin` has type `Option<ChildStdin>`, but since we know this instance
+    // must have one, we can directly `unwrap` it.）
     match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
         Err(why) => panic!("couldn't write to wc stdin: {}",
                            why.description()),
         Ok(_) => println!("sent pangram to wc"),
     }
 
-    // Because `stdin` does not live after the above calls, it is `drop`ed,
-    // and the pipe is closed.
+    // 因为 `stdin` 在上面调用后就不再存活，所以它被销毁了，且管道被关闭。
     //
-    // This is very important, otherwise `wc` wouldn't start processing the
-    // input we just sent.
+    // 这点非常重要，否则 `wc` 不会开始处理我们刚刚发送的输入。
 
-    // The `stdout` field also has type `Option<ChildStdout>` so must be unwrapped.
+    // `stdout` 域也拥有 `Option<ChildStdout>` 类型，所以必需解包。
     let mut s = String::new();
     match process.stdout.unwrap().read_to_string(&mut s) {
         Err(why) => panic!("couldn't read wc stdout: {}",
