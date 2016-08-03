@@ -1,5 +1,4 @@
-If you'd like to wait for a `process::Child` to finish, you must call
-`Child::wait`, which will return a `process::ExitStatus`.
+如果你想等待 `process::Child` 完成，就必须调用 `Child::wait`，这会返回一个 `process::ExitStatus`。
 
 {wait.rs}
 
