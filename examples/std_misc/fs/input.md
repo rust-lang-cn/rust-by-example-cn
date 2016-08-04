@@ -1,9 +1,8 @@
-The `std::io::fs` module contains several functions that deal with the
-filesystem.
+`std::io::fs` 模块包含几个处理文件系统的函数。
 
 {fs.rs}
 
-Here's the expected successful output:
+下面是预期成功的输出：
 
 ```
 $ rustc fs.rs && ./fs
@@ -27,7 +26,7 @@ $ rustc fs.rs && ./fs
 `rmdir a/c/d`
 ```
 
-And the final state of the `a` directory is:
+且 `a` 目录的最终状态为：
 
 ```
 $ tree a
@@ -39,8 +38,8 @@ a
 1 directory, 2 files
 ```
 
-### See also:
+### 参见：
 
 [`cfg!`][cfg]
 
-[cfg]: /attribute/cfg.html
+[cfg]: ../attribute/cfg.html
