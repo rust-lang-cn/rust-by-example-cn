@@ -1,5 +1,4 @@
-The command line arguments can be accessed using `std::env::args`, which
-returns an iterator that yields a String for each argument:
+命令行参数可使用 `std::enc::args` 进行接收，这将返回一个迭代器，该迭代器会对各个参数产生一个字符串。
 
 {args.play}
 
