@@ -5,7 +5,7 @@ extern {
     fn ccosf(z: Complex) -> Complex;
 }
 
-// safe wrapper
+// 安全装包（原文：safe wrapper）
 fn cos(z: Complex) -> Complex {
     unsafe { ccosf(z) }
 }
@@ -17,7 +17,7 @@ fn main() {
     println!("cos({:?}) = {:?}", z, cos(z));
 }
 
-// Minimal implementation of single precision complex numbers
+// 最小化实现单精度复数
 #[repr(C)]
 #[derive(Clone, Copy)]
 struct Complex {
