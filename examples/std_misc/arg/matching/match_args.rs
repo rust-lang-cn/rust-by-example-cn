@@ -20,22 +20,22 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     match args.len() {
-        // no arguments passed
+        // 没有传入参数
         1 => {
             println!("My name is 'match_args'. Try passing some arguments!");
         },
-        // one argument passed
+        // 一个传入参数
         2 => {
             match args[1].parse() {
                 Ok(42) => println!("This is the answer!"),
                 _ => println!("This is not the answer."),
             }
         },
-        // one command and one argument passed
+        // 一条命令和一个传入参数
         3 => {
             let cmd = &args[1];
             let num = &args[2];
-            // parse the number
+            // 解析数字
             let number: i32 = match num.parse() {
                 Ok(n) => {
                     n
@@ -46,7 +46,7 @@ fn main() {
                     return;
                 },
             };
-            // parse the command
+            // 解析命令
             match &cmd[..] {
                 "increase" => increase(number),
                 "decrease" => decrease(number),
@@ -56,9 +56,9 @@ fn main() {
                 },
             }
         },
-        // all the other cases
+        // 所有其他情况
         _ => {
-            // show a help message
+            // 显示帮助信息
             help();
         }
     }
