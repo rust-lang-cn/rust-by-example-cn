@@ -1,22 +1,22 @@
-/// A human being is represented here
+/// 这里给出一个人类
 pub struct Person {
-    /// A person must have a name, no matter how much Juliet may hate it
+    /// 一个人必须有名字，不管 Juliet 多讨厌他/她。
     name: String,
 }
 
 impl Person {
-    /// Returns a person with the name given them
+    /// 返回给定名字的人
     ///
-    /// # Arguments
+    /// # 参数
     ///
-    /// * `name` - A string slice that holds the name of the person
+    /// * `name` - 字符串 slice，代表人物的名称
     ///
-    /// # Example
+    /// # 示例：
     ///
     /// ```
-    /// // You can have rust code between fences inside the comments
-    /// // If you pass --test to Rustdoc, it will even test it for you!
-    /// let person = Person::new("name");
+    /// // 可以在注释的特定标记内编写 Rust。
+    /// // 如果可以通过 --- 测试传递给 Rustdoc，它将会帮你进行测试！
+    /// let person = Person::new("name);
     /// ```
     pub fn new(name: &str) -> Person {
         Person {
@@ -24,9 +24,8 @@ impl Person {
         }
     }
 
-    /// Gives a friendly hello!
-    ///
-    /// Says "Hello, [name]" to the `Person` it is called on.
+    /// 给一个友好的问候！
+    /// 对被叫到的 `Person` 说 "Hello, [name]" 。
     pub fn hello(& self) {
         println!("Hello, {}!", self.name);
     }
