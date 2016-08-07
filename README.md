@@ -1,7 +1,7 @@
 # 通过例子学 Rust
 
 [![Build Status][travis-image]][travis-link]  
-> 翻译正在进行中……  
+> 已翻译完全部内容，欢迎纠正——2016-08-07  
 > Chinese translation of the [Rust by Example][rust-by-example]
 
 ## 这是什么？
