@@ -1,13 +1,13 @@
-// Conditionally compile `main` only when the test-suite is *not* being run.
+// 当且仅当测试套件没有运行时，才条件编译 `main` 函数。
 #[cfg(not(test))]
 fn main() {
     println!("If you see this, the tests were not compiled nor ran!");
 }
 
-// Conditionally compile the module `test` only when the test-suite is run.
+// 当且仅当测试套件没有启动时，才条件编译 `test` 模块。
 #[cfg(test)]
 mod test {
-    // A helper function `distance_test` will need.
+    // 需要一个辅助函数 `distance_test`。
     fn distance(a: (f32, f32), b: (f32, f32)) -> f32 {
         (
             (b.0 - a.0).powi(2) +

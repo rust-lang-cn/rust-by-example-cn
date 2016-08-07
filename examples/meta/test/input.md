@@ -1,12 +1,11 @@
-Functions can be tested by using these [attributes][attributes]:
+函数可以通过这些[属性][attributes]（attribute） 进行测试：
 
-* `#[test]` marks a function as a unit test. The function must take zero
-parameters and return nothing.
-* `#[should_panic]` marks a function as a panicking test.
+* `#[test]` 将一个函数标记为一个单元测试。该函数不能接受参数且返回空。
+* `#[should_panic]` 将一个函数标记为 panic 测试。
 
 {unit_test.rs}
 
-Tests can be run with `cargo test` or `rustc --test`.
+通过 `cargo test` 或 `rustc --test` 运行测试。
 
 ```
 $ rustc --test unit_test.rs
@@ -19,7 +18,7 @@ test test::failing_test ... ok
 test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured
 ```
 
-If `--test` were not included, then this would happen
+若 `--test` 没有包含进来，则会出现这样的情况：
 
 ```
 $ rustc unit_test.rs
@@ -27,10 +26,10 @@ $ ./unit_test
 If you see this, the tests were not compiled nor ran!
 ```
 
-### See also:
+### 参见：
 
-[attributes][attributes], [conditional compilation][cfg], and [`mod`][mod].
+[属性][attributes], [条件编译][cfg], 和 [`mod`][mod].
 
-[attributes]: /attribute.html
-[cfg]: /attribute/cfg.html
-[mod]: /mod.html
+[attributes]: ../../attribute.html
+[cfg]: ../../attribute/cfg.html
+[mod]: ../../mod.html
