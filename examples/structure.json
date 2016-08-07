@@ -186,11 +186,11 @@
         { "id": "arg", "title": "程序参数", "children": [
             { "id": "matching", "title": "参数分析", "children": null }
         ] },
-        { "id": "ffi", "title": "外部语言接口", "children": null  }
+        { "id": "ffi", "title": "外部语言函数接口", "children": null  }
     ] },
-    { "id": "meta", "title": "Meta", "children": [
-        { "id": "doc", "title": "Documentation", "children": null },
-        { "id": "test", "title": "Testing", "children": null  }
+    { "id": "meta", "title": "补充", "children": [
+        { "id": "doc", "title": "文档", "children": null },
+        { "id": "test", "title": "测试", "children": null  }
     ] },
-    { "id": "unsafe", "title": "Unsafe operations", "children": null  }
+    { "id": "unsafe", "title": "不安全操作", "children": null  }
 ]
