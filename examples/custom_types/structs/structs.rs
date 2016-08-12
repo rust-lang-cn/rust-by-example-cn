@@ -2,12 +2,12 @@
 struct Nil;
 
 // 元组结构体
-struct Pair(i32, f64);
+struct Pair(i32, f32);
 
 // 带有两个字段的结构体
 struct Point {
-    x: f64,
-    y: f64,
+    x: f32,
+    y: f32,
 }
 
 // 结构体可以作为另一个结构体的字段
