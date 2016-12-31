@@ -24,7 +24,7 @@ fn main() {
     }
     println!("imperative style: {}", acc);
 
-    // 功能性方式（functional approach）
+    // 函数式方式（functional approach）
     let sum_of_squared_odd_numbers: u32 =
         (0..).map(|n| n * n)             // 所有自然数的平方
              .take_while(|&n| n < upper) // 小于上限
