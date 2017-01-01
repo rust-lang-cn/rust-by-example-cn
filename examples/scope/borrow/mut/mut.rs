@@ -12,7 +12,7 @@ fn borrow_book(book: &Book) {
     println!("I immutably borrowed {} - {} edition", book.title, book.year);
 }
 
-// 此函数接受一个指向不可变的图书 Book 的引用，同时把年份 `year` 改为 2004 年
+// 此函数接受一个指向可变的图书 Book 的引用，同时把年份 `year` 改为 2004 年
 fn new_edition(book: &mut Book) {
     book.year = 2014;
     println!("I mutably borrowed {} - {} edition", book.title, book.year);
