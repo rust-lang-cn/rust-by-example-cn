@@ -4,7 +4,7 @@ fn main() {
     println!("If you see this, the tests were not compiled nor ran!");
 }
 
-// 当且仅当测试套件没有启动时，才条件编译 `test` 模块。
+// 当且仅当测试套件运行时，才条件编译 `test` 模块。
 #[cfg(test)]
 mod test {
     // 需要一个辅助函数 `distance_test`。
