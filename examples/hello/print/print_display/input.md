@@ -12,7 +12,7 @@ struct Structure(i32);
 // 为了使用 `{}` 标记，必须手动实现 `fmt::Display` trait 来支持相应类型。
 impl fmt::Display for Structure {
     // This trait requires `fmt` with this exact signature.
-    // 这个 trait 要求 `tmt` 带有正确的标记
+    // 这个 trait 要求 `fmt` 带有正确的标记
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // 严格将第一个元素写入到给定的输出流 `f`。返回 `fmt:Result`，此结果表明操作成功
         // 或失败。注意这里的 `write!` 用法和 `println!` 很相似。
