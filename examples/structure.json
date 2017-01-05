@@ -147,7 +147,7 @@
             { "id": "result_map", "title": "关于 Result 的 map", "children": null },
             { "id": "result_alias", "title": "Result 作为别名", "children": null }
         ] },
-        { "id": "option_with_result", "title": "带有 Results 的 Options", "children": [
+        { "id": "multiple_error_types", "title": "各种错误类型", "children": [
             { "id": "result_string_errors", "title": "字符串作为错误信息", "children": null },
             { "id": "combinator_combinations", "title": "结合不同的组合", "children": null },
             { "id": "enter_try", "title": "使用 try!", "children": null }
