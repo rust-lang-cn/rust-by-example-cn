@@ -140,10 +140,11 @@
         { "id": "dry", "title": "DRY (不要写重复代码)", "children": null }
     ] },
     { "id": "error", "title": "错误处理", "children": [
-	{ "id": "panic_unwrap", "title": "`panic`", "children": null },
-        { "id": "option", "title": "`Option` 与 `unwrap`", "children": null },
-        { "id": "map", "title": "`map`", "children": null },
-        { "id": "and_then", "title": "`and_then`", "children": null },
+	{ "id": "panic", "title": "`panic`", "children": null },
+        { "id": "option", "title": "`Option` 与 `unwrap`", "children": [
+            { "id": "map", "title": "`map`", "children": null },
+            { "id": "and_then", "title": "`and_then`", "children": null }
+	] },
         { "id": "result", "title": "结果 `Result`", "children": [
             { "id": "result_map", "title": "关于 `Result` 的 `map`", "children": null },
             { "id": "result_alias", "title": "`Result` 作为别名", "children": null }
