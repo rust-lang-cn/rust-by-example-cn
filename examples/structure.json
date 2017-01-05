@@ -140,21 +140,21 @@
         { "id": "dry", "title": "DRY (不要写重复代码)", "children": null }
     ] },
     { "id": "error", "title": "错误处理", "children": [
-        { "id": "unwrap", "title": "Option 与 unwrap", "children": null },
-        { "id": "map", "title": "map", "children": null },
-        { "id": "and_then", "title": "and_then", "children": null },
-        { "id": "result", "title": "结果 Result", "children": [
-            { "id": "result_map", "title": "关于 Result 的 map", "children": null },
-            { "id": "result_alias", "title": "Result 作为别名", "children": null }
+        { "id": "unwrap", "title": "`Option` 与 `unwrap`", "children": null },
+        { "id": "map", "title": "`map`", "children": null },
+        { "id": "and_then", "title": "`and_then`", "children": null },
+        { "id": "result", "title": "结果 `Result`", "children": [
+            { "id": "result_map", "title": "关于 `Result` 的 `map`", "children": null },
+            { "id": "result_alias", "title": "`Result` 作为别名", "children": null }
         ] },
         { "id": "multiple_error_types", "title": "各种错误类型", "children": [
             { "id": "result_string_errors", "title": "字符串作为错误信息", "children": null },
             { "id": "combinator_combinations", "title": "结合不同的组合", "children": null },
-            { "id": "enter_try", "title": "使用 try!", "children": null }
+            { "id": "enter_try", "title": "使用 `try!`", "children": null }
         ] },
         { "id": "limits_of_strings", "title": "字符串的局限", "children": null },
-        { "id": "reenter_try", "title": "再次使用 try!", "children": null },
-        { "id": "reenabling_box", "title": "重新启用 box", "children": null }
+        { "id": "reenter_try", "title": "再次使用 `try!`", "children": null },
+        { "id": "boxing_errors", "title": "使用 `Box` 处理错误", "children": null }
     ] },
     { "id": "std", "title": "标准库类型", "children": [
         { "id": "box", "title": "Box, 以及栈和堆", "children": null },
