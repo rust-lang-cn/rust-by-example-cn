@@ -79,7 +79,7 @@ fn main() {
 
     // 实例方法通过点运算符来调用
     // 注意第一个参数 `&self` 是隐式传递的，比如：
-    // `rectangle.perimeter()` === `perimeter(&rectangle)`
+    // `rectangle.perimeter()` === `Rectangle::perimeter(&rectangle)`
     println!("Rectangle perimeter: {}", rectangle.perimeter());
     println!("Rectangle area: {}", rectangle.area());
 
