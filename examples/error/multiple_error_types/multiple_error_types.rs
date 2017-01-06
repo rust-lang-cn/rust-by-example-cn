@@ -8,12 +8,11 @@ fn double_first(vec: Vec<&str>) -> Result<i32> {
        .ok_or("Please use a vector with at least one element.".to_owned())
        // 回想一下，`parse` 返回一个 `Result<T, ParseIntError>`。
        .and_then(|s| s.parse::<i32>()
-                      // 映射错误 `parse` 产生得到 `String`。
-                      // 然后返回类型变成 `Result<T, String>`。
-                      // （原文：Map the errors `parse` yields to `String`.
-                      // The return type is then `Result<T, String>`.）
+                      // 映射任意错误 `parse` 产生得到 `String`。
+                      // （原文：Map any errors `parse` yields to `String`.）
                       .map_err(|e| e.to_string())
-                      // 根据这点，我们可以推断出里面的数字。
+                      // `Result<T, String>` 成为新的返回类型，
+                      // 我们可以给里面的数字扩大两倍。
                       .map(|i| 2 * i))
 }
 
@@ -25,11 +24,9 @@ fn print(result: Result<i32>) {
 }
 
 fn main() {
-    let numbers = vec!["93", "18"];
     let empty = vec![];
     let strings = vec!["tofu", "93", "18"];
 
-    print(double_first(numbers));
     print(double_first(empty));
     print(double_first(strings));
 }
