@@ -19,7 +19,7 @@ impl Contains for Container {
     type A = i32;
     type B = i32;
 
-    // `&Self::A` 和 `&self::B` 在这里也是有效的。
+    // `&Self::A` 和 `&Self::B` 在这里也是有效的。
     fn contains(&self, number_1: &i32, number_2: &i32) -> bool {
         (&self.0 == number_1) && (&self.1 == number_2)
     }
