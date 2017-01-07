@@ -1,8 +1,7 @@
 use std::num::ParseIntError;
-use std::result;
 
 // 为带有错误类型 `ParseIntError` 的 `Result` 定义一个泛型别名。
-type AliasedResult<T> = result::Result<T, ParseIntError>;
+type AliasedResult<T> = Result<T, ParseIntError>;
 
 // 使用上面定义过的别名来表示我们特指的 `Result` 类型。
 fn double_number(number_str: &str) -> AliasedResult<i32> {
