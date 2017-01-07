@@ -10,8 +10,8 @@ fn main() {
     let i = 1;
     // 调用函数和闭包。
     println!("function: {}", function(i));
-    println!("annotated closure: {}", closure_annotated(i));
-    println!("inferred closure: {}", closure_inferred(i));
+    println!("closure_annotated: {}", closure_annotated(i));
+    println!("closure_inferred: {}", closure_inferred(i));
 
     // 没有参数的闭包，返回一个 `i32` 类型。
     // 返回类型是自动推导的。
