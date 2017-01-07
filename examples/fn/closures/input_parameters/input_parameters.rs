@@ -20,6 +20,7 @@ fn main() {
     
     let greeting = "hello";
     // 不可复制的类型。
+    // `to_owned` 从借用的数据创建属于自己的数据。
     let mut farewell = "goodbye".to_owned();
 
     // 捕获 2 个变量：通过引用方式的 `greeting` 和
