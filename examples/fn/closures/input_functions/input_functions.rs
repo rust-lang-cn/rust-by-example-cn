@@ -5,7 +5,7 @@ fn call_me<F: Fn()>(f: F) {
 
 // 定义一个满足 `Fn` 限定的装包函数（wrapper function）。
 fn function() {
-    println!("I'm a function!")
+    println!("I'm a function!");
 }
 
 fn main() {
