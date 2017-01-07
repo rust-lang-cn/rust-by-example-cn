@@ -4,7 +4,7 @@ fn apply<F>(f: F) where
     F: FnOnce() {
     // ^ 试一试：将 `FnOnce` 换成 `Fn` 或 `FnMut`。
 
-    f()
+    f();
 }
 
 // 使用闭包并返回一个 `i32` 整型的函数。
