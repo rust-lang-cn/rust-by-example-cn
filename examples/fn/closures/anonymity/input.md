@@ -4,7 +4,7 @@
 // `F` 必须是泛型。
 fn apply<F>(f: F) where
     F: FnOnce() {
-    f()
+    f();
 }
 ```
 
