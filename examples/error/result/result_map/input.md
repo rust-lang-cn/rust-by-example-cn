@@ -1,6 +1,6 @@
 前面关于 panic 例子，提供给我们的是一个无用的错误消息。为了避免这样，我们需要更具体地指定返回类型。在那个例子中，该常规元素为 `i32` 类型。
 
-为了确定 `Err` 的类型，我们可以借助 `parse()`，它使用 [`FromStr`][from_str] trait 来针对 [`i32`][i32] 实现。结果是，`Err` 类型被指定为 [`ParseIntError`][parse_int_error]。
+为了确定 `Err` 的类型，我们可以借助 [`parse()`][parse]，它使用 [`FromStr`][from_str] trait 来针对 [`i32`][i32] 实现。结果是，`Err` 类型被指定为 [`ParseIntError`][parse_int_error]。
 
 在下面例子中要注意，使用简单的 `match` 语句会导致更加繁琐的代码。事实证明，用到 `Option` 的 `map` 方法也对 `Result` 进行了实现。
 
