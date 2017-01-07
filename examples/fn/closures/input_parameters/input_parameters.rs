@@ -48,6 +48,7 @@ fn main() {
     // which applies the closure）。
     apply(diary);
 
+    // `double` 满足 `apply_to_3` 的 trait 限定。
     let double = |x| 2 * x;
 
     println!("3 doubled: {}", apply_to_3(double));
