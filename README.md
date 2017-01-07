@@ -19,14 +19,14 @@
 安装 [Rust](http://www.rust-lang.org/install.html) 并执行以下命令：
 
 ```
-sudo apt-get install nodejs npm subversion
+sudo apt-get install nodejs npm subversion calibre
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
 ### 非 Debian 类型的发行版
 
 安装 Rust [nightly](http://www.rust-lang.org/install.html)，
-`node`, `npm`, 和 `subversion`。
+`node`, `npm`, `subversion` 和 `calibre`。
 
 ### 编译指示
 
