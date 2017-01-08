@@ -3,7 +3,7 @@
 {executable.rs}
 
 ```
-# library.rlib 是已编译好的库的路径，可得知这里它在同一目录下：
+# library.rlib 是已编译好的库的路径，假设在这里它在同一目录下：
 # （原文：Where library.rlib is the path to to the compiled library, 
 # assumed that it's in the same directory here:）
 $ rustc executable.rs --extern rary=library.rlib && ./executable
