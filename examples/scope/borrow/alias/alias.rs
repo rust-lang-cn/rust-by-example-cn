@@ -44,7 +44,7 @@ fn main() {
     }
 
     // `point` 的不可变引用再次可用。
-    let borrow_point = &point;
+    let borrowed_point = &point;
     println!("Point now has coordinates: ({}, {}, {})",
              borrowed_point.x, borrowed_point.y, borrowed_point.z);
 }
