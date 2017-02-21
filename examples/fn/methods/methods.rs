@@ -25,7 +25,7 @@ struct Rectangle {
 
 impl Rectangle {
     // 这是实例方法（instance method）
-    // `&slef` 是 `self: &Self` 的语法糖（sugar），其中 `Self` 是所调用对象
+    // `&self` 是 `self: &Self` 的语法糖（sugar），其中 `Self` 是所调用对象
     // 的类型。在这个例子中 `Self` = `Rectangle`
     fn area(&self) -> f64 {
         // `self` 通过点运算符来访问结构体字段
