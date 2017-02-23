@@ -103,7 +103,7 @@ license 两种协议进行授权。
 详情参见 LICENSE-APACHE 和 LICENSE-MIT。
 
 [rust-by-example]: https://github.com/rust-lang/rust-by-example
-[travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
+[travis-image]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn.svg?branch=master
 [travis-link]: https://travis-ci.org/rust-lang/rust-by-example
 [website]: http://rustbyexample.com
 [website-cn]: http://rustwiki.org/rust-by-example
