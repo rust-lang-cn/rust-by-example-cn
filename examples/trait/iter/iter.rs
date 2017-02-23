@@ -18,13 +18,13 @@ impl Iterator for Fibonacci {
         self.curr = self.next;
         self.next = new_next;
 
-        // 既然斐波那契数列不存在不存在终点，那么 `Iterator` 将不可能
+        // 既然斐波那契数列不存在终点，那么 `Iterator` 将不可能
         // 返回 `None`，而总是返回 `Some`。
         Some(self.curr)
     }
 }
 
-// 返回一个斐波那契数列生存器（generator）
+// 返回一个斐波那契数列生成器（generator）
 fn fibonacci() -> Fibonacci {
     Fibonacci { curr: 1, next: 1 }
 }
