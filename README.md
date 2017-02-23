@@ -104,7 +104,7 @@ license 两种协议进行授权。
 
 [rust-by-example]: https://github.com/rust-lang/rust-by-example
 [travis-image]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn.svg?branch=master
-[travis-link]: https://travis-ci.org/rust-lang/rust-by-example
+[travis-link]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn
 [website]: http://rustbyexample.com
 [website-cn]: http://rustwiki.org/rust-by-example
 [how-to-contribute]: CONTRIBUTING.md
