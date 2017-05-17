@@ -10,7 +10,7 @@ fn borrow_i32(borrowed_i32: &i32) {
 
 fn main() {
     // 创建一个装箱的 i32 类型，以及一个存在栈中的 i32 类型。
-    let boxed_int = Box::new(5_i32);
+    let boxed_i32 = Box::new(5_i32);
     let stacked_i32 = 6_i32;
 
     // 借用了  box 的内容，但没有取得所有权，所以 box 的内容可以
