@@ -2,7 +2,7 @@
 
 * 解引用裸指针
 * 通过 FFI 调用函数（这个内容在本书其他章节介绍过了）
-* 使用 `std::cast::transmute` 来强制转型（change type）
+* 使用 `std::mem::transmute` 来强制转型（change type）
 * 内联汇编(inline assembly)
 
 ### 原始指针

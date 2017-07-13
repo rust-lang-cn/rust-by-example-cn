@@ -40,4 +40,5 @@ fn main() {
     // 报错！`content` 字段是私有的。
     //println!("The black box contains: {}", _black_box.contents);
     // 试一试 ^ 将此行注释去掉    
+
 }

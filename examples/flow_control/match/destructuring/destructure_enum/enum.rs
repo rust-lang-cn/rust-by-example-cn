@@ -1,7 +1,5 @@
-// 必须 derive `Debug` 使得 `println!` 能够使用。
 // 需要 `allow` 来消除警告，因为只使用了一个变量。
 #[allow(dead_code)]
-#[derive(Debug)]
 enum Color {
     // 这三者仅由它们的名字来表示。
     Red,

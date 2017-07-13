@@ -1,10 +1,10 @@
-闭包从封闭的作用中域捕获变量简单明了。这样会有什么后果吗？当然会。观察到在函数中使用闭包的方式要求是[泛型][generics]，它们定义的方式决定了这是必要的（原文：Observe how using a closure in a function requires [generics], which is necessary because of how they are defined）：
+闭包从封闭的作用中域捕获变量简单明了。这样会有某些后果吗？当然会。观察一下使用闭包作为函数参量的方式是要求为[泛型][generics]的，它们定义的方式决定了这是必要的（原文：Observe how using a closure as a function parameter requires [generics], which is necessary because of how they are defined）：
 
 ```rust
 // `F` 必须是泛型。
 fn apply<F>(f: F) where
     F: FnOnce() {
-    f()
+    f();
 }
 ```
 

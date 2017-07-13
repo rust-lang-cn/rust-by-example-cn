@@ -2,7 +2,7 @@
 // —— 确切地讲是 `print` 要求的类型。
 fn apply<F>(f: F) where
     F: Fn() {
-    f()
+    f();
 }
 
 fn main() {

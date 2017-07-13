@@ -4,7 +4,7 @@ fn apply<F>(f: F) where
     F: FnOnce() {
     // ^ 试一试：将 `FnOnce` 换成 `Fn` 或 `FnMut`。
 
-    f()
+    f();
 }
 
 // 使用闭包并返回一个 `i32` 整型的函数。
@@ -20,6 +20,7 @@ fn main() {
     
     let greeting = "hello";
     // 不可复制的类型。
+    // `to_owned` 从借用的数据创建属于自己的数据。
     let mut farewell = "goodbye".to_owned();
 
     // 捕获 2 个变量：通过引用方式的 `greeting` 和
@@ -47,6 +48,7 @@ fn main() {
     // which applies the closure）。
     apply(diary);
 
+    // `double` 满足 `apply_to_3` 的 trait 限定。
     let double = |x| 2 * x;
 
     println!("3 doubled: {}", apply_to_3(double));

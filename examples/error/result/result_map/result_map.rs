@@ -1,7 +1,6 @@
 use std::num::ParseIntError;
 
-// 返回类型重写之后，我们继续使用模式匹配，而不需要用到 `unwrap()`，
-// 但代码会显得冗余。
+// 返回类型重写之后，我们使用模式匹配，而不使用 `unwrap()`。
 fn double_number(number_str: &str) -> Result<i32, ParseIntError> {
     match number_str.parse::<i32>() {
         Ok(n)  => Ok(2 * n),

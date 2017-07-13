@@ -1,3 +1,5 @@
+#![crate_name = "doc"]
+
 /// 这里给出一个人类
 pub struct Person {
     /// 一个人必须有名字，不管 Juliet 多讨厌他/她。

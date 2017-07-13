@@ -36,10 +36,15 @@ fn main() {
         //println!("Point Z coordinate is {}", point.z);
         // 动手试一试 ^ 将此行注释去掉。
 
+        // 好！可变引用可以作为不可变的传给 `println!`。
+        println!("Point has coordinates: ({}, {}, {})",
+                 mutable_borrow.x, mutable_borrow.y, mutable_borrow.z);
+
         // 可变引用离开作用域
     }
 
     // `point` 的不可变引用再次可用。
+    let borrowed_point = &point;
     println!("Point now has coordinates: ({}, {}, {})",
-             point.x, point.y, point.z);
+             borrowed_point.x, borrowed_point.y, borrowed_point.z);
 }

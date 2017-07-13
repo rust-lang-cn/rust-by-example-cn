@@ -14,13 +14,13 @@ impl fmt::Display for MinMax {
 
 // 为了比较，定义一个含有字段的结构体。
 #[derive(Debug)]
-struct Point2 {
+struct Point2D {
     x: f64,
     y: f64,
 }
 
-// 类似地对 Point2 进行实现
-impl fmt::Display for Point2 {
+// 类似地对 Point2D 进行实现
+impl fmt::Display for Point2D {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // 自定义方式实现，仅让 `x` 和 `y` 标识出来。
         write!(f, "x: {}, y: {}", self.x, self.y)
@@ -41,7 +41,7 @@ fn main() {
              small = small_range,
              big = big_range);
 
-    let point = Point2 { x: 3.3, y: 7.2 };
+    let point = Point2D { x: 3.3, y: 7.2 };
 
     println!("Compare points:");
     println!("Display: {}", point);

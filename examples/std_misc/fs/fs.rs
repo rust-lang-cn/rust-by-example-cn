@@ -24,7 +24,7 @@ fn echo(s: &str, path: &Path) -> io::Result<()> {
 
 // `% touch path`（忽略已存在文件）的简单实现
 fn touch(path: &Path) -> io::Result<()> {
-    match OpenOptions::new().create(true).open(path) {
+    match OpenOptions::new().create(true).write(true).open(path) {
         Ok(_) => Ok(()),
         Err(e) => Err(e),
     }

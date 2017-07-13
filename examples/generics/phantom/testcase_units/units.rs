@@ -7,11 +7,12 @@ enum Inch {}
 #[derive(Debug, Clone, Copy)]
 enum Mm {}
 
-/// `Length` 是一个带有虚位类型参量的 `Unit`（单位）。
+/// `Length` 是一个带有虚位类型参量的 `Unit`（单位），
+/// 而且不是关于长类型（即 `f64`）的泛型。
 ///
 /// `f64` 已经实现了 `Clone` 和 `Copy` trait.
 #[derive(Debug, Clone, Copy)]
-struct Length<Unit>(f64,PhantomData<Unit>);
+struct Length<Unit>(f64, PhantomData<Unit>);
 
 /// `Add` trait 定义了 `+` 运算符的行为。
 impl<Unit> Add for Length<Unit> {
@@ -38,8 +39,8 @@ fn main() {
     let two_meters = one_meter + one_meter;
 
     // 加法正常执行。
-    println!("one foot + one_foot = {:?}", two_feet);
-    println!("one meter + one_meter = {:?}", two_meters);
+    println!("one foot + one_foot = {:?} in", two_feet.0);
+    println!("one meter + one_meter = {:?} mm", two_meters.0);
 
     // 无意义的操作将会失败，因为它们会导致：
     // 编译期报错：类型不匹配（Compile-time Error: type mismatch.）。

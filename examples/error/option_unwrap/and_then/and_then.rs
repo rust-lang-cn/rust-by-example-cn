@@ -32,7 +32,7 @@ fn cookable_v1(food: Food) -> Option<Food> {
     }
 }
 
-// 这可以使用 `and_then()` 方便地重写出更紧凑的代码：
+// 这可以使用 `and_then()` 方便重写出更紧凑的代码：
 fn cookable_v2(food: Food) -> Option<Food> {
     have_ingredients(food).and_then(have_recipe)
 }

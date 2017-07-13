@@ -1,7 +1,7 @@
 # 通过例子学 Rust
 
 [![Build Status][travis-image]][travis-link]  
-> 已翻译完全部内容，欢迎纠正——2016-08-07  
+> 已于 2016-08-07 翻译完全部内容，欢迎纠正——最后更新时间 2017-02-14  
 > Chinese translation of the [Rust by Example][rust-by-example]
 
 ## 这是什么？
@@ -19,14 +19,14 @@
 安装 [Rust](http://www.rust-lang.org/install.html) 并执行以下命令：
 
 ```
-sudo apt-get install nodejs npm subversion
+sudo apt-get install nodejs npm subversion calibre
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
 ### 非 Debian 类型的发行版
 
 安装 Rust [nightly](http://www.rust-lang.org/install.html)，
-`node`, `npm`, 和 `subversion`。
+`node`, `npm`, `subversion` 和 `calibre`。
 
 ### 编译指示
 
@@ -103,8 +103,8 @@ license 两种协议进行授权。
 详情参见 LICENSE-APACHE 和 LICENSE-MIT。
 
 [rust-by-example]: https://github.com/rust-lang/rust-by-example
-[travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
-[travis-link]: https://travis-ci.org/rust-lang/rust-by-example
+[travis-image]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn.svg?branch=master
+[travis-link]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn
 [website]: http://rustbyexample.com
 [website-cn]: http://rustwiki.org/rust-by-example
 [how-to-contribute]: CONTRIBUTING.md

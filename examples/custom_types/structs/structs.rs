@@ -39,6 +39,9 @@ fn main() {
     // 实例化一个元组结构体
     let pair = Pair(1, 0.1);
 
+    // 访问元组结构体的字段
+    println!("pair contains {:?} and {:?}", pair.0, pair.1);
+
     // 解构一个元组结构体
     let Pair(integer, decimal) = pair;
 
