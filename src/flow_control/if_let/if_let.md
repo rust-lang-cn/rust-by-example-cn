@@ -6,11 +6,11 @@ let optional = Some(7);
 match optional {
     Some(i) => {
         println!("This is a really long string and `{:?}`", i);
-		// ^ 行首需要2个缩进，就这样可以从 option 类型中对 `i`
-		// 进行解构
+        // ^ 行首需要2个缩进，就这样可以从 option 类型中对 `i`
+        // 进行解构
     },
     _ => {},
-	// ^ 必需内容，因为 `match` 需要覆盖全部情况。难道不觉得冗余吗？
+    // ^ 必需内容，因为 `match` 需要覆盖全部情况。难道不觉得冗余吗？
 };
 
 ```

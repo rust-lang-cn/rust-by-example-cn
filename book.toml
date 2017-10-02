@@ -1,0 +1,7 @@
+title = "通过例子学中文"
+description = "A description"
+author = "The Rust Community"
+translator = "Aaklo Xu"
+
+[output.html.playpen]
+editable = true
