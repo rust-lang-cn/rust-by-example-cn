@@ -11,13 +11,64 @@ $ tree .
 `-- split.rs
 ```
 
-{split.rs}
+```rust,editable
+// 此声明将会查找名为 `my.rs` 或 `my/mod.rs` 的文件，并将该文件的内容插入到
+// 此作用域名为 `my` 的模块里面。
+mod my;
 
-{my/mod.rs}
+fn function() {
+    println!("called `function()`");
+}
 
-{my/nested.rs}
+fn main() {
+    my::function();
 
-{my/inaccessible.rs}
+    function();
+
+    my::indirect_access();
+
+    my::nested::function();
+}
+```
+
+```rust,editable
+// 类似地，`mod inaccessible` 和 `mod nested` 将找到 `nested.rs` 和
+// `inaccessible.rs` 文件，并在它们各自的模块中插入它们的内容。
+mod inaccessible;
+pub mod nested;
+
+pub fn function() {
+    println!("called `my::function()`");
+}
+
+fn private_function() {
+    println!("called `my::private_function()`");
+}
+
+pub fn indirect_access() {
+    print!("called `my::indirect_access()`, that\n> ");
+
+    private_function();
+}
+```
+
+```rust,editable
+pub fn function() {
+    println!("called `my::nested::function()`");
+}
+
+#[allow(dead_code)]
+fn private_function() {
+    println!("called `my::nested::private_function()`");
+}
+```
+
+```rust,editable
+#[allow(dead_code)]
+pub fn public_function() {
+    println!("called `my::inaccessible::public_function()`");
+}
+```
 
 我们看到代码仍然正常运行，就和前面的一样：
 

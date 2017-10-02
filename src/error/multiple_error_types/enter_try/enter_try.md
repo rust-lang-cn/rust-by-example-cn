@@ -7,7 +7,35 @@
 
 `try!` **几乎完全**[^1]等同于一个这样的 `unwrap`——对待错误（`Err`）采用返回的方式而不是 `panic。我们来看看如何简化之前使用组合算子的示例：
 
-{try.play}
+```rust,editable
+// 使用 `String` 作为错误类型
+type Result<T> = std::result::Result<T, String>;
+
+fn double_first(vec: Vec<&str>) -> Result<i32> {
+    let first = try!(vec.first()
+        .ok_or("Please use a vector with at least one element.".to_owned()));
+    
+    let value = try!(first.parse::<i32>()
+        .map_err(|e| e.to_string()));
+    
+    Ok(2 * value)
+}
+
+fn print(result: Result<i32>) {
+    match result {
+        Ok(n)  => println!("The first doubled is {}", n),
+        Err(e) => println!("Error: {}", e),
+    }
+}
+
+fn main() {
+    let empty = vec![];
+    let strings = vec!["tofu", "93", "18"];
+
+    print(double_first(empty));
+    print(double_first(strings));
+}
+```
 
 注意到目前为止，我们一直使用 `String` 作为错误类型。但它们作为错误类型是有一定限制的。在下一节中，我们将学习如何通过自定义类型来创建更具结构化和更多信息量的错误。
 

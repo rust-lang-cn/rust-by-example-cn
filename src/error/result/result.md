@@ -13,7 +13,20 @@
 
 我们来看看当 `parse()` 字符串成功和失败时会发生什么：
 
-{result.play}
+```rust,editable
+fn double_number(number_str: &str) -> i32 {
+    // 让我们尝试使用 `unwrap()` 把数字取出来。它会咬我们吗？
+    2 * number_str.parse::<i32>().unwrap()
+}
+
+fn main() {
+    let twenty = double_number("10");
+    println!("double is {}", twenty);
+
+    let tt = double_number("t");
+    println!("double is {}", tt);
+}
+```
 
 在失败的情况下，`parse()` 留给我们一个错误，让 `unwrap()` 产生 `panic`（原文：`parse()` leaves us with an error for `unwrap()` to `panic` on）。另外，`panic` 会退出我们的程序，并提供一个不愉快的错误消息。
 

@@ -2,7 +2,30 @@
 
 因为我们正在处理的程序只有一个线程，`panic!` 将会引发程序上报 panic 消息并退出。
 
-{panic.play}
+```rust,editable
+// 再次实现整型的除法（/）
+fn division(dividend: i32, divisor: i32) -> i32 {
+    if divisor == 0 {
+        // 除以一个 0 时会引发一个 panic
+        panic!("division by zero");
+    } else {
+        dividend / divisor
+    }
+}
+
+// `main` 任务
+fn main() {
+    // 堆分配的整数
+    let _x = Box::new(0i32);
+
+    // 此操作将会引发一个任务失败
+    division(3, 0);
+
+    println!("This point won't be reached!");
+
+    // `_x` 在此处将被销毁
+}
+```
 
 由分析知道， panic!不会泄露内存
 

@@ -8,9 +8,25 @@
 ### 原始指针
 原始指针（裸指针） `*` 和引用 `&T` 有类似的功能，但引用总是安全的，因为它们保证指向一个有效的数据，这得益于借用检查器（borrow checker）。解引用一个裸指针只能通过不安全代码块中来完成。
 
-{pointer.rs}
+```rust,editable
+fn main() {
+    let raw_p: *const u32 = &10;
+
+    unsafe {
+        assert!(*raw_p == 10);
+    }
+}
+```
 
 ### Transmute（转变）
 从一种类型变到另一种类型的允许简单转换，但是两种类型必须拥有相同的大小和排列：
 
-{transmute.rs}
+```rust,editable
+fn main() {
+    let u: &[u8] = &[49, 50, 51];
+
+    unsafe {
+        assert!(u == std::mem::transmute::<&str, &[u8]>("123"));
+    }
+}
+```

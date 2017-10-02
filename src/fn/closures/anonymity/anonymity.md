@@ -18,7 +18,24 @@ This type is assigned to the variable which is stored until calling）。
 未限定的类型参量 `<T>` 仍然是不明确的并且是不允许的。因此通过其中一种 
 `trait`：`Fn`，`FnMut`，或 `RnOnce`（已经实现）就足以指明它的类型。
 
-{anonymity.play}
+```rust,editable
+// `F` 必须针对一个没有输入参数和返回值的闭包实现 `Fn`
+// —— 确切地讲是 `print` 要求的类型。
+fn apply<F>(f: F) where
+    F: Fn() {
+    f();
+}
+
+fn main() {
+    let x = 7;
+
+    // 捕获的 `x` 成为一个匿名类型并为它实现 `Fn`。
+    // 将它存储到 `print` 中。
+    let print = || println!("{}", x);
+
+    apply(print);
+}
+```
 
 ### 参见：
 

@@ -8,7 +8,29 @@ Rust 有两种常量，可以在任意作用域声明，包括全局作用域。
 `'static` 生命周期。这似乎是无关紧要的，因为所需的显式标记会隐藏差异（This may seem minor
  though because the required explicit annotation hides the distinction.）。
 
-{constants.play}
+```rust,editable
+// 在所有的作用域外声明全局变量。
+static LANGUAGE: &'static str = "Rust";
+const  THRESHOLD: i32 = 10;
+
+fn is_big(n: i32) -> bool {
+    // 在一般函数中访问常量
+    n > THRESHOLD
+}
+
+fn main() {
+    let n = 16;
+
+    // 在 main 函数(主函数)中访问常量
+    println!("This is {}", LANGUAGE);
+    println!("The threshold is {}", THRESHOLD);
+    println!("{} is {}", n, if is_big(n) { "big" } else { "small" });
+
+    // 报错！不能修改一个 `const` 常量。
+    THRESHOLD = 5;
+    // 改正 ^ 注释掉此行
+}
+```
 
 ### 参见：
 

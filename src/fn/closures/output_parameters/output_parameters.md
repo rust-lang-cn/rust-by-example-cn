@@ -8,7 +8,27 @@
 
 除此之外，还必须使用 `move` 关键字，它表明了通过值来产生全部的捕获（which signals that all captures occur by value）。这是必需的，因为在函数退出的同时任何通过引用捕获的值将被丢弃（dropped），在闭包中留下无效的引用。
 
-{output_parameters.play}
+```rust,editable
+fn create_fn() -> Box<Fn()> {
+    let text = "Fn".to_owned();
+
+    Box::new(move || println!("This is a: {}", text))
+}
+
+fn create_fnmut() -> Box<FnMut()> {
+    let text = "FnMut".to_owned();
+
+    Box::new(move || println!("This is a: {}", text))
+}
+
+fn main() {
+    let fn_plain = create_fn();
+    let mut fn_mut = create_fnmut();
+
+    fn_plain();
+    fn_mut();
+}
+```
 
 ### 参见：
 

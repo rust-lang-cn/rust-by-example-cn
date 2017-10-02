@@ -3,7 +3,22 @@
 
 让我们使用 `for` 代替 `while` 来写 FizzBuzz 程序。
 
-{for.play}
+```rust,editable
+fn main() {
+    // `n` 将从 1, 2, ..., 100 这些值依次获取进行每次循环
+    for n in 1..101 {
+        if n % 15 == 0 {
+            println!("fizzbuzz");
+        } else if n % 3 == 0 {
+            println!("fizz");
+        } else if n % 5 == 0 {
+            println!("buzz");
+        } else {
+            println!("{}", n);
+        }
+    }
+}
+```
 
 ### 参见：
 
