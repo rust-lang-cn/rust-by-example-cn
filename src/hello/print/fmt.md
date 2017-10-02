@@ -28,7 +28,7 @@ impl Display for City {
         let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
 
         // `write!` 和 `format!` 类似，但它会将格式化后的字符串写入到一个缓冲区
-        // 中（第一个除数f）
+        // 中（第一个参数f）
         write!(f, "{}: {:.3}°{} {:.3}°{}",
                self.name, self.lat.abs(), lat_c, self.lon.abs(), lon_c)
     }
