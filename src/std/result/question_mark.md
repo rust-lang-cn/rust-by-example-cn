@@ -1,6 +1,6 @@
-使用匹配链接结果会得到极其繁琐的内容；幸运的是，`try!` 宏可以使事情再次变得干净漂亮。`try!` 宏展开一个匹配表达式，其中 `Err(err)` 分支扩展了提前（返回）`return Err(err)`，同时 `Ok(ok)` 分支扩展成 `ok` 表达式。
+使用匹配链接结果会得到极其繁琐的内容；幸运的是，`?` 运算符可以使事情再次变得干净漂亮。`?` 运算符用在返回值为 `Result` 的表式式后面，等同于这样一个匹配表式，其中 `Err(err)` 分支展开成提前（返回）`return Err(err)`，同时 `Ok(ok)` 分支展开成 `ok` 表达式。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 mod checked {
     #[derive(Debug)]
     enum MathError {
@@ -38,10 +38,10 @@ mod checked {
     // 中间函数
     fn op_(x: f64, y: f64) -> MathResult {
         // 如果 `div` “失败”了，那么 `DivisionByZero` 将被返回
-        let ratio = try!(div(x, y));
+        let ratio = div(x, y)?;
 
         // 如果 `ln` “失败”了，那么 `NegativeLogarithm` 将被返回
-        let ln = try!(ln(ratio));
+        let ln = ln(ratio)?;
 
         sqrt(ln)
     }
@@ -68,4 +68,4 @@ fn main() {
 
 记得查阅[文档][docs]，里面有很多匹配/组合 `Result`。
 
-[docs]: http://doc.rust-lang.org/std/result/index.html
+[docs]: https://doc.rust-lang.org/std/result/index.html
