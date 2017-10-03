@@ -1,3 +1,5 @@
+# 结构体
+
 类似地，解构 `struct` 如下所示：
 
 ```rust,editable

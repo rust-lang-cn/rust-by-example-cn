@@ -1,3 +1,5 @@
+# 可变变量
+
 变量绑定默认是不可变的，但加上 `mut` 修饰语后变量就可以改变。
 
 ```rust,editable,ignore,mdbook-runnable

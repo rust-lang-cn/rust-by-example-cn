@@ -1,3 +1,5 @@
+# C 风格用法
+
 `enum` 也可以像 C 语言枚举那样使用。
 
 ```rust,editable

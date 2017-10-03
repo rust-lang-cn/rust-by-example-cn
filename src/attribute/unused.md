@@ -1,3 +1,5 @@
+# 死代码 `dead_code`
+
 编译器提供了 `dead_code`（死代码，无效代码） [*lint*][lint]，这会对未使用的函数产生警告。可以加上**属性**来抑制这个 lint。
 
 ```rust,editable

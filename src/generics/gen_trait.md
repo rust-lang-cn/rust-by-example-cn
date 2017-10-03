@@ -1,3 +1,5 @@
+# 特性 trait
+
 当然 `trait` 也可以是泛型。我们在这里定义了一个实现 `Drop` 的 `trait`，作为泛型方法来 `drop`（丢弃） 它本身和输入参数。
 
 ```rust,editable

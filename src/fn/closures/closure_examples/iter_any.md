@@ -1,3 +1,5 @@
+# Iterator::any
+
 `Iterator::any` 是一个函数，在处理一个迭代器（iterator）时，当其中任一元素符合条件（predicate）时将返回 `true`，否则返回 `false`。它的原型如下：
 
 ```rust,ignore

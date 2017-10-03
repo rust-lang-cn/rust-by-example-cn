@@ -1,3 +1,5 @@
+# 闭包
+
 闭包（closure）在 Rust 中也称为 lambda，是一类捕获封闭环境的函数。例如，一个可以捕获 x 变量的闭包如下：
 ```Rust
 |val| val + x

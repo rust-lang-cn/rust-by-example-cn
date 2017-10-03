@@ -1,3 +1,5 @@
+# 派生
+
 通过 `#[derive]` [属性][attribute]，编译器能够提供一些对于 trait 的基本实现。如果需要一个更复杂的业务，这些 trait 仍然可以手动实现。（原文：The compiler is capable of providing basic implementations for some traits via the `#[derive]` [attribute][attribute]. These traits can still be manually implemented if a more complex behavior is required.）
 
 下面列举了 “derivable”（可派生的）trait：

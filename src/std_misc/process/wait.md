@@ -1,3 +1,5 @@
+# 等待 Wait
+
 如果你想等待 `process::Child` 完成，就必须调用 `Child::wait`，这会返回一个 `process::ExitStatus`。
 
 ```rust,ignore

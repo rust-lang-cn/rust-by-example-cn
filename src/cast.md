@@ -1,3 +1,5 @@
+# 类型转换
+
 Rust 在基本类型之间没有提供隐式类型转换（强制类型转换）（implicit type conversion，coercion
 ）。不过使用 `as` 关键字进行显式类型转换（explict type conversion，casting）。
 

@@ -1,3 +1,5 @@
+# 字符串 String
+
 Rust 中有两种字符串类型：`String` 和 `&str`。
 
 `String` 被存储为一个字节形式（`Vec<u3>`）的vector ，但确保一定是一个有效的 UTF-8 序列。`String` 是堆分配的，可增大且无上限。

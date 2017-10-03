@@ -137,7 +137,7 @@
     - [结果 `Result`](error/result.md)
         - [关于 `Result` 的 `map`](error/result/result_map.md)
         - [给 `Result` 起别名](error/result/result_alias.md)
-    - [各种错误类型](error/multiple_error_types.md)    
+    - [各种错误类型](error/multiple_error_types.md)
         - [提前返回](error/multiple_error_types/early_returns.md)
         - [介绍 `try!`](error/multiple_error_types/enter_try.md)
     - [定义一个错误类型](error/define_error_type.md)

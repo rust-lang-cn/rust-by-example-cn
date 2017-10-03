@@ -1,3 +1,5 @@
+# Iterator::find
+
 `Iterator::find` 是一个函数，在处理一个迭代器（iterator）时，将返回第一个满足条件的元素作为一个 `Option` 类型。它的原型如下：
 
 ```rust,ignore

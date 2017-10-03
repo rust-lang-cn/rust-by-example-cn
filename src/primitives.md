@@ -1,3 +1,5 @@
+# 原生类型
+
 Rust 提供了多种原生类型，包括：
 
 * 有符号整型（signed integers）：`i8`， `i16`， `i32`， `i64` 和 `isize`（指针 size）

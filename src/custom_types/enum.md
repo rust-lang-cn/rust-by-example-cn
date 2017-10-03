@@ -1,3 +1,5 @@
+# 枚举
+
 `enum` 关键字允许创建一个代表数个可能变量的数据的类型（原文：The `enum` keyword allows
  the creation of a type which may be one of a few different variants.若您对此句有
  更好的翻译或理解，希望指出来，谢谢。）。在 `struct` 中合法的任意变量在 `enum` 同样是合法的。

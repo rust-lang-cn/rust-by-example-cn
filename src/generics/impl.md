@@ -1,3 +1,5 @@
+# 实现
+
 和函数类似，实现（implementation）也需要关注保持泛型。（原文：Similar to functions, implementations require care to remain generic.）
 
 ```rust

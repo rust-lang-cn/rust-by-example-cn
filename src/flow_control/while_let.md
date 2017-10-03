@@ -1,3 +1,5 @@
+# while let
+
 和 `if let` 类似，`while let` 会产生更加难看的 `match` 的一连串内容。
 考虑下面的有关增量 `i` 的一连串内容：
 
@@ -9,7 +11,7 @@ let mut optional = Some(0);
 // 重复运行这个测试。
 loop {
     match optional {
-		// 如果 `optional` 解构成功，就执行下面语句块。
+        // 如果 `optional` 解构成功，就执行下面语句块。
         Some(i) => {
             if i > 9 {
                 println!("Greater than 9, quit!");
@@ -20,9 +22,9 @@ loop {
             }
             // ^ 需要三个缩进！
         },
-		// 当解构失败时退出循环：
+        // 当解构失败时退出循环：
         _ => { break; }
-		// ^ 为什么要这样的语句呢？肯定有更优雅的处理方式！
+        // ^ 为什么要这样的语句呢？肯定有更优雅的处理方式！
     }
 }
 ```

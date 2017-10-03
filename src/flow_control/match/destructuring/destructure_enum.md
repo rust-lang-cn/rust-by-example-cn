@@ -1,3 +1,5 @@
+# 枚举
+
 和前面相似，解构 `enum` 方式如下：
 
 ```rust,editable

@@ -1,3 +1,5 @@
+# 外部语言函数接口
+
 Rust 提供了外部语言函数接口（Foreign Function Interface，FFI）到 C 语言库。外部语言函数必须声明在一个 `extern` 代码块，且该代码块要带有一个包含外部语言库名称的 `#[link]` 属性。
 
 ```rust,ignore

@@ -1,3 +1,5 @@
+# 冻结
+
 当数据被不可变地借用时，它还会**冻结**（*freeze*）。**已冻结**（*frozen*）数据无法通过原始对象来修改，直到指向这些数据的所有引用离开作用域为止。
 
 ```rust,editable,ignore,mdbook-runnable

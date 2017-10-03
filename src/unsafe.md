@@ -1,3 +1,5 @@
+# 不安全操作
+
 为了介绍本章内容，我们借用[官方文档](http://doc.rust-lang.org/book/unsafe.html)的一句话, “在基本代码中尽可能减少不安全的代码”（"one should try to minimize the amount of unsafe code in a code base."）。记住这句话，接着我们进入学习！在 Rust 中，不安全代码块是用于避开编译器的保护策略；具体地说，不安全代码块主要有 4 方面内容：
 
 * 解引用裸指针

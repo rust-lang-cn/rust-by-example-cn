@@ -1,3 +1,5 @@
+# 打开文件 `open`
+
 `open` 静态方法能够以只读模式（read-only mode）打开一个文件。
 
 `File` 拥有一个资源，文件描述符（file descriptor），以及在文件丢弃时管理好关闭文件的操作。（原文：A `File` owns a resource, the file descriptor and takes care of closing the file when it is `drop`ed.）

@@ -1,3 +1,5 @@
+# 类型匿名
+
 闭包从封闭的作用中域捕获变量简单明了。这样会有某些后果吗？当然会。观察一下使用闭包作为函数参量的方式是要求为[泛型][generics]的，它们定义的方式决定了这是必要的（原文：Observe how using a closure as a function parameter requires [generics], which is necessary because of how they are defined）：
 
 ```rust

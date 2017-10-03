@@ -1,3 +1,5 @@
+# 泛型
+
 **泛型**（generic）可以泛化类型和功能，以扩大适用范围。减少代码的重复是相当重要的，这可以通过多种方式实现，不过需要相当繁琐的语法。也就是说，用到泛型需要特别谨慎地指出哪种类型对于泛型类型来说是有效的。使用泛型最简单且最常见的方式就是用到类型参量（type parameter）。（本段原文：
 *Generics* is the topic of generalizing types and functionalities to broader
 cases. This is extremely useful for reducing code duplication in many ways,

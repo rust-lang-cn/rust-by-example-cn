@@ -1,3 +1,5 @@
+# 散列集 HashSet
+
 考虑 `HashSet` 作为一个 `HashMap`，在此处我们只关心键（`HashSet<T>` 实际上只是一个包围 `HashMap<T, ()>` 的装包（wrapper））。（原文：Consider a `HashSet` as a `HashMap` where we just care about the keys (`HashSet<T>` is, in actuality, just a wrapper around `HashMap<T, ()>`).）
 
 “关键点是什么呢？”你可能会这样问。“我可以将键只存储到一个 `Vec` 中。”

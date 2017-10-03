@@ -1,3 +1,5 @@
+# 多重限定
+
 使用多重限定（multiple bounds）可以用 `+` 连接。和平常一样，不同的类型使用 `,` 隔开。
 
 ```rust,editable

@@ -1,3 +1,5 @@
+# 创建文件 `create`
+
 `create` 静态方法以只写模式（write-only mode）打开一个文件。若文件已经存在，则旧内容将被销毁。否则，将创建一个新文件。
 
 ```rust,ignore

@@ -1,3 +1,5 @@
+# Iterators
+
 `Iterator` trait 用来实现关于集合（collection）类型（比如数组）的迭代器。
 
 这个 trait 只需定义一个指向 `next`（下一个）元素的方法，这可手动在 `impl` 代码块中定义，或者自动定义（比如在数组或区间中）。
