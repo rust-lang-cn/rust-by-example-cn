@@ -1,4 +1,4 @@
-# try!` 的其他用法
+# `try!` 的其他用法
 
 注意在前面的例子中，我们对调用 `parse` 的最直接反应就是将错误从库错误映射到我们的新的自定义错误类型（原文：Notice in the previous example that our immediate reaction to calling `parse` is to `map` the error from a library error into our new custom error type）：
 
