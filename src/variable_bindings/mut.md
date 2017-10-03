@@ -1,6 +1,6 @@
 变量绑定默认是不可变的，但加上 `mut` 修饰语后变量就可以改变。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn main() {
     let _immutable_binding = 1;
     let mut mutable_binding = 1;

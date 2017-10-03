@@ -13,7 +13,7 @@
 
 我们来看看当 `parse()` 字符串成功和失败时会发生什么：
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn double_number(number_str: &str) -> i32 {
     // 让我们尝试使用 `unwrap()` 把数字取出来。它会咬我们吗？
     2 * number_str.parse::<i32>().unwrap()

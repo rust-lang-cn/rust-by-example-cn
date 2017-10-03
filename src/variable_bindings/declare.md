@@ -1,7 +1,7 @@
 Rust 语言可以先声明变量绑定，后面才将它们初始化。但是这种情况用得很少，因为这样很可能导致使用未
 初始的变量。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn main() {
     // 声明一个变量绑定
     let a_binding;

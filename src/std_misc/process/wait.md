@@ -1,6 +1,6 @@
 如果你想等待 `process::Child` 完成，就必须调用 `Child::wait`，这会返回一个 `process::ExitStatus`。
 
-```rust,editable
+```rust,ignore
 use std::process::Command;
 
 fn main() {
@@ -11,7 +11,7 @@ fn main() {
 }
 ```
 
-```
+```bash
 $ rustc wait.rs && ./wait
 reached end of main
 # `wait` keeps running for 5 seconds

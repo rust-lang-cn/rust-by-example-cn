@@ -1,6 +1,6 @@
 `create` 静态方法以只写模式（write-only mode）打开一个文件。若文件已经存在，则旧内容将被销毁。否则，将创建一个新文件。
 
-```rust,editable
+```rust,ignore
 static LOREM_IPSUM: &'static str =
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-Here's the expected successful output:
+下面是预期成功的输出：
 
-```
+```bash
 $ mkdir out
 $ rustc create.rs && ./create
 successfully wrote to out/lorem_ipsum.txt

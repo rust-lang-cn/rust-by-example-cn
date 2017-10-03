@@ -1,6 +1,6 @@
 `std::io::fs` 模块包含几个处理文件系统的函数。
 
-```rust,editable
+```rust,ignore
 use std::fs;
 use std::fs::{File, OpenOptions};
 use std::io;
@@ -97,7 +97,7 @@ fn main() {
 
 下面是预期成功的输出：
 
-```
+```bash
 $ rustc fs.rs && ./fs
 `mkdir a`
 `echo hello > a/b.txt`
@@ -121,7 +121,7 @@ $ rustc fs.rs && ./fs
 
 且 `a` 目录的最终状态为：
 
-```
+```text
 $ tree a
 a
 |-- b.txt
@@ -130,6 +130,17 @@ a
 
 1 directory, 2 files
 ```
+
+另一种定义 `cat` 函数的方式是使用 `?` 标记：
+
+```rust,ignore
+fn cat(path: &Path) -> io::Result<String> {
+	let mut f = File::open(path)?;
+    let mut s = String::new();
+    f.read_to_string(&mut s)?;
+    Ok(s)
+}
+```				
 
 ### 参见：
 

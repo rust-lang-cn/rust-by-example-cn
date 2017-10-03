@@ -23,7 +23,7 @@ pub fn indirect_access() {
 
 当用到 `crate_type` 属性时，就不再需要给 `rustc` 命令加上 `--crate-type` 标记。
 
-```
+```bash
 $ rustc lib.rs
 $ ls lib*
 library.rlib

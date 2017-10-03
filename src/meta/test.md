@@ -36,7 +36,7 @@ mod test {
 
 通过 `cargo test` 或 `rustc --test` 运行测试。
 
-```
+```bash
 $ rustc --test unit_test.rs
 $ ./unit_test 
 
@@ -49,7 +49,7 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured
 
 若 `--test` 没有包含进来，则会出现这样的情况：
 
-```
+```bash
 $ rustc unit_test.rs
 $ ./unit_test
 If you see this, the tests were not compiled nor ran!

@@ -16,7 +16,7 @@ pub fn indirect_access() {
 }
 ```
 
-```
+```bash
 $ rustc --crate-type=lib rary.rs
 $ ls lib*
 library.rlib

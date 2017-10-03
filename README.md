@@ -6,7 +6,7 @@
 
 ## 使用
 
-如果想阅读《通过例子学 Rust》，可以直接访问 [https://rustwiki.org/rust-by-example/][website-cn] 在线上阅读。（英文阅读地址：[http://rustwiki.org/rust-by-example][website]）
+如果想阅读《通过例子学 Rust》，可以直接访问 [https://rustwiki.org/rust-by-example/][website-cn] 在线上阅读。（英文阅读地址：[https://rustbyexample.com/][website]）
 
 若想在本地阅读，请先[安装 Rust][install Rust]，然后进行下面操作：
 

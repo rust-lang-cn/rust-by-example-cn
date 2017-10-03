@@ -22,7 +22,7 @@
 
 在下面的例子中尝试使用这些操作。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 use std::collections::HashSet;
 
 fn main() {

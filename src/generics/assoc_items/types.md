@@ -15,7 +15,7 @@ trait Contains {
 
 注意到上面函数用到了 `Contains` `trait`，再也不需要表达 `A` 或 `B`：
 
-```rust
+```rust,ignore
 // 不使用关联类型
 fn difference<A, B, C>(container: &C) -> i32 where
     C: Contains<A, B> { ... }

@@ -4,7 +4,7 @@
 
 * 当分开指定泛型类型和限定时更清晰情况：
 
-```rust
+```rust,ignore
 impl <A: TraitB + TraitC, D: TraitE + TraitF> MyTrait<A, D> for YourType {}
 
 // 使用 `where` 从句来表达限定

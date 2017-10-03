@@ -1,6 +1,6 @@
 借用检查器使用显式的生命周期来明确引用的有效时间应该持续多久。在生命周期没有省略[^1]的情况，Rust 需要显式标注来确定引用的生命周期应该是什么样的。对于显式地标注引用的生命周期的语法如下：
 
-```rust
+```rust,ignore
 foo<'a>
 // `foo` 带有一个生命周期参量 `'a`
 ```
@@ -10,7 +10,7 @@ foo<'a>
 In cases with multiple lifetimes, the syntax is similar:
 对于多个生命周期的情况，语法是类似的：
 
-```rust
+```rust,ignore
 foo<'a, 'b>
 // `foo` 带有生命周期参量 `'a` 和 `'b`
 ```
@@ -19,7 +19,7 @@ foo<'a, 'b>
 
 看下面的例子，了解显式生命周期标注的运用：
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // 生命周期 `'a` 和 `'b`。这两个生命周期都必须至少要和 `print_refs`
 // 函数的一样长。
 fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {

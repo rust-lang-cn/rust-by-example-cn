@@ -10,7 +10,7 @@ is for type parameters.）
 
 例如定义一个名为 `foo` 的 **泛型函数**，可接受一个任意类型的参数 `T`：
 
-```rust
+```rust,ignore
 fn foo<T>(T) { ... }
 ```
 

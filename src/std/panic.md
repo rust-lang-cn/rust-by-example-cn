@@ -2,7 +2,7 @@
 
 因为我们正在处理的程序只有一个线程，`panic!` 将会引发程序上报 panic 消息并退出。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // 再次实现整型的除法（/）
 fn division(dividend: i32, divisor: i32) -> i32 {
     if divisor == 0 {
@@ -29,7 +29,7 @@ fn main() {
 
 由分析知道， panic!不会泄露内存
 
-```
+```text
 $ rustc panic.rs && valgrind ./panic
 ==4401== Memcheck, a memory error detector
 ==4401== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.

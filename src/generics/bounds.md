@@ -1,6 +1,6 @@
 在运用泛型时，类型参量常常必须使用 trait 作为**限定**（bound）来明确规定一个类型实现了哪些功能。例如下面的例子用到了 `Display` trait 来打印，所以它要求 `T` 由 `Display` 限定，也就是说 `T` **必须**实现 `Display`。
 
-```rust
+```rust,ignore
 // 定义一个函数 `printer`，接受一个泛型类型 `T`，其中 `T` 必须
 // 实现 `Display` trait。
 fn printer<T: Display>(t: T) {
@@ -10,7 +10,7 @@ fn printer<T: Display>(t: T) {
 
 限定限制了泛型为符合限定的类型。即：
 
-```rust
+```rust,ignore
 struct S<T: Display>(T);
 
 // 报错！`Vec<T>` 未实现 `Display`。

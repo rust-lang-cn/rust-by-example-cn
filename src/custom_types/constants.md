@@ -8,7 +8,7 @@ Rust 有两种常量，可以在任意作用域声明，包括全局作用域。
 `'static` 生命周期。这似乎是无关紧要的，因为所需的显式标记会隐藏差异（This may seem minor
  though because the required explicit annotation hides the distinction.）。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // 在所有的作用域外声明全局变量。
 static LANGUAGE: &'static str = "Rust";
 const  THRESHOLD: i32 = 10;

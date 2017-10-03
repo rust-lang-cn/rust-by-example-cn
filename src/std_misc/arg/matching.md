@@ -68,7 +68,7 @@ fn main() {
 }
 ```
 
-```
+```bash
 $ ./match_args Rust
 This is not the answer.
 $ ./match_args 42

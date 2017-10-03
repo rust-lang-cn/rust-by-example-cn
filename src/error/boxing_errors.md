@@ -2,7 +2,7 @@
 
 标准库会自动通过 `Form` 将任意实现了 `Error` trait 的类型转换成 trait 对象 `Box<Error>` 的类型（原文：The `std` library automatically converts any type that implements the `Error` trait into the trait object `Box<Error>`, via `From`. ）。对于一个库用户，下面可以很容易做到：
 
-```rust
+```rust,ignore
 fn foo(...) -> Result<T, Box<Error>> { ... }
 ```
 
@@ -14,7 +14,7 @@ fn foo(...) -> Result<T, Box<Error>> { ... }
 
 将内容“装包”（"Boxing"）是一个常见的选择。缺点是潜在的错误类型只能在运行时知道，且不能[静态确定][dynamic_dispatch]（statically determined）。正如刚才提到的，要做到这点所有要做的事情就是实现 `Error` trait：
 
-```rust
+```rust,ignore
 trait Error: Debug + Display {
     fn description(&self) -> &str;
     fn cause(&self) -> Option<&Error>;

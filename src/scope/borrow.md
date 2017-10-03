@@ -2,7 +2,7 @@
 
 编译器静态地保证了（通过借用检查器）引用**总是**（*always*）指向有效的对象。也就是说，当存在引用指向一个对象时，该对象不能被销毁。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // 此函数拥有 box 的所有权并销毁它
 fn eat_box_i32(boxed_i32: Box<i32>) {
     println!("Destroying box that contains {}", boxed_i32);

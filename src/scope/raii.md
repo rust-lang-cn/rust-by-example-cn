@@ -35,7 +35,7 @@ fn main() {
 
 当然我们可以使用 [`valgrind`][valgrind] 对内存错误进行仔细检查：
 
-```
+```bash
 $ rustc raii.rs && valgrind ./raii
 ==26873== Memcheck, a memory error detector
 ==26873== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.

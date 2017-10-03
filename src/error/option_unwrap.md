@@ -12,7 +12,7 @@
 请注意，手动使用 [expect][expect] 方法自定义 `panic` 是可能的，而 `unwrap` 相比显式处理则留下不太有意义的输出。在下面例子中，显式处理得到更具可控性的结果，同时若需要的话，可将选项保留为 `panic`。（本段原文：Note that it's possible to manually customize `panic` with [expect][expect], but `unwrap` otherwise leaves us with a less 
 meaningful output than explicit handling. In the following example, explicit handling yields a more controlled result while retaining the option to `panic` if desired. ）
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // 平民（commoner）已经见过所有东西，并能妥善处理好各种情况。
 // 所有礼物都通过手动使用 `match` 来处理。
 fn give_commoner(gift: Option<&str>) {

@@ -15,7 +15,7 @@ Rust 提供了多种原生类型，包括：
 整数会自动推断为 `i64` 类型，仅当使用环境无法推断时，整型数值时才断定为 `i32`，浮点数值才
 断定为 `f64`）。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn main() {
     // 变量可以声明类型。
     let logical: bool = true;

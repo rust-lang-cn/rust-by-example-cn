@@ -5,7 +5,7 @@
 * `Ok(value)` 表示操作成功，并装包操作返回的 `value`（`value` 拥有 `T` 类型）。
 * `Err(why)`，表示操作失败，并装包 `why`，它（能按照所希望的方式）解释了失败的原因（`why` 拥有 `E` 类型）。
 
-```rust,editalbe
+```rust,editalbe,ignore,mdbook-runnable
 mod checked {
     // 我们想要捕获的数学“错误”
     #[derive(Debug)]

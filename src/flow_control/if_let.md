@@ -1,4 +1,5 @@
 在一些例子中，`match` 使用起来并不优雅。比如：
+
 ```rust
 // 将 `optional` 定为 `Option<i32>` 类型
 let optional = Some(7);

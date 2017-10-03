@@ -6,7 +6,7 @@
 
 所有的解析文本都以相同的方式进行。另外一点是格式化的正确性在编译时检查。
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn main() {
     // 通常情况下， `{}` 会被任意变量内容所替换。
     // 值内容会转化成字符串。
