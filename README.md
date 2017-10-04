@@ -4,6 +4,8 @@
 > 已于 2016-08-07 翻译完全部内容，欢迎纠正——最后更新时间 2017-10-03    
 > Chinese translation of the [Rust by Example][rust-by-example]
 
+通过例子学 Rust（Rust by Example 中文版）包含在线代码编辑器。 
+
 ## 使用
 
 如果想阅读《通过例子学 Rust》，可以直接访问 [https://rustwiki.org/rust-by-example/][website-cn] 在线上阅读。（英文阅读地址：[https://rustbyexample.com/][website]）
@@ -11,11 +13,11 @@
 若想在本地阅读，请先[安装 Rust][install Rust]，然后进行下面操作：
 
 ```bash
-> git clone https://github.com/rust-lang-cn/rust-by-example-cn
-> cd rust-by-example-cn
-> cargo install mdbook
-> mdbook build
-> mdbook serve
+$ git clone https://github.com/rust-lang-cn/rust-by-example-cn
+$ cd rust-by-example-cn
+$ cargo install mdbook
+$ mdbook build
+$ mdbook serve
 ```
 
 

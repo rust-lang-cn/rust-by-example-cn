@@ -31,7 +31,7 @@ fn main() {
 
 由分析知道， panic!不会泄露内存
 
-```text
+```bash
 $ rustc panic.rs && valgrind ./panic
 ==4401== Memcheck, a memory error detector
 ==4401== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
