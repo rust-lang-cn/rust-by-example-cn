@@ -9,43 +9,43 @@
 
 - [Hello World](hello.html) - 从经典的 “Hello World” 程序开始学习。
 
-- [Primitives](primitives.html) - 学习有符号整型，无符号整型和其他原生类型。
+- [原生类型](primitives.html) - 学习有符号整型，无符号整型和其他原生类型。
 
-- [Custom Types](custom_types.html) - 结构体 `struct` 和 枚举 `enum`。
+- [自定义类型](custom_types.html) - 结构体 `struct` 和 枚举 `enum`。
 
-- [Variable Bindings](variable_bindings.html) - 变量绑定，作用域，隐藏。
+- [变量绑定](variable_bindings.html) - 变量绑定，作用域，隐藏。
 
-- [Casting](cast.html) - 学习类型之间的显式转换。
+- [类型转换](cast.html) - 学习类型之间的显式转换。
 
-- [Expressions](expression.html)
+- [表达式](expression.html)
 
-- [Flow Control](flow_control.html) - `if`/`else`，`for`，以及其他流程控制有关内容。
+- [流程控制](flow_control.html) - `if`/`else`，`for`，以及其他流程控制有关内容。
 
-- [Functions](fn.html) - 学习方法、闭包和高阶函数。
+- [函数](fn.html) - 学习方法、闭包和高阶函数。
 
-- [Modules](mod.html) - 使用模块来组织代码。
+- [模块](mod.html) - 使用模块来组织代码。
 
-- [Crates](crates.html) - crate 是 Rust 中的编译单元。学习创建一个库。
+- [`crate`](crates.html) - crate 是 Rust 中的编译单元。学习创建一个库。
 
-- [Attributes](attribute.html) - 属性是应用于某些模块、crate 或项的元数据（metadata）。
+- [属性](attribute.html) - 属性是应用于某些模块、crate 或项的元数据（metadata）。
 
-- [Generics](generics.html) - 学习编写能够适用于多类型参数的函数或数据类型。
+- [泛型](generics.html) - 学习编写能够适用于多类型参数的函数或数据类型。
 
-- [Scoping rules](scope.html) - 作用域在所有权（ownership）、借用（borrowing）和生命周期（lifetime）中起着重要作用。
+- [作用域规则](scope.html) - 作用域在所有权（ownership）、借用（borrowing）和生命周期（lifetime）中起着重要作用。
 
-- [Traits](trait.html) - trait 是对未知类型定义的方法集：Self。
+- [特性 trait](trait.html) - trait 是对未知类型定义的方法集：Self。
 
-- [Macros](macros.html)
+- [宏](macros.html)
 
-- [Error handling](error.html) - 学习 Rust 语言处理失败的方式。
+- [错误处理](error.html) - 学习 Rust 语言处理失败的方式。
 
-- [Std library types](std.html) - 学习 `std` 标准库提供的一些自定义类型。
+- [标准库类型](std.html) - 学习 `std` 标准库提供的一些自定义类型。
 
-- [Std misc](std_misc.html) - 更多关于文件处理、线程的自定义类型。
+- [标准库更多介绍](std_misc.html) - 更多关于文件处理、线程的自定义类型。
 
-- [Meta](meta.html) - 文档和测试
+- [补充](meta.html) - 文档和测试
 
-- [Unsafe Operations](unsafe.html)
+- [不安全操作](unsafe.html)
 
 [website]: http://rustbyexample.com
 [rust]: http://www.rust-lang.org/
