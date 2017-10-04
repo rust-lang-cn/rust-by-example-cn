@@ -137,12 +137,12 @@ a
 
 ```rust,ignore
 fn cat(path: &Path) -> io::Result<String> {
-	let mut f = File::open(path)?;
+    let mut f = File::open(path)?;
     let mut s = String::new();
     f.read_to_string(&mut s)?;
     Ok(s)
 }
-```				
+```
 
 ### 参见：
 

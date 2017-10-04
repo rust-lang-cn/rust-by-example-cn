@@ -45,4 +45,4 @@ fn main() {
 
 [`'static` 常量][static_const]
 
-[static_const]: ../../custom_types/constants.html
+[static_const]: ./custom_types/constants.html

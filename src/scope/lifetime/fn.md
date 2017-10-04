@@ -57,4 +57,4 @@ fn main() {
 [函数][fn]
 
 [elision]: elision.html
-[fn]: ../../fn.html
+[fn]: ./fn.html

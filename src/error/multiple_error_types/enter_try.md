@@ -49,4 +49,4 @@ fn main() {
 
 [result]: http://doc.rust-lang.org/std/result/enum.Result.html
 [io_result]: http://doc.rust-lang.org/std/io/type.Result.html
-[re_enter_try]: ../../error/reenter_try.html
+[re_enter_try]: ./error/reenter_try.html

@@ -17,11 +17,11 @@ fn main() {
     let strings = vec!["tofu", "93", "18"];
     
     println!("The first doubled is {}", double_first(empty));
-	// 错误1：输入 vector 为空
+    // 错误1：输入 vector 为空
     
     println!("The first doubled is {}", double_first(strings));
-	// 错误2：此元素不能解析成数字
-	}
+    // 错误2：此元素不能解析成数字
+}
 ```
 
 使用组合算子的知识，我们能够重写上述代码来显式地处理错误。为了做到两种错误类型都能够出现，我们需要将他们转换为一种通用类型，比如 `String` 类型。

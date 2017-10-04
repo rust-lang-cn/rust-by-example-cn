@@ -41,4 +41,4 @@ fn main() {
 
 [文档注释][docs]
 
-[docs]: ../meta/doc.html
+[docs]: ./meta/doc.html

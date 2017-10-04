@@ -32,6 +32,6 @@ fn main() {
   **模块**（module）的逻辑单元中。在这个例子中，`size_of_val` 函数是定义在 `mem` 模块的，
   `mem` 模块是定义在 `std` 包（crate）中。更多内容参考[模块][mod] 和 [crate][crate]。
 
-[borrow]: ../scope/borrow.html
-[mod]: ../mod.html
-[crate]: ../crates.html
+[borrow]: ./scope/borrow.html
+[mod]: ./mod.html
+[crate]: ./crates.html

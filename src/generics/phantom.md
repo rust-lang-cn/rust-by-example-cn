@@ -52,7 +52,7 @@ fn main() {
 
 [Derive], [结构体][struct], 和 [元组结构体][TupleStructs]
 
-[Derive]: ../trait/derive.html
-[struct]: ../custom_types/structs.html
-[TupleStructs]: ../custom_types/structs.html
+[Derive]: ./trait/derive.html
+[struct]: ./custom_types/structs.html
+[TupleStructs]: ./custom_types/structs.html
 [std::marker::PhantomData]: https://doc.rust-lang.org/std/marker/struct.PhantomData.html

@@ -26,4 +26,4 @@ fn main() {
 
 [Iterator][iter]
 
-[iter]: ../trait/iter.html
+[iter]: ./trait/iter.html

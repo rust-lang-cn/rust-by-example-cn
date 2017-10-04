@@ -57,5 +57,5 @@ fn main() {
 
 [`struct`][structs], 和 [`trait`][traits]
 
-[structs]: ../../custom_types/structs.html
-[traits]: ../../trait.html
+[structs]: ./custom_types/structs.html
+[traits]: ./trait.html

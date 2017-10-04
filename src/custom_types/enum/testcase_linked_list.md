@@ -72,7 +72,7 @@ fn main() {
 
 ### 参见：
 
-[`Box`][box] 和 [methods][methods]
+[`Box`][box] 和 [方法][methods]
 
-[box]: ../../std/box.html
-[methods]: ../../fn/methods.html
+[box]: ./std/box.html
+[methods]: ./fn/methods.html

@@ -67,6 +67,6 @@ fn main() {
 
 [闭包][closures]，[`Option::map()`][map], 和 [`Option::and_then()`][and_then]
 
-[closures]: ../../fn/closures.html
+[closures]: ./fn/closures.html
 [map]: http://doc.rust-lang.org/std/option/enum.Option.html#method.map
 [and_then]: http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then 

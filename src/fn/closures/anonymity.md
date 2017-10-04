@@ -44,7 +44,7 @@ fn main() {
 [透彻分析][thorough_analysis], [`Fn`][fn], [`FnMut`][fn_mut],
 和 [`FnOnce`][fn_once]
 
-[generics]: ../../generics.html
+[generics]: ./generics.html
 [fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
 [fn_mut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
 [fn_once]: http://doc.rust-lang.org/std/ops/trait.FnOnce.html

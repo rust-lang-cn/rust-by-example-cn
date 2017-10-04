@@ -26,4 +26,4 @@ fn main() {
 [methods][methods]
 
 
-[methods]: ../../fn/methods.html
+[methods]: ./fn/methods.html

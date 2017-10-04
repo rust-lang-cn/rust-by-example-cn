@@ -91,4 +91,4 @@ called `my::indirect_access()`, that
 called `my::nested::function()`
 ```
 
-[visibility]: ../mod/visibility.html
+[visibility]: ./mod/visibility.html

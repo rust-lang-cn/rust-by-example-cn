@@ -47,7 +47,7 @@ fn main() {
 [函数返回引用][fn], [`impl`][methods], 和 [`struct`][structs]
 
 
-[fn]: ../scope/lifetime/fn.html
-[methods]: ../fn/methods.html
+[fn]: ./scope/lifetime/fn.html
+[methods]: ./fn/methods.html
 [specialization_plans]: http://blog.rust-lang.org/2015/05/11/traits.html#the-future
-[structs]: ../custom_types/structs.html
+[structs]: ./custom_types/structs.html

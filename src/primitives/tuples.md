@@ -80,4 +80,4 @@ Transpose:
 ( 1.2 2.2 )
 ```
 
-[print_display]: ../hello/print/print_display.html
+[print_display]: ./hello/print/print_display.html

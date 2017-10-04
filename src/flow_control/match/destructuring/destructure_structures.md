@@ -28,4 +28,4 @@ fn main() {
 
 ### 参见：
 
-[结构体](../../../custom_types/structs.html), [ref 模式](../../../scope/borrow/ref.html)
+[结构体](./custom_types/structs.html), [ref 模式](./scope/borrow/ref.html)

@@ -56,9 +56,9 @@ fn main() {
 [`for`][for], [`ref`][ref], [`Result`][result], [`struct`][struct],
 [`try!`][try], [`vec!`][vec]
 
-[for]: ../../../flow_control/for.html
-[result]: ../../../std/result.html
-[ref]: ../../../scope/borrow/ref.html
-[struct]: ../../../custom_types/structs.html
-[try]: ../../../std/result/try.html
-[vec]: ../../../std/vec.html
+[for]: ./flow_control/for.html
+[result]: ./std/result.html
+[ref]: ./scope/borrow/ref.html
+[struct]: ./custom_types/structs.html
+[try]: ./std/result/try.html
+[vec]: ./std/vec.html

@@ -49,4 +49,4 @@ fn main() {
 }
 ```
 
-[references]: ../flow_control/match/destructuring/destructure_pointers.html
+[references]: ./flow_control/match/destructuring/destructure_pointers.html

@@ -61,6 +61,6 @@ If you see this, the tests were not compiled nor ran!
 
 [属性][attributes], [条件编译][cfg], 和 [`mod`][mod].
 
-[attributes]: ../../attribute.html
-[cfg]: ../../attribute/cfg.html
-[mod]: ../../mod.html
+[attributes]: ./attribute.html
+[cfg]: ./attribute/cfg.html
+[mod]: ./mod.html

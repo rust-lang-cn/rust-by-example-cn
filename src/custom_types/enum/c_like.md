@@ -32,6 +32,6 @@ fn main() {
 
 ### 参考：
 
-[casting][cast]
+[类型转换][cast]
 
-[cast]: ../../cast.html
+[cast]: ./cast.html

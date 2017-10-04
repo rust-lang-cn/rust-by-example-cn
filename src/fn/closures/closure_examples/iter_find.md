@@ -4,16 +4,16 @@
 
 ```rust,ignore
 pub trait Iterator {
-	// 迭代相关的类型。
+    // 迭代相关的类型。
     type Item;
 
-	// `find` 接受 `&mut self` 作为调用者可能被借用和修改，但不会消费掉。
-	// （原文：`find` takes `&mut self` meaning the caller may be borrowed
+    // `find` 接受 `&mut self` 作为调用者可能被借用和修改，但不会消费掉。
+    // （原文：`find` takes `&mut self` meaning the caller may be borrowed
     // and modified, but not consumed.）
     fn find<P>(&mut self, predicate: P) -> Option<Self::Item> where
-		// `FnMut` 表示任意捕获变量很可能都被修改，而非消费。
-		// `&Self::Item` 表明了通过引用接受闭包类型的参数。
-		// （原文：`FnMut` meaning any captured variable may at most be
+        // `FnMut` 表示任意捕获变量很可能都被修改，而非消费。
+        // `&Self::Item` 表明了通过引用接受闭包类型的参数。
+        // （原文：`FnMut` meaning any captured variable may at most be
         // modified, not consumed. `&Self::Item` states it takes
         // arguments to the closure by reference.）
         P: FnMut(&Self::Item) -> bool {}
