@@ -23,7 +23,7 @@ fn main() {
     // 借用了  box 的内容，但没有取得所有权，所以 box 的内容可以
     // 再次借用。
     borrow_i32(&boxed_i32);
-    borrow_i32(&tacked_i32);
+    borrow_i32(&stacked_i32);
 
     {
         // 给出一个指向 box 里面所包含数据的引用
@@ -38,6 +38,6 @@ fn main() {
     }
 
     // box 现在可以放弃 `eat_i32` 的所有权且可以销毁
-    eat_i32(boxed_i32);
+    eat_box_i32(boxed_i32);
 }
 ```
