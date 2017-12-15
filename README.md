@@ -44,5 +44,5 @@ license 两种协议进行授权。
 [travis-image]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn.svg?branch=master
 [travis-link]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn
 [website]: https://rustbyexample.com
-[website-cn]: https://rustwiki.org/rust-by-example
+[website-cn]: https://rustwiki.org/rust-by-example/
 [how-to-contribute]: CONTRIBUTING.md
