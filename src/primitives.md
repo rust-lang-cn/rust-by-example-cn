@@ -2,20 +2,28 @@
 
 Rust 提供了多种原生类型，包括：
 
-* 有符号整型（signed integers）：`i8`， `i16`， `i32`， `i64` 和 `isize`（指针 size）
-* 无符号整型（unsigned integers）： `u8`， `u16`， `u64` 和 `usize`（指针 size）
-* 浮点类型（floating point）： `f32`， `f64`
-* `char`（字符）：单独的 Unicode 字符，如 `'a'`，`'α'` 和 `'∞'`（大小都是4个字节）
-* `bool`（布尔型）：只能是 `true` 或 `false`
-* 单元类型(unit type，空元组)： 只有 `()` 这个唯一值
-* 数组：如 `[1, 2, 3]`
-* 元组： 如 `(1, true)`
+## 标量类型
 
-变量都能够显式地给出**类型声明**。数字可以通过**加后缀**或**默认方式**来额外地声明。整型默认为
-`i32` 类型，浮点型默认为 `f64` 类型（译注：此说法不明确，[Rust语言参考][reference]指出：
-未声明类型数值的具体类型由实际使用情况推断，比如一个未声明类型整数和 `i64` 的整数相加，则该
-整数会自动推断为 `i64` 类型，仅当使用环境无法推断时，整型数值时才断定为 `i32`，浮点数值才
-断定为 `f64`）。
+* 有符号整型（signed integers）：`i8`、`i16`、`i32`、`i64` 和 `isize`（指针宽度）
+* 无符号整型（unsigned integers）： `u8`、`u16`、`u32`、`u64` 和 `usize`（指针宽
+度）
+* 浮点类型（floating point）： `f32`、`f64`
+* `char`（字符）：单个 Unicode 字符，如 `'a'`，`'α'` 和 `'∞'`（每个都是 4 字节）
+* `bool`（布尔型）：只能是 `true` 或 `false`
+* 单元类型 `()`，其唯一可能的值是 `()` 这个空元组
+
+尽管单元类型的值是个元组，它却并不被认为是复合类型，因为并不包含多个值。
+
+## 复合类型
+
+* 数组：如 `[1, 2, 3]`
+* 元组：如 `(1, true)`
+
+变量都能够显式地给出**类型声明**。数字还可以通过**加后缀**或**默认方式**来声明类
+型。整型默认为 `i32` 类型，浮点型默认为 `f64` 类型。注意 Rust 还可以根据上下文来
+推断类型（译注：比如一个未声明类型整数和 `i64` 的整数相加，则该整数会自动推断为
+ `i64` 类型。仅当根据环境无法推断时，才按默认方式取整型数值为 `i32`，浮点数值为
+ `f64`）。
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -28,17 +36,29 @@ fn main() {
     // 否则自动推断类型。
     let default_float   = 3.0; // `f64`
     let default_integer = 7;   // `i32`
-
-    let mut mutable = 12; // 可变类型 `i32`。
-
-    // 报错！变量的类型不可改变。
+    
+    // 类型也可根据上下文自动推断。
+    let mut inferred_type = 12; // 根据下一行的赋值推断为 i64 类型
+    inferred_type = 4294967296i64;
+    
+    // 可变的（mutable）变量，其值可以改变。
+    let mut mutable = 12; // Mutable `i32`
+    mutable = 21;
+    
+    // 报错！变量的类型并不能改变。
     mutable = true;
+    
+    // 但可以用掩蔽（shadow）来覆盖前面的变量。
+    let mutable = true;
 }
 ```
 
 ### 参见：
 
-[`std` 库][std]
+[`std` 库][std]、[`mut`][mut]、[类型推断][inference] 和[变量掩蔽](shadowing)。
 
 [std]: http://doc.rust-lang.org/std/
-[reference]: http://doc.rust-lang.org/reference.html#number-literals
+[mut]: https://rustbyexample.com/variable_bindings/mut.html
+[inference]: https://rustbyexample.com/types/inference.html
+[shadowing]: https://rustbyexample.com/variable_bindings/scope.html
+
