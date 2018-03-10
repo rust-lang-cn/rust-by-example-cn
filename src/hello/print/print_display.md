@@ -1,66 +1,68 @@
 # 显示
 
-`fmt::Debug` 看起来并不简洁，然而它对自定义输出外观通常是有好处的。而[`fmt::Display`]
-[fmt]是通过手动的方式来实现，采用了`{}`来打印标记。实现方式看起来像这样：
+`fmt::Debug` 通常看起来不太简洁，因此自定义输出的外观经常是更可取的。这需要通过
+手动实现 [`fmt::Display`][fmt] 来做到。`fmt::Display` 采用 `{}` 标记。实现方式看
+起来像这样：
 
 ```rust
-// (使用 `use`)导入 `fmt` 模块使 `fmt::Display` 可用
+// （使用 `use`）导入 `fmt` 模块使 `fmt::Display` 可用
 use std::fmt;
 
-// 定义一个结构体，使用 `fmt::Display` 来实现。这只是简单地给元组结构体`Structure` 包含
-// 一个 `i32` 元素。
+// 定义一个结构体，咱们会为它实现 `fmt::Display`。以下是个简单的元组结构体
+// `Structure`，包含一个 `i32` 元素。
 struct Structure(i32);
 
-// 为了使用 `{}` 标记，必须手动实现 `fmt::Display` trait 来支持相应类型。
+// 为了使用 `{}` 标记，必须手动为类型实现 `fmt::Display` trait。
 impl fmt::Display for Structure {
-    // 这个 trait 要求 `fmt` 带有正确的标记
+    // 这个 trait 要求 `fmt` 使用与下面的函数完全一致的函数签名
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // 严格将第一个元素写入到给定的输出流 `f`。返回 `fmt:Result`，此结果表明操作成功
-        // 或失败。注意这里的 `write!` 用法和 `println!` 很相似。
+        // 仅将 self 的第一个元素写入到给定的输出流 `f`。返回 `fmt:Result`，此
+        // 结果表明操作成功或失败。注意 `write!` 的用法和 `println!` 很相似。
         write!(f, "{}", self.0)
     }
 }
 ```
 
-`fmt::display` 的使用形式可能比 `fmt::Debug` 简洁，但它对于标准库的处理有一个问题。模棱
-两可的类型该如何显示呢？举个例子，假设标准库对所有的 `Vec<T>` 都实现了单一样式，那么它应该
-是那种样式？随意一种或者包含两种？
+`fmt::display` 的效果可能比 `fmt::Debug` 简洁，但对于 `std` 库来说，这就有一个问
+题。模棱两可的类型该如何显示呢？举个例子，假设标准库对所有的 `Vec<T>` 都实现了同
+一种输出样式，那么它应该是哪种样式？下面两种中的一种吗？
 
-* `Vec<path>`: `/:/etc:/home/username:/bin` (split on `:`)
-* `Vec<number>`: `1,2,3` (split on `,`)
+* `Vec<path>`：`/:/etc:/home/username:/bin`（使用 `:` 分割）
+* `Vec<number>`：`1,2,3`（使用 `,` 分割）
 
-答案是否定的，因为没有合适的样式适用于所有类型，标准库也没规定一种情况。对于 `Vec<T>` 或其
-他任意泛型容器(container)，`fmt::Display` 都没有实现形式。在这种含有泛型的情况下要用到
- `fmt::Debug`。
+我们没有这样做，因为没有一种合适的样式适用于所有类型，标准库也并不擅自规定一种样
+式。对于 `Vec<T>` 或其他任意泛型容器（generic container），`fmt::Display` 都没有
+实现。因此在这些泛型的情况下要用 `fmt::Debug`。
 
-而对于非泛型的容器类型的输出， `fmt::Display` 都能够实现。
+这并不是一个问题，因为对于任何**非**泛型的**容器**类型， `fmt::Display` 都能够实
+现。
 
 ```rust,editable
 use std::fmt; // 导入 `fmt`
 
-// 带有两个数字的结构体。`Debug` 将被派生，可以看到输出结果和 `Display` 的差异。
+// 带有两个数字的结构体。推导出 `Debug`，以便与 `Display` 的输出进行比较。
 #[derive(Debug)]
 struct MinMax(i64, i64);
 
 // 实现 `MinMax` 的 `Display`。
 impl fmt::Display for MinMax {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // 使用 `self.number` 方式来表示各个数据。
+        // 使用 `self.number` 来表示各个数据。
         write!(f, "({}, {})", self.0, self.1)
     }
 }
 
-// 为了比较，定义一个含有字段的结构体。
+// 为了比较，定义一个含有具名字段的结构体。
 #[derive(Debug)]
 struct Point2D {
     x: f64,
     y: f64,
 }
 
-// 类似地对 Point2D 进行实现
+// 类似地对 `Point2D` 实现 `Display`
 impl fmt::Display for Point2D {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // 自定义方式实现，仅让 `x` 和 `y` 标识出来。
+        // 自定义格式，使得仅显示 `x` 和 `y` 的值。
         write!(f, "x: {}, y: {}", self.x, self.y)
     }
 }
@@ -91,14 +93,15 @@ fn main() {
 }
 ```
 
-`fmt::Display` 都实现了，而 `fmt::Binary` 都没有，因此 `fmt::Binary` 不能使用。
-`std::fmt` 有很多这样的 [`traits`][traits]，使用这些 trait 都要有各自的实现。这些内容将
-在后面的 [`std::fmt`][fmt] 章节中详细介绍。
+`fmt::Display` 被实现了，而 `fmt::Binary` 没有，因此 `fmt::Binary` 不能使用。
+`std::fmt` 有很多这样的 [`trait`][traits]，它们都要求有各自的实现。这些内容将在
+后面的 [`std::fmt`][fmt] 章节中详细介绍。
 
 ### 动手试一试
 
-对上面程序的运行结果检验完毕后，在上述示例程序中，仿照 `Point2` 结构体增加一个复数结构体。
-使用一样的方式打印，输出结果要求这个样子：
+检验上面例子的输出，然后在示例程序中，仿照 `Point2D` 结构体增加一个复数结构体。
+使用一样的方式打印，输出结果要求是这个样子：
+
 ```
 Display: 3.3 + 7.2i
 Debug: Complex { real: 3.3, imag: 7.2 }

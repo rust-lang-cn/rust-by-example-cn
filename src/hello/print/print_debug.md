@@ -1,49 +1,71 @@
 # 调试
 
-所有要用到`std::fmt`格式化的`traits`类型都需要转化成可打印的实现。`std`库这些类型能够自动实现。但所有其他类型都必须手动来实现。
+所有的类型，若想用 `std::fmt` 的格式化 `trait` 打印出来，都要求实现这个
+ `trait`。自动的实现只为一些类型提供，比如 `std` 库中的类型。所有其他类型
+都**必须**手动实现。
 
-`fmt::Debug` `trait` 使上面工作变得相当简单。所有类型都能推导（自动创建）`fmt::Debug`
-的实现。但是 `fmt::Display` 需要手动来实现。
+`fmt::Debug` 这个 `trait` 使这项工作变得相当简单。所有类型都能推导（即自动创建）
+`fmt::Debug` 的实现。但是 `fmt::Display` 需要手动实现。
 
 ```rust
-// 这种结构体不能使用`fmt::Display`或`fmt::Debug`来进行打印。
+// 这个结构体不能使用 `fmt::Display` 或 `fmt::Debug` 来进行打印。
 struct UnPrintable(i32);
 
-// `derive`属性会自动创建实现，借助`fmt::Debug`使得这个`struct`能够打印。
+// `derive` 属性会自动创建所需的实现，使这个 `struct` 能使用 `fmt::Debug` 打印。
 #[derive(Debug)]
 struct DebugPrintable(i32);
 ```
 
-所有`std`库类型加上`{:?}`后也能够自动打印：
+所有 `std` 库类型都天生可以使用 `{:?}` 来打印：
 
 ```rust,editable
-// 从 `fmt::Debug` 获得实现给 `Structure`。
-// `Structure` 是一个包含`i32`基本类型的结构体。
+// 推导 `Structure` 的 `fmt::Debug` 实现。
+// `Structure` 是一个包含单个 `i32` 的结构体。
 #[derive(Debug)]
 struct Structure(i32);
 
-// 将 `Structure` 放到结构体 `Deep` 中。使 `Deep` 也能够打印。
+// 将 `Structure` 放到结构体 `Deep` 中。然后使 `Deep` 也能够打印。
 #[derive(Debug)]
 struct Deep(Structure);
 
 fn main() {
-    // 打印操作使用 `{:?}` 和使用 `{}` 类似。
+    // 使用 `{:?}` 打印和使用 `{}` 类似。
     println!("{:?} months in a year.", 12);
     println!("{1:?} {0:?} is the {actor:?} name.",
              "Slater",
              "Christian",
              actor="actor's");
 
-    // `Structure` 是能够打印的类型。
+    // `Structure` 也可以打印！
     println!("Now {:?} will print!", Structure(3));
     
     // 使用 `derive` 的一个问题是不能控制输出的形式。
-    // 假如我只想展示一个 `7`？
+    // 假如我只想展示一个 `7` 怎么办？
     println!("Now {:?} will print!", Deep(Structure(7)));
 }
 ```
 
-所以 `fmt::Debug` 确实使这些内容可以打印，但是牺牲了美感。手动执行 `fmt::Display` 将能够弥补这些问题。
+所以 `fmt::Debug` 确实使这些内容可以打印，但是牺牲了一些美感。Rust 也通过
+ `{:#?}` 提供了 “美化打印” 的功能：
+
+```rust,editable
+#[derive(Debug)]
+struct Person<'a> {
+    name: &'a str,
+    age: u8
+}
+
+fn main() {
+    let name = "Peter";
+    let age = 27;
+    let peter = Person { name, age };
+
+    // 美化打印
+    println!("{:#?}", peter);
+}
+```
+
+你可以通过手动实现 `fmt::Display` 来控制显示效果。
 
 ### 参见：
 
