@@ -25,7 +25,7 @@ struct City {
 }
 
 impl Display for City {
-    // `f` 是一个缓冲区（buffer），此方法必须将格式化后字符串写入其中
+    // `f` 是一个缓冲区（buffer），此方法必须将格式化后的字符串写入其中
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
         let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
