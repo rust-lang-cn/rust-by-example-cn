@@ -1,7 +1,8 @@
 # 作用域和掩蔽
 
 变量绑定有一个作用域（scope），它被限定只在一个**代码块**（block）中生存（live）。
-代码块是一个被 `{}` 包围的语句集合。另外也允许[变量掩蔽][variable-shadow]。
+代码块是一个被 `{}` 包围的语句集合。另外也允许[变量掩蔽][variable-shadow]（variable
+ shadowing）。
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
