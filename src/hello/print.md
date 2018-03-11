@@ -9,7 +9,7 @@
 * `eprint!`：与 `format!` 类似，但将文本输出到标准错误（io::stderr）。
 * `eprintln!`：与 `eprint!` 类似，但输出结果追加一个换行符。
 
-这些宏都以相同的做法解析文本。另外有个优点是格式化的正确性会在编译时检查。
+这些宏都以相同的做法解析（parse）文本。另外有个优点是格式化的正确性会在编译时检查。
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
