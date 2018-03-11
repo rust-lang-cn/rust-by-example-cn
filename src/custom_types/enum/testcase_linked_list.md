@@ -14,19 +14,19 @@ enum List {
 
 // 可以为 enum 定义方法
 impl List {
-    // 创建一个空列表
+    // 创建一个空的 List 实例
     fn new() -> List {
         // `Nil` 为 `List` 类型（译注：因 `Nil` 的完整名称是 `List::Nil`）
         Nil
     }
 
-    // 处理一个列表，在其头部插入新元素，并返回该列表
+    // 处理一个 List，在其头部插入新元素，并返回该 List
     fn prepend(self, elem: u32) -> List {
         // `Cons` 同样为 List 类型
         Cons(elem, Box::new(self))
     }
 
-    // 返回列表的长度
+    // 返回 List 的长度
     fn len(&self) -> u32 {
         // 必须对 `self` 进行匹配（match），因为这个方法的行为取决于 `self` 的
         // 取值种类。

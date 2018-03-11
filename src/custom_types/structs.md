@@ -19,7 +19,7 @@ struct Nil;
 // 元组结构体
 struct Pair(i32, f32);
 
-// 带有两个字段的结构体
+// 带有两个字段（field）的结构体
 struct Point {
     x: f32,
     y: f32,
