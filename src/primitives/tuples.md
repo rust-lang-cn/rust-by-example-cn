@@ -24,7 +24,7 @@ fn main() {
                       0.1f32, 0.2f64,
                       'a', true);
 
-    // 通过元组的脚标来访问具体的值
+    // 通过元组的下标来访问具体的值
     println!("long tuple first value: {}", long_tuple.0);
     println!("long tuple second value: {}", long_tuple.1);
 
@@ -64,25 +64,25 @@ fn main() {
 
  1. **复习**：在上面的例子中给 Matrix `结构体` 加上 `fmt::Display` trait，这样当
  你从 Debug 格式化 `{:?}` 切换到 Display 格式化 `{}` 时，会得到如下的输出：
-```
-( 1.1 1.2 )
-( 2.1 2.2 )
-```
-    可以回顾之前学过的[打印显示][print_display] 的例子。
+     ```
+     ( 1.1 1.2 )
+     ( 2.1 2.2 )
+     ```
+     可以回顾之前学过的[打印显示][print_display]的例子。
  2. 以 `reverse` 函数作为样板，写一个 `transpose` 函数，它可以接受一个 Matrix
      作为参数，并返回一个右上 - 左下对角线上的两元素交换后的 Matrix。举个例子：
-```
-println!("Matrix:\n{}", matrix);
-println!("Transpose:\n{}", transpose(matrix));
-```
-输出结果：
-```
-Matrix:
-( 1.1 1.2 )
-( 2.1 2.2 )
-Transpose:
-( 1.1 2.1 )
-( 1.2 2.2 )
-```
+     ```
+     println!("Matrix:\n{}", matrix);
+     println!("Transpose:\n{}", transpose(matrix));
+     ```
+     输出结果：
+     ```
+     Matrix:
+     ( 1.1 1.2 )
+     ( 2.1 2.2 )
+     Transpose:
+     ( 1.1 2.1 )
+     ( 1.2 2.2 )
+     ```
 
 [print_display]: ./hello/print/print_display.html

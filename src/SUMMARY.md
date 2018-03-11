@@ -11,9 +11,9 @@
         - [格式化](hello/print/fmt.md)
 
 - [原生类型](primitives.md)
-    - [数据和运算符](primitives/literals.md)
+    - [字面量和运算符](primitives/literals.md)
     - [元组](primitives/tuples.md)
-    - [数组和 slice 类型](primitives/array.md)
+    - [数组和切片](primitives/array.md)
 
 - [自定义类型](custom_types.md)
     - [结构体](custom_types/structs.md)
