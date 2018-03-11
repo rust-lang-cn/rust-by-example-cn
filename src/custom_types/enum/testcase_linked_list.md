@@ -41,7 +41,7 @@ impl List {
         }
     }
 
-    // 返回列表的（堆分配的）字符串表示
+    // 返回列表的字符串表示（该字符串是堆分配的）
     fn stringify(&self) -> String {
         match *self {
             Cons(head, ref tail) => {
