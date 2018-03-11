@@ -1,12 +1,12 @@
 # C 风格用法
 
-`enum` 也可以像 C 语言枚举那样使用。
+`enum` 也可以像 C 语言风格的枚举那样使用。
 
 ```rust,editable
-// 隐藏未使用代码警告的属性。
+// 该属性用于隐藏对未使用代码的警告。
 #![allow(dead_code)]
 
-// 拥有隐式辨别值（implicit discriminator）的 enum（从0开始计数）
+// 拥有隐式辨别值（implicit discriminator，从 0 开始）的 enum
 enum Number {
     Zero,
     One,
