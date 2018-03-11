@@ -29,7 +29,7 @@ struct List(Vec<i32>);
 
 impl fmt::Display for List {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // 使用元组的脚标获取值，并创建一个 `vec` 的引用。
+        // 使用元组的下标获取值，并创建一个 `vec` 的引用。
         let vec = &self.0;
 
         write!(f, "[")?;
@@ -54,7 +54,7 @@ fn main() {
 ```
 
 ### 动手试一试：
-更改程序使 vector 里面每个元素的脚标也能够打印出来。新的结果如下：
+更改程序使 vector 里面每个元素的下标也能够打印出来。新的结果如下：
 
 ```rust
 [0: 1, 1: 2, 2: 3]
