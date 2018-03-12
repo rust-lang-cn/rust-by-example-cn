@@ -41,7 +41,7 @@
         - [嵌套循环和标签](flow_control/loop/nested.md)
         - [从 loop 循环返回](flow_control/loop/return.md)
     - [while 循环](flow_control/while.md)
-    - [for 循环和区间](flow_control/for.md)
+    - [for 循环](flow_control/for.md)
     - [match 匹配](flow_control/match.md)
         - [解构](flow_control/match/destructuring.md)
             - [元组](flow_control/match/destructuring/destructure_tuple.md)
