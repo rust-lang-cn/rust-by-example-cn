@@ -1,43 +1,74 @@
 # 可见性
 
-项（item）默认情况下拥有私有的可见性（private visibility），不过可以加上 `pub` （public 的前 3 个字母）修饰语（modifier）来改变默认行为。一个模块之外的作用域只能访问该模块里面的公有项（public item）。
+默认情况下，模块中的物件拥有私有的可见性（private visibility），不过可以
+加上 `pub` 修饰语来重载这一行为。模块中只有公有的（public）物件可以从模块外的
+作用域访问。
 
 ```rust,editable
-// 一个名为 `my` 的模块
-mod my {
-    // 在模块中的项默认带有私有可见性。
+// 一个名为 `my_mod` 的模块
+mod my_mod {
+    // 模块中的物件默认具有私有的可见性
     fn private_function() {
-        println!("called `my::private_function()`");
+        println!("called `my_mod::private_function()`");
     }
 
     // 使用 `pub` 修饰语来改变默认可见性。
     pub fn function() {
-        println!("called `my::function()`");
+        println!("called `my_mod::function()`");
     }
-    
-    // 在同一模块中，项可以访问其它项，即使是私有属性。
+
+    // 在同一模块中，物件可以访问其它物件，即使它是私有的。
     pub fn indirect_access() {
-        print!("called `my::indirect_access()`, that\n> ");
+        print!("called `my_mod::indirect_access()`, that\n> ");
         private_function();
     }
 
-    // 项也可以嵌套。
+    // 模块也可以嵌套
     pub mod nested {
         pub fn function() {
-            println!("called `my::nested::function()`");
+            println!("called `my_mod::nested::function()`");
         }
 
         #[allow(dead_code)]
         fn private_function() {
-            println!("called `my::nested::private_function()`");
+            println!("called `my_mod::nested::private_function()`");
+        }
+
+        // 使用 `pub(in path)` 语法定义的函数只在给定的路径中可见。
+        // `path` 必须是父模块（parent module）或祖先模块（ancestor module）
+        pub(in my_mod) fn public_function_in_my_mod() {
+            print!("called `my_mod::nested::public_function_in_my_mod()`, that\n > ");
+            public_function_in_nested()
+        }
+
+        // 使用 `pub(self)` 语法定义的函数则只在当前模块中可见。
+        pub(self) fn public_function_in_nested() {
+            println!("called `my_mod::nested::public_function_in_nested");
+        }
+
+        // 使用 `pub(super)` 语法定义的函数只在父模块中可见。
+        pub(super) fn public_function_in_super_mod() {
+            println!("called my_mod::nested::public_function_in_super_mod");
         }
     }
-    
-    // 嵌套项的可见性遵循相同的规则。
+
+    pub fn call_public_function_in_my_mod() {
+        print!("called `my_mod::call_public_funcion_in_my_mod()`, that\n> ");
+        nested::public_function_in_my_mod();
+        print!("> ");
+        nested::public_function_in_super_mod();
+    }
+
+    // `pub(crate)` 使得函数只在当前 crate 中可见
+    pub(crate) fn public_function_in_crate() {
+        println!("called `my_mod::public_function_in_crate()");
+    }
+
+    // 嵌套模块的可见性遵循相同的规则
     mod private_nested {
         #[allow(dead_code)]
         pub fn function() {
-            println!("called `my::private_nested::function()`");
+            println!("called `my_mod::private_nested::function()`");
         }
     }
 }
@@ -47,27 +78,34 @@ fn function() {
 }
 
 fn main() {
-    // 模块允许在拥有相同名字的项之间消除歧义。
+    // 模块机制消除了相同名字的物件之间的歧义。
     function();
-    my::function();
-    
-    // 公有项，包括内部嵌套的公有项，可以在父级的模块中访问到。
-    my::indirect_access();
-    my::nested::function();
+    my_mod::function();
 
-    // 一个模块中的私有项不能被直接访问，即使私有项嵌套在公有的模块中：
+    // 公有物件，包括嵌套模块内的，都可以在父模块外部访问。
+    my_mod::indirect_access();
+    my_mod::nested::function();
+    my_mod::call_public_function_in_my_mod();
 
-    // 报错！`private_function` 是私有的。
-    //my::private_function();
-    // 试一试 ^ 将此行注释去掉
+    // pub(crate) 物件可以在同一个 crate 中的任何地方访问
+    my_mod::public_function_in_crate();
 
-    // 报错！ `private_function` 是私有的。
-    //my::nested::private_function();
-    // 试一试 ^ 将此行注释去掉    
+    // pub(in path) 物件只能在指定的模块中访问
+    // 报错！函数 `public_function_in_my_mod` 是私有的
+    //my_mod::nested::public_function_in_my_mod();
+    // 试一试 ^ 取消该行的注释
 
-    // 报错！ `private_nested` 是私有的模块。
-    //my::private_nested::function();
-    // 试一试 ^ 将此行注释去掉    
+    // 模块的私有物件不能直接访问，即便它是嵌套在公有模块内部的
 
+    // 报错！`private_function` 是私有的
+    //my_mod::private_function();
+    // 试一试 ^ 取消此行注释
+
+    // 报错！`private_function` 是私有的
+    //my_mod::nested::private_function();
+    // 试一试 ^ 取消此行的注释
+
+    // Error! `private_nested` is a private module
+    //my_mod::private_nested::function();
+    // 试一试 ^ 取消此行的注释
 }
-```
