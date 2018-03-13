@@ -1,16 +1,16 @@
 # 枚举
 
-和前面相似，解构 `enum` 的方式如下：
+和前面相似，解构 `enum` 方式如下：
 
 ```rust,editable
-// 需要 `allow` 来消除警告，因为只使用了枚举类型的一种取值。
+// 需要 `allow` 来消除警告，因为只使用了一个变量。
 #[allow(dead_code)]
 enum Color {
-    // 这三个取值仅由它们的名字（而非类型）来指定。
+    // 这三者仅由它们的名字来表示。
     Red,
     Blue,
     Green,
-    // 这些则把 `u32` 元组赋予不同的名字，以色彩模型命名。
+    // 这些元组含有类似的 `u32` 元素，分别对应不同的名字：颜色模型（color models）。
     RGB(u32, u32, u32),
     HSV(u32, u32, u32),
     HSL(u32, u32, u32),
@@ -46,7 +46,7 @@ fn main() {
 
 ### 参见：
 
-[`#[allow(...)]`][allow], [色彩模型][color_models] 和 [`enum`][enum] 
+[`#[allow(...)]`][allow], [color models][color_models] 和 [`enum`][enum] 
 
 [allow]: ./attribute/unused.html
 [color_models]: http://en.wikipedia.org/wiki/Color_model

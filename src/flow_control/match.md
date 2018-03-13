@@ -25,7 +25,7 @@ fn main() {
         // match 分支必须覆盖所有可能的值
         false => 0,
         true => 1,
-        // 试一试 ^ 将其中一条分支注释掉
+        // 试一试 ^ 试着将其中一条分支注释掉
     };
 
     println!("{} -> {}", boolean, binary);
