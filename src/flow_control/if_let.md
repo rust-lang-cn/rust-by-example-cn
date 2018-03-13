@@ -9,7 +9,7 @@ let optional = Some(7);
 match optional {
     Some(i) => {
         println!("This is a really long string and `{:?}`", i);
-        // ^ 行首需要 2 个缩进。这里从 optional 中解构出 `i`。
+        // ^ 行首需要 2 层缩进。这里从 optional 中解构出 `i`。
         // 译注：正确的缩进是好的，但并不是 “不缩进就不能运行” 这个意思。
     },
     _ => {},
