@@ -3,6 +3,7 @@
 属性是应用于某些模块、crate 或项的元数据（metadata）。这元数据可以用来：
 
 <!-- TODO: Link these to their respective examples -->
+
 * [条件编译代码][cfg]
 * [设置 crate 名称、版本和类型（二进制文件或库）][crate]
 * 禁用 [lint][lint] （警告）
