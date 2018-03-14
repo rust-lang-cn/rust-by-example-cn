@@ -77,11 +77,6 @@
     - [库](crates/lib.md)
     - [`extern crate`](crates/link.md)
 
-- [cargo](cargo.md)
-    - [依赖](cargo/deps.md)
-    - [惯例](cargo/conventions.md)
-    - [测试](cargo/test.md)
-
 - [属性](attribute.md)
     - [死代码 `dead_code`](attribute/unused.md)
     - [`crate`](attribute/crate.md)
