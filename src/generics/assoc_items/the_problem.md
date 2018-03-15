@@ -1,25 +1,29 @@
 # 存在问题
 
-对容器类型为泛型的 `trait` 有类型规范需要——`trait` 的成员**必须**指出全部关于它的泛型类型。
+`trait` 如果对实现了它的容器类型是泛型的，则须遵守类型规范要求——`trait` 的
+使用者**必须**指出 `trait` 的全部泛型类型。
 
-在下面例子中，`Contains` `trait` 允许使用泛型类型 `A` 或 `B`。然后这个 trait 针对 `Container` 类型实现，指定 `i32` 为 `A` 和 `B`，因而它可以用到 `fn difference()`。（本段原文：In the example below, the `Contains` `trait` allows the use of the generic types `A` and `B`. The trait is then implemented for the `Container` type, 
-specifying `i32` for `A` and `B` so that it can be used with `fn difference()`.）
+在下面例子中，`Contains` `trait` 允许使用泛型类型 `A` 或 `B`。然后我们为
+ `Container` 类型实现了这个 trait，将 `A` 和 `B` 指定为 `i32`，这样就可以对
+它们使用 `difference()` 函数。
 
-因为 `Contains` 是泛型，所以我们被迫显式地指出了针对 `fn difference()` 的所有泛型类型。实际上，我们只想要一种方式来表示由**输入**的 `C` 确定的 `A` 和 `B`。正如你就要看到的下一节内容，关联类型正好提供了这方面能力。
+因为 `Contains` 是泛型的，我们必须在 `fn difference()` 中显式地指出**所有的**泛型
+类型。但实际上，我们想要表达，`A` 和 `B` 究竟是什么类型是由输入 `C` 决定的。在
+下一节会看到，关联类型恰好提供了这样的功能。
 
 ```rust,editable
 struct Container(i32, i32);
 
-// 这个 trait 检查 2 个项是否存到 Container（容器）中。
-// 还会获得第一个值或最后一个值。
+// 这个 trait 检查给定的 2 个项是否储存于容器中
+// 并且能够获得容器的第一个或最后一个值。
 trait Contains<A, B> {
-    fn contains(&self, &A, &B) -> bool; // 显式指出需要 `A` 和 `B`
-    fn first(&self) -> i32; // 未显式指出需要 `A` 或 `B`
-    fn last(&self) -> i32;  // 未显式指出需要 `A` 或 `B`
+    fn contains(&self, &A, &B) -> bool; // 显式地要求 `A` 和 `B`
+    fn first(&self) -> i32; // 未显式地要求 `A` 或 `B`
+    fn last(&self) -> i32;  // 未显式地要求 `A` 或 `B`
 }
 
 impl Contains<i32, i32> for Container {
-    // 如果存储的数字相等则为真。
+    // 如果存储的数字和给定的相等则为真。
     fn contains(&self, number_1: &i32, number_2: &i32) -> bool {
         (&self.0 == number_1) && (&self.1 == number_2)
     }
@@ -31,7 +35,7 @@ impl Contains<i32, i32> for Container {
     fn last(&self) -> i32 { self.1 }
 }
 
-// `C` 包含 `A` 和 `B` 。鉴于此，必须重复表达 `A` 和 `B` 真麻烦。
+// 容器 `C` 就包含了 `A` 和 `B` 类型。鉴于此，必须指出 `A` 和 `B` 显得很麻烦。
 fn difference<A, B, C>(container: &C) -> i32 where
     C: Contains<A, B> {
     container.last() - container.first()

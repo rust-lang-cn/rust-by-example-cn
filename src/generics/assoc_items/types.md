@@ -1,21 +1,21 @@
 # 关联类型
 
-使用“关联类型”可以增强代码的可读性，其方式是移动内部类型到一个 trait 作为*output*（输出）类型。这个 `trait` 的定义的语法如下：
+通过把容器内部的类型放到 `trait` 中作为**输出类型**，使用 “关联类型” 增加了代码
+的可读性。这样的 `trait` 的定义语法如下：
 
 ```rust
-// `A` 和 `B` 在 trait 里面通过`type` 关键字来定义。
-// （注意：此处的 `type` 不同于用作别名时的 `type`）。
+// `A` 和 `B` 在 trait 里面通过 `type` 关键字来定义。
+// （注意：此处的 `type` 不同于为类型取别名时的 `type`）。
 trait Contains {
     type A;
     type B;
 
-	// 通常提供新语法来表示这些新的类型。
-    // （原文：Updated syntax to refer to these new types generically.）
+	// 这种语法能够泛型地表示这些新类型。
     fn contains(&self, &Self::A, &Self::B) -> bool;
 }
 ```
 
-注意到上面函数用到了 `Contains` `trait`，再也不需要表达 `A` 或 `B`：
+注意使用了 `Contains` `trait` 的函数就不需要写出 `A` 或 `B` 了：
 
 ```rust,ignore
 // 不使用关联类型
@@ -31,10 +31,10 @@ fn difference<C: Contains>(container: &C) -> i32 { ... }
 ```rust,editable
 struct Container(i32, i32);
 
-// 这个 trait 检查 2 个项是否存到 Container（容器）中。
-// 还会获得第一个值或最后一个值。
+// 这个 trait 检查给定的 2 个项是否储存于容器中
+// 并且能够获得容器的第一个或最后一个值。
 trait Contains {
-    // 在这里定义可以被方法利用的泛型类型。
+    // 在这里定义可以被方法使用的泛型类型。
     type A;
     type B;
 
@@ -50,7 +50,7 @@ impl Contains for Container {
     type A = i32;
     type B = i32;
 
-    // `&Self::A` 和 `&Self::B` 在这里也是有效的。
+    // `&Self::A` 和 `&Self::B` 在这里也是合法的类型。
     fn contains(&self, number_1: &i32, number_2: &i32) -> bool {
         (&self.0 == number_1) && (&self.1 == number_2)
     }

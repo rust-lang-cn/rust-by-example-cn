@@ -1,6 +1,6 @@
-# 多重限定
+# 多重约束
 
-使用多重限定（multiple bounds）可以用 `+` 连接。和平常一样，不同的类型使用 `,` 隔开。
+多重约束（multiple bounds）可以用 `+` 连接。和平常一样，类型之间使用 `,` 隔开。
 
 ```rust,editable
 use std::fmt::{Debug, Display};
