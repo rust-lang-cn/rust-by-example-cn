@@ -11,7 +11,7 @@ fn main() {
     // 可变性错误
     //*immutable_box = 4;
 
-    // **移动** box，改变所有权（和可变性）
+    // *移动* box，改变所有权（和可变性）
     let mut mutable_box = immutable_box;
 
     println!("mutable_box contains {}", mutable_box);
