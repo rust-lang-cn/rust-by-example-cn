@@ -1,14 +1,14 @@
 # DRY (不写重复代码)
 
-通过提取函数或测试单元的公共部分，宏允许编写 DRY 代码（DRY 是 Don't Repeat Yourself 的缩写，意思为“不要写重复代码”）。这里给出一个例子，实现并测试了关于 `Vec<T>` 的 `+=`、`*=` 和 `-=` 等运算符。
+通过提取函数或测试集的公共部分，宏可以让你写出 DRY 的代码（DRY 是 Don't Repeat
+Yourself 的缩写，意思为 “不要写重复代码”）。这里给出一个例子，对 `Vec<T>` 实现
+并测试了关于 `+=`、`*=` 和 `-=` 等运算符。
 
 ```rust,editable
 use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
-    // `tt` （token tree，令牌树）指示符用于运算符和令牌。
-    // （原文：The `tt` (token tree) designator is used for
-    // operators and tokens.）
+    // `tt` （token tree，标记树）指示符表示运算符和标记。
     ($a:ident, $b: ident, $func:ident, $op:tt) => (
         assert!($a.len() == $b.len(),
                 "{:?}: dimension mismatch: {:?} {:?} {:?}",
