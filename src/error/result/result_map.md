@@ -1,29 +1,49 @@
-# 关于 `Result` 的 `map`
+# `Result` 的 `map`
 
-前面关于 panic 例子，提供给我们的是一个无用的错误消息。为了避免这样，我们需要更具体地指定返回类型。在那个例子中，该常规元素为 `i32` 类型。
+上一节的 `multiply` 函数的 panic 设计不是健壮的（robust）。一般地，我们希望把
+错误返回给调用者，这样它可以决定回应错误的正确方式。
 
-为了确定 `Err` 的类型，我们可以借助 [`parse()`][parse]，它使用 [`FromStr`][from_str] trait 来针对 [`i32`][i32] 实现。结果是，`Err` 类型被指定为 [`ParseIntError`][parse_int_error]。
+首先，我们需要了解需要处理的错误类型是什么。为了确定 `Err` 的类型，我们可以
+用 [`parse()`][parse] 来试验。Rust 已经为 [`i32`][i32] 类型使用
+[`FromStr`][from_str] trait 实现了 `parse()`。结果表明，这里的 `Err` 类型被指定为
+[`ParseIntError`][parse_int_error]。
 
-在下面例子中要注意，使用简单的 `match` 语句会导致更加繁琐的代码。事实证明，用到 `Option` 的 `map` 方法也对 `Result` 进行了实现。
+> 译注：原文没有具体讲如何确定 `Err` 的类型。由于目前用于获取类型的函数仍然是不
+> 稳定的，我们可以用间接的方法。使用下面的代码：
+>
+> ```rust,editable
+> fn main () {
+>     let i: () = "t".parse::<i32>();
+> }
+> ```
+>
+> 由于不可能把 `Result` 类型赋给单元类型变量 `i`，编译器会提示我们：
+>
+> ```text
+> note: expected type `()`
+>          found type `std::result::Result<i32, std::num::ParseIntError>`
+> ```
+>
+> 这样就知道了 `parse<i32>` 函数的返回类型详情。
 
-幸运的是，`Option` 的 `map` 方法是对 `Result` 进行了实现的许多组合算子之一。 [`enum.Result`][result] 包含一个完整的列表。
+在下面的例子中，使用简单的 `match` 语句导致了更加繁琐的代码。
 
 ```rust,editable
 use std::num::ParseIntError;
 
-// 返回类型重写之后，我们使用模式匹配，而不使用 `unwrap()`。
-fn double_number(number_str: &str) -> Result<i32, ParseIntError> {
-    match number_str.parse::<i32>() {
-        Ok(n)  => Ok(2 * n),
+// 修改了上一节中的返回类型，现在使用模式匹配而不是 `unwrap()`。
+fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
+    match first_number_str.parse::<i32>() {
+        Ok(first_number)  => {
+            match second_number_str.parse::<i32>() {
+                Ok(second_number)  => {
+                    Ok(first_number * second_number)
+                },
+                Err(e) => Err(e),
+            }
+        },
         Err(e) => Err(e),
     }
-}
-
-// 就像 `Option`，我们可以使用组合算子，如 `map()`。
-// 此函数在其他方面和上述的示例一样，并表示：
-// 若值有效则修改 n，否则传递错误。
-fn double_number_map(number_str: &str) -> Result<i32, ParseIntError> {
-    number_str.parse::<i32>().map(|n| 2 * n)
 }
 
 fn print(result: Result<i32, ParseIntError>) {
@@ -34,12 +54,45 @@ fn print(result: Result<i32, ParseIntError>) {
 }
 
 fn main() {
-    // 这里仍然给出一个合理的答案。
-    let twenty = double_number("10");
+    // 这种情形下仍然会给出正确的答案。
+    let twenty = multiply("10", "2");
     print(twenty);
 
-    // 下面提供了更加有用的错误消息。
-    let tt = double_number_map("t");
+    // 这种情况下就会提供一条更有用的错误信息。
+    let tt = multiply("t", "2");
+    print(tt);
+}
+```
+
+幸运的是，`Option` 的 `map`、`and_then`、以及很多其他组合算子也为 `Result` 实现
+了。官方文档的 [`Result`][result] 一节包含完整的方法列表。
+
+```rust,editable
+use std::num::ParseIntError;
+
+// 就像 `Option` 那样，我们可以使用 `map()` 之类的组合算子。
+// 除去写法外，这个函数与上面那个完全一致，它的作用是：
+// 如果值是合法的，计算其乘积，否则返回错误。
+fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
+    first_number_str.parse::<i32>().and_then(|first_number| {
+        second_number_str.parse::<i32>().map(|second_number| first_number * second_number)
+    })
+}
+
+fn print(result: Result<i32, ParseIntError>) {
+    match result {
+        Ok(n)  => println!("n is {}", n),
+        Err(e) => println!("Error: {}", e),
+    }
+}
+
+fn main() {
+    // 这种情况下仍然会给出正确的答案。
+    let twenty = multiply("10", "2");
+    print(twenty);
+
+    // 这种情况下就会提供一条更有用的错误信息。
+    let tt = multiply("t", "2");
     print(tt);
 }
 ```
