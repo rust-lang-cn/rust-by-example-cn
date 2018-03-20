@@ -1,12 +1,15 @@
 # Iterators
 
-`Iterator` trait 用来实现关于集合（collection）类型（比如数组）的迭代器。
+`Iterator` trait 用来对集合（collection）类型（比如数组）实现迭代器。
 
-这个 trait 只需定义一个指向 `next`（下一个）元素的方法，这可手动在 `impl` 代码块中定义，或者自动定义（比如在数组或区间中）。
+这个 trait 只需定义一个返回 `next`（下一个）元素的方法，这可手动在 `impl` 代码块
+中定义，或者自动定义（比如在数组或区间中）。
 
-为方便起见，`for` 结构通常使用 [`.into_iterator()`][intoiter] 方法将一些集合类型转换为迭代器。
+为方便起见，`for` 结构会使用 [`.into_iterator()`][intoiter] 方法将一些集合类型
+转换为迭代器。
 
-下面例子展示了如何访问使用 `Iterator` trait 的方法，关于这方面的更多内容可[点击这里][iter]查看。
+下面例子展示了如何使用 `Iterator` trait 的方法，更多可用的方法可以看[这里][iter]。
+
 
 ```rust,editable
 struct Fibonacci {
@@ -14,15 +17,15 @@ struct Fibonacci {
     next: u32,
 }
 
-// 实现关于 `Fibonacci` （斐波那契）的 `Iterator`。
-// `Iterator` trait 只需定义一个指向 `next`（下一个）元素的方法。
+// 为 `Fibonacci`（斐波那契）实现 `Iterator`。
+// `Iterator` trait 只需定义一个能返回 `next`（下一个）元素的方法。
 impl Iterator for Fibonacci {
     type Item = u32;
     
     // 我们在这里使用 `.curr` 和 `.next` 来定义数列（sequence）。
     // 返回类型为 `Option<T>`：
     //     * 当 `Iterator` 结束时，返回 `None`。
-    //     * 其他情况，返回被 `Some` 包裹（wrapped）的下一个值。
+    //     * 其他情况，返回被 `Some` 包裹（wrap）的下一个值。
     fn next(&mut self) -> Option<u32> {
         let new_next = self.curr + self.next;
 
@@ -35,13 +38,13 @@ impl Iterator for Fibonacci {
     }
 }
 
-// 返回一个斐波那契数列生成器（generator）
+// 返回一个斐波那契数列生成器
 fn fibonacci() -> Fibonacci {
     Fibonacci { curr: 1, next: 1 }
 }
 
 fn main() {
-    // `0..3` 是一个 `Iterator`，会产生：0，1 和 2。
+    // `0..3` 是一个 `Iterator`，会产生：0、1 和 2。
     let mut sequence = 0..3;
 
     println!("Four consecutive `next` calls on 0..3");
@@ -50,9 +53,8 @@ fn main() {
     println!("> {:?}", sequence.next());
     println!("> {:?}", sequence.next());
 
-    // `for` 通过 `Iterator` 进行工作，直到 `Iterator` 为 `None`。
-    // 每个 `Some` 值都被解包（unwrap）且限定为一个变量（这里是 `i`）。
-    println!("Iterate through 0..3 using `for`");
+    // `for` 遍历 `Iterator` 直到返回 `None`，
+    // 并且每个 `Some` 值都被解包（unwrap），然后绑定给一个变量（这里是 `i`）。       println!("Iterate through 0..3 using `for`");
     for i in 0..3 {
         println!("> {}", i);
     }
@@ -63,7 +65,7 @@ fn main() {
         println!("> {}", i);
     }
 
-    // `skip(n)` 方法通过跳过前 `n` 项缩短了 `Iterator` 。
+    // `skip(n)` 方法移除前 `n` 项，从而缩短了 `Iterator` 。
     println!("The next four terms of the Fibonacci sequence are: ");
     for i in fibonacci().skip(4).take(4) {
         println!("> {}", i);

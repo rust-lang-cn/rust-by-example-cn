@@ -1,15 +1,17 @@
 # Clone
 
-当处理资源时，默认的行为是在赋值或函数调用的同时将它们转移。但是我们有时候也需要得到一份资源的复制。
+当处理资源时，默认的行为是在赋值或函数调用的同时将它们转移。但是我们有时候也需要
+把资源复制一份。
 
-[`Clone`][clone] trait 正好帮助我们完成这任务。更普遍地，我们可以使用由 `Clone` trait 定义的方法。
+[`Clone`][clone] trait 正好帮助我们完成这任务。通常，我们可以使用由 `Clone`
+trait 定义的 `.clone()` 方法。
 
 ```rust,editable
 // 不含资源的单元结构体
 #[derive(Debug, Clone, Copy)]
 struct Nil;
 
-// 包含实现 `Clone` trait 的资源的元组结构体
+// 一个包含资源的结构体，它实现了 `Clone` trait
 #[derive(Clone, Debug)]
 struct Pair(Box<i32>, Box<i32>);
 
@@ -27,15 +29,15 @@ fn main() {
     let pair = Pair(Box::new(1), Box::new(2));
     println!("original: {:?}", pair);
 
-    // 将 `pair` 复制到 `moved_pair`，移动（move）了资源
+    // 将 `pair` 绑定到 `moved_pair`，移动（move）了资源
     let moved_pair = pair;
     println!("copy: {:?}", moved_pair);
 
     // 报错！`pair` 已失去了它的资源。
     //println!("original: {:?}", pair);
-    // 试一试 ^ 将此行注释去掉。
+    // 试一试 ^ 取消此行注释。
 
-    // 将 `moved_pair` 克隆到 `cloned_pair`（包含资源）
+    // 将 `moved_pair`（包括其资源）克隆到 `cloned_pair`。
     let cloned_pair = moved_pair.clone();
     // 使用 std::mem::drop 来销毁原始的 pair。
     drop(moved_pair);
