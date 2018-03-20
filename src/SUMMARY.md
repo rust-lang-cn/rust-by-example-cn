@@ -130,7 +130,7 @@
         - [重复](macros/repeat.md)
     - [DRY (不写重复代码)](macros/dry.md)
     - [DSL (领域专用语言)](macros/dsl.md)
-    - [可变参数宏](macros/variadics.md)
+    - [可变参数接口](macros/variadics.md)
 
 - [macro_rules!](macros.md)
     - [Syntax](macros/syntax.md)

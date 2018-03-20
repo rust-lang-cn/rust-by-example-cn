@@ -8,7 +8,7 @@ Yourself 的缩写，意思为 “不要写重复代码”）。这里给出一�
 use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
-    // `tt` （token tree，标记树）指示符表示运算符和标记。
+    // `tt`（token tree，标记树）指示符表示运算符和标记。
     ($a:ident, $b: ident, $func:ident, $op:tt) => (
         assert!($a.len() == $b.len(),
                 "{:?}: dimension mismatch: {:?} {:?} {:?}",

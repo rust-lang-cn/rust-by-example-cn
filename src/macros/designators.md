@@ -3,7 +3,7 @@
 宏的参数使用一个美元符号 `$` 作为前缀，并使用一个**指示符**（designator）来
 注明类型：
 
-```rust,editalbe
+```rust,editable
 macro_rules! create_function {
     // 此宏接受一个 `ident` 指示符表示的参数，并创建一个名为 `$func_name` 的函数。
     // `ident` 指示符用于变量名或函数名
