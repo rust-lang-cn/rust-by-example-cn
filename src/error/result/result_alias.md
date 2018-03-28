@@ -22,7 +22,7 @@ fn multiply(first_number_str: &str, second_number_str: &str) -> AliasedResult<i3
     })
 }
 
-// 这里的别名又让我们节省了一些代码量。
+// 在这里使用别名又让我们节省了一些代码量。
 fn print(result: AliasedResult<i32>) {
     match result {
         Ok(n)  => println!("n is {}", n),
