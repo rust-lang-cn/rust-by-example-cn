@@ -1,8 +1,9 @@
-# Box、栈和堆
+# 箱子、栈和堆
 
 在 Rust 中，所有值默认都是栈分配的。通过创建 `Box<T>`，可以把值**装箱**（boxed）来
-使它在堆上分配。箱子类型是一个智能指针，指向堆分配的 `T` 类型的值。当一个箱子离开
-作用域时，它的析构函数会被调用，内部的对象会被销毁，堆上分配的内存也会被释放。
+使它在堆上分配。箱子（box，即 `Box<T>` 类型的实例）是一个智能指针，指向堆分配
+的 `T` 类型的值。当箱子离开作用域时，它的析构函数会被调用，内部的对象会被
+销毁，堆上分配的内存也会被释放。
 
 被装箱的值可以使用 `*` 运算符进行解引用；这会移除掉一层装箱。
 
@@ -65,7 +66,7 @@ fn main() {
     println!("Boxed box occupies {} bytes in the stack",
              mem::size_of_val(&box_in_a_box));
 
-    // 将包含在 `boxed_point` 的数据复制到 `unboxed_point`
+    // 将包含在 `boxed_point` 中的数据复制到 `unboxed_point`
     let unboxed_point: Point = *boxed_point;
     println!("Unboxed point occupies {} bytes in the stack",
              mem::size_of_val(&unboxed_point));

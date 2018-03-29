@@ -29,7 +29,7 @@ mod checked {
             // `Err` 中并返回
             Err(MathError::DivisionByZero)
         } else {
-            // 此操作是有效的，返回包装成 `Ok` 的结果
+            // 此操作是有效的，返回包装在 `Ok` 中的结果
             Ok(x / y)
         }
     }

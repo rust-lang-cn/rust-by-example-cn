@@ -1,8 +1,8 @@
 # 动态数组 vector
 
-vector 是可变大小的数组。和 slice（切片）类似，它们的大小在编译时是未知的，但
+vector 是大小可变的数组。和 slice（切片）类似，它们的大小在编译时是未知的，但
 它们可以随时扩大或缩小。一个 vector 使用 3 个词来表示：一个指向数据的指针，vector
-的长度，还有它的容量。此容量指明了为这个 vector 要保留多少内存。vector 的长度
+的长度，还有它的容量。此容量指明了要为这个 vector 保留多少内存。vector 的长度
 只要小于该容量，就可以随意增长；当需要超过这个阈值时，会给 vector 重新分配一段
 更大的容量。
 
@@ -44,7 +44,7 @@ fn main() {
         println!("> {}", x);
     }
 
-    // `Vector` 也可以在被迭代的同时，使用独立变量（`i`）来记录迭代次数
+    // 可以在迭代 `Vector` 的同时，使用独立变量（`i`）来记录迭代次数
     for (i, x) in xs.iter().enumerate() {
         println!("In position {} we have value {}", i, x);
     }

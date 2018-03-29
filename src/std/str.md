@@ -3,9 +3,9 @@
 Rust 中有两种字符串类型：`String` 和 `&str`。
 
 `String` 被存储为由字节组成的 vector（`Vec<u8>`），但保证了它一定是一个有效的
-UTF-8 序列。`String` 是堆分配的，可增长，且不是零结尾的（null terminated）。
+UTF-8 序列。`String` 是堆分配的，可增长的，且不是零结尾的（null terminated）。
 
-`&str` 是一个总是指向有效 UTF-8 序列的切片（`&[u8]`），并可在用来查看 `String` 的内容，就如同 `&[T]` 是 `Vec<T>` 的全部或部分引用。
+`&str` 是一个总是指向有效 UTF-8 序列的切片（`&[u8]`），并可用来查看 `String` 的内容，就如同 `&[T]` 是 `Vec<T>` 的全部或部分引用。
 
 ```rust,editable
 fn main() {
@@ -115,7 +115,7 @@ fn main() {
     // 注意这并不是一个 &str
     let bytestring: &[u8; 20] = b"this is a bytestring";
 
-    // 字节串没有实现 Display，所以它们的打印功能有一些受限
+    // 字节串没有实现 Display，所以它们的打印功能有些受限
     println!("A bytestring: {:?}", bytestring);
 
     // 字节串可以使用单字节的转义字符...

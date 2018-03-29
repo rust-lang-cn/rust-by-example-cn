@@ -3,7 +3,7 @@
 
 把 result 用 match 连接起来会显得很难看；幸运的是，`?` 运算符可以把这种逻辑变得
 干净漂亮。`?` 运算符用在返回值为 `Result` 的表达式后面，它等同于这样一个匹配
-表达式：其中 `Err(err)` 分支展开成提前返回的 `return Err(err)`，同时 `Ok(ok)`
+表达式：其中 `Err(err)` 分支展开成提前返回的 `return Err(err)`，而 `Ok(ok)`
 分支展开成 `ok` 表达式。
 
 ```rust,editable,ignore,mdbook-runnable
@@ -43,10 +43,10 @@ mod checked {
 
     // 中间函数
     fn op_(x: f64, y: f64) -> MathResult {
-        // 如果 `div` “失败”了，那么 `DivisionByZero` 将被返回
+        // 如果 `div` “失败” 了，那么返回 `DivisionByZero`
         let ratio = div(x, y)?;
 
-        // 如果 `ln` “失败”了，那么 `NegativeLogarithm` 将被返回
+        // 如果 `ln` “失败” 了，那么返回 `NegativeLogarithm`
         let ln = ln(ratio)?;
 
         sqrt(ln)

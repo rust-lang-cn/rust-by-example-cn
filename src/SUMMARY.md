@@ -145,7 +145,7 @@
     - [使用 `Box` 处理错误](error/boxing_errors.md)
 
 - [标准库类型](std.md)
-    - [Box, 以及栈和堆](std/box.md)
+    - [箱子、栈和堆](std/box.md)
     - [动态数组 vector](std/vec.md)
     - [字符串 String](std/str.md)
     - [选项 `Option`](std/option.md)

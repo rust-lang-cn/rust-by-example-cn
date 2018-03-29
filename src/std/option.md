@@ -1,7 +1,7 @@
 # 选项 `Option`
 
 有时候想要捕捉到程序某部分的失败信息，而不是调用 `panic!`；这可使用 `Option`
-枚举类型来完成。
+枚举类型来实现。
 
 `Option<T>` 有两个变量：
 
@@ -42,7 +42,6 @@ fn main() {
     let optional_float = Some(0f32);
 
     // 解包 `Some` 将取出被包装的值。
-    // （原文：Unwrapping a `Some` variant will extract the value wrapped.）
     println!("{:?} unwraps to {:?}", optional_float, optional_float.unwrap());
 
     // 解包 `None` 将会引发 `panic!`。

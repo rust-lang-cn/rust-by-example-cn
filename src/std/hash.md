@@ -4,7 +4,7 @@ vector 通过整型下标来存储值，而 `HashMap`（散列表）通过键（
 值。`HashMap` 的键可以是布尔型、整型、字符串，或任意实现了 `Eq` 和 `Hash` trait
 的其他类型。在下一节将进一步介绍。
 
-和 vector 类似，`HashMap` 也是可增长的，但 HashMap 在占据了多余空间时也可以缩小
+和 vector 类似，`HashMap` 也是可增长的，但 HashMap 在占据了多余空间时还可以缩小
 自己。可以使用 `HashMap::with_capacity(unit)` 创建具有一定初始容量的 HashMap，也
 可以使用 `HashMap::new()` 来获得一个带有默认初始容量的 HashMap（这是推荐方式）。
 
@@ -54,7 +54,7 @@ fn main() {
 }
 ```
 
-想要了解更多关于散列（hash）与散列表（hash map）（有时也称作散列表，hash table）的
-工作原理，可以查看 Wikipedia 的词条[散列表][wiki-hash]。
+想要了解更多关于散列（hash）与散列表（hash map）（有时也称作 hash table）的
+工作原理，可以查看 Wikipedia 的[散列表][wiki-hash]词条。
 
 [wiki-hash]: http://en.wikipedia.org/wiki/Hash_table
