@@ -1,13 +1,16 @@
-# Box, 以及栈和堆
+# Box、栈和堆
 
-在 Rust 中，所有值默认都由栈分配。值也可以通过创建 `Box<T>` 来**装箱**（boxed，分配在堆上）。装箱类型是一个智能指针，指向堆分配的 `T` 类型的值。当一个装箱类型离开作用域时，它的析构器会被调用，内部的对象会被销毁，分配在堆上内存会被释放。
+在 Rust 中，所有值默认都是栈分配的。通过创建 `Box<T>`，可以把值**装箱**（boxed）来
+使它在堆上分配。箱子类型是一个智能指针，指向堆分配的 `T` 类型的值。当一个箱子离开
+作用域时，它的析构函数会被调用，内部的对象会被销毁，堆上分配的内存也会被释放。
 
-**装箱**的值可以使用 `*` 运算符进行解引用；这会移除掉一个间接层（this removes one layer of indirection. ）。
+被装箱的值可以使用 `*` 运算符进行解引用；这会移除掉一层装箱。
 
 ```rust,editalbe
 use std::mem;
 
-#[derive(Clone, Copy)]
+#[allow(dead_code)]
+#[derive(Debug, Clone, Copy)]
 struct Point {
     x: f64,
     y: f64,
@@ -29,7 +32,7 @@ fn boxed_origin() -> Box<Point> {
 }
 
 fn main() {
-    // （所有的类型标注都是可要可不要的）
+    // （所有的类型标注都不是必需的）
     // 栈分配的变量
     let point: Point = origin();
     let rectangle: Rectangle = Rectangle {
@@ -43,10 +46,10 @@ fn main() {
         p2: origin()
     });
 
-    // 函数的输出可以装箱（boxed）
+    // 函数的输出可以装箱
     let boxed_point: Box<Point> = Box::new(origin());
 
-    // 双重间接装箱（Double indirection）
+    // 两层装箱
     let box_in_a_box: Box<Box<Point>> = Box::new(boxed_origin());
 
     println!("Point occupies {} bytes in the stack",
@@ -54,7 +57,7 @@ fn main() {
     println!("Rectangle occupies {} bytes in the stack",
              mem::size_of_val(&rectangle));
 
-    // box 的大小 = 指针 大小（box size = pointer size）
+    // box 的宽度就是指针宽度
     println!("Boxed point occupies {} bytes in the stack",
              mem::size_of_val(&boxed_point));
     println!("Boxed rectangle occupies {} bytes in the stack",
