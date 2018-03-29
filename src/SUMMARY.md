@@ -158,6 +158,7 @@
 
 - [标准库更多介绍](std_misc.md)
     - [线程](std_misc/threads.md)
+        - [测试实例：map-reduce](std_misc/threads/testcase_mapreduce.md)
     - [通道](std_misc/channels.md)
     - [路径 Path](std_misc/path.md)
     - [文件输入输出 I/O](std_misc/file.md)

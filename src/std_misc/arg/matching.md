@@ -1,6 +1,6 @@
-# 参数分析
+# 参数解析
 
-匹配可以用来解析简单的参数：
+可以用模式匹配来解析简单的参数：
 
 ```rust,editable
 use std::env;
@@ -36,7 +36,7 @@ fn main() {
                 _ => println!("This is not the answer."),
             }
         },
-        // 一条命令和一个传入参数
+        // 传入一条命令和一个参数
         3 => {
             let cmd = &args[1];
             let num = &args[2];
