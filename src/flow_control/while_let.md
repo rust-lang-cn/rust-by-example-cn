@@ -20,7 +20,7 @@ loop {
                 println!("`i` is `{:?}`. Try again.", i);
                 optional = Some(i + 1);
             }
-            // ^ 需要三个缩进！
+            // ^ 需要三层缩进！
         },
         // 当解构失败时退出循环：
         _ => { break; }

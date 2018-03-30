@@ -18,7 +18,7 @@ fn main() {
         // 相反，将 1 ... 12 序列绑定到 `n` 。现在年龄就可以读取了。
         n @ 1  ... 12 => println!("I'm a child of age {:?}", n),
         n @ 13 ... 19 => println!("I'm a teen of age {:?}", n),
-        // 没有绑定。返回结果。
+        // 不符合上面的范围。返回结果。
         n             => println!("I'm an old person of age {:?}", n),
     }
 }
