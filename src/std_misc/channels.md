@@ -12,7 +12,7 @@ static NTHREADS: i32 = 3;
 
 fn main() {
     // 通道有两个端点：`Sender<T>` 和 `Receiver<T>`，其中 `T` 是要发送
-    // 消息的类型（类型标注是可选的）
+    // 的消息的类型（类型标注是可选的）
     let (tx, rx): (Sender<i32>, Receiver<i32>) = mpsc::channel();
 
     for id in 0..NTHREADS {

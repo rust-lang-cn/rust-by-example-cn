@@ -20,7 +20,7 @@ fn main() {
     }
 
     for child in children {
-        // 等待线程到结束。返回一个结果。
+        // 等待线程结束。返回一个结果。
         let _ = child.join();
     }
 }

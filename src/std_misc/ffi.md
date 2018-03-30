@@ -1,8 +1,8 @@
 # 外部语言函数接口
 
 Rust 提供了到 C 语言库的外部语言函数接口（Foreign Function Interface，FFI）。外
-部语言函数必须在一个 `extern` 代码块中声明，且该代码块要带有一个包含外部语言库
-名称的 `#[link]` 属性。
+部语言函数必须在一个 `extern` 代码块中声明，且该代码块要带有一个包含库名称
+的 `#[link]` 属性。
 
 ```rust,ignore
 use std::fmt;

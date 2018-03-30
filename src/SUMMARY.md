@@ -169,7 +169,7 @@
         - [等待 Wait](std_misc/process/wait.md)
     - [文件系统操作](std_misc/fs.md)
     - [程序参数](std_misc/arg.md)
-        - [参数分析](std_misc/arg/matching.md)
+        - [参数解析](std_misc/arg/matching.md)
     - [外部语言函数接口](std_misc/ffi.md)
 
 - [补充](meta.md)
