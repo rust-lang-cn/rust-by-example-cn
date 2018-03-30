@@ -1,4 +1,4 @@
-# 路径 Path
+# 路径
 
 `Path` 结构体代表了底层文件系统的文件路径。`Path` 分为两种：`posix::Path`，针对
 类 UNIX 系统；以及 `windows::Path`，针对 Windows。prelude 会选择并输出符合平台类型
