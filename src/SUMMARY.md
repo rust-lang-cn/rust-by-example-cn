@@ -25,7 +25,7 @@
 
 - [变量绑定](variable_bindings.md)
     - [可变变量](variable_bindings/mut.md)
-    - [作用域和隐藏](variable_bindings/scope.md)
+    - [作用域和掩蔽](variable_bindings/scope.md)
     - [变量先声明](variable_bindings/declare.md)
 
 - [类型转换](cast.md)
