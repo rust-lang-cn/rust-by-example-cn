@@ -63,10 +63,10 @@ test src/lib.rs - div (line 31) ... ok
 test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-## 文档测试背后的动机
+## 文档测试的目的
 
 文档测试的主要目的是作为使用函数功能的例子，这是最重要的[指导
-原则][question-instead-of-unwrap] 之一。文档测试应当可以作为完整的代码段被直接
+原则][question-instead-of-unwrap]之一。文档测试应当可以作为完整的代码段被直接
 使用（很多用户会复制文档中的代码来用，所以例子要写得完善）。但使用 `?` 符号会
 导致编译失败，因为 `main` 函数会返回 `unit` 类型。幸运的是，我们可以在文档中
 隐藏几行源代码：你可以写 `fn try_main() -> Result<(), ErrorType>` 这样的

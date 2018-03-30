@@ -10,7 +10,7 @@ Rust 是一门非常重视正确性的语言，这门语言本身就提供了对
 
 Rust 也支持在测试中指定额外的依赖：
 
-* [dev 依赖][dev-dependencies]
+* [开发依赖][dev-dependencies]
 
 ## 参见
 

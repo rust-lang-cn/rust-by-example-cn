@@ -6,7 +6,7 @@
 
 cargo 在与 `src` 同级别的 `tests` 目录寻找集成测试。
 
-文件 `src/lib.rs`:
+文件 `src/lib.rs`：
 
 ```rust,ignore
 // 假设这个 crate 叫做 adder，我们需要在集成测试中用 extern 说明。
@@ -15,7 +15,7 @@ pub fn testing add(a: i32, b: i32) -> i32 {
 }
 ```
 
-包含测试的文件：`tests/integration_test.rs`:
+包含测试的文件：`tests/integration_test.rs`：
 
 ```rust,ignore
 // 声明被测试的外部 crate，就像其他使用该 crate 的程序要声明的那样。

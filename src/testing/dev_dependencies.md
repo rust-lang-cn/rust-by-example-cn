@@ -1,9 +1,9 @@
 # 开发依赖
 
 有时仅在测试中才需要一些依赖（比如基准测试相关的）。这种依赖要写在 `Cargo.toml`
-的 `[dev-dependencies]` 部分。这些依赖不会传染给其他依赖于这个包的包。
+的 `[dev-dependencies]` 部分。这些依赖不会传播给其他依赖于这个包的包。
 
-一个例子就是使用扩展了标准的 `assert!` 宏的 crate。
+比如说使用 `pretty_assertions`，这是扩展了标准的 `assert!` 宏的一个 crate。
 
 文件 `Cargo.toml`:
 
