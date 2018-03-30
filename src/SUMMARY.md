@@ -5,15 +5,15 @@
 - [Hello World](hello.md)
     - [注释](hello/comment.md)
     - [格式化输出](hello/print.md)
-        - [调试](hello/print/print_debug.md)
-        - [显示](hello/print/print_display.md)
+        - [调试（debug）](hello/print/print_debug.md)
+        - [显示（display）](hello/print/print_display.md)
             - [测试实例：List](hello/print/print_display/testcase_list.md)
         - [格式化](hello/print/fmt.md)
 
 - [原生类型](primitives.md)
-    - [数据和运算符](primitives/literals.md)
+    - [字面量和运算符](primitives/literals.md)
     - [元组](primitives/tuples.md)
-    - [数组和 slice 类型](primitives/array.md)
+    - [数组和切片](primitives/array.md)
 
 - [自定义类型](custom_types.md)
     - [结构体](custom_types/structs.md)
@@ -25,7 +25,7 @@
 
 - [变量绑定](variable_bindings.md)
     - [可变变量](variable_bindings/mut.md)
-    - [作用域和隐藏](variable_bindings/scope.md)
+    - [作用域和掩蔽](variable_bindings/scope.md)
     - [变量先声明](variable_bindings/declare.md)
 
 - [类型转换](conversion.md)
