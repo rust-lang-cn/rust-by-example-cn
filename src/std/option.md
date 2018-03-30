@@ -8,7 +8,7 @@
 * `None`，表明失败或缺少值
 * `Some(value)`，元组结构体，封装了一个 `T` 类型的值 `value`
 
-```rust,editalbe,ignore,mdbook-runnable
+```rust,editable,ignore,mdbook-runnable
 // 不会 `panic!` 的整数除法。
 fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
     if divisor == 0 {
