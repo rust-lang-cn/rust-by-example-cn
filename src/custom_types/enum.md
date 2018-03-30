@@ -1,58 +1,54 @@
 # 枚举
 
-`enum` 关键字允许创建一个代表数个可能变量的数据的类型（原文：The `enum` keyword allows
- the creation of a type which may be one of a few different variants.若您对此句有
- 更好的翻译或理解，希望指出来，谢谢。）。在 `struct` 中任何合法的变量在 `enum` 同样是合法的。
+`enum` 关键字可以创建枚举类型（enumeration），该类型的实例只能在数个可能的取值中
+取一种。任何一个合法的 `struct` 同时也是合法的 `enum` 取值。
 
 ```rust,editable
-// 隐藏未使用代码警告的属性。
+// 该属性用于隐藏对未使用代码的警告。
 #![allow(dead_code)]
 
-// 创建一个 `enum` （枚举）来划分人的类别。注意命名和类型的信息是如何一起
-// 明确规定变量的：
-// `Engineer != Scientist` 和 `Height(i32) != Weight(i32)`。每者都不相同且
-// 相互独立。
-enum Person {
-    // 一个 `enum` 可能是个 `unit-like`（类单元结构体），
-    Engineer,
-    Scientist,
-    // 或像一个元组结构体，
-    Height(i32),
-    Weight(i32),
-    // 或像一个普通的结构体。
-    Info { name: String, height: i32 }
+// 创建一个 `enum`（枚举）来对 web 事件分类。注意变量名和类型共同指定了 `enum`
+// 取值的种类：`PageLoad` 不等于 `PageUnload`，`KeyPress(char)` 不等于
+// `Paste(String)`。各个取值不同，互相独立。
+enum WebEvent {
+    // 一个 `enum` 可以是单元结构体（称为 `unit-like` 或 `unit`），
+    PageLoad,
+    PageUnload,
+    // 或者一个元组结构体，
+    KeyPress(char),
+    Paste(String),
+    // 或者一个普通的结构体。
+    Click { x: i64, y: i64 }
 }
 
-// 此函数将一个 `Person` enum 作为参数，无返回值。
-fn inspect(p: Person) {
-    // `enum` 的使用必须覆盖所有情形（无可辩驳的），所以使用 `match`
-    // 以分支方式覆盖所有类型。
-    match p {
-        Person::Engineer    => println!("Is engineer!"),
-        Person::Scientist       => println!("Is scientist!"),
-        // 从 `enum` 内部解构 `i`
-        Person::Height(i) => println!("Has a height of {}.", i),
-        Person::Weight(i) => println!("Has a weight of {}.", i),
-        // 将 `Info` 解构成 `name` 和 `height`。
-        Person::Info { name, height } => {
-            println!("{} is {} tall!", name, height);
+// 此函数将一个 `WebEvent` enum 作为参数，无返回值。
+fn inspect(event: WebEvent) {
+    match event {
+        WebEvent::PageLoad => println!("page loaded"),
+        WebEvent::PageUnload => println!("page unloaded"),
+        // 从 `enum` 里解构出 `c`。
+        WebEvent::KeyPress(c) => println!("pressed '{}'.", c),
+        WebEvent::Paste(s) => println!("pasted \"{}\".", s),
+        // 把 `Click` 解构给 `x` and `y`。
+        WebEvent::Click { x, y } => {
+            println!("clicked at x={}, y={}.", x, y);
         },
     }
 }
 
 fn main() {
-    let person   = Person::Height(18);
-    let amira    = Person::Weight(10);
-    // `to_owned()` 从一个字符串 slice 创建一个具有所有权的 `String`。
-    let dave     = Person::Info { name: "Dave".to_owned(), height: 72 };
-    let rebecca  = Person::Scientist;
-    let rohan    = Person::Engineer;
+    let pressed = WebEvent::KeyPress('x');
+    // `to_owned()` 从一个字符串切片中创建一个具有所有权的 `String`。
+    let pasted  = WebEvent::Paste("my text".to_owned());
+    let click   = WebEvent::Click { x: 20, y: 80 };
+    let load    = WebEvent::PageLoad;
+    let unload  = WebEvent::PageUnload;
 
-    inspect(person);
-    inspect(amira);
-    inspect(dave);
-    inspect(rebecca);
-    inspect(rohan);
+    inspect(pressed);
+    inspect(pasted);
+    inspect(click);
+    inspect(load);
+    inspect(unload);
 }
 ```
 
