@@ -62,6 +62,7 @@ fn main() {
     // 现在让我们试试更简便的方式 `process()`。
     // （原文：Let's try the simpler looking `process()` now.）
     // （翻译疑问：looking 是什么意思呢？望指教。）
+    // （校对：让我们试试更简化的形式）
     let cooked_potato = process(potato);
 
     eat(cooked_apple);
