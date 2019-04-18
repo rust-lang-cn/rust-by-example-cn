@@ -190,6 +190,12 @@
         - [参数解析](std_misc/arg/matching.md)
     - [外部语言函数接口](std_misc/ffi.md)
 
+- [测试](testing.md)
+    - [单元测试](testing/unit_testing.md)
+    - [文档测试](testing/doc_testing.md)
+    - [集成测试](testing/integration_testing.md)
+    - [开发依赖](testing/dev_dependencies.md)
+
 - [补充](meta.md)
     - [文档](meta/doc.md)
     - [测试](meta/test.md)
