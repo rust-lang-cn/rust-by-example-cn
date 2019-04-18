@@ -18,7 +18,7 @@ This type is assigned to the variable which is stored until calling）。
 
 由于这个新类型是未知的类型，所以在函数中的任何用法都要求是泛型。然而，
 未限定的类型参量 `<T>` 仍然是不明确的并且是不允许的。因此通过其中一种 
-`trait`：`Fn`，`FnMut`，或 `RnOnce`（已经实现）就足以指明它的类型。
+`trait`：`Fn`，`FnMut`，或 `FnOnce`（已经实现）就足以指明它的类型。
 
 ```rust,editable
 // `F` 必须针对一个没有输入参数和返回值的闭包实现 `Fn`
