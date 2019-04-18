@@ -30,7 +30,7 @@ fn have_recipe(food: Food) -> Option<Food> {
 }
 
 // 做一份好菜，我们需要原材料和食谱这两者。
-// 我们可以借助一系列 `match` 来表达相应的逻辑：
+// 我们可以借助一连串 `match` 来表达相应的逻辑：
 // （原文：We can represent the logic with a chain of `match`es:）
 fn cookable_v1(food: Food) -> Option<Food> {
     match have_ingredients(food) {
@@ -69,4 +69,4 @@ fn main() {
 
 [closures]: ./fn/closures.html
 [map]: http://doc.rust-lang.org/std/option/enum.Option.html#method.map
-[and_then]: http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then 
+[and_then]: http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then
