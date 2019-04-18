@@ -34,7 +34,7 @@ fn main() {
 
 ### 参见：
 
-[语言参考][ref], [`cfg!`][cfg], 和 [宏][macros].
+[引用][ref], [`cfg!`][cfg], 和 [宏][macros].
 
 [cfg]: http://doc.rust-lang.org/std/macro.cfg!.html
 [macros]: ./macros.html
