@@ -6,46 +6,47 @@
 use List::*;
 
 enum List {
-    // Cons： 元组结构体，包含一个元素和一个指向下一节点的指针
+    // Cons：元组结构体，包含链表的一个元素和一个指向下一节点的指针
     Cons(u32, Box<List>),
-    // Nil： 末结点，表明链表结束
+    // Nil：末结点，表明链表结束
     Nil,
 }
 
-// 方法可以在 enum 定义
+// 可以为 enum 定义方法
 impl List {
-    // 创建一个空列表
+    // 创建一个空的 List 实例
     fn new() -> List {
-        // `Nil` 为 `List` 类型
+        // `Nil` 为 `List` 类型（译注：因 `Nil` 的完整名称是 `List::Nil`）
         Nil
     }
 
-    // 处理一个列表，得到一个头部带上一个新元素的同样类型的列表并返回此值
+    // 处理一个 List，在其头部插入新元素，并返回该 List
     fn prepend(self, elem: u32) -> List {
         // `Cons` 同样为 List 类型
         Cons(elem, Box::new(self))
     }
 
-    // 返回列表的长度
+    // 返回 List 的长度
     fn len(&self) -> u32 {
-        // `self` 必须匹配，因为这个方法的行为取决于 `self` 的变化类型
-        // `self` 为 `&List` 类型，`*self` 为 `List` 类型，一个具体的 `T` 类型的匹配
-        // 要参考引用 `&T` 的匹配
+        // 必须对 `self` 进行匹配（match），因为这个方法的行为取决于 `self` 的
+        // 取值种类。
+        // `self` 为 `&List` 类型，`*self` 为 `List` 类型，匹配一个具体的 `T`
+        // 类型要好过匹配引用 `&T`。
         match *self {
             // 不能得到 tail 的所有权，因为 `self` 是借用的；
-            // 而是得到一个 tail 引用
+            // 因此使用一个对 tail 的引用
             Cons(_, ref tail) => 1 + tail.len(),
-            // 基本情形：空列表的长度为 0
+            // （递归的）基准情形（base case）：一个长度为 0 的空列表
             Nil => 0
         }
     }
 
-    // 将列表以字符串（堆分配的）的形式返回
+    // 返回列表的字符串表示（该字符串是堆分配的）
     fn stringify(&self) -> String {
         match *self {
             Cons(head, ref tail) => {
-                // `format!` 和 `print!` 类似，但返回的是一个堆分配的字符串，而不是
-                // 打印结果到控制台上
+                // `format!` 和 `print!` 类似，但返回的是一个堆分配的字符串，
+                // 而不是打印结果到控制台上
                 format!("{}, {}", head, tail.stringify())
             },
             Nil => {
