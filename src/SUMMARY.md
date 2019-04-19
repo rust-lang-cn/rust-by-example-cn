@@ -5,8 +5,8 @@
 - [Hello World](hello.md)
     - [注释](hello/comment.md)
     - [格式化输出](hello/print.md)
-        - [调试](hello/print/print_debug.md)
-        - [显示](hello/print/print_display.md)
+        - [调试（debug）](hello/print/print_debug.md)
+        - [显示（display）](hello/print/print_display.md)
             - [测试实例：List](hello/print/print_display/testcase_list.md)
         - [格式化](hello/print/fmt.md)
 
