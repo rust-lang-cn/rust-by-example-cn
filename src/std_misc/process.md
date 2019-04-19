@@ -1,6 +1,7 @@
 # 子进程
 
-`process::Output` 结构体表示已结束的子进程（child process）的输出，而 `process::Command` 结构体是一个进程创建者（process builder）。
+`process::Output` 结构体表示已结束的子进程（child process）的输出，而
+`process::Command` 结构体是一个进程创建者（process builder）。
 
 ```rust,editable
 use std::process::Command;
@@ -24,4 +25,4 @@ fn main() {
 }
 ```
 
-（再试试前面的例子，给`rustc` 命令传入一个错误的标志）
+（再试试上面的例子，给 `rustc` 命令传入一个错误的 flag）
