@@ -1,6 +1,6 @@
 # 组合算子：`and_then`
 
-`map()` 以链式调用的方式来简化 `match` 语句。然而，在返回类型是 `Option<T>` 的函数中使用 `map()` 会导致出现嵌套形式 `Option<Option<T>>`。多层链式调用也会变得混乱。所以有必要引入 `and_them()`，就像某些熟知语言中的 flatmap。
+`map()` 以链式调用的方式来简化 `match` 语句。然而，在返回类型是 `Option<T>` 的函数中使用 `map()` 会导致出现嵌套形式 `Option<Option<T>>`。多层链式调用也会变得混乱。所以有必要引入 `and_then()`，就像某些熟知语言中的 flatmap。
 
 `and_then()` 使用包裹的值（wrapped value）调用其函数输入并返回结果。 如果 `Option` 是 `None`，那么它返回 `None`。
 
@@ -30,7 +30,7 @@ fn have_recipe(food: Food) -> Option<Food> {
 }
 
 // 做一份好菜，我们需要原材料和食谱这两者。
-// 我们可以借助一系列 `match` 来表达相应的逻辑：
+// 我们可以借助一连串 `match` 来表达相应的逻辑：
 // （原文：We can represent the logic with a chain of `match`es:）
 fn cookable_v1(food: Food) -> Option<Food> {
     match have_ingredients(food) {
@@ -69,4 +69,4 @@ fn main() {
 
 [closures]: ./fn/closures.html
 [map]: http://doc.rust-lang.org/std/option/enum.Option.html#method.map
-[and_then]: http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then 
+[and_then]: http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then

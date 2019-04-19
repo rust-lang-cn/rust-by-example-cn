@@ -19,7 +19,7 @@ fn main() {
 }
 ```
 
-`println!` 是一个[**宏**][macros]（macro），可以将文本输出到控制台（console）。
+`println!` 是一个[**宏**][macros]（macros），可以将文本输出到控制台（console）。
 
 使用 Rust 的编译器 `rustc` 可以从源程序生成可执行文件：
 
@@ -36,8 +36,7 @@ Hello World!
 
 ### 动手试一试
 
-单击上面的 "Run" 按钮并观察输出结果。然后增加一行代码，再一次使用宏 `println!`，
-得到下面结果：
+单击上面的 "Run" 按钮并观察输出结果。然后增加一行代码，再一次使用宏 `println!`，得到下面结果：
 
 ```text
 Hello World!
