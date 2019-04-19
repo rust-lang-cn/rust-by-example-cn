@@ -1,7 +1,8 @@
 # 通过例子学 Rust
 
 [![Build Status][travis-image]][travis-link]  
-> 已于 2016-08-07 翻译完全部内容，欢迎纠正——最后更新时间 2017-10-03    
+> 首次于 2016-08-07 翻译完全部内容，欢迎纠正——最后更新时间 2019.4.20  
+> 近段时间将跟随英文版进行升级调整，欢迎大家踊跃参与，共同更新内容 —— 2019.4.20  
 > Chinese translation of the [Rust by Example][rust-by-example]
 
 通过例子学 Rust（Rust by Example 中文版）包含在线代码编辑器。 
