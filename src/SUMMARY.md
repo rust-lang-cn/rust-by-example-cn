@@ -34,10 +34,9 @@
     - [类型推断](types/inference.md)
     - [别名](types/alias.md)
 
-- [类型转换](cast.md)
-    - [字面量](cast/literals.md)
-    - [类型推导](cast/inference.md)
-    - [别名](cast/alias.md)
+- [类型转换](conversion.md)
+    - [From 和 Into](conversion/from_into.md)
+    - [ToString 和 FromStr](conversion/string.md)
 
 - [表达式](expression.md)
 
