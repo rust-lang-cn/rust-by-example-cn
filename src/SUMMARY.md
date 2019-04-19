@@ -124,7 +124,7 @@
         - [省略](scope/lifetime/elision.md)
 
 - [特性 trait](trait.md)
-    - [派生](trait/derive.md)
+    - [推导](trait/derive.md)
     - [运算符重载](trait/ops.md)
     - [Drop](trait/drop.md)
     - [Iterators](trait/iter.md)

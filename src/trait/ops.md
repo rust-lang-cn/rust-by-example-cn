@@ -1,8 +1,11 @@
 # 运算符重载
 
-在 Rust 中，大部分运算符都可以通过 trait 来重载。也就是说，这些运算符可以根据它们输入的参数来完成不同的任务。为什么这样做是可行的呢，是因为运算符是对方法调用的语法糖。例如，`a + b` 中的 `+` 运算符会调用 `add` 方法（也就是 `a.add(b)`）。这个 `add` 方法是 `Add` trait 的一部分。因此，`+` 运算符可以被 `Add` trait 的实现者（implementor）使用。
+在 Rust 中，很多运算符可以通过 trait 来重载。也就是说，这些运算符可以根据它们的
+输入参数来完成不同的任务。这之所以可行，是因为运算符就是方法调用的语法糖。例
+如，`a + b` 中的 `+` 运算符会调用 `add` 方法（也就是 `a.add(b)`）。这个 `add` 方
+法是 `Add` trait 的一部分。因此，`+` 运算符可以被任何 `Add` trait 的实现者使用。
 
-[点击这里][ops]查看列举的重载运算符 trait，比如 `Add`。（原文：A list of the traits, such as `Add`, that overload operators are available [here][ops].）
+会重载运算符的 `trait`（比如 `Add` 这种）可以在[这里][ops]查看。
 
 ```rust,editable
 use std::ops;
@@ -16,9 +19,9 @@ struct FooBar;
 #[derive(Debug)]
 struct BarFoo;
 
-// `std::ops::Add` trait 在这里用来指明 `+` 的功能，我们给出 `Add<Bar>`——关于
-// 加法的 trait，带有一个 `Bar` 类型的右操作数（RHS）。下面代码块实现了这样的
-// 运算： Foo + Bar = FooBar。
+// `std::ops::Add` trait 用来指明 `+` 的功能，这里我们实现 `Add<Bar>`，它是用于
+// 把对象和 `Bar` 类型的右操作数（RHS）加起来的 `trait`。
+// 下面的代码块实现了 `Foo + Bar = FooBar` 这样的运算。
 impl ops::Add<Bar> for Foo {
     type Output = FooBar;
 
@@ -29,9 +32,9 @@ impl ops::Add<Bar> for Foo {
     }
 }
 
-// 通过反转类型，我们以实现非交换的加法作为结束。
-// 这里我们给出 `Add<Foo>`——关于加法的 trait，带有一个 `Foo` 类型的右操作数。
-// 这个代码块实现了这样的操作：Bar + Foo = BarFoo。
+// 通过颠倒类型，我们实现了不服从交换律的加法。
+// 这里我们实现 `Add<Foo>`，它是用于把对象和 `Foo` 类型的右操作数加起来的 trait。
+// 下面的代码块实现了 `Bar + Foo = BarFoo` 这样的运算。
 impl ops::Add<Foo> for Bar {
     type Output = BarFoo;
 
@@ -48,7 +51,7 @@ fn main() {
 }
 ```
 
-###参见：
+### 参见：
 
 [Add][add], [语法索引][syntax]
 
