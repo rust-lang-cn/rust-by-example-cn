@@ -10,7 +10,7 @@
 在下面代码中，`unwrap` 的两个实例生成了不同的错误类型。`Vec::first` 返回一个
 `Option`，而 `parse::<i32>` 返回一个 `Result<i32, ParseIntError>`：
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn double_first(vec: Vec<&str>) -> i32 {
     let first = vec.first().unwrap(); // 生成错误 1
     2 * first.parse::<i32>().unwrap() // 生成错误 2

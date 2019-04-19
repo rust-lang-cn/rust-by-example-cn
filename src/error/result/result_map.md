@@ -11,7 +11,7 @@
 > 译注：原文没有具体讲如何确定 `Err` 的类型。由于目前用于获取类型的函数仍然是不
 > 稳定的，我们可以用间接的方法。使用下面的代码：
 >
-> ```rust,editable
+> ```rust,editable,ignore
 > fn main () {
 >     let i: () = "t".parse::<i32>();
 > }

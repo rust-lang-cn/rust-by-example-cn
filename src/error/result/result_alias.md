@@ -31,8 +31,8 @@ fn print(result: AliasedResult<i32>) {
 }
 
 fn main() {
-    print(multiply("10"));
-    print(multiply("t"));
+    print(multiply("10", "2"));
+    print(multiply("t", "2"));
 }
 ```
 

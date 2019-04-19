@@ -64,19 +64,24 @@ fn main() {
 
  1. **复习**：在上面的例子中给 Matrix `结构体` 加上 `fmt::Display` trait，这样当
     你从 Debug 格式化 `{:?}` 切换到 Display 格式化 `{}` 时，会得到如下的输出：
-     ```
+	
+     ```text
      ( 1.1 1.2 )
      ( 2.1 2.2 )
      ```
+	 
      可以回顾之前学过的[显示（display）][print_display]的例子。
  2. 以 `reverse` 函数作为样板，写一个 `transpose` 函数，它可以接受一个 Matrix
      作为参数，并返回一个右上 - 左下对角线上的两元素交换后的 Matrix。举个例子：
-     ```
+	 
+     ```rust,ignore
      println!("Matrix:\n{}", matrix);
      println!("Transpose:\n{}", transpose(matrix));
      ```
+	 
      输出结果：
-     ```
+	 
+     ```text
      Matrix:
      ( 1.1 1.2 )
      ( 2.1 2.2 )
