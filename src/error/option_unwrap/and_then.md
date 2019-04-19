@@ -1,11 +1,15 @@
 # 组合算子：`and_then`
 
-`map()` 以链式调用的方式来简化 `match` 语句。然而，在返回类型是 `Option<T>` 的函数中使用 `map()` 会导致出现嵌套形式 `Option<Option<T>>`。多层链式调用也会变得混乱。所以有必要引入 `and_then()`，就像某些熟知语言中的 flatmap。
+`map()` 以链式调用的方式来简化 `match` 语句。然而，如果以返回类型是 `Option<T>`
+ 的函数作为 `map()` 的参数，会导致出现嵌套形式 `Option<Option<T>>`。这样多层串联
+调用就会变得混乱。所以有必要引入 `and_then()`，在某些语言中它叫做 flatmap。
 
-`and_then()` 使用包裹的值（wrapped value）调用其函数输入并返回结果。 如果 `Option` 是 `None`，那么它返回 `None`。
+`and_then()` 使用被 `Option` 包裹的值来调用其输入函数并返回结果。 如果 `Option`
+ 是 `None`，那么它返回 `None`。
 
-
-在下面例子中，`cookable_v2()` 会产生一个 `Option<Food>`。使用 `map()` 替代 `and_then()` 将会得到 `Option<Option<Food>>`，对 `eat()` 来说是一个无效类型。
+在下面例子中，`cookable_v2()` 会产生一个 `Option<Food>`。如果在这里使用 `map()`
+而不是 `and_then()` 将会得到 `Option<Option<Food>>`，这对 `eat()` 来说是一个
+无效类型。
 
 ```rust,editable
 #![allow(dead_code)]
@@ -13,7 +17,7 @@
 #[derive(Debug)] enum Food { CordonBleu, Steak, Sushi }
 #[derive(Debug)] enum Day { Monday, Tuesday, Wednesday }
 
-// 我们没有原材料（ingredient）来制作寿司。
+// 我们没有制作寿司所需的原材料（ingredient）（有其他的原材料）。
 fn have_ingredients(food: Food) -> Option<Food> {
     match food {
         Food::Sushi => None,
@@ -21,7 +25,7 @@ fn have_ingredients(food: Food) -> Option<Food> {
     }
 }
 
-// 我们拥有全部食物的食谱，除了欠缺高超的烹饪手艺。
+// 我们拥有全部食物的食谱，除了法国蓝带猪排（Cordon Bleu）的。
 fn have_recipe(food: Food) -> Option<Food> {
     match food {
         Food::CordonBleu => None,
@@ -29,9 +33,9 @@ fn have_recipe(food: Food) -> Option<Food> {
     }
 }
 
-// 做一份好菜，我们需要原材料和食谱这两者。
-// 我们可以借助一连串 `match` 来表达相应的逻辑：
-// （原文：We can represent the logic with a chain of `match`es:）
+
+// 要做一份好菜，我们需要原材料和食谱。
+// 我们可以借助一系列 `match` 来表达这个逻辑：
 fn cookable_v1(food: Food) -> Option<Food> {
     match have_ingredients(food) {
         None       => None,
@@ -42,7 +46,7 @@ fn cookable_v1(food: Food) -> Option<Food> {
     }
 }
 
-// 这可以使用 `and_then()` 方便重写出更紧凑的代码：
+// 也可以使用 `and_then()` 把上面的逻辑改写得更紧凑：
 fn cookable_v2(food: Food) -> Option<Food> {
     have_ingredients(food).and_then(have_recipe)
 }

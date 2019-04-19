@@ -1,10 +1,13 @@
-# 给 `Result` 起别名
+# 给 `Result` 取别名
 
-当我们要重复多次使用特定的 `Result` 类型怎么办呢？回忆一下，Rust 允许我们创建[别名][typealias]。对问题中提到的特定 `Result`，我们可以很方便地给它定义一个别名。
+当我们要重用某个 `Result` 类型时，该怎么办呢？回忆一下，Rust 允许我们
+创建[别名][typealias]。若某个 `Result` 有可能被重用，我们可以方便地给它取一个别名。
 
-在单个模块的级别上创建别名特别有帮助。在特定模块中发现的错误常常会有相同的 `Err` 类型，所以一个单一的别名就能简便地定义**所有的**关联 `Result`。这点太重要了，甚至标准库也提供了一个： `io::Result`！
+在模块的层面上创建别名特别有帮助。同一模块中的错误常常会有相同的 `Err` 类
+型，所以单个别名就能简便地定义**所有**相关的 `Result`。这太有用了，以至于标准库
+也提供了一个别名： [`io::Result`][io_result]！
 
-下面给出一个快速示例来展示语法：
+下面给出一个简短的示例来展示语法：
 
 ```rust,editable
 use std::num::ParseIntError;
@@ -12,12 +15,14 @@ use std::num::ParseIntError;
 // 为带有错误类型 `ParseIntError` 的 `Result` 定义一个泛型别名。
 type AliasedResult<T> = Result<T, ParseIntError>;
 
-// 使用上面定义过的别名来表示我们特指的 `Result` 类型。
-fn double_number(number_str: &str) -> AliasedResult<i32> {
-    number_str.parse::<i32>().map(|n| 2 * n)
+// 使用上面定义过的别名来表示上一节中的 `Result<i32,ParseIntError>` 类型。
+fn multiply(first_number_str: &str, second_number_str: &str) -> AliasedResult<i32> {
+    first_number_str.parse::<i32>().and_then(|first_number| {
+        second_number_str.parse::<i32>().map(|second_number| first_number * second_number)
+    })
 }
 
-// 这里的别名又让我们节省了一些空间（save some space）。
+// 在这里使用别名又让我们节省了一些代码量。
 fn print(result: AliasedResult<i32>) {
     match result {
         Ok(n)  => println!("n is {}", n),
@@ -26,8 +31,8 @@ fn print(result: AliasedResult<i32>) {
 }
 
 fn main() {
-    print(double_number("10"));
-    print(double_number("t"));
+    print(multiply("10"));
+    print(multiply("t"));
 }
 ```
 

@@ -1,36 +1,43 @@
 # 结果 `Result`
 
-[`Result`][result] 是 [`Option`][option] 类型的更丰富的版本，描述的是可能的**错误**而不是可能的**不存在**。
+[`Result`][result] 是 [`Option`][option] 类型的更丰富的版本，描述的是可能
+的**错误**而不是可能的**不存在**。
 
 也就是说，`Result<T，E>` 可以有两个结果的其中一个：
 
 * `Ok<T>`：找到 `T` 元素
-* `Err<E>`：发现错误，使用元素 `E` 表示（An error was found with element `E`）
+* `Err<E>`：找到 `E` 元素，`E` 即表示错误的类型。
 
 按照约定，预期结果是 “Ok”，而意外结果是 “Err”。
 
-和 `Option` 类似，`Result` 也有很多相关联的方法。例如 `unwrap（）`，能够产生元素 `T` 或 `panic`。 对于事件的处理，`Result` 和 `Option` 两者间有很多组合算子重叠。
+`Result` 有很多类似 `Option` 的方法。例如 `unwrap()`，它要么举出元素
+`T`，要么就 `panic`。 对于事件的处理，`Result` 和 `Option` 有很多相同的组合算子。
 
-使用 Rust 过程中，你可能会遇到返回 `Result` 类型的方法，例如 [`parse()`][parse] 方法。 它在某些情况下可能不能将一个字符串解析为另一种类型，所以 `parse()` 返回一个 `Result` 表示可能的失败。
+在使用 Rust 时，你可能会遇到返回 `Result` 类型的方法，例如 [`parse()`][parse]
+方法。它并不是总能把字符串解析成指定的类型，所以 `parse()` 返回一个
+`Result` 表示可能的失败。
 
 我们来看看当 `parse()` 字符串成功和失败时会发生什么：
 
 ```rust,editable,ignore,mdbook-runnable
-fn double_number(number_str: &str) -> i32 {
-    // 让我们尝试使用 `unwrap()` 把数字取出来。它会咬我们吗？
-    2 * number_str.parse::<i32>().unwrap()
+fn multiply(first_number_str: &str, second_number_str: &str) -> i32 {
+    // 我们试着用 `unwrap()` 把数字放出来。它会咬我们一口吗？
+    let first_number = first_number_str.parse::<i32>().unwrap();
+    let second_number = second_number_str.parse::<i32>().unwrap();
+    first_number * second_number
 }
 
 fn main() {
-    let twenty = double_number("10");
+    let twenty = multiply("10", "2");
     println!("double is {}", twenty);
 
-    let tt = double_number("t");
+    let tt = multiply("t", "2");
     println!("double is {}", tt);
 }
 ```
 
-在失败的情况下，`parse()` 留给我们一个错误，让 `unwrap()` 产生 `panic`（原文：`parse()` leaves us with an error for `unwrap()` to `panic` on）。另外，`panic` 会退出我们的程序，并提供一个不愉快的错误消息。
+在失败的情况下，`parse()` 产生一个错误，留给 `unwrap()` 来解包并产生 `panic`。另
+外，`panic` 会退出我们的程序，并提供一个让人很不爽的错误消息。
 
 为了改善错误消息的质量，我们应该更具体地了解返回类型并考虑显式地处理错误。
 
