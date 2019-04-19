@@ -1,8 +1,12 @@
 # RAII
 
-Rust 的变量不只是在栈中保存数据：它们也**占有**资源，比如 `Box<T>` 占有堆中的内存。Rust 强制实行 [RAII][raii]（Resource Acquisition Is Initiallization，资源获取即初始化），所以任何一个对象在离开作用域时，它的析构器（destructor）都被调用以及它的资源都被释放。
+Rust 的变量不只是在栈中保存数据：它们也**占有**资源，比如 `Box<T>` 占有
+堆（heap）中的内存。Rust 强制实行 [RAII][raii]（Resource Acquisition Is
+Initiallization，资源获取即初始化），所以任何对象在离开作用域时，它的析构
+函数（destructor）就被调用，然后它占有的资源就被释放。
 
-这种行为避免了**资源泄露**（*resource leak*）的错误，所以你再也不用手动释放内存或者担心内存泄露（memory leak）！下面是个快速入门示例：
+这种行为避免了**资源泄漏**（resource leak），所以你再也不用手动释放内存或者担心
+内存泄漏（memory leak）！下面是个快速入门示例：
 
 ```rust,editable
 // raii.rs
@@ -10,7 +14,7 @@ fn create_box() {
     // 在堆上分配一个整型数据
     let _box1 = Box::new(3i32);
 
-    // `_box1` 在这里销毁，而且内存得到释放
+    // `_box1` 在这里被销毁，内存得到释放
 }
 
 fn main() {
@@ -22,16 +26,16 @@ fn main() {
         // 在堆上分配一个整型数据
         let _box3 = Box::new(4i32);
 
-        // `_box3` 在这里销毁，而且内存得到释放        
+        // `_box3` 在这里被销毁，内存得到释放        
     }
 
-    // 创建很多 box，纯属娱乐。
+    // 创建一大堆 box（只是因为好玩）。
     // 完全不需要手动释放内存！
     for _ in 0u32..1_000 {
         create_box();
     }
 
-    // `_box2` 在这里销毁，而且内存得到释放    
+    // `_box2` 在这里被销毁，内存得到释放    
 }
 ```
 
@@ -55,7 +59,31 @@ $ rustc raii.rs && valgrind ./raii
 ==26873== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
 ```
 
-完全没有泄露！
+完全没有泄漏！
+
+## 析构函数
+
+Rust 中的析构函数概念是通过 [`Drop`] trait 提供的。当资源离开作用域，就调用析构
+函数。你无需为每种类型都实现 [`Drop`] trait，只要为那些需要自己的析构函数逻辑的
+类型实现就可以了。
+
+运行下列例子，看看 [`Drop`] trait 是怎样工作的。当 `main` 函数中的变量离开作用
+域，自定义的析构函数就会被调用：
+
+```rust,editable
+struct ToDrop;
+
+impl Drop for ToDrop {
+    fn drop(&mut self) {
+        println!("ToDrop is being dropped");
+    }
+}
+
+fn main() {
+    let x = ToDrop;
+    println!("Made a ToDrop!");
+}
+```
 
 ### 参见：
 
@@ -64,3 +92,4 @@ $ rustc raii.rs && valgrind ./raii
 [raii]: http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization
 [box]: ./std/box.html
 [valgrind]: http://valgrind.org/info/
+[`Drop`]: https://doc.rust-lang.org/std/ops/trait.Drop.html

@@ -1,7 +1,7 @@
 # 文件分层
 
-模块可以分配到文件/目录的层次结构中。让我们将[可见性小节例子][visibility]
-的代码拆开分到多个文件中：
+模块可以分配到文件/目录的层次结构中。让我们将《可见性》一节中
+的[例子][visibility]的代码拆分到多个文件中：
 
 ```bash
 $ tree .
@@ -13,11 +13,11 @@ $ tree .
 `-- split.rs
 ```
 
-在 `split.rs` 文件：
+`split.rs` 的内容：
 
 ```rust,ignore
-// 此声明将会查找名为 `my.rs` 或 `my/mod.rs` 的文件，并将该文件的内容插入到
-// 此作用域名为 `my` 的模块里面。
+// 此声明将会查找名为 `my.rs` 或 `my/mod.rs` 的文件，并将该文件的内容放到
+// 此作用域中一个名为 `my` 的模块里面。
 mod my;
 
 fn function() {
@@ -35,11 +35,11 @@ fn main() {
 }
 ```
 
-在 `my/mod.rs` 文件：
+`my/mod.rs` 的内容：
 
 ```rust,ignore
 // 类似地，`mod inaccessible` 和 `mod nested` 将找到 `nested.rs` 和
-// `inaccessible.rs` 文件，并在它们各自的模块中插入它们的内容。
+// `inaccessible.rs` 文件，并在它们放到各自的模块中。
 mod inaccessible;
 pub mod nested;
 
@@ -58,7 +58,7 @@ pub fn indirect_access() {
 }
 ```
 
-在 `my/nested.rs` 文件：
+`my/nested.rs` 的内容：
 
 ```rust,ignore
 pub fn function() {
@@ -71,7 +71,7 @@ fn private_function() {
 }
 ```
 
-在 `my/inaccessible.rs` 文件：
+`my/inaccessible.rs` 的内容：
 
 ```rust,ignore
 #[allow(dead_code)]

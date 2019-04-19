@@ -1,16 +1,17 @@
-# 派生
+# 推导
 
-通过 `#[derive]` [属性][attribute]，编译器能够提供一些对于 trait 的基本实现。如果需要一个更复杂的业务，这些 trait 仍然可以手动实现。（原文：The compiler is capable of providing basic implementations for some traits via the `#[derive]` [attribute][attribute]. These traits can still be manually implemented if a more complex behavior is required.）
+通过 `#[derive]` [属性][attribute]，编译器能够提供某些 trait 的基本实现。如果
+需要更复杂的行为，这些 trait 也可以手动实现。
 
-下面列举了 “derivable”（可派生的）trait：
+下面以下是可以自动推导的 trait：
+
 * 比较 trait:
   [`Eq`][eq], [`PartialEq`][partial-eq], [`Ord`][ord], [`PartialOrd`][partial-ord]
-* [`Clone`][clone], 采用复制（copy）方式从 `&T` 创建 `T`。
-* [`Copy`][copy]，给出“复制语义”（'copy semantics'）来替代“移动语义”（'move semantics'）。
+* [`Clone`][clone], 用来从 `&T` 创建副本 `T`。
+* [`Copy`][copy]，使类型具有 “复制语义”（copy semantics）而非 “移动语义”（move semantics）。
 * [`Hash`][hash]，从 `&T` 计算哈希值（hash）。
 * [`Default`][default], 创建数据类型的一个空实例。
-* `Zero`，创建数字数据类型的一个零值实例（zero instance）。
-* [`Debug`][debug]，使用 `{:?}` 格式化程序（formatter）格式化一个值。
+* [`Debug`][debug]，使用 `{:?}` formatter 来格式化一个值。
 
 ```rust,editable
 // `Centimeters`，可以比较的元组结构体
@@ -37,11 +38,11 @@ fn main() {
 
     // 报错：`Seconds` 不能打印；它没有实现 `Debug` trait
     //println!("One second looks like: {:?}", _one_second);
-    // 试一试 ^ 将此行注释去掉
+    // 试一试 ^ 取消此行注释
 
     // 报错：`Seconds`不能比较；它没有实现 `PartialEq` trait
     //let _this_is_true = (_one_second == _one_second);
-    // 试一试 ^ 将此行注释去掉
+    // 试一试 ^ 取消此行注释
 
     let foot = Inches(12);
 
@@ -59,6 +60,8 @@ fn main() {
     println!("One foot is {} than one meter.", cmp);
 }
 ```
+
+### 参见
 
 [`derive`][derive]
 

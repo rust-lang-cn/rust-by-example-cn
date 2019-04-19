@@ -1,49 +1,52 @@
 # 泛型
 
-**泛型**（generic）可以泛化类型和功能，以扩大适用范围。减少代码的重复是相当重要的，这可以通过多种方式实现，不过需要相当繁琐的语法。也就是说，用到泛型需要特别谨慎地指出哪种类型对于泛型类型来说是有效的。使用泛型最简单且最常见的方式就是用到类型参量（type parameter）。（本段原文：
-*Generics* is the topic of generalizing types and functionalities to broader
-cases. This is extremely useful for reducing code duplication in many ways,
-but can call for rather involving syntax. Namely, being generic requires
-taking great care to specify over which types a generic type
-is actually considered valid. The simplest and most common use of generics
-is for type parameters.）
+**泛型**（generic）是关于泛化类型和函数功能，以扩大其适用范围的话题。泛型极大地
+减少了代码的重复，但它自身的语法很要求细心。也就是说，采用泛型意味着仔细地指定
+泛型类型具体化时，什么样的具体类型是合法的。泛型最简单和常用的用法是用于类型参数。
 
-类型参量指定为泛型要使用尖括号和 [CamelCase][camelcase]（驼峰式命名）：`<Aaa, Bbb, ...>` 。“泛型类型参量”一般用 `<T>` 来表示。在 Rust 中，“泛型”也表示可以接受一个或多个泛型类型参量 `<T>` 的任何内容。任何指定为泛型类型参量的类型都是泛型，其他的都是具体类型（非泛型）。
+> 译注：定义泛型类型或泛型函数之类的东西时，我们会用 `<A>` 或者 `<T>` 这类标记
+> 作为类型的代号，就像函数的形参一样。在使用时，为把 `<A>`、`<T>` 具体化，我们
+> 会把类型说明像实参一样使用，像是 `<i32>` 这样。这两种把（泛型的或具体的）类型
+> 当作参数的用法就是**类型参数**。
 
-例如定义一个名为 `foo` 的 **泛型函数**，可接受一个任意类型的参数 `T`：
+泛型的类型参数是使用尖括号和[大驼峰命名][camelcase]的名称：`<Aaa, Bbb, ...>`
+ 来指定的。泛型类型参数一般用 `<T>` 来表示。在 Rust 中，“泛型的” 除了表示
+类型，还表示可以接受一个或多个泛型类型参数 `<T>` 的任何内容。任何用泛型类型参数
+表示的类型都是泛型，其他的类型都是具体（非泛型）类型。
+
+例如定义一个名为 `foo` 的 **泛型函数**，它可接受类型为 `T` 的任何参数 `arg`：
 
 ```rust,ignore
-fn foo<T>(T) { ... }
+fn foo<T>(arg: T) { ... }
 ```
 
-因为 `T` 被指定为一个使用 `<T>` 的泛型类型参量，所以在这里用到的 `(T)` 会变成泛型 。即使 `T` 在前面被定义为 `struct` 也是如此。
+因为我们使用了泛型类型参数 `<T>`，所以这里的 `(arg: T)` 中的 `T` 就是泛型
+类型。即使 `T` 在之前被定义为 `struct`，这里的 `T` 仍然代表泛型。
 
-下面例子展示了一些操作中的语法：
+下面例子展示了泛型语法的使用：
 
 ```rust,editable
-// 具体的类型 `A`。
+// 一个具体类型 `A`。
 struct A;
 
-// 在定义类型 `Single` 时，在 `A` 的首次使用之前没有出现 `<A>`。
-// 因此，`Single` 是一个具体的类型，`A` 在上面已经定义。
-// （原文：In defining the type `Single`, the first use of `A` is not preceded
-// by `<A>`. Therefore, `Single` is a concrete type, and `A` is defined as above.）
+// 在定义类型 `Single` 时，第一次使用类型 `A` 之前没有写 `<A>`。
+// 因此，`Single` 是个具体类型，`A` 取上面的定义。
 struct Single(A);
 //            ^ 这里是 `Single` 对类型 `A` 的第一次使用。
 
 // 此处 `<T>` 在第一次使用 `T` 前出现，所以 `SingleGen` 是一个泛型类型。
-// 因为类型参量 `T` 是泛型，所以它可以是任何类型，包括在上面定义的具体类型 `A`。
+// 因为 `T` 是泛型的，所以它可以是任何类型，包括在上面定义的具体类型 `A`。
 struct SingleGen<T>(T);
 
 fn main() {
-    // `Single` 是具体类型并显式地接受 `A`。
+    // `Single` 是具体类型，并且显式地使用类型 `A`。
     let _s = Single(A);
     
-    // 创建一个 `SingleGen<char>` 类型的变量 `_char`，并给一个 `SingleGen('a') 值。
-    // 这里的 `SingleGen` 拥有显式指定的类型参量。
+    // 创建一个 `SingleGen<char>` 类型的变量 `_char`，并令其值为 `SingleGen('a')`
+    // 这里的 `SingleGen` 的类型参数是显式指定的。
     let _char: SingleGen<char> = SingleGen('a');
 
-    // `SingleGen` 也可以拥有隐式指定的类型参量：
+    // `SingleGen` 的类型参数也可以隐式地指定。
     let _t    = SingleGen(A); // 使用在上面定义的 `A`。
     let _i32  = SingleGen(6); // 使用 `i32` 类型。
     let _char = SingleGen('a'); // 使用 `char`。

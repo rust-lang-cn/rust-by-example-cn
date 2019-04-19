@@ -61,6 +61,7 @@ fn main() {
 
     let cooked_apple = cook(chop(peel(apple)));
     let cooked_carrot = cook(chop(peel(carrot)));
+
     // 现在让我们试试看起来更简单的 `process()`。
     let cooked_potato = process(potato);
 

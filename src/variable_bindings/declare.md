@@ -1,7 +1,7 @@
 # 变量先声明
 
-Rust 语言可以先声明变量绑定，后面才将它们初始化。但是这种情况用得很少，因为这样很可能导致使用未
-初始的变量。
+可以先声明（declare）变量绑定，后面才将它们初始化（initialize）。但是这种做法很
+少用，因为这样可能导致使用未初始化的变量。
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {

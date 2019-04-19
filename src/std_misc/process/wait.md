@@ -1,6 +1,7 @@
-# 等待 Wait
+# 等待
 
-如果你想等待 `process::Child` 完成，就必须调用 `Child::wait`，这会返回一个 `process::ExitStatus`。
+如果你想等待一个 `process::Child` 完成，就必须调用 `Child::wait`，这会返回
+一个 `process::ExitStatus`。
 
 ```rust,ignore
 use std::process::Command;

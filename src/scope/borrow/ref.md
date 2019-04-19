@@ -1,6 +1,7 @@
 # `ref` 模式
 
-在通过 `let` 绑定来进行模式匹配或解构时，`ref` 关键字可用来接受结构体/元组的字段的引用。下面的例子展示了几个实例，可看到 `ref` 的作用：
+在通过 `let` 绑定来进行模式匹配或解构时，`ref` 关键字可用来创建结构体/元组的
+字段的引用。下面的例子展示了几个实例，可看到 `ref` 的作用：
 
 ```rust,editable
 #[derive(Clone, Copy)]
@@ -9,7 +10,7 @@ struct Point { x: i32, y: i32 }
 fn main() {
     let c = 'Q';
 
-    // 赋值语句中左边的 `ref` 关键字等价右边的 `&` 符号。
+    // 赋值语句中左边的 `ref` 关键字等价于右边的 `&` 符号。
     let ref ref_c1 = c;
     let ref_c2 = &c;
 
@@ -30,7 +31,7 @@ fn main() {
     let mut mutable_point = point;
 
     {
-        // `ref` 可以结合 `mut` 来接受可变引用。
+        // `ref` 可以与 `mut` 结合以创建可变引用。
         let Point { x: _, y: ref mut mut_ref_to_y } = mutable_point;
 
         // 通过可变引用来改变 `mutable_point` 的字段 `y`。

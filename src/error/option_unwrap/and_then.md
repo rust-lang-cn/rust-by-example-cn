@@ -1,6 +1,6 @@
 # 组合算子：`and_then`
 
-`map()` 以串联调用的方式来简化 `match` 语句。然而，如果以返回类型是 `Option<T>`
+`map()` 以链式调用的方式来简化 `match` 语句。然而，如果以返回类型是 `Option<T>`
  的函数作为 `map()` 的参数，会导致出现嵌套形式 `Option<Option<T>>`。这样多层串联
 调用就会变得混乱。所以有必要引入 `and_then()`，在某些语言中它叫做 flatmap。
 
@@ -32,6 +32,7 @@ fn have_recipe(food: Food) -> Option<Food> {
         _                => Some(food),
     }
 }
+
 
 // 要做一份好菜，我们需要原材料和食谱。
 // 我们可以借助一系列 `match` 来表达这个逻辑：
@@ -72,4 +73,4 @@ fn main() {
 
 [closures]: ./fn/closures.html
 [map]: http://doc.rust-lang.org/std/option/enum.Option.html#method.map
-[and_then]: http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then 
+[and_then]: http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then

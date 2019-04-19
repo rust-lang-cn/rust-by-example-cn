@@ -4,9 +4,7 @@
 
 ```rust,editable
 // 一个 `Borrowed` 类型，含有一个指向 `i32` 类型的引用。
-// 指向 `i32` 的引用必须比 `Borrowed` 寿命更长。
-// （原望：A type `Borrowed` which houses a reference to an
-// `i32`. The reference to `i32` must outlive `Borrowed`.）
+// 该引用必须比 `Borrowed` 寿命更长。
 #[derive(Debug)]
 struct Borrowed<'a>(&'a i32);
 
@@ -17,8 +15,7 @@ struct NamedBorrowed<'a> {
     y: &'a i32,
 }
 
-// 一个枚举类型，不是 `i32` 类型就是一个指向某个量的引用。
-//（原文： An enum which is either an `i32` or a reference to one.）
+// 一个枚举类型，其取值不是 `i32` 类型就是一个指向 `i32` 的引用。
 #[derive(Debug)]
 enum Either<'a> {
     Num(i32),

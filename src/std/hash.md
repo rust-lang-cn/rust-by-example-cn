@@ -1,8 +1,12 @@
 # 散列表 HashMap
 
-vector 通过整型索引来存储值，而 `HashMap` （散列表）通过键（key）来存储值。`HashMap` 的键可以是布尔型、整型、字符串，或任意实现了 `Eq` 和 `Hash` trait 的其他类型。在下一节将进一步介绍。
+vector 通过整型下标来存储值，而 `HashMap`（散列表）通过键（key）来存储
+值。`HashMap` 的键可以是布尔型、整型、字符串，或任意实现了 `Eq` 和 `Hash` trait
+的其他类型。在下一节将进一步介绍。
 
-和 vector 类似，`HashMap` 也是可增长的，但 HashMap 在空间多余时能够缩小自身（原文：HashMaps can also shrink themselves when they have excess space. ）。创建 HashMap，可以使用适当的初始化容器（starting capacity） `HashMap::with_capacity(unit)`，或者使用 `HashMap::new()` 来获得一个带有默认初始容器的 HashMap（推荐方式）。
+和 vector 类似，`HashMap` 也是可增长的，但 HashMap 在占据了多余空间时还可以缩小
+自己。可以使用 `HashMap::with_capacity(unit)` 创建具有一定初始容量的 HashMap，也
+可以使用 `HashMap::new()` 来获得一个带有默认初始容量的 HashMap（这是推荐方式）。
 
 ```rust,editable
 use std::collections::HashMap;
@@ -42,16 +46,15 @@ fn main() {
 
     contacts.remove(&("Ashley")); 
 
-    // `HashMap::iter()` 返回一个迭代器，该迭代器获得
-    // 任意顺序的 (&'a key, &'a value) 对。
-    // （原文：`HashMap::iter()` returns an iterator that yields 
-    // (&'a key, &'a value) pairs in arbitrary order.）
+    // `HashMap::iter()` 返回一个迭代器，该迭代器以任意顺序举出
+    // (&'a key, &'a value) 对。
     for (contact, &number) in contacts.iter() {
         println!("Calling {}: {}", contact, call(number)); 
     }
 }
 ```
 
-了解更多关于映射（map）和散列映射（hash map）（通常也称作散列表，哈希表）的实现原理，可以查看 Wikipedia 的词条[散列表][wiki-hash]。
+想要了解更多关于散列（hash）与散列表（hash map）（有时也称作 hash table）的
+工作原理，可以查看 Wikipedia 的[散列表][wiki-hash]词条。
 
 [wiki-hash]: http://en.wikipedia.org/wiki/Hash_table

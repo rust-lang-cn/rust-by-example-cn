@@ -1,8 +1,10 @@
-# 文件输入输出 I/O
+# 文件输入输出（I/O）
 
-`File` 结构体表示一个被打开的文件（它装包了一个文件描述符），并赋予了针对底层文件的读和/或写能力。（原文：The `File` struct represents a file that has been opened (it wraps a file descriptor), and gives read and/or write access to the underlying file.）
+`File` 结构体表示一个被打开的文件（它包裹了一个文件描述符），并赋予了对所表示的
+文件的读写能力。
 
-由于在进行文件 I/O（输入/输出）操作时很多情形都可能出现错误，因此所有的 `File` 方法都返回 `io::Result<T>` 类型，这是 `Result<T, io::Error>` 的别名。
+由于在进行文件 I/O（输入/输出）操作时可能出现各种错误，因此 `File` 的所有方法都
+返回 `io::Result<T>` 类型，它是 `Result<T, io::Error>` 的别名。
 
-这使得所有 I/O 操作的失败都变成**显式**内容。借助这点，程序员可以看到所有的失败路径，并鼓励主动去处理这些情形。
-
+这使得所有 I/O 操作的失败都变成**显式的**。借助这点，程序员可以看到所有的失败
+路径，并被鼓励主动地处理这些情形。
