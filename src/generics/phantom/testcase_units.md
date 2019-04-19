@@ -1,17 +1,18 @@
-# 测试实例：单位阐明
+# 测试实例：单位说明
 
-单位转换（unit conversion）中的一个有效方法可以通过实现 `Add` trait 来检验，其中 `Add` 带有虚位类型参量（原文：A useful method of unit conversions can be examined by implementing `Add` with a phantom type parameter）。用作检验 `Add` `trait` 的代码如下：
+通过实现一个带虚类型参数的 `Add` trait 可以实现单位检查。这种 `Add` trait 的
+代码如下：
 
 ```rust,ignore
-// 这个结构得到加强：`Self + RHS = Output`，其中 RHS 要
-// 是没有给出特定实现的话会默认成为 Self。
+// 这个 `trait` 会要求 `Self + RHS = Output`。`<RHS = Self>` 表示 RHS 的默认值
+// 为 Self 类型，也就是如果没有在实现中另行指定，RHS 就取 Self 类型。
 pub trait Add<RHS = Self> {
     type Output;
 
     fn add(self, rhs: RHS) -> Self::Output;
 }
 
-// `Output` 必须是 `T<U>` 类型，所以 `T<U> + T<U> = T<U>`。
+// `Output` 必须是 `T<U>` 类型，所以是 `T<U> + T<U> = T<U>`。
 impl<U> Add for T<U> {
     type Output = T<U>;
     ...
@@ -24,14 +25,14 @@ impl<U> Add for T<U> {
 use std::ops::Add;
 use std::marker::PhantomData;
 
-/// 创建空枚举来定义单位类型。
+/// 创建空枚举类型来表示单位。
 #[derive(Debug, Clone, Copy)]
 enum Inch {}
 #[derive(Debug, Clone, Copy)]
 enum Mm {}
 
-/// `Length` 是一个带有虚位类型参量的 `Unit`（单位），
-/// 而且不是关于长类型（即 `f64`）的泛型。
+/// `Length` 是一个带有虚类型参数 `Unit` 的类型，
+/// 而且对于表示长度的类型（即 `f64`）而言，`Length` 不是泛型的。
 ///
 /// `f64` 已经实现了 `Clone` 和 `Copy` trait.
 #[derive(Debug, Clone, Copy)]
@@ -41,7 +42,7 @@ struct Length<Unit>(f64, PhantomData<Unit>);
 impl<Unit> Add for Length<Unit> {
      type Output = Length<Unit>;
 
-    // add() 返回一个全新的包含总和的 `Length` 结构体。
+    // add() 返回一个含有和的新的 `Length` 结构体。
     fn add(self, rhs: Length<Unit>) -> Length<Unit> {
         // `+` 调用了针对 `f64` 类型的 `Add` 实现。
         Length(self.0 + rhs.0, PhantomData)
@@ -49,15 +50,15 @@ impl<Unit> Add for Length<Unit> {
 }
 
 fn main() {
-    // 指出 `one_foot` 拥有虚位类型参量 `Inch`。
+    // 指定 `one_foot` 拥有虚类型参数 `Inch`。
     let one_foot:  Length<Inch> = Length(12.0, PhantomData);
-    // `one_meter` 拥有虚位类型参量 `Mm`。
+    // `one_meter` 拥有虚类型参数 `Mm`。
     let one_meter: Length<Mm>   = Length(1000.0, PhantomData);
 
-    // `+` 调用了 `add()` 方法，该方法对 `Length<Unit>` 进行了实现。
+    // `+` 调用了我们对 `Length<Unit>` 实现的 `add()` 方法。
     //
-    // 由于 `Length` 了实现了 `Copy`，于是 `add()` 不会消费 `one_foot`
-    // 和 `one_meter`，但会复制它们到 `self` 和 `rhs`。
+    // 由于 `Length` 了实现了 `Copy`，`add()` 不会消耗 `one_foot`
+    // 和 `one_meter`，而是复制它们作为 `self` 和 `rhs`。
     let two_feet = one_foot + one_foot;
     let two_meters = one_meter + one_meter;
 
@@ -65,8 +66,8 @@ fn main() {
     println!("one foot + one_foot = {:?} in", two_feet.0);
     println!("one meter + one_meter = {:?} mm", two_meters.0);
 
-    // 无意义的操作将会失败，因为它们会导致：
-    // 编译期报错：类型不匹配（Compile-time Error: type mismatch.）。
+    // 无意义的运算当然会失败：
+    // 编译期错误：类型不匹配。
     //let one_feter = one_foot + one_meter;
 }
 

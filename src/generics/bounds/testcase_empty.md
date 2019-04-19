@@ -1,6 +1,7 @@
-# 测试实例：空限定
+# 测试实例：空约束
 
-限定的工作机制有一个效果是，即使一个 `trait` 不包含任何功能，你仍然可以使用它作为一个限定。在标准库中的 `Eq` 和 `Ord` 就是这样的例子。
+约束的工作机制会产生这样的效果：即使一个 `trait` 不包含任何功能，你仍然可以用它
+作为约束。标准库中的 `Eq` 和 `Ord` 就是这样的 `trait`。
 
 ```rust,editable
 struct Cardinal;
@@ -13,8 +14,8 @@ trait Blue {}
 impl Red for Cardinal {}
 impl Blue for BlueJay {}
 
-// 这些函数只对实现了相应的 trait 的类型有效。实际情况中 trait 内部
-// 是否为空都无所谓。
+// 这些函数只对实现了相应的 trait 的类型有效。
+// 事实上这些 trait 内部是空的，但这没有关系。
 fn red<T: Red>(_: &T)   -> &'static str { "red" }
 fn blue<T: Blue>(_: &T) -> &'static str { "blue" }
 
@@ -23,12 +24,11 @@ fn main() {
     let blue_jay = BlueJay;
     let _turkey   = Turkey;
 
-    // 由于限定，`red()` 不能调用 blue_jay （蓝松鸟），
-    // 反过来也一样。
+    // 由于约束，`red()` 不能作用于 blue_jay （蓝松鸟），反过来也一样。
     println!("A cardinal is {}", red(&cardinal));
     println!("A blue jay is {}", blue(&blue_jay));
     //println!("A turkey is {}", red(&_turkey));
-    // ^ 试一试：将此行注释去掉。
+    // ^ 试一试：去掉此行注释。
 }
 ```
 

@@ -1,22 +1,22 @@
-# 特性 trait
+# trait
 
-当然 `trait` 也可以是泛型。我们在这里定义了一个实现 `Drop` 的 `trait`，作为泛型方法来 `drop`（丢弃） 它本身和输入参数。
+当然 `trait` 也可以是泛型的。我们在这里定义了一个 `trait`，它把 `Drop` `trait`
+ 作为泛型方法实现了，可以 `drop`（丢弃）调用者本身和一个输入参数。
 
 ```rust,editable
 // 不可复制的类型。
 struct Empty;
 struct Null;
 
-// 用到 `T` 的trait 泛型。
+// `T` 的泛型 trait。
 trait DoubleDrop<T> {
-    // 定义一个关于调用者的方法，接受一个额外的单一参量 `T`，
-    // 且没有任何操作。
+    // 定义一个调用者的方法，接受一个额外的参数 `T`，但不对它做任何事。
     fn double_drop(self, _: T);
 }
 
-// 针对泛型参量 `T` 和调用者 `U` 实现了 `DoubleDrop<T>` 。
+// 对泛型的调用者类型 `U` 和任何泛型类型 `T` 实现 `DoubleDrop<T>` 。
 impl<T, U> DoubleDrop<T> for U {
-    // 此方法获得了两个传入参数的所有权，并释放这两个参数。
+    // 此方法获得两个传入参数的所有权，并释放它们。
     fn double_drop(self, _: T) {}
 }
 

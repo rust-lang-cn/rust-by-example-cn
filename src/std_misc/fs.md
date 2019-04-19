@@ -27,7 +27,7 @@ fn echo(s: &str, path: &Path) -> io::Result<()> {
     f.write_all(s.as_bytes())
 }
 
-// `% touch path`（忽略已存在文件）的简单实现
+// `% touch path` 的简单实现（忽略已存在的文件）
 fn touch(path: &Path) -> io::Result<()> {
     match OpenOptions::new().create(true).write(true).open(path) {
         Ok(_) => Ok(()),
@@ -50,7 +50,7 @@ fn main() {
     });
 
     println!("`mkdir -p a/c/d`");
-    // 递归创建一个目录，返回 `io::Result<()>`
+    // 递归地创建一个目录，返回 `io::Result<()>`
     fs::create_dir_all("a/c/d").unwrap_or_else(|why| {
         println!("! {:?}", why.kind());
     });
@@ -97,7 +97,7 @@ fn main() {
 }
 ```
 
-下面是预期成功的输出：
+下面是所期望的成功的输出：
 
 ```bash
 $ rustc fs.rs && ./fs

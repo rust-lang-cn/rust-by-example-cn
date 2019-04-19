@@ -1,19 +1,22 @@
-# 虚位类型参量
+# 虚类型参数
 
-虚位类型参量（phantom type parameter）是一种在运行时（runtime）不出现，而在（且只在）编译期进行静态方式检查的参量。
+虚类型（phantom type）参数是一种在运行时不出现，而在（且仅在）编译时进行静态检查
+的类型参数。
 
-数据类型可以使用额外的泛型类型参量来充当标记或在编译期执行类型检查。这些额外的参量没有存储值，且没有运行时行为（runtime behavior）。
+可以用额外的泛型类型参数指定数据类型，这类型可以充当标记，也可以供编译时类型检查
+使用。这些额外的参数没有存储值，也没有运行时行为。
 
-在下面例子中，我们把 [std::marker::PhantomData] 和虚位类型参量概念结合起来创建包含不同数据类型的元组。
+在下面例子中，我们使用 [std::marker::PhantomData] 作为虚类型参数的类型，创建
+包含不同数据类型的元组。
 
 ```rust,editable
 use std::marker::PhantomData;
 
-// 虚位元组结构体，这是一个带有 `A` 和隐藏参量（hidden parameter） `B` 的泛型。
+// 这个虚元组结构体对 `A` 是泛型的，并且带有隐藏参数 `B`。
 #[derive(PartialEq)] // 允许这种类型进行相等测试（equality test）。
 struct PhantomTuple<A, B>(A,PhantomData<B>);
 
-// 模型元组结构体，这是一个带有 `A` 和隐藏参量 `B` 的泛型。
+// 这个虚类型结构体对 `A` 是泛型的，并且带有隐藏参数 `B`。
 #[derive(PartialEq)] // 允许这种类型进行相等测试。
 struct PhantomStruct<A, B> { first: A, phantom: PhantomData<B> }
 
@@ -21,10 +24,10 @@ struct PhantomStruct<A, B> { first: A, phantom: PhantomData<B> }
 //       因此，`B` 不能参与运算。
 
 fn main() {
-    // 这里的 `f32` 和 `f64` 是隐藏参量。
-    // 被指定为 `<char, f32>` 的虚位元组（PhantomTuple）类型。
+    // 这里的 `f32` 和 `f64` 是隐藏参数。
+    // 被指定为 `<char, f32>` 的 `PhantomTuple` 类型。
     let _tuple1: PhantomTuple<char, f32> = PhantomTuple('Q', PhantomData);
-    // 被指定为 `<char, f64>` 的虚位元组。
+    // 被指定为 `<char, f64>` `PhantomTuple` 类型。
     let _tuple2: PhantomTuple<char, f64> = PhantomTuple('Q', PhantomData);
 
     // 被指定为 `<char, f32>` 的类型。
@@ -38,11 +41,11 @@ fn main() {
         phantom: PhantomData,
     };
     
-    // 编译期（compile-time）报错！类型不匹配，所以这些值不能够比较：
+    // 编译期错误！类型不匹配，所以这些值不能够比较：
     //println!("_tuple1 == _tuple2 yields: {}",
     //          _tuple1 == _tuple2);
     
-    // 编译期报错！类型不匹配，所以这些值不能够比较：
+    // 编译期错误！类型不匹配，所以这些值不能够比较：
     //println!("_struct1 == _struct2 yields: {}",
     //          _struct1 == _struct2);
 }
