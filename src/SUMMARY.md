@@ -146,15 +146,6 @@
     - [DSL (领域专用语言)](macros/dsl.md)
     - [可变参数接口](macros/variadics.md)
 
-- [macro_rules!](macros.md)
-    - [Syntax](macros/syntax.md)
-        - [Designators](macros/designators.md)
-        - [Overload](macros/overload.md)
-        - [Repeat](macros/repeat.md)
-    - [DRY (Don't Repeat Yourself)](macros/dry.md)
-    - [DSL (Domain Specific Languages)](macros/dsl.md)
-    - [Variadics](macros/variadics.md)
-
 - [错误处理](error.md)
     - [`panic`](error/panic.md)
     - [`Option` 和 `unwrap`](error/option_unwrap.md)
