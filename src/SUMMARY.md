@@ -25,7 +25,7 @@
 
 - [变量绑定](variable_bindings.md)
     - [可变变量](variable_bindings/mut.md)
-    - [作用域和掩蔽](variable_bindings/scope.md)
+    - [作用域和遮蔽](variable_bindings/scope.md)
     - [变量先声明](variable_bindings/declare.md)
 
 - [类型系统](types.md)
@@ -35,8 +35,8 @@
     - [别名](types/alias.md)
 
 - [类型转换](conversion.md)
-    - [From 和 Into](conversion/from_into.md)
-    - [ToString 和 FromStr](conversion/string.md)
+    - [`From` 和 `Into`](conversion/from_into.md)
+    - [`ToString` 和 `FromStr`](conversion/string.md)
 
 - [表达式](expression.md)
 
@@ -46,7 +46,7 @@
         - [嵌套循环和标签](flow_control/loop/nested.md)
         - [从 loop 循环返回](flow_control/loop/return.md)
     - [while 循环](flow_control/while.md)
-    - [for 循环](flow_control/for.md)
+    - [for 循环和区间](flow_control/for.md)
     - [match 匹配](flow_control/match.md)
         - [解构](flow_control/match/destructuring.md)
             - [元组](flow_control/match/destructuring/destructure_tuple.md)
@@ -70,6 +70,7 @@
             - [Iterator::any](fn/closures/closure_examples/iter_any.md)
             - [Iterator::find](fn/closures/closure_examples/iter_find.md)
     - [高阶函数](fn/hof.md)
+    - [发散函数](fn/diverging.md)
 
 - [模块](mod.md)
     - [可见性](mod/visibility.md)
@@ -81,6 +82,12 @@
 - [crate](crates.md)
     - [库](crates/lib.md)
     - [`extern crate`](crates/link.md)
+
+- [Cargo](cargo.md)
+    - [依赖](cargo/deps.md)
+    - [约定规范](cargo/conventions.md)
+    - [测试](cargo/test.md)
+    - [构建角本](cargo/build_scripts.md)
 
 - [属性](attribute.md)
     - [死代码 `dead_code`](attribute/unused.md)
@@ -95,13 +102,13 @@
     - [约束](generics/bounds.md)
         - [测试实例：空约束](generics/bounds/testcase_empty.md)
     - [多重约束](generics/multi_bounds.md)
-    - [where 分句](generics/where.md)
-    - [new type 惯用法](generics/new_types.md)
+    - [where 子句](generics/where.md)
+    - [`newtype` 惯用法](generics/new_types.md)
     - [关联项](generics/assoc_items.md)
         - [存在问题](generics/assoc_items/the_problem.md)
         - [关联类型](generics/assoc_items/types.md)
     - [虚类型参数](generics/phantom.md)
-        - [测试实例：单位说明](generics/phantom/testcase_units.md)
+        - [测试实例：单位检查](generics/phantom/testcase_units.md)
 
 - [作用域规则](scope.md)
     - [RAII](scope/raii.md)
@@ -117,13 +124,14 @@
         - [函数](scope/lifetime/fn.md)
         - [方法](scope/lifetime/methods.md)
         - [结构体](scope/lifetime/struct.md)
+        - [trait](scope/lifetime/trait.md)
         - [约束](scope/lifetime/lifetime_bounds.md)
         - [强制转换](scope/lifetime/lifetime_coercion.md)
         - [static](scope/lifetime/static_lifetime.md)
         - [省略](scope/lifetime/elision.md)
 
 - [特性 trait](trait.md)
-    - [推导](trait/derive.md)
+    - [派生](trait/derive.md)
     - [运算符重载](trait/ops.md)
     - [Drop](trait/drop.md)
     - [Iterators](trait/iter.md)
@@ -185,6 +193,7 @@
     - [文件输入输出（I/O）](std_misc/file.md)
         - [打开文件 `open`](std_misc/file/open.md)
         - [创建文件 `create`](std_misc/file/create.md)
+        - [读取行 `read lines`](std_misc/file/read_lines.md)
     - [子进程](std_misc/process.md)
         - [管道](std_misc/process/pipe.md)
         - [等待](std_misc/process/wait.md)
@@ -199,7 +208,10 @@
     - [集成测试](testing/integration_testing.md)
     - [开发依赖](testing/dev_dependencies.md)
 
+- [不安全操作](unsafe.md)
+
+- [兼容性](compatibility.md)
+    - [原始标志符](compatibility/raw_identifiers.md)
+
 - [补充](meta.md)
     - [文档](meta/doc.md)
-
-- [不安全操作](unsafe.md)

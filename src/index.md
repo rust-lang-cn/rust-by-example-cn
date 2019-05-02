@@ -14,7 +14,7 @@
 
 - [自定义类型](custom_types.html) - 结构体 `struct` 和 枚举 `enum`。
 
-- [变量绑定](variable_bindings.html) - 变量绑定，作用域，变量隐蔽。
+- [变量绑定](variable_bindings.html) - 变量绑定，作用域，变量遮蔽。
 
 - [类型系统](types.html) - 学习改变和定义类型。
 
