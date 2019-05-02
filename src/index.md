@@ -52,7 +52,7 @@
 
 - [不安全操作](unsafe.html)
 
-- [兼容性](compatibility.html)
+- [兼容性](compatibility.html)（TODO: 翻译中）
 
 - [补充](meta.html) - 文档和基准测试
 
