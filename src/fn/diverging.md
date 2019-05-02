@@ -1,6 +1,6 @@
-# Diverging functions
+# 发散函数
 
-Diverging functions never return. They are marked using `!`, which is an empty type.
+发散函数（diverging function）绝不会返回。 它们使用 `!` 标记，这是一个空类型。
 
 ```rust
 fn foo() -> ! {
@@ -8,12 +8,9 @@ fn foo() -> ! {
 }
 ```
 
-As opposed to all the other types, this one cannot be instantiated, because the
-set of all possible values this type can have is empty. Note, that it is
-different from the `()` type, which has exactly one possible value.
+和所有其他类型相反，这个类型无法实例化，因为此类型可能具有的所有可能值的集合为空。 注意，它与 `()` 类型不同，后者只有一个可能的值。
 
-For example, this function returns as usual, although there is no information
-in the return value.
+如下面例子，虽然返回值中没有信息，但此函数会照常返回。
 
 ```rust
 fn some_fn() {
@@ -26,7 +23,7 @@ fn main() {
 }
 ```
 
-As opposed to this function, which will never return the control back to the caller.
+下面这个函数相反，这个函数永远不会将控制内容返回给调用者。
 
 ```rust,ignore
 #![feature(never_type)]
@@ -37,24 +34,20 @@ fn main() {
 }
 ```
 
-Although this might seem like an abstract concept, it is in fact very useful and
-often handy. The main advantage of this type is that it can be cast to any other
-one and therefore used at places where an exact type is required, for instance
-in `match` branches. This allows us to write code like this:
+虽然这看起来像是一个抽象的概念，但实际上这非常有用且方便。这种类型的主要优点是它可以被转换为任何其他类型，从而可以在需要精确类型的地方使用，例如在 `match` 匹配分支。 这允许我们编写如下代码：
 
 ```rust
 fn main() {
     fn sum_odd_numbers(up_to: u32) -> u32 {
         let mut acc = 0;
         for i in 0..up_to {
-            // Notice that the return type of this match expression must be u32
-            // because of the type of the "addition" variable.
+            // 注意这个 match 表达式的返回值必须为 u32，
+            // 因为 “addition” 变量是这个类型。
             let addition: u32 = match i%2 == 1 {
-                // The "i" variable is of type u32, which is perfectly fine.
+                // “i” 变量的类型为 u32，这毫无问题。
                 true => i,
-                // On the other hand, the "continue" expression does not return
-                // u32, but it is still fine, because it never returns and therefore
-                // does not violate the type requirements of the match expression.
+                // 另一方面，“continue” 表达式不返回 u32，但它仍然没有问题，
+                // 因为它永远不会返回，因此不会违反匹配表达式的类型要求。
                 false => continue,
             };
             acc += addition;
@@ -65,5 +58,4 @@ fn main() {
 }
 ```
 
-It is also the return type of functions that loop forever (e.g. `loop {}`) like
-network servers or functions that terminates the process (e.g. `exit()`).
+这也是永远循环（如 `loop {}`）的函数（如网络服务器）或终止进程的函数（如 `exit()`）的返回类型。
