@@ -1,5 +1,7 @@
 # Cargo
 
+> TODO: 本章将近期翻译 —— 2019.05.03
+
 `cargo` is the official Rust package management tool. It has lots of really
 useful features to improve code quality and developer velocity! These include
 
