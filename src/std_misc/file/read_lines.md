@@ -1,10 +1,8 @@
-# Read Lines
+# 读取行
 
-The method `lines()` returns an iterator over the lines
-of a file.  
+方法 `lines()` 在文件的行上返回一个迭代器。
 
-`File::open` expects a generic, `AsRef<Path>`.  That's what
-`read_lines()` expects as input.
+`File::open` 需要一个泛型 `AsRef<Path>`。这正是 `read_lines()` 期望的输入。
 
 ```rust,no_run
 use std::fs::File;
@@ -12,9 +10,9 @@ use std::io::{self, BufRead};
 use std::path::Path;
 
 fn main() {
-    // File hosts must exist in current path before this produces output
+    // 在生成输出之前，文件主机必须存在于当前路径中
     if let Ok(lines) = read_lines("./hosts") {
-        // Consumes the iterator, returns an (Optional) String
+        // 使用迭代器，返回一个（可选）字符串
         for line in lines {
             if let Ok(ip) = line {
                 println!("{}", ip);
@@ -23,8 +21,8 @@ fn main() {
     }
 }
 
-// The output is wrapped in a Result to allow matching on errors
-// Returns an Iterator to the Reader of the lines of the file.
+// 输出包裹在 Result 中以允许匹配错误，
+// 将迭代器返回给文件行的读取器（Reader）。
 fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 where P: AsRef<Path>, {
     let file = File::open(filename)?;
@@ -32,7 +30,8 @@ where P: AsRef<Path>, {
 }
 ```
 
-Running this program simply prints the lines individually.
+运行此程序将一行行将内容打印出来。
+
 ```bash
 $ echo -e "127.0.0.1\n192.168.0.1\n" > hosts
 $ rustc read_lines.rs && ./read_lines
@@ -40,5 +39,4 @@ $ rustc read_lines.rs && ./read_lines
 192.168.0.1
 ```
 
-This process is more efficient than creating a `String` in memory
-especially working with larger files.
+这个过程比在内存中创建 `String` 更有效，特别是处理更大的文件。
