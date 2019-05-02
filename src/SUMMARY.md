@@ -179,7 +179,7 @@
     - [字符串 String](std/str.md)
     - [选项 `Option`](std/option.md)
     - [结果 `Result`](std/result.md)
-        - [`?`](std/result/question_mark.md)
+        - [`?` 用法](std/result/question_mark.md)
     - [`panic!`](std/panic.md)
     - [散列表 HashMap](std/hash.md)
         - [更改或自定义关键字类型](std/hash/alt_key_types.md)
