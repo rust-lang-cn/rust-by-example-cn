@@ -30,7 +30,7 @@
 
 - [`crate`](crates.html) - crate 是 Rust 中的编译单元。学习创建一个库。
 
-- [Cargo](cargo.html) - 学习官方的 Rust 包管理工具的一些基本功能。（TODO: 翻译中）
+- [cargo](cargo.html) - 学习官方的 Rust 包管理工具的一些基本功能。
 
 - [属性](attribute.html) - 属性是应用于某些模块、crate 或项的元数据（metadata）。
 

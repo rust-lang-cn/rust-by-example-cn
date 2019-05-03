@@ -1,12 +1,8 @@
-# Build Scripts
+# 构建脚本
 
-Sometimes a normal build from cargo is not enough. Perhaps your crate needs some
-pre-requisites before cargo will successfully compile, things like code
-generation, or some native code that needs to be compiled. To solve this problem
-we have build scripts that Cargo can run.
+有时使用 `cargo` 正常构建还是不够的。也许你的 crate 在 cargo 成功编译之前需要一些先决条件，比如代码生成或者需要编译的一些本地代码。为了解决这个问题，我们构建了 cargo 可以运行的脚本。
 
-To add a build script to your package it can either be specified in the
-`Cargo.toml` as follows:
+要向包中添加构建脚本，可以在 `Cargo.toml` 中指定它，如下所示：
 
 ```toml
 [package]
@@ -14,24 +10,19 @@ To add a build script to your package it can either be specified in the
 build = "build.rs"
 ```
 
-Otherwise Cargo will look for a `build.rs` file in the project directory by
-default.
+跟默认情况不同，这里 cargo 将在项目目录中优先查找 `build.rs` 文件。（本句采用意译，英文原文为：Otherwise Cargo will look for a `build.rs` file in the project directory by default.）
 
-## How to use a build script
+## 怎么使用构建脚本
 
-The build script is simply another Rust file that will be compiled and invoked
-prior to compiling anything else in the package. Hence it can be used to fulfil
-pre-requisites of your crate.
+构建脚本只是另一个 Rust 文件，此文件将在编译包中的任何其他内容之前，优先进行编译和调用。 因此，此文件可实现满足 crate 的先决条件。
 
-Cargo provides the script with inputs via environment variables [specified
-here] that can be used.
+cargo 通过[此处指定][specified
+here]的可以使用的环境变量为脚本提供输入。（英文原文：Cargo provides the script with inputs via environment variables [specified
+here] that can be used.）
 
-The script provides output via stdout. All lines printed are written to
-`target/debug/build/<pkg>/output`. Further, lines prefixed with `cargo:` will be
-interpreted by Cargo directly and hence can be used to define parameters for the
-packages compilation.
+此脚本通过 stdout （标准输出）提供输出。打印的所有行都写入到 `target/debug/build/<pkg>/output`。另外，以 `cargo:` 为前缀的行将由 cargo 直接解析，因此可用于定义包编译的参数。
 
-For further specification and examples have a read of the [cargo specification].
+有关进一步的说明和示例，请阅读 [cargo 规定说明文档][cargo specification]。
 
 [specified here]: https://doc.rust-lang.org/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts
 

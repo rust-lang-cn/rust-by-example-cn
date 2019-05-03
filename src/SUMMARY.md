@@ -83,11 +83,11 @@
     - [库](crates/lib.md)
     - [`extern crate`](crates/link.md)
 
-- [Cargo](cargo.md)
+- [cargo](cargo.md)
     - [依赖](cargo/deps.md)
     - [约定规范](cargo/conventions.md)
     - [测试](cargo/test.md)
-    - [构建角本](cargo/build_scripts.md)
+    - [构建脚本](cargo/build_scripts.md)
 
 - [属性](attribute.md)
     - [死代码 `dead_code`](attribute/unused.md)
