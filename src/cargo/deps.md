@@ -1,24 +1,20 @@
-# Dependencies
+# 依赖
 
-Most programs have dependencies on some libraries. If you have ever managed
-dependencies by hand, you know how much of a pain this can be. Luckily, the Rust
-ecosystem comes standard with `cargo`! `cargo` can manage dependencies for a
-project.
+大多数程序都会依赖于某些库。如果你曾经手动管理过库依赖，那么你就知道这会带来的极大的痛苦。幸运的是，Rust 的生态链标配 `cargo` 工具！`cargo` 可以管理项目的依赖关系。
 
-To create a new Rust project,
+下面创建一个新的 Rust 项目：
 
 ```sh
-# A binary
+# 二进制可执行文件
 cargo new foo
 
-# OR A library
+# 或者库
 cargo new --lib foo
 ```
 
-For the rest of this chapter, I will assume we are making a binary, rather than
-a library, but all of the concepts are the same.
+对于本章的其余部分，我们选定创建的都是二进制可执行文件而不是库，但所有的概念都是相同的。
 
-After the above commands, you should see something like this:
+完成上述命令后，将看到如下内容：
 
 ```txt
 foo
@@ -27,9 +23,7 @@ foo
     └── main.rs
 ```
 
-The `main.rs` is the root source file for your new project -- nothing new there.
-The `Cargo.toml` is the config file for `cargo` for this project (`foo`). If you
-look inside it, you should see something like this:
+`main.rs` 是新项目的入口源文件——这里没什么新东西。 `Cargo.toml` 是本项目（`foo`）的 `cargo` 的配置文件。 浏览 `Cargo.toml` 文件，将看到类似以下的的内容：
 
 ```toml
 [package]
@@ -40,28 +34,18 @@ authors = ["mark"]
 [dependencies]
 ```
 
-The `name` field under `package` determines the name of the project. This is
-used by `crates.io` if you publish the crate (more later). It is also the name
-of the output binary when you compile.
+`package` 下面的 `name` 字段表明项目的名称。 如果您发布 crate（后面将做更多介绍），那么 `crates.io` 将使用此字段标明的名称。 这也是编译时输出的二进制可执行文件的名称。
 
-The `version` field is a crate version number using [Semantic
-Versioning](http://semver.org/).
+`version` 字段是使用[语义版本控制](http://semver.org/)（Semantic
+Versioning）的 crate 版本号。
 
-The `authors` field is a list of authors used when publishing the crate.
+`authors` 字段表明发布 crate 时的作者列表。
 
-The `dependencies` section lets you add a dependency for your project.
+`dependencies` 这部分可以让你为项目添加依赖。
 
-For example, suppose that I want my program to have a great CLI. You can find
-lots of great packages on [crates.io](https://crates.io) (the official Rust
-package registry). One popular choice is [clap](https://crates.io/crates/clap).
-As of this writing, the most recent published version of `clap` is `2.27.1`. To
-add a dependency to our program, we can simply add the following to our
-`Cargo.toml` under `dependencies`: `clap = "2.27.1"`.  And of course, `extern
-crate clap` in `main.rs`, just like normal. And that's it! You can start using
-`clap` in your program.
+举个例子，假设我们希望程序有一个很棒的命令行界面（command-line interface，CLI））。 你可以在 [crates.io](https://crates.io)（官方的 Rust 包注册服务）上找到很多很棒的 Rust 包。其中一个受欢迎的包是 [clap](https://crates.io/crates/clap)（译注：一个命令行参数的解析器）。在撰写本文时，[clap] 最新发布的版本为 `2.27.1`。要在程序中添加依赖，我们可以很简单地在 `Cargo.toml` 文件中的 `dependencies` 项后面将以下内容添加进来 ：`clap = "2.27.1"`。当然，在 `main.rs` 文件中写上 `extern crate clap`，就和平常一样。 就是这样！你就可以在程序中开始使用 `clap` 了。
 
-`cargo` also supports [other types of dependencies][dependencies]. Here is just
-a small sampling:
+`cargo` 还支持[其他类型的依赖][dependencies]。 下面是一个简单的示例：
 
 ```toml
 [package]
@@ -70,22 +54,16 @@ version = "0.1.0"
 authors = ["mark"]
 
 [dependencies]
-clap = "2.27.1" # from crates.io
-rand = { git = "https://github.com/rust-lang-nursery/rand" } # from online repo
-bar = { path = "../bar" } # from a path in the local filesystem
+clap = "2.27.1" # 来自 crates.io
+rand = { git = "https://github.com/rust-lang-nursery/rand" } # 来自网上的仓库
+bar = { path = "../bar" } # 来自本地文件系统的路径
 ```
 
-`cargo` is more than a dependency manager. All of the available
-configuration options are listed in the [format specification][manifest] of
-`Cargo.toml`.
+`cargo` 不仅仅是一个包依赖管理器。`Cargo.toml` 的所有可用配置选项都列在 [格式规范][manifest]中。
 
-To build our project we can execute `cargo build` anywhere in the project
-directory (including subdirectories!). We can also do `cargo run` to build and
-run. Notice that these commands will resolve all dependencies, download crates
-if needed, and build everything, including your crate. (Note that it only
-rebuilds what it has not already built, similar to `make`).
+要构建我们的项目，我们可以在项目目录中的任何位置（包括子目录！）执行 `cargo build`。我们也可以执行 `cargo run` 来构建和运行。请注意，这些命令将处理所有依赖，在需要时下载 crate，并构建所有内容，包括 crate。（请注意，它只重新构建尚未构建的内容，这和 `make` 类似）。
 
-Voila! That's all there is to it!
+瞧！这里的所有都和 `cargo` 有关！
 
 
 [manifest]: https://doc.rust-lang.org/cargo/reference/manifest.html
