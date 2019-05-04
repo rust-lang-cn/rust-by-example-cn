@@ -1,12 +1,13 @@
 # 通过例子学 Rust
 
 [![Build Status][travis-image]][travis-link]  
+> Chinese translation of the [Rust By Example][rust-by-example]
+>
 > 本文档按照 [**Rust 文档翻译指引**](https://github.com/rust-lang-cn/rust-translation-guide)规范进行翻译。  
 > 首次于 2016-08-07 翻译完全部内容，欢迎纠正——最后更新时间 2019.5.3  
 > 近段时间将跟随英文版进行升级调整，欢迎大家踊跃参与，共同更新内容 —— 2019.4.20  
-> Chinese translation of the [Rust by Example][rust-by-example]
 
-通过例子学 Rust，Rust by Example 中文版（包含在线代码编辑器）。
+通过例子学 Rust，Rust By Example 中文版（包含在线代码编辑器）。
 
 ## 使用说明
 
@@ -43,7 +44,7 @@ $ mdbook serve
 
 可以根据自己选择来定。
 
-除非您有另外说明，否则您在本仓库提交的任何贡献均按上述方式进行双重许可授权，就如 Apache 2.0 协议所规定那样，而不附加任何附加条款或条件。
+除非您有另外说明，否则您在本仓库提交的任何贡献均按上述方式进行双重许可授权，就如 Apache 2.0 协议所规定那样，而无需附加任何其他条款或条件。
 
 
 
