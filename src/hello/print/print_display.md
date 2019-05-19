@@ -1,4 +1,4 @@
-# 显示（display）
+# 显示（Display）
 
 `fmt::Debug` 通常看起来不太简洁，因此自定义输出的外观经常是更可取的。这需要通过
 手动实现 [`fmt::Display`][fmt] 来做到。`fmt::Display` 采用 `{}` 标记。实现方式看
@@ -23,7 +23,7 @@ impl fmt::Display for Structure {
 }
 ```
 
-`fmt::display` 的效果可能比 `fmt::Debug` 简洁，但对于 `std` 库来说，这就有一个问
+`fmt::Display` 的效果可能比 `fmt::Debug` 简洁，但对于 `std` 库来说，这就有一个问
 题。模棱两可的类型该如何显示呢？举个例子，假设标准库对所有的 `Vec<T>` 都实现了同
 一种输出样式，那么它应该是哪种样式？下面两种中的一种吗？
 
