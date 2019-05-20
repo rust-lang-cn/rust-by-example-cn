@@ -24,7 +24,7 @@ fn main() {
     // 比如可以使用位置参数。
     println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");
 
-    // 可以使用赋值语句。
+    // 可以使用命名参数。
     println!("{subject} {verb} {object}",
              object="the lazy dog",
              subject="the quick brown fox",
@@ -59,7 +59,7 @@ fn main() {
 来控制文字显示，其中重要的两种 trait 的基本形式如下：
 
 * `fmt::Debug`：使用 `{:?}` 标记。格式化文本以供调试使用。
-* `fmt::Display`：使用 `{}` 标记。以更优雅和友好的风格来格式文本。
+* `fmt::Display`：使用 `{}` 标记。以更优雅和友好的风格来格式化文本。
 
 上例使用了 `fmt::Display`，因为标准库提供了那些类型的实现。若要打印自定义类型的
 文本，需要更多的步骤。
