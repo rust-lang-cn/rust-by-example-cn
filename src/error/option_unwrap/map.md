@@ -76,6 +76,6 @@ fn main() {
 [闭包][closures], [`Option`][option], 和 [`Option::map()`][map]
 
 [combinators]: https://doc.rust-lang.org/book/glossary.html#combinators
-[closures]: ./fn/closures.html
-[option]: http://doc.rust-lang.org/std/option/enum.Option.html
-[map]: http://doc.rust-lang.org/std/option/enum.Option.html#method.map
+[closures]: ../../fn/closures.md
+[option]: https://doc.rust-lang.org/std/option/enum.Option.html
+[map]: https://doc.rust-lang.org/std/option/enum.Option.html#method.map

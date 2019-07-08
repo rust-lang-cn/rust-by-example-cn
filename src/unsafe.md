@@ -53,5 +53,5 @@ fn main() {
 数据类型，我们**必须**满足这一假设，否则程序的行为是未定义的（undefined），于是
 我们就不能预测会发生些什么了。
 
-[unsafe]: https://doc.rust-lang.org/book/second-edition/ch19-01-unsafe-rust.html
+[unsafe]: https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html
 [`std::slice::from_raw_parts`]: https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html

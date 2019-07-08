@@ -66,4 +66,4 @@ fn main() {
 
 [^†]: 更多细节请看[`?` 的更多用法][re_enter_?]。
 
-[re_enter_?]: error/multiple_error_types/reenter_question_mark.html
+[re_enter_?]: ../multiple_error_types/reenter_question_mark.md

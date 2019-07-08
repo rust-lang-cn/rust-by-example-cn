@@ -13,4 +13,4 @@
 [原生类型][primitives] 和 [标准库类型][std]
 
 [primitives]: ./primitives.html
-[std]: http://doc.rust-lang.org/std/
+[std]: https://doc.rust-lang.org/std/

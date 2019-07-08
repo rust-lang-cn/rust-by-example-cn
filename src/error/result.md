@@ -41,6 +41,8 @@ fn main() {
 
 为了改善错误消息的质量，我们应该更具体地了解返回类型并考虑显式地处理错误。
 
-[option]: http://doc.rust-lang.org/std/option/enum.Option.html
-[result]: http://doc.rust-lang.org/std/result/enum.Result.html
+[option]: https://doc.rust-lang.org/std/option/enum.Option.html
+[result]: https://doc.rust-lang.org/std/result/enum.Result.html
 [parse]: https://doc.rust-lang.org/std/primitive.str.html#method.parse
+[`Debug`]: https://doc.rust-lang.org/std/fmt/trait.Debug.html
+[the following section]: result/early_returns.md

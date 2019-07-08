@@ -32,4 +32,4 @@ fn main() {
 
 ### See also:
 
-[属性](attribute.html)
+[Attributes](../attribute.md)
