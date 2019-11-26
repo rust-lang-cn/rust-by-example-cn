@@ -1,11 +1,11 @@
 # 通过例子学 Rust
 
-[![Build Status][travis-image]][travis-link]  
+[![Build Status][travis-image]][travis-link]
 > Chinese translation of the [Rust By Example][rust-by-example]
 >
-> 本文档按照 [**Rust 文档翻译指引**](https://github.com/rust-lang-cn/rust-translation-guide)规范进行翻译。  
-> 首次于 2016-08-07 翻译完全部内容，欢迎纠正——最后更新时间 2019.5.3  
-> 近段时间将跟随英文版进行升级调整，欢迎大家踊跃参与，共同更新内容 —— 2019.4.20  
+> 本文档按照 [**Rust 文档翻译指引**](https://github.com/rust-lang-cn/rust-translation-guide)规范进行翻译。
+> 首次于 2016-08-07 翻译完全部内容，欢迎纠正——最后更新时间 2019.5.3
+> 近段时间将跟随英文版进行升级调整，欢迎大家踊跃参与，共同更新内容 —— 2019.4.20
 
 通过例子学 Rust，Rust By Example 中文版（包含在线代码编辑器）。
 
@@ -18,10 +18,12 @@
 ```bash
 $ git clone https://github.com/rust-lang-cn/rust-by-example-cn
 $ cd rust-by-example-cn
-$ cargo install mdbook --version 0.2 --force
+$ cargo install mdbook
 $ mdbook build
 $ mdbook serve
 ```
+
+为了能够运行这些示例，你必须要连接到网络；当然你可以离线阅读所有这些内容。
 
 
 ## 如何贡献
