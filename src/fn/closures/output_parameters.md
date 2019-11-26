@@ -2,8 +2,7 @@
 
 闭包作为输入参数是可能的，所以返回闭包作为输出参数（output parameter）也应该是
 可能的。然而返回闭包类型会有问题，因为目前 Rust 只支持返回具体（非泛型）的
-类型。按照定义，匿名的闭包的类型是未知的，所以想要返回一个闭包只有使它变成具体的
-类型。通过 box 操作可以实现这点。
+类型。按照定义，匿名的闭包的类型是未知的，所以只有使用`impl Trait`才能返回一个闭包。
 
 返回值的合法 trait 和前面的略有不同：
 
@@ -16,16 +15,16 @@
 的，因为在函数退出时，任何通过引用的捕获都被丢弃，在闭包中留下无效的引用。
 
 ```rust,editable
-fn create_fn() -> Box<Fn()> {
+fn create_fn() -> impl Fn() {
     let text = "Fn".to_owned();
 
-    Box::new(move || println!("This is a: {}", text))
+    move || println!("This is a: {}", text)
 }
 
-fn create_fnmut() -> Box<FnMut()> {
+fn create_fnmut() -> impl FnMut() {
     let text = "FnMut".to_owned();
 
-    Box::new(move || println!("This is a: {}", text))
+    move || println!("This is a: {}", text)
 }
 
 fn main() {
@@ -35,14 +34,14 @@ fn main() {
     fn_plain();
     fn_mut();
 }
+
 ```
 
 ### 参见：
 
-[Boxing][box], [`Fn`][fn], [`FnMut`][fnmut], 和 [泛型][generics].
+[`Fn`][fn], [`FnMut`][fnmut], [范型][generics] 和 [impl Trait][impltrait].
 
-[box]: ./std/box.html
-[fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
-[fnmut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fnbox]: http://doc.rust-lang.org/std/boxed/trait.FnBox.html 
-[generics]: ./generics.html
+[fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
+[fnmut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
+[generics]: ../../generics.md
+[impltrait]: ../../trait/impl_trait.md
