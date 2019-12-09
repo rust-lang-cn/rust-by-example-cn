@@ -36,6 +36,7 @@
 
 - [类型转换](conversion.md)
     - [`From` 和 `Into`](conversion/from_into.md)
+    - [`TryFrom` 和 `TryInto`](conversion/try_from_try_into.md)
     - [`ToString` 和 `FromStr`](conversion/string.md)
 
 - [表达式](expression.md)
