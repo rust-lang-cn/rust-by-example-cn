@@ -94,16 +94,16 @@ fn main() {
 你想挑战一下吗？使用 `if let`修复以下示例：
 
 ```rust,editable,ignore,mdbook-runnable
-// This enum purposely doesn't #[derive(PartialEq)],
-// neither we implement PartialEq for it. That's why comparing Foo::Bar==a fails below.
+// 该枚举故意未注明 `#[derive(PartialEq)]`，
+// 并且也没为其实现 `PartialEq`。这就是为什么下面比较 `Foo::Bar==a` 会失败的原因。
 enum Foo {Bar}
 
 fn main() {
     let a = Foo::Bar;
 
-    // Variable a matches Foo::Bar
+    // 变量匹配 Foo::Bar
     if Foo::Bar == a {
-    // ^-- this causes a compile-time error. Use `if let` instead.
+    // ^-- 这就是编译时发现的错误。使用 `if let` 来替换它。
         println!("a is foobar");
     }
 }
