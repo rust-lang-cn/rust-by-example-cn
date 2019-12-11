@@ -25,6 +25,26 @@ fn main() {
 }
 ```
 
+或者, 可以使用`a..=b`表示两端都包含在内的范围。上面的代码可以写成：
+
+```rust,editable
+fn main() {
+    // `n` 将在每次迭代中分别取 1, 2, ..., 100
+    for n in 1..=100 {
+        if n % 15 == 0 {
+            println!("fizzbuzz");
+        } else if n % 3 == 0 {
+            println!("fizz");
+        } else if n % 5 == 0 {
+            println!("buzz");
+        } else {
+            println!("{}", n);
+        }
+    }
+}
+```
+
+
 ## for 与迭代器
 
 `for in` 结构能以几种方式与 `Iterator` 互动。在 [迭代器][iter] trait 一节将会谈
