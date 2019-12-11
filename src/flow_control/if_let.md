@@ -89,6 +89,26 @@ fn main() {
 }
 ```
 
+另一个好处是：`if let` 允许匹配枚举非参数化的变量，即枚举未注明 `#[derive(PartialEq)]`，我们也没有为其实现 `PartialEq`。在这种情况下，通常 `if Foo::Bar==a` 会出错，因为此类枚举的实例不具有可比性。但是，`if let` 是可行的。
+
+你想挑战一下吗？使用 `if let`修复以下示例：
+
+```rust,editable,ignore,mdbook-runnable
+// This enum purposely doesn't #[derive(PartialEq)],
+// neither we implement PartialEq for it. That's why comparing Foo::Bar==a fails below.
+enum Foo {Bar}
+
+fn main() {
+    let a = Foo::Bar;
+
+    // Variable a matches Foo::Bar
+    if Foo::Bar == a {
+    // ^-- this causes a compile-time error. Use `if let` instead.
+        println!("a is foobar");
+    }
+}
+```
+
 ### 参见：
 
 [`枚举`][enum]，[`Option`][option]，和相关的 [RFC][if_let_rfc]
