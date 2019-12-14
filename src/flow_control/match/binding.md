@@ -27,4 +27,4 @@ fn main() {
 ### 参见：
 [函数][functions]
 
-[functions]: ./fn.html
+[functions]: ../../fn.md

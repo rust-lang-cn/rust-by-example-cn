@@ -75,5 +75,5 @@ fn main() {
 
 [`Box`][box] 和 [方法][methods]
 
-[box]: ../std/box.html
-[methods]: ../fn/methods.html
+[box]: ../../std/box.md
+[methods]: ../../fn/methods.md

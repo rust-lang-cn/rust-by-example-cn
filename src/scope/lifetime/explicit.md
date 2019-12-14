@@ -62,7 +62,7 @@ fn main() {
 
 [泛型][generics] 和 [闭包][closures]
 
-[anonymity]: ./fn/closures/anonymity.html
-[closures]: ./fn/closures.html
-[elision]: elision.html
-[generics]: ./generics.html
+[anonymity]: ../../fn/closures/anonymity.md
+[closures]: ../../fn/closures.md
+[elision]: elision.md
+[generics]: ../../generics.md

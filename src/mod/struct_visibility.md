@@ -55,5 +55,5 @@ fn main() {
 
 [泛型][generics] 和 [方法][methods]
 
-[generics]: ./generics.html
-[methods]: ./fn/methods.html
+[generics]: ../generics.md
+[methods]: ../fn/methods.md

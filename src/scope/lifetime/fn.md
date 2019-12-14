@@ -56,5 +56,5 @@ fn main() {
 
 [函数][fn]
 
-[elision]: elision.html
-[fn]: ./fn.html
+[elision]: elision.md
+[fn]: fn.md

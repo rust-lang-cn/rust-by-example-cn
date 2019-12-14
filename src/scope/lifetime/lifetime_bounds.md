@@ -45,6 +45,6 @@ fn main() {
 [泛型][generics], [泛型中的约束][bounds], 以及
 [泛型中的多重约束][multibounds]
 
-[generics]: ./generics.html
-[bounds]: ./generics/bounds.html
-[multibounds]: ./generics/multi_bounds.html
+[generics]: ../../generics.md
+[bounds]: ../../generics/bounds.md
+[multibounds]: ../../generics/multi_bounds.md
