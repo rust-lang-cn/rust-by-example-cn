@@ -43,4 +43,4 @@ Hello World!
 I'm a Rustacean!
 ```
 
-[macros]: ./macros.html
+[macros]: macros.md

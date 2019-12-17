@@ -21,4 +21,4 @@ fn main() {
 
 ### 参见：
 
-[元组](./primitives/tuples.html)
+[元组](../../../primitives/tuples.md)

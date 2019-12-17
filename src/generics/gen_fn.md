@@ -50,5 +50,5 @@ fn main() {
 
 [函数][fn] 和 [`struct`s][structs]
 
-[fn]: ./fn.html
-[structs]: ./custom_types/structs.html
+[fn]: ../fn.md
+[structs]: ../custom_types/structs.md

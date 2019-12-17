@@ -48,6 +48,6 @@ fn main() {
 
 相关的 [RFC][where]、[`struct`][struct] 和 [`trait`][trait]
 
-[struct]: ./custom_types/structs.html
-[trait]: ./trait.html
+[struct]: ../custom_types/structs.md
+[trait]: ../trait.md
 [where]: https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md

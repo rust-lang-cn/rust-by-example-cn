@@ -55,4 +55,4 @@ fn main() {
 ### 参见：
 [`static`][static]
 
-[static]: ./lifetime/static_lifetime.html
+[static]: ../lifetime/static_lifetime.md

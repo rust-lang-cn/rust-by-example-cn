@@ -96,9 +96,8 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
 
 [`match`][match], [`fn`][fn], 和 [`String`][str], ["Type alias enum variants" RFC][type_alias_rfc]
 
+[attributes]: ../attribute.md
 [c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
-[match]: ../flow_control/match.html
-[fn]: ../fn.html
-[str]: ../std/str.html
-[aliasreport]: https://github.com/rust-lang/rust/pull/61682/#issuecomment-502472847
-[type_alias_rfc]: https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html
+[match]: ../flow_control/match.md
+[fn]: ../fn.md
+[str]: ../std/str.md

@@ -48,6 +48,6 @@ fn main() {
 
 [`#[allow(...)]`][allow], [色彩模型][color_models] 和 [`enum`][enum] 
 
-[allow]: ./attribute/unused.html
+[allow]: ../../../attribute/unused.md
 [color_models]: http://en.wikipedia.org/wiki/Color_model
-[enum]: ./custom_types/enum.html
+[enum]: ../../../custom_types/enum.md

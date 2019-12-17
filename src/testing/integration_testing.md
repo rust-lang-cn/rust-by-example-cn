@@ -80,5 +80,5 @@ fn test_add() {
 带有共用代码的模块遵循和普通的[模块][mod]一样的规则，所以完全可以把公共模块
 写在 `tests/common/mod.rs` 文件中。
 
-[unit]: testing/unit_testing.html
-[mod]: mod.html
+[unit]: unit_testing.md
+[mod]: ../mod.md

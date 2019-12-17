@@ -32,5 +32,5 @@ fn main() {
 
 [`std::fmt`][fmt] 和 [`trait`][traits]
 
-[fmt]: ./hello/print.html
-[traits]: ./trait.html
+[fmt]: ../hello/print.md
+[traits]: ../trait.md
