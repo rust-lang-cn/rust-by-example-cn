@@ -52,12 +52,53 @@ fn main() {
 }
 ```
 
+## 类型别名
+
+若使用类型别名，则可以通过其别名引用每个枚举变量。当枚举的名称太长或者太一般化，且你想要对其重命名，那么这对你会有所帮助。
+
+```rust,editable
+enum VeryVerboseEnumOfThingsToDoWithNumbers {
+    Add,
+    Subtract,
+}
+
+// Creates a type alias
+type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
+
+fn main() {
+    // We can refer to each variant via its alias, not its long and inconvenient
+    // name.
+    let x = Operations::Add;
+}
+```
+
+最常见的情况就是在 `impl` 块中使用 `Self` 别名。
+
+```rust,editable
+enum VeryVerboseEnumOfThingsToDoWithNumbers {
+    Add,
+    Subtract,
+}
+
+impl VeryVerboseEnumOfThingsToDoWithNumbers {
+    fn run(&self, x: i32, y: i32) -> i32 {
+        match self {
+            Self::Add => x + y,
+            Self::Subtract => x - y,
+        }
+    }
+}
+```
+
+该功能已在 Rust 中稳定化， 可以阅读 [stabilization report][aliasreport] 来了解更多有关枚举和类型别名的知识。
+
 ### 参见：
 
-[`attributes`][attributes], [`match`][match], [`fn`][fn], 和 [`String`][str]
+[`match`][match], [`fn`][fn], 和 [`String`][str], ["Type alias enum variants" RFC][type_alias_rfc]
 
-[attributes]: ../attribute.html
 [c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [match]: ../flow_control/match.html
 [fn]: ../fn.html
 [str]: ../std/str.html
+[aliasreport]: https://github.com/rust-lang/rust/pull/61682/#issuecomment-502472847
+[type_alias_rfc]: https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html
