@@ -9,13 +9,15 @@ fn main() {
 
     {
         // 借用 `_mutable_integer`
-        let _large_integer = &_mutable_integer;
+        let large_integer = &_mutable_integer;
 
         // 报错！`_mutable_integer` 在本作用域被冻结
         _mutable_integer = 50;
         // 改正 ^ 注释掉此行
 
-        // `_large_integer` 离开作用域
+        println!("Immutably borrowed {}", large_integer);
+
+        // `large_integer` 离开作用域
     }
 
     // 正常运行！`_mutable_integer` 在这作用域没有冻结
