@@ -22,7 +22,6 @@
 ```rust,editable
 use std::error;
 use std::fmt;
-use std::num::ParseIntError;
 
 // 为 `Box<error::Error>` 取别名。
 type Result<T> = std::result::Result<T, Box<error::Error>>;
