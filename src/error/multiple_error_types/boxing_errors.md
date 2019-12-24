@@ -10,7 +10,6 @@
 ```rust,editable
 use std::error;
 use std::fmt;
-use std::num::ParseIntError;
 
 // 为 `Box<error::Error>` 取别名。
 type Result<T> = std::result::Result<T, Box<error::Error>>;
@@ -38,9 +37,11 @@ impl error::Error for EmptyVec {
 fn double_first(vec: Vec<&str>) -> Result<i32> {
     vec.first()
        .ok_or_else(|| EmptyVec.into())  // 装箱
-       .and_then(|s| s.parse::<i32>()
-            .map_err(|e| e.into())  // 装箱
-            .map(|i| 2 * i))
+       .and_then(|s| {
+            s.parse::<i32>()
+                .map_err(|e| e.into())  // 装箱
+                .map(|i| 2 * i)
+        })
 }
 
 fn print(result: Result<i32>) {
