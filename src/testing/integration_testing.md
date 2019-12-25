@@ -10,7 +10,7 @@ cargo 在与 `src` 同级别的 `tests` 目录寻找集成测试。
 
 ```rust,ignore
 // 假设这个 crate 叫做 adder，我们需要在集成测试中用 extern 说明。
-pub fn testing add(a: i32, b: i32) -> i32 {
+pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 ```
