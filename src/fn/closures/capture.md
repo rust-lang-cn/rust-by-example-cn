@@ -29,8 +29,8 @@ fn main() {
 
     let mut count = 0;
 
-    // 这个闭包使 `count` 值增加。要做到这点，它需要得到 `&mut count` 或者
-    // `count` 本身，但 `&mut count` 的要求没那么严格，所以我们采取这种方式。
+    // 这个闭包使 `count` 值增加。要做到这点，它需要使用 `&mut count` 或者
+    // `count` 的方式，但 `&mut count` 的权限更低，所以我们采取这种方式。
     // 该闭包立即借用 `count`。
     //
     // `inc` 前面需要加上 `mut`，因为闭包里存储着一个 `&mut` 变量。调用闭包时，
@@ -45,7 +45,8 @@ fn main() {
     inc();
 
     //let reborrow = &mut count;
-    // ^ 试一试：将此行注释去掉。
+    //*reborrow = 3;
+    // ^ 试一试：将上面两行注释去掉。
     
     // 不可复制类型（non-copy type）。
     let movable = Box::new(3);
