@@ -38,9 +38,7 @@ fn double_first(vec: Vec<&str>) -> Result<Option<i32>, ParseIntError> {
         first.parse::<i32>().map(|n| 2 * n)
     });
 
-    let opt = opt.map_or(Ok(None), |r| r.map(Some))?;
-
-    Ok(opt)
+    opt.map_or(Ok(None), |r| r.map(Some))
 }
 
 fn main() {
@@ -54,4 +52,4 @@ fn main() {
 }
 ```
 
-[enter_question_mark]: ../result/enter_question_mark.html
+[enter_question_mark]: ../result/enter_question_mark.md

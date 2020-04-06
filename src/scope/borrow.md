@@ -34,10 +34,13 @@ fn main() {
         let _ref_to_i32: &i32 = &boxed_i32;
 
         // 报错！
-        // 当 `boxed_i32` 里面的值被借用时，不能销毁 `boxed_int`。
+        // 当 `boxed_i32` 里面的值之后在作用域中被借用时，不能将其销毁。
         eat_box_i32(boxed_i32);
         // 改正 ^ 注释掉此行
 
+        // 在 `_ref_to_i32` 里面的值被销毁后，尝试借用 `_ref_to_i32`
+        //（译注：如果此处不借用，则在上一行的代码中，eat_box_i32(boxed_i32)可以将 `boxed_i32` 销毁。）
+        borrow_i32(_ref_to_i32);
         // `_ref_to_i32` 离开作用域且不再被借用。
     }
 

@@ -20,4 +20,4 @@ fn main() {
 
 ### 参见：
 
-[Tuples](./primitives/tuples.html)
+[Tuples](../../primitives/tuples.md)

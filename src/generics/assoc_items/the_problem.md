@@ -17,7 +17,7 @@ struct Container(i32, i32);
 // 这个 trait 检查给定的 2 个项是否储存于容器中
 // 并且能够获得容器的第一个或最后一个值。
 trait Contains<A, B> {
-    fn contains(&self, &A, &B) -> bool; // 显式地要求 `A` 和 `B`
+    fn contains(&self, _: &A, _: &B) -> bool; // 显式地要求 `A` 和 `B`
     fn first(&self) -> i32; // 未显式地要求 `A` 或 `B`
     fn last(&self) -> i32;  // 未显式地要求 `A` 或 `B`
 }
@@ -61,5 +61,5 @@ fn main() {
 
 [`struct`][structs], 和 [`trait`][traits]
 
-[structs]: ./custom_types/structs.html
-[traits]: ./trait.html
+[structs]: ../../custom_types/structs.md
+[traits]: ../../trait.md

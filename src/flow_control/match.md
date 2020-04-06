@@ -14,7 +14,7 @@ fn main() {
         // 匹配多个值
         2 | 3 | 5 | 7 | 11 => println!("This is a prime"),
         // 匹配一个闭区间范围
-        13...19 => println!("A teen"),
+        13..=19 => println!("A teen"),
         // 处理其他情况
         _ => println!("Ain't special"),
     }

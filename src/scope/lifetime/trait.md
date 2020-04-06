@@ -29,4 +29,4 @@ fn main() {
 [`trait`][trait]
 
 
-[trait]: trait.html
+[trait]: ../../trait.md

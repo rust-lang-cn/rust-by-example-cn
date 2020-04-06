@@ -3,9 +3,7 @@ title = "通过例子学 Rust"
 description = "通过例子学 Rust, Rust By Example 中文版，RBE 中文版"
 author = "The Rust Community"
 translator = "Aaklo Xu"
-
-[output.html]
-theme = "theme"
+language = "zh-CN"
 
 [output.html.playpen]
 editable = true

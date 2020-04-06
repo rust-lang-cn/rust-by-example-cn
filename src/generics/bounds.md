@@ -70,8 +70,8 @@ fn main() {
 
 [`std::fmt`][fmt], [`struct`][structs], 和 [`trait`][traits]
 
-[fmt]: ./hello/print.html
-[methods]: ./fn/methods.html
-[structs]: ./custom_types/structs.html
-[traits]: ./trait.html
-[where]: ./generics/where.html
+[fmt]: ../hello/print.md
+[methods]: ../fn/methods.md
+[structs]: ../custom_types/structs.md
+[traits]: ../trait.md
+[where]: ../generics/where.md

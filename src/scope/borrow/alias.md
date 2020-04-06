@@ -22,6 +22,9 @@ fn main() {
         //let mutable_borrow = &mut point;
         // 试一试 ^ 取消此行注释。
 
+        // 此处再次使用被借用的值
+        println!("Point has coordinates: ({}, {}, {})", borrowed_point.x, another_borrow.y, point.z);
+
         // 不可变引用离开作用域
     }
 

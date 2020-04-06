@@ -31,9 +31,9 @@ fn print_multi<'a, 'b>(x: &'a i32, y: &'b i32) {
 // 但必须返回正确的生命周期。
 fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 { x }
 
-//fn invalid_output<'a>() -> &'a i32 { &7 }
+//fn invalid_output<'a>() -> &'a String { &String::from("foo") }
 // 上面代码是无效的：`'a` 存活的时间必须比函数的长。
-// 这里的 `&7` 将会创建一个 `i32` 类型，然后对它取引用。
+// 这里的 `&String::from("foo")` 将会创建一个 `String` 类型，然后对它取引用。
 // 数据在离开作用域时删掉，返回一个指向无效数据的引用。
 
 fn main() {
@@ -56,5 +56,5 @@ fn main() {
 
 [函数][fn]
 
-[elision]: elision.html
-[fn]: ./fn.html
+[elision]: elision.md
+[fn]: fn.md

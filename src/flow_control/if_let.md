@@ -89,10 +89,30 @@ fn main() {
 }
 ```
 
+另一个好处是：`if let` 允许匹配枚举非参数化的变量，即枚举未注明 `#[derive(PartialEq)]`，我们也没有为其实现 `PartialEq`。在这种情况下，通常 `if Foo::Bar==a` 会出错，因为此类枚举的实例不具有可比性。但是，`if let` 是可行的。
+
+你想挑战一下吗？使用 `if let`修复以下示例：
+
+```rust,editable,ignore,mdbook-runnable
+// 该枚举故意未注明 `#[derive(PartialEq)]`，
+// 并且也没为其实现 `PartialEq`。这就是为什么下面比较 `Foo::Bar==a` 会失败的原因。
+enum Foo {Bar}
+
+fn main() {
+    let a = Foo::Bar;
+
+    // 变量匹配 Foo::Bar
+    if Foo::Bar == a {
+    // ^-- 这就是编译时发现的错误。使用 `if let` 来替换它。
+        println!("a is foobar");
+    }
+}
+```
+
 ### 参见：
 
 [`枚举`][enum]，[`Option`][option]，和相关的 [RFC][if_let_rfc]
 
-[enum]: ./custom_types/enum.html
+[enum]: ../custom_types/enum.md
 [if_let_rfc]: https://github.com/rust-lang/rfcs/pull/160
-[option]: ./std/option.html
+[option]: ../std/option.md

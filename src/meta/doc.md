@@ -24,7 +24,8 @@ impl Person {
     /// ```
     /// // 在文档注释中，你可以书写代码块
     /// // 如果向 Rustdoc 传递 --test 参数，它还会帮你测试注释文档中的代码！
-    /// let person = Person::new("name);
+    /// use doc::Person;
+    /// let person = Person::new("name");
     /// ```
     pub fn new(name: &str) -> Person {
         Person {

@@ -34,4 +34,4 @@ fn main() {
 
 [类型转换][cast]
 
-[cast]: ./cast.html
+[cast]: ../../types/cast.md

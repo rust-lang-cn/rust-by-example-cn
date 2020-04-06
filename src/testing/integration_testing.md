@@ -10,7 +10,7 @@ cargo 在与 `src` 同级别的 `tests` 目录寻找集成测试。
 
 ```rust,ignore
 // 假设这个 crate 叫做 adder，我们需要在集成测试中用 extern 说明。
-pub fn testing add(a: i32, b: i32) -> i32 {
+pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 ```
@@ -80,5 +80,5 @@ fn test_add() {
 带有共用代码的模块遵循和普通的[模块][mod]一样的规则，所以完全可以把公共模块
 写在 `tests/common/mod.rs` 文件中。
 
-[unit]: testing/unit_testing.html
-[mod]: mod.html
+[unit]: unit_testing.md
+[mod]: ../mod.md
