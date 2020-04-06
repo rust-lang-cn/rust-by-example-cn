@@ -54,7 +54,7 @@
             - [枚举](flow_control/match/destructuring/destructure_enum.md)
             - [指针和引用](flow_control/match/destructuring/destructure_pointers.md)
             - [结构体](flow_control/match/destructuring/destructure_structures.md)
-        - [守卫](flow_control/match/guard.md)
+        - [卫语句](flow_control/match/guard.md)
         - [绑定](flow_control/match/binding.md)
     - [if let](flow_control/if_let.md)
     - [while let](flow_control/while_let.md)
