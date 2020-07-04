@@ -52,7 +52,7 @@ fn main() {
 
 ```bash
 $ rustc doc.rs --crate-type lib
-$ rustdoc --test --extern doc="libdoc.rs"
+$ rustdoc --test --extern doc="libdoc.rlib" doc.rs
 ```
 
 （当你对库 crate 上运行 `cargo test` 时，Cargo 将自动生成并运行正确的 `rustc`
