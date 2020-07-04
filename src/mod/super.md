@@ -44,7 +44,7 @@ mod my {
         // 这将在 *crate* 作用域内绑定 `cool::function` 。
         // 在这个例子中，crate 作用域是最外面的作用域。
         {
-            use cool::function as root_function;
+            use crate::cool::function as root_function;
             root_function();
         }
     }
