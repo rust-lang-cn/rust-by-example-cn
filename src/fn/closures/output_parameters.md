@@ -39,7 +39,7 @@ fn main() {
 
 ### 参见：
 
-[`Fn`][fn], [`FnMut`][fnmut], [范型][generics] 和 [impl Trait][impltrait].
+[`Fn`][fn], [`FnMut`][fnmut], [泛型][generics] 和 [impl Trait][impltrait].
 
 [fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
 [fnmut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
