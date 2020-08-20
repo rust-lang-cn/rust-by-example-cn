@@ -48,7 +48,7 @@ fn main() {
 
 ### 参见：
 
-[函数][fn] 和 [`struct`s][structs]
+[函数][fn] 和 [`structs`][structs]
 
 [fn]: ../fn.md
 [structs]: ../custom_types/structs.md
