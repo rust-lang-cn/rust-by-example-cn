@@ -21,7 +21,7 @@ enum Color {
 }
 
 fn main() {
-    // `enum` 可以转成整形。
+    // `enum` 可以转成整型。
     println!("zero is {}", Number::Zero as i32);
     println!("one is {}", Number::One as i32);
 
