@@ -33,9 +33,10 @@ $ mdbook serve
 
 ## 其他语言版本
 
-* [English](https://github.com/rust-lang/rust-by-example)
-* [French](https://github.com/Songbird0/FR_RBE)
-* [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
+* [英语](https://github.com/rust-lang/rust-by-example)
+* [法语](https://github.com/Songbird0/FR_RBE)
+* [日语](https://github.com/rust-lang-ja/rust-by-example-ja)
+* [俄语](https://github.com/ruRust/rust-by-example)
 
 ## 授权协议
 
