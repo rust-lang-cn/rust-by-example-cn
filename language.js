@@ -24,15 +24,23 @@
   if (github_id != null && github_id.parentNode.href != undefined) {
     edit_url = github_id.parentNode.href;
     var repo_name = edit_url.split('/').pop();
-    var url_name = repo_name.slice(0, -3);
-    html_file = url.split(url_name).pop();
+    var url_repo_name = repo_name.slice(0, -3);
+
+    if (url.indexOf(url_repo_name) > -1) {
+      var html_file = url.split(url_repo_name).pop();
+    } else if (url.indexOf(":3000") > -1) {
+      var html_file = url.split(":3000").pop();
+    } else {
+      var html_file = '/';
+    }
+    
     
     if (html_file == '/') {
       edit_url += '/tree/master/src'
     } else {
-      md_len = html_file.indexOf('.html');
+      var md_len = html_file.indexOf('.html');
       if (md_len > -1) {
-        md_file = html_file.substring(0, md_len) + '.md';
+        var md_file = html_file.substring(0, md_len) + '.md';
         edit_url += '/blob/master/src' + md_file;
       }
     }
