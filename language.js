@@ -46,7 +46,7 @@
     }
   }
 
-  var edit_node = '<a href="' + edit_url + '" title="改进本页翻译" aria-label="改进本页翻译"><i id="go-back-homepage" class="fa fa-pencil-square-o"></i></a>';
+  var edit_node = '<a href="' + edit_url + '" title="改进本页翻译" aria-label="改进本页翻译" target="_blank"><i id="go-back-homepage" class="fa fa-pencil-square-o"></i></a>';
 
   if (url.indexOf(search.en) != -1 && url.indexOf(search.en) === (url.indexOf(host) + host.length)) {
     link = url.replace(search.en, replaceWith.en);
