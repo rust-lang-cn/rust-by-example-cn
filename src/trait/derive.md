@@ -1,9 +1,9 @@
-# 推导
+# 派生
 
 通过 `#[derive]` [属性][attribute]，编译器能够提供某些 trait 的基本实现。如果
 需要更复杂的行为，这些 trait 也可以手动实现。
 
-下面以下是可以自动推导的 trait：
+下面以下是可以自动派生的 trait：
 
 * 比较 trait:
   [`Eq`][eq], [`PartialEq`][partial-eq], [`Ord`][ord], [`PartialOrd`][partial-ord]
