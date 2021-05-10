@@ -23,9 +23,9 @@ fn main() {
 
 > 译注：方法一般是不需要标明生命周期的，因为 `self` 的生命周期会赋给所有的输出
 > 生命周期参数，详见 [TRPL](https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#lifetime-elision)。
+
 ### 参见：
 
-[methods][methods]
-
+[方法][methods]
 
 [methods]: ../../fn/methods.md
