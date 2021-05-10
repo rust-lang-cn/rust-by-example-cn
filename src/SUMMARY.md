@@ -116,6 +116,7 @@
   - [RAII](scope/raii.md)
   - [所有权和移动](scope/move.md)
     - [可变性](scope/move/mut.md)
+    - [部分移动](scope/move/partial_move.md)
   - [借用](scope/borrow.md)
     - [可变性](scope/borrow/mut.md)
     - [别名使用](scope/borrow/alias.md)
