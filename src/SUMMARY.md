@@ -134,6 +134,7 @@
 
 - [特质 trait](trait.md)
   - [派生](trait/derive.md)
+  - [使用 `dyn` 返回 trait](trait/dyn.md)
   - [运算符重载](trait/ops.md)
   - [Drop](trait/drop.md)
   - [Iterators](trait/iter.md)
