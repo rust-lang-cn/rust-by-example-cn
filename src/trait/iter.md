@@ -1,4 +1,4 @@
-# Iterators
+# Iterator
 
 `Iterator` trait 用来对集合（collection）类型（比如数组）实现迭代器。
 

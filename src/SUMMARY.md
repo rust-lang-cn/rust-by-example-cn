@@ -137,9 +137,11 @@
   - [使用 `dyn` 返回 trait](trait/dyn.md)
   - [运算符重载](trait/ops.md)
   - [Drop](trait/drop.md)
-  - [Iterators](trait/iter.md)
+  - [Iterator](trait/iter.md)
   - [`impl Trait`](trait/impl_trait.md)
   - [Clone](trait/clone.md)
+  - [父 trait](trait/supertraits.md)
+  - [消除重叠 trait](trait/disambiguating.md)
 
 - [使用 `macro_rules!` 来创建宏](macros.md)
   - [语法](macros/syntax.md)
