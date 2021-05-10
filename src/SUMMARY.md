@@ -83,7 +83,7 @@
 
 - [crate](crates.md)
   - [库](crates/lib.md)
-  - [`extern crate`](crates/link.md)
+  - [使用库](crates/using_lib.md)
 
 - [cargo](cargo.md)
   - [依赖](cargo/deps.md)
