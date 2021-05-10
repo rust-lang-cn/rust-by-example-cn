@@ -138,6 +138,7 @@
   - [运算符重载](trait/ops.md)
   - [Drop](trait/drop.md)
   - [Iterators](trait/iter.md)
+  - [`impl Trait`](trait/impl_trait.md)
   - [Clone](trait/clone.md)
 
 - [使用 `macro_rules!` 来创建宏](macros.md)
