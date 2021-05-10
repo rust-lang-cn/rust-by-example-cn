@@ -40,7 +40,6 @@ fn main() {
 
 ### 参见：
 
-[`structs`][structs]
-
+[结构体][structs]
 
 [structs]: ../../custom_types/structs.md
