@@ -2,8 +2,9 @@
 
 > Chinese translation of the [Rust By Example][website]
 >
-> 本文档按照 [**Rust 文档翻译指引**](https://rustwiki.org/zh-CN/rust-wiki/translate/rust-translation-guide.html)规范进行翻译。  
->《通过例子学 Rust》(Rust By Example 中文版)翻译自 [Rust By Example][website]，内容已全部翻译完成，中文版最后更新时间：2019-5-3。查看此书的 [Github 翻译项目][home]。
+> 本文档按照 [**Rust 文档翻译指引**](https://rustwiki.org/zh-CN/rust-wiki/translate/rust-translation-guide.html)规范进行翻译。<br>
+>《通过例子学 Rust》(Rust By Example 中文版)翻译自 [Rust By Example][website]，内容已全部翻译完成，中文版最后更新时间：2021-5-10。查看此书的 [Github 翻译项目][home]。<br>
+> <span style="color:red;">本站支持文档中英文切换</span>，点击页面右上角语言图标可切换到相同章节的英文页面。
 
 [Rust][rust] 是一门注重安全（safety）、速度（speed）和并发（concurrency）的现代系统编程语言。Rust 通过内存安全来实现以上目标，但不用垃圾回收机制（garbage collection, GC)。
 
