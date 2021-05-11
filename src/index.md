@@ -4,7 +4,7 @@
 >
 > - 本文档按照 [**Rust 文档翻译指引**](https://rustwiki.org/zh-CN/rust-wiki/translate/rust-translation-guide.html)规范进行翻译。<br>
 > - 《通过例子学 Rust》(Rust By Example 中文版)翻译自 [Rust By Example][website]，中文版最后更新时间：2021-5-10。查看此书的 [Github 翻译项目][home]。<br>
-> - <a href="https://rustwiki.org/zh-CN/rust-by-example" style="color:red;">本站支持文档中英文切换</a>，点击页面右上角语言图标可切换到相同章节的英文页面。
+> - <a href="https://rustwiki.org/zh-CN/rust-by-example" style="color:red;">本站支持文档中英文切换</a>，点击页面右上角语言图标可切换到相同章节的英文页面，**本站英文版每天都会自动同步一次官方的最新版本**。
 > - 若发现本页表达错误或帮助我们改进翻译，可点击右上角的编辑按钮打开本页对应源码文件进行编辑和修改，Rust 中文资源的开源组织发展离不开大家，感谢您的支持和帮助！
 
 [Rust][rust] 是一门注重安全（safety）、速度（speed）和并发（concurrency）的现代系统编程语言。Rust 通过内存安全来实现以上目标，但不用垃圾回收机制（garbage collection, GC)。
