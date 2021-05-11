@@ -10,7 +10,7 @@
 
 ## 使用说明
 
-如果想阅读《通过例子学 Rust》，可以直接访问 [https://rustwiki.org/zh-CN/rust-by-example/][website-cn] 进行在线上阅读。（英文阅读地址：[https://doc.rust-lang.org/rust-by-example/][website]）
+如果想阅读《通过例子学 Rust》，可以直接访问 [https://rustwiki.org/zh-CN/rust-by-example/][website-cn] 进行在线上阅读（<span style="color:red;">支持同一页面中英双语切换</span>）。（英文阅读地址：[https://doc.rust-lang.org/rust-by-example/][website]）
 
 若想在本地阅读，请先[安装 Rust][install Rust]，然后进行下面操作：
 
@@ -24,11 +24,9 @@ $ mdbook serve
 
 为了能够运行这些示例，你必须要连接到网络；当然你可以离线阅读所有这些内容。
 
-
 ## 如何贡献
 
 请查看 [CONTRIBUTING.md][how-to-contribute] 文件了解详细内容。
-
 
 ## 其他语言版本
 
@@ -47,8 +45,6 @@ $ mdbook serve
 可以根据自己选择来定。
 
 除非您有另外说明，否则您在本仓库提交的任何贡献均按上述方式进行双重许可授权，就如 Apache 2.0 协议所规定那样，而无需附加任何其他条款或条件。
-
-
 
 [install Rust]: https://www.rust-lang.org/tools/install
 [rust-by-example]: https://github.com/rust-lang/rust-by-example
