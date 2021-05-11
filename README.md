@@ -10,7 +10,7 @@
 
 ## 使用说明
 
-如果想阅读《通过例子学 Rust》，可以直接访问 [https://rustwiki.org/zh-CN/rust-by-example/][website-cn] 进行在线上阅读（<span style="color:red;">支持同一页面中英双语切换</span>）。（英文阅读地址：[https://doc.rust-lang.org/rust-by-example/][website]）
+如果想阅读《通过例子学 Rust》，可以直接访问 [https://rustwiki.org/zh-CN/rust-by-example/][website-cn] 进行在线上阅读（**支持同一页面中英双语切换**）。（英文阅读地址：[https://doc.rust-lang.org/rust-by-example/][website]）
 
 若想在本地阅读，请先[安装 Rust][install Rust]，然后进行下面操作：
 
