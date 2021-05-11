@@ -4,7 +4,6 @@ description = "Rust by Example (RBE) is a collection of runnable examples that i
 author = "The Rust Community"
 
 [output.html]
-additional-js = ["language.js"]
 git-repository-url = "https://github.com/rust-lang/rust-by-example"
 
 [output.html.playpen]

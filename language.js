@@ -13,8 +13,6 @@
     zh_CN: "/en/"
   }
 
-  console.log("hheheeh");
-
   var link = "";
   var word = "";
   var home = "Home";
@@ -34,9 +32,10 @@
       var html_file = '/';
     }
     
-    
-    if (html_file == '/') {
-      edit_url += '/tree/master/src'
+    if (typeof default_homepage_md !== 'undefined') {
+      edit_url += '/blob/master/src/' + default_homepage_md;
+    } else if (html_file == '/') {
+        edit_url += '/tree/master/src';
     } else {
       var md_len = html_file.indexOf('.html');
       if (md_len > -1) {
