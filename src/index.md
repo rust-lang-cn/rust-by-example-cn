@@ -66,7 +66,3 @@
 [install]: https://www.rust-lang.org/tools/install
 [std]: http://doc.rust-lang.org/std/
 [home]: https://github.com/rust-lang-cn/rust-by-example-cn
-
-<script>
-  var default_homepage_md = "index.md";
-</script>

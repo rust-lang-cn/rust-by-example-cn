@@ -8,6 +8,7 @@ language = "zh-CN"
 [output.html]
 additional-js = ["language.js"]
 git-repository-url = "https://github.com/rust-lang-cn/rust-by-example-cn"
+edit-url-template = "https://github.com/rust-lang-cn/rust-by-example-cn/edit/master/{path}"
 
 [output.html.playpen]
 editable = true
