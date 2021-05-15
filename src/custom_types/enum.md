@@ -1,6 +1,6 @@
 # 枚举
 
-`enum` 关键字允许创建一个从数个不同取值中选一个的枚举类型（enumeration）。任何一个在 `struct` 中合法的取值在 `enum` 中也合法。
+`enum` 关键字允许创建一个从数个不同取值中选其一的枚举类型（enumeration）。任何一个在 `struct` 中合法的取值在 `enum` 中也合法。
 
 ```rust,editable
 // 该属性用于隐藏对未使用代码的警告。
