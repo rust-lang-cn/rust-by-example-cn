@@ -174,8 +174,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="枚举"><a class="header" href="#枚举">枚举</a></h1>
-<p><code>enum</code> 关键字可以创建枚举类型（enumeration），该类型的实例只能在数个可能的取值中
-取一种。任何一个合法的 <code>struct</code> 同时也是合法的 <code>enum</code> 取值。</p>
+<p><code>enum</code> 关键字允许创建一个从数个不同取值中选其一的枚举类型（enumeration）。任何一个在 <code>struct</code> 中合法的取值在 <code>enum</code> 中也合法。</p>
 <pre><pre class="playground"><code class="language-rust editable">// 该属性用于隐藏对未使用代码的警告。
 #![allow(dead_code)]
 
@@ -254,9 +253,9 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
     }
 }
 </code></pre></pre>
-<p>该功能已在 Rust 中稳定化， 可以阅读 [stabilization report][aliasreport] 来了解更多有关枚举和类型别名的知识。</p>
+<p>该功能已在 Rust 中稳定下来， 可以阅读 [stabilization report][aliasreport] 来了解更多有关枚举和类型别名的知识。</p>
 <h3 id="参见"><a class="header" href="#参见">参见：</a></h3>
-<p><a href="../flow_control/match.html"><code>match</code></a>, <a href="../fn.html"><code>fn</code></a>, 和 <a href="../std/str.html"><code>String</code></a>, [&quot;Type alias enum variants&quot; RFC][type_alias_rfc]</p>
+<p><a href="../flow_control/match.html"><code>match</code></a>, <a href="../fn.html"><code>fn</code></a>, 和 <a href="../std/str.html"><code>String</code></a>, <a href="https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html">“类型别名枚举变量” 的 RFC</a></p>
 
                     </main>
 
