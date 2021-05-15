@@ -4,7 +4,7 @@
 [![LICENSE-MIT](https://img.shields.io/badge/license-MIT-green)](https://raw.githubusercontent.com/rust-lang-cn/rust-by-example-cn/master/LICENSE-MIT)
 [![LICENSE-APACHE](https://img.shields.io/badge/license-Apache%202-blue)](https://raw.githubusercontent.com/rust-lang-cn/rust-by-example-cn/master/LICENSE-APACHE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rust-lang-cn/rust-by-example-cn?color=gold)
-![GitHub contributors](https://img.shields.io/github/contributors/rust-lang-cn/rust-by-example-cn)
+![GitHub contributors](https://img.shields.io/github/contributors/rust-lang-cn/rust-by-example-cn?color=pink)
 ![rustwiki.org](https://img.shields.io/website?up_message=rustwiki.org&url=https%3A%2F%2Frustwiki.org)
 
 > Chinese translation of the [Rust By Example][rust-by-example]
