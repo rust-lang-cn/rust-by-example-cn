@@ -1,7 +1,6 @@
 # 枚举
 
-`enum` 关键字可以创建枚举类型（enumeration），该类型的实例只能在数个可能的取值中
-取一种。任何一个合法的 `struct` 同时也是合法的 `enum` 取值。
+`enum` 关键字允许创建一个从数个不同取值中选一个的枚举类型（enumeration）。任何一个可以作为合法 `struct` 的变量也能够作为合法的 `enum`。
 
 ```rust,editable
 // 该属性用于隐藏对未使用代码的警告。
@@ -90,14 +89,15 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
 }
 ```
 
-该功能已在 Rust 中稳定化， 可以阅读 [stabilization report][aliasreport] 来了解更多有关枚举和类型别名的知识。
+该功能已在 Rust 中稳定下来， 可以阅读 [stabilization report][aliasreport] 来了解更多有关枚举和类型别名的知识。
 
 ### 参见：
 
-[`match`][match], [`fn`][fn], 和 [`String`][str], ["Type alias enum variants" RFC][type_alias_rfc]
+[`match`][match], [`fn`][fn], 和 [`String`][str], [“类型别名枚举变量” 的 RFC][type_alias_rfc]
 
 [attributes]: ../attribute.md
 [c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [match]: ../flow_control/match.md
 [fn]: ../fn.md
 [str]: ../std/str.md
+[type_alias_rfc]: https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html
