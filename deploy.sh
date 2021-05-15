@@ -5,12 +5,12 @@ rev=$(git rev-parse --short HEAD)
 cd book
 
 git init
-git config user.name "Steve Klabnik"
-git config user.email "steve@steveklabnik.com"
-git remote add upstream "https://$GITHUB_TOKEN@github.com/rust-lang/rust-by-example.git"
+git config user.name "Aaran Xu"
+git config user.email "aaranxu@outlook.com"
+git remote add upstream "git@github.com:rust-lang-cn/rust-by-example-cn.git"
 git fetch upstream && git reset upstream/gh-pages
 
-echo "rustbyexample.com" > CNAME
+# echo "rustwiki.org" > CNAME
 
 touch .
 
