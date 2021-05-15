@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>显示（display） - 通过例子学 Rust</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="通过例子学 Rust, Rust By Example 中文版，RBE 中文版">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">简介</a></li><li class="chapter-item expanded "><a href="../../hello.html"><strong aria-hidden="true">1.</strong> Hello World</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../hello/comment.html"><strong aria-hidden="true">1.1.</strong> 注释</a></li><li class="chapter-item expanded "><a href="../../hello/print.html"><strong aria-hidden="true">1.2.</strong> 格式化输出</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../hello/print/print_debug.html"><strong aria-hidden="true">1.2.1.</strong> 调试（debug）</a></li><li class="chapter-item expanded "><a href="../../hello/print/print_display.html" class="active"><strong aria-hidden="true">1.2.2.</strong> 显示（display）</a></li><li class="chapter-item expanded "><a href="../../hello/print/print_display/testcase_list.html"><strong aria-hidden="true">1.2.3.</strong> 测试实例：List</a></li><li class="chapter-item expanded "><a href="../../hello/print/fmt.html"><strong aria-hidden="true">1.2.4.</strong> 格式化</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../primitives.html"><strong aria-hidden="true">2.</strong> 原生类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../primitives/literals.html"><strong aria-hidden="true">2.1.</strong> 字面量和运算符</a></li><li class="chapter-item expanded "><a href="../../primitives/tuples.html"><strong aria-hidden="true">2.2.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../../primitives/array.html"><strong aria-hidden="true">2.3.</strong> 数组和切片</a></li></ol></li><li class="chapter-item expanded "><a href="../../custom_types.html"><strong aria-hidden="true">3.</strong> 自定义类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> 结构体</a></li><li class="chapter-item expanded "><a href="../../custom_types/enum.html"><strong aria-hidden="true">3.2.</strong> 枚举</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../custom_types/enum/enum_use.html"><strong aria-hidden="true">3.2.1.</strong> 使用 use</a></li><li class="chapter-item expanded "><a href="../../custom_types/enum/c_like.html"><strong aria-hidden="true">3.2.2.</strong> C 风格用法</a></li><li class="chapter-item expanded "><a href="../../custom_types/enum/testcase_linked_list.html"><strong aria-hidden="true">3.2.3.</strong> 测试实例：链表</a></li></ol></li><li class="chapter-item expanded "><a href="../../custom_types/constants.html"><strong aria-hidden="true">3.3.</strong> 常量</a></li></ol></li><li class="chapter-item expanded "><a href="../../variable_bindings.html"><strong aria-hidden="true">4.</strong> 变量绑定</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../variable_bindings/mut.html"><strong aria-hidden="true">4.1.</strong> 可变变量</a></li><li class="chapter-item expanded "><a href="../../variable_bindings/scope.html"><strong aria-hidden="true">4.2.</strong> 作用域和遮蔽</a></li><li class="chapter-item expanded "><a href="../../variable_bindings/declare.html"><strong aria-hidden="true">4.3.</strong> 变量先声明</a></li><li class="chapter-item expanded "><a href="../../variable_bindings/freeze.html"><strong aria-hidden="true">4.4.</strong> 冻结</a></li></ol></li><li class="chapter-item expanded "><a href="../../types.html"><strong aria-hidden="true">5.</strong> 类型系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../types/cast.html"><strong aria-hidden="true">5.1.</strong> 类型转换</a></li><li class="chapter-item expanded "><a href="../../types/literals.html"><strong aria-hidden="true">5.2.</strong> 字面量</a></li><li class="chapter-item expanded "><a href="../../types/inference.html"><strong aria-hidden="true">5.3.</strong> 类型推断</a></li><li class="chapter-item expanded "><a href="../../types/alias.html"><strong aria-hidden="true">5.4.</strong> 别名</a></li></ol></li><li class="chapter-item expanded "><a href="../../conversion.html"><strong aria-hidden="true">6.</strong> 类型转换</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../conversion/from_into.html"><strong aria-hidden="true">6.1.</strong> From 和 Into</a></li><li class="chapter-item expanded "><a href="../../conversion/try_from_try_into.html"><strong aria-hidden="true">6.2.</strong> TryFrom 和 TryInto</a></li><li class="chapter-item expanded "><a href="../../conversion/string.html"><strong aria-hidden="true">6.3.</strong> ToString 和 FromStr</a></li></ol></li><li class="chapter-item expanded "><a href="../../expression.html"><strong aria-hidden="true">7.</strong> 表达式</a></li><li class="chapter-item expanded "><a href="../../flow_control.html"><strong aria-hidden="true">8.</strong> 流程控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../flow_control/if_else.html"><strong aria-hidden="true">8.1.</strong> if/else</a></li><li class="chapter-item expanded "><a href="../../flow_control/loop.html"><strong aria-hidden="true">8.2.</strong> loop 循环</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../flow_control/loop/nested.html"><strong aria-hidden="true">8.2.1.</strong> 嵌套循环和标签</a></li><li class="chapter-item expanded "><a href="../../flow_control/loop/return.html"><strong aria-hidden="true">8.2.2.</strong> 从 loop 循环返回</a></li></ol></li><li class="chapter-item expanded "><a href="../../flow_control/while.html"><strong aria-hidden="true">8.3.</strong> while 循环</a></li><li class="chapter-item expanded "><a href="../../flow_control/for.html"><strong aria-hidden="true">8.4.</strong> for 循环和区间</a></li><li class="chapter-item expanded "><a href="../../flow_control/match.html"><strong aria-hidden="true">8.5.</strong> match 匹配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../flow_control/match/destructuring.html"><strong aria-hidden="true">8.5.1.</strong> 解构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../flow_control/match/destructuring/destructure_tuple.html"><strong aria-hidden="true">8.5.1.1.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../../flow_control/match/destructuring/destructure_enum.html"><strong aria-hidden="true">8.5.1.2.</strong> 枚举</a></li><li class="chapter-item expanded "><a href="../../flow_control/match/destructuring/destructure_pointers.html"><strong aria-hidden="true">8.5.1.3.</strong> 指针和引用</a></li><li class="chapter-item expanded "><a href="../../flow_control/match/destructuring/destructure_structures.html"><strong aria-hidden="true">8.5.1.4.</strong> 结构体</a></li></ol></li><li class="chapter-item expanded "><a href="../../flow_control/match/guard.html"><strong aria-hidden="true">8.5.2.</strong> 卫语句</a></li><li class="chapter-item expanded "><a href="../../flow_control/match/binding.html"><strong aria-hidden="true">8.5.3.</strong> 绑定</a></li></ol></li><li class="chapter-item expanded "><a href="../../flow_control/if_let.html"><strong aria-hidden="true">8.6.</strong> if let</a></li><li class="chapter-item expanded "><a href="../../flow_control/while_let.html"><strong aria-hidden="true">8.7.</strong> while let</a></li></ol></li><li class="chapter-item expanded "><a href="../../fn.html"><strong aria-hidden="true">9.</strong> 函数</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../fn/methods.html"><strong aria-hidden="true">9.1.</strong> 方法</a></li><li class="chapter-item expanded "><a href="../../fn/closures.html"><strong aria-hidden="true">9.2.</strong> 闭包</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../fn/closures/capture.html"><strong aria-hidden="true">9.2.1.</strong> 捕获</a></li><li class="chapter-item expanded "><a href="../../fn/closures/input_parameters.html"><strong aria-hidden="true">9.2.2.</strong> 作为输入参数</a></li><li class="chapter-item expanded "><a href="../../fn/closures/anonymity.html"><strong aria-hidden="true">9.2.3.</strong> 类型匿名</a></li><li class="chapter-item expanded "><a href="../../fn/closures/input_functions.html"><strong aria-hidden="true">9.2.4.</strong> 输入函数</a></li><li class="chapter-item expanded "><a href="../../fn/closures/output_parameters.html"><strong aria-hidden="true">9.2.5.</strong> 作为输出参数</a></li><li class="chapter-item expanded "><a href="../../fn/closures/closure_examples.html"><strong aria-hidden="true">9.2.6.</strong> std 中的例子</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../fn/closures/closure_examples/iter_any.html"><strong aria-hidden="true">9.2.6.1.</strong> Iterator::any</a></li><li class="chapter-item expanded "><a href="../../fn/closures/closure_examples/iter_find.html"><strong aria-hidden="true">9.2.6.2.</strong> Iterator::find</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../fn/hof.html"><strong aria-hidden="true">9.3.</strong> 高阶函数</a></li><li class="chapter-item expanded "><a href="../../fn/diverging.html"><strong aria-hidden="true">9.4.</strong> 发散函数</a></li></ol></li><li class="chapter-item expanded "><a href="../../mod.html"><strong aria-hidden="true">10.</strong> 模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mod/visibility.html"><strong aria-hidden="true">10.1.</strong> 可见性</a></li><li class="chapter-item expanded "><a href="../../mod/struct_visibility.html"><strong aria-hidden="true">10.2.</strong> 结构体的可见性</a></li><li class="chapter-item expanded "><a href="../../mod/use.html"><strong aria-hidden="true">10.3.</strong> use 声明</a></li><li class="chapter-item expanded "><a href="../../mod/super.html"><strong aria-hidden="true">10.4.</strong> super 和 self</a></li><li class="chapter-item expanded "><a href="../../mod/split.html"><strong aria-hidden="true">10.5.</strong> 文件分层</a></li></ol></li><li class="chapter-item expanded "><a href="../../crates.html"><strong aria-hidden="true">11.</strong> crate</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../crates/lib.html"><strong aria-hidden="true">11.1.</strong> 库</a></li><li class="chapter-item expanded "><a href="../../crates/using_lib.html"><strong aria-hidden="true">11.2.</strong> 使用库</a></li></ol></li><li class="chapter-item expanded "><a href="../../cargo.html"><strong aria-hidden="true">12.</strong> cargo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cargo/deps.html"><strong aria-hidden="true">12.1.</strong> 依赖</a></li><li class="chapter-item expanded "><a href="../../cargo/conventions.html"><strong aria-hidden="true">12.2.</strong> 约定规范</a></li><li class="chapter-item expanded "><a href="../../cargo/test.html"><strong aria-hidden="true">12.3.</strong> 测试</a></li><li class="chapter-item expanded "><a href="../../cargo/build_scripts.html"><strong aria-hidden="true">12.4.</strong> 构建脚本</a></li></ol></li><li class="chapter-item expanded "><a href="../../attribute.html"><strong aria-hidden="true">13.</strong> 属性</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../attribute/unused.html"><strong aria-hidden="true">13.1.</strong> 死代码 dead_code</a></li><li class="chapter-item expanded "><a href="../../attribute/crate.html"><strong aria-hidden="true">13.2.</strong> crate</a></li><li class="chapter-item expanded "><a href="../../attribute/cfg.html"><strong aria-hidden="true">13.3.</strong> cfg</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../attribute/cfg/custom.html"><strong aria-hidden="true">13.3.1.</strong> 自定义条件</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../generics.html"><strong aria-hidden="true">14.</strong> 泛型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../generics/gen_fn.html"><strong aria-hidden="true">14.1.</strong> 函数</a></li><li class="chapter-item expanded "><a href="../../generics/impl.html"><strong aria-hidden="true">14.2.</strong> 实现</a></li><li class="chapter-item expanded "><a href="../../generics/gen_trait.html"><strong aria-hidden="true">14.3.</strong> trait</a></li><li class="chapter-item expanded "><a href="../../generics/bounds.html"><strong aria-hidden="true">14.4.</strong> 约束</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../generics/bounds/testcase_empty.html"><strong aria-hidden="true">14.4.1.</strong> 测试实例：空约束</a></li></ol></li><li class="chapter-item expanded "><a href="../../generics/multi_bounds.html"><strong aria-hidden="true">14.5.</strong> 多重约束</a></li><li class="chapter-item expanded "><a href="../../generics/where.html"><strong aria-hidden="true">14.6.</strong> where 子句</a></li><li class="chapter-item expanded "><a href="../../generics/new_types.html"><strong aria-hidden="true">14.7.</strong> newtype 惯用法</a></li><li class="chapter-item expanded "><a href="../../generics/assoc_items.html"><strong aria-hidden="true">14.8.</strong> 关联项</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../generics/assoc_items/the_problem.html"><strong aria-hidden="true">14.8.1.</strong> 存在问题</a></li><li class="chapter-item expanded "><a href="../../generics/assoc_items/types.html"><strong aria-hidden="true">14.8.2.</strong> 关联类型</a></li></ol></li><li class="chapter-item expanded "><a href="../../generics/phantom.html"><strong aria-hidden="true">14.9.</strong> 虚类型参数</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../generics/phantom/testcase_units.html"><strong aria-hidden="true">14.9.1.</strong> 测试实例：单位检查</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../scope.html"><strong aria-hidden="true">15.</strong> 作用域规则</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../scope/raii.html"><strong aria-hidden="true">15.1.</strong> RAII</a></li><li class="chapter-item expanded "><a href="../../scope/move.html"><strong aria-hidden="true">15.2.</strong> 所有权和移动</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../scope/move/mut.html"><strong aria-hidden="true">15.2.1.</strong> 可变性</a></li><li class="chapter-item expanded "><a href="../../scope/move/partial_move.html"><strong aria-hidden="true">15.2.2.</strong> 部分移动</a></li></ol></li><li class="chapter-item expanded "><a href="../../scope/borrow.html"><strong aria-hidden="true">15.3.</strong> 借用</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../scope/borrow/mut.html"><strong aria-hidden="true">15.3.1.</strong> 可变性</a></li><li class="chapter-item expanded "><a href="../../scope/borrow/alias.html"><strong aria-hidden="true">15.3.2.</strong> 别名使用</a></li><li class="chapter-item expanded "><a href="../../scope/borrow/ref.html"><strong aria-hidden="true">15.3.3.</strong> ref 模式</a></li></ol></li><li class="chapter-item expanded "><a href="../../scope/lifetime.html"><strong aria-hidden="true">15.4.</strong> 生命周期</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../scope/lifetime/explicit.html"><strong aria-hidden="true">15.4.1.</strong> 显式标注</a></li><li class="chapter-item expanded "><a href="../../scope/lifetime/fn.html"><strong aria-hidden="true">15.4.2.</strong> 函数</a></li><li class="chapter-item expanded "><a href="../../scope/lifetime/methods.html"><strong aria-hidden="true">15.4.3.</strong> 方法</a></li><li class="chapter-item expanded "><a href="../../scope/lifetime/struct.html"><strong aria-hidden="true">15.4.4.</strong> 结构体</a></li><li class="chapter-item expanded "><a href="../../scope/lifetime/trait.html"><strong aria-hidden="true">15.4.5.</strong> trait</a></li><li class="chapter-item expanded "><a href="../../scope/lifetime/lifetime_bounds.html"><strong aria-hidden="true">15.4.6.</strong> 约束</a></li><li class="chapter-item expanded "><a href="../../scope/lifetime/lifetime_coercion.html"><strong aria-hidden="true">15.4.7.</strong> 强制转换</a></li><li class="chapter-item expanded "><a href="../../scope/lifetime/static_lifetime.html"><strong aria-hidden="true">15.4.8.</strong> static</a></li><li class="chapter-item expanded "><a href="../../scope/lifetime/elision.html"><strong aria-hidden="true">15.4.9.</strong> 省略</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../trait.html"><strong aria-hidden="true">16.</strong> 特质 trait</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../trait/derive.html"><strong aria-hidden="true">16.1.</strong> 派生</a></li><li class="chapter-item expanded "><a href="../../trait/dyn.html"><strong aria-hidden="true">16.2.</strong> 使用 dyn 返回 trait</a></li><li class="chapter-item expanded "><a href="../../trait/ops.html"><strong aria-hidden="true">16.3.</strong> 运算符重载</a></li><li class="chapter-item expanded "><a href="../../trait/drop.html"><strong aria-hidden="true">16.4.</strong> Drop</a></li><li class="chapter-item expanded "><a href="../../trait/iter.html"><strong aria-hidden="true">16.5.</strong> Iterator</a></li><li class="chapter-item expanded "><a href="../../trait/impl_trait.html"><strong aria-hidden="true">16.6.</strong> impl Trait</a></li><li class="chapter-item expanded "><a href="../../trait/clone.html"><strong aria-hidden="true">16.7.</strong> Clone</a></li><li class="chapter-item expanded "><a href="../../trait/supertraits.html"><strong aria-hidden="true">16.8.</strong> 父 trait</a></li><li class="chapter-item expanded "><a href="../../trait/disambiguating.html"><strong aria-hidden="true">16.9.</strong> 消除重叠 trait</a></li></ol></li><li class="chapter-item expanded "><a href="../../macros.html"><strong aria-hidden="true">17.</strong> 使用 macro_rules! 来创建宏</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../macros/syntax.html"><strong aria-hidden="true">17.1.</strong> 语法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../macros/designators.html"><strong aria-hidden="true">17.1.1.</strong> 指示符</a></li><li class="chapter-item expanded "><a href="../../macros/overload.html"><strong aria-hidden="true">17.1.2.</strong> 重载</a></li><li class="chapter-item expanded "><a href="../../macros/repeat.html"><strong aria-hidden="true">17.1.3.</strong> 重复</a></li></ol></li><li class="chapter-item expanded "><a href="../../macros/dry.html"><strong aria-hidden="true">17.2.</strong> DRY (不写重复代码)</a></li><li class="chapter-item expanded "><a href="../../macros/dsl.html"><strong aria-hidden="true">17.3.</strong> DSL (领域专用语言)</a></li><li class="chapter-item expanded "><a href="../../macros/variadics.html"><strong aria-hidden="true">17.4.</strong> 可变参数接口</a></li></ol></li><li class="chapter-item expanded "><a href="../../error.html"><strong aria-hidden="true">18.</strong> 错误处理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../error/panic.html"><strong aria-hidden="true">18.1.</strong> panic</a></li><li class="chapter-item expanded "><a href="../../error/option_unwrap.html"><strong aria-hidden="true">18.2.</strong> Option 和 unwrap</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../error/option_unwrap/question_mark.html"><strong aria-hidden="true">18.2.1.</strong> 使用 ? 解开 Option</a></li><li class="chapter-item expanded "><a href="../../error/option_unwrap/map.html"><strong aria-hidden="true">18.2.2.</strong> 组合算子：map</a></li><li class="chapter-item expanded "><a href="../../error/option_unwrap/and_then.html"><strong aria-hidden="true">18.2.3.</strong> 组合算子：and_then</a></li></ol></li><li class="chapter-item expanded "><a href="../../error/result.html"><strong aria-hidden="true">18.3.</strong> 结果 Result</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../error/result/result_map.html"><strong aria-hidden="true">18.3.1.</strong> Result 的 map</a></li><li class="chapter-item expanded "><a href="../../error/result/result_alias.html"><strong aria-hidden="true">18.3.2.</strong> 给 Result 取别名</a></li><li class="chapter-item expanded "><a href="../../error/result/early_returns.html"><strong aria-hidden="true">18.3.3.</strong> 提前返回</a></li><li class="chapter-item expanded "><a href="../../error/result/enter_question_mark.html"><strong aria-hidden="true">18.3.4.</strong> 引入 ?</a></li></ol></li><li class="chapter-item expanded "><a href="../../error/multiple_error_types.html"><strong aria-hidden="true">18.4.</strong> 处理多种错误类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../error/multiple_error_types/option_result.html"><strong aria-hidden="true">18.4.1.</strong> 从 Option 中取出 Result</a></li><li class="chapter-item expanded "><a href="../../error/multiple_error_types/define_error_type.html"><strong aria-hidden="true">18.4.2.</strong> 定义一种错误类型</a></li><li class="chapter-item expanded "><a href="../../error/multiple_error_types/boxing_errors.html"><strong aria-hidden="true">18.4.3.</strong> 把错误 “装箱”</a></li><li class="chapter-item expanded "><a href="../../error/multiple_error_types/reenter_question_mark.html"><strong aria-hidden="true">18.4.4.</strong> ? 的其他用法</a></li><li class="chapter-item expanded "><a href="../../error/multiple_error_types/wrap_error.html"><strong aria-hidden="true">18.4.5.</strong> 包裹错误</a></li></ol></li><li class="chapter-item expanded "><a href="../../error/iter_result.html"><strong aria-hidden="true">18.5.</strong> 遍历 Result</a></li></ol></li><li class="chapter-item expanded "><a href="../../std.html"><strong aria-hidden="true">19.</strong> 标准库类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../std/box.html"><strong aria-hidden="true">19.1.</strong> 箱子、栈和堆</a></li><li class="chapter-item expanded "><a href="../../std/vec.html"><strong aria-hidden="true">19.2.</strong> 动态数组 vector</a></li><li class="chapter-item expanded "><a href="../../std/str.html"><strong aria-hidden="true">19.3.</strong> 字符串 String</a></li><li class="chapter-item expanded "><a href="../../std/option.html"><strong aria-hidden="true">19.4.</strong> 选项 Option</a></li><li class="chapter-item expanded "><a href="../../std/result.html"><strong aria-hidden="true">19.5.</strong> 结果 Result</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../std/result/question_mark.html"><strong aria-hidden="true">19.5.1.</strong> ? 用法</a></li></ol></li><li class="chapter-item expanded "><a href="../../std/panic.html"><strong aria-hidden="true">19.6.</strong> panic!</a></li><li class="chapter-item expanded "><a href="../../std/hash.html"><strong aria-hidden="true">19.7.</strong> 散列表 HashMap</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../std/hash/alt_key_types.html"><strong aria-hidden="true">19.7.1.</strong> 更改或自定义关键字类型</a></li><li class="chapter-item expanded "><a href="../../std/hash/hashset.html"><strong aria-hidden="true">19.7.2.</strong> 散列集 HashSet</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../std_misc.html"><strong aria-hidden="true">20.</strong> 标准库更多介绍</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../std_misc/threads.html"><strong aria-hidden="true">20.1.</strong> 线程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../std_misc/threads/testcase_mapreduce.html"><strong aria-hidden="true">20.1.1.</strong> 测试实例：map-reduce</a></li></ol></li><li class="chapter-item expanded "><a href="../../std_misc/channels.html"><strong aria-hidden="true">20.2.</strong> 通道</a></li><li class="chapter-item expanded "><a href="../../std_misc/path.html"><strong aria-hidden="true">20.3.</strong> 路径</a></li><li class="chapter-item expanded "><a href="../../std_misc/file.html"><strong aria-hidden="true">20.4.</strong> 文件输入输出（I/O）</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../std_misc/file/open.html"><strong aria-hidden="true">20.4.1.</strong> 打开文件 open</a></li><li class="chapter-item expanded "><a href="../../std_misc/file/create.html"><strong aria-hidden="true">20.4.2.</strong> 创建文件 create</a></li><li class="chapter-item expanded "><a href="../../std_misc/file/read_lines.html"><strong aria-hidden="true">20.4.3.</strong> 读取行 read lines</a></li></ol></li><li class="chapter-item expanded "><a href="../../std_misc/process.html"><strong aria-hidden="true">20.5.</strong> 子进程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../std_misc/process/pipe.html"><strong aria-hidden="true">20.5.1.</strong> 管道</a></li><li class="chapter-item expanded "><a href="../../std_misc/process/wait.html"><strong aria-hidden="true">20.5.2.</strong> 等待</a></li></ol></li><li class="chapter-item expanded "><a href="../../std_misc/fs.html"><strong aria-hidden="true">20.6.</strong> 文件系统操作</a></li><li class="chapter-item expanded "><a href="../../std_misc/arg.html"><strong aria-hidden="true">20.7.</strong> 程序参数</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../std_misc/arg/matching.html"><strong aria-hidden="true">20.7.1.</strong> 参数解析</a></li></ol></li><li class="chapter-item expanded "><a href="../../std_misc/ffi.html"><strong aria-hidden="true">20.8.</strong> 外部语言函数接口</a></li></ol></li><li class="chapter-item expanded "><a href="../../testing.html"><strong aria-hidden="true">21.</strong> 测试</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../testing/unit_testing.html"><strong aria-hidden="true">21.1.</strong> 单元测试</a></li><li class="chapter-item expanded "><a href="../../testing/doc_testing.html"><strong aria-hidden="true">21.2.</strong> 文档测试</a></li><li class="chapter-item expanded "><a href="../../testing/integration_testing.html"><strong aria-hidden="true">21.3.</strong> 集成测试</a></li><li class="chapter-item expanded "><a href="../../testing/dev_dependencies.html"><strong aria-hidden="true">21.4.</strong> 开发依赖</a></li></ol></li><li class="chapter-item expanded "><a href="../../unsafe.html"><strong aria-hidden="true">22.</strong> 不安全操作</a></li><li class="chapter-item expanded "><a href="../../compatibility.html"><strong aria-hidden="true">23.</strong> 兼容性</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../compatibility/raw_identifiers.html"><strong aria-hidden="true">23.1.</strong> 原始标志符</a></li></ol></li><li class="chapter-item expanded "><a href="../../meta.html"><strong aria-hidden="true">24.</strong> 补充</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../meta/doc.html"><strong aria-hidden="true">24.1.</strong> 文档</a></li><li class="chapter-item expanded "><a href="../../meta/playpen.html"><strong aria-hidden="true">24.2.</strong> Playpen</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">通过例子学 Rust</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/rust-lang-cn/rust-by-example-cn" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/rust-lang-cn/rust-by-example-cn/edit/master/src/hello/print/print_display.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="显示display"><a class="header" href="#显示display">显示（Display）</a></h1>
+<p><code>fmt::Debug</code> 通常看起来不太简洁，因此自定义输出的外观经常是更可取的。这需要通过
+手动实现 <a href="https://doc.rust-lang.org/std/fmt/"><code>fmt::Display</code></a> 来做到。<code>fmt::Display</code> 采用 <code>{}</code> 标记。实现方式看
+起来像这样：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// （使用 `use`）导入 `fmt` 模块使 `fmt::Display` 可用
+use std::fmt;
+
+// 定义一个结构体，咱们会为它实现 `fmt::Display`。以下是个简单的元组结构体
+// `Structure`，包含一个 `i32` 元素。
+struct Structure(i32);
+
+// 为了使用 `{}` 标记，必须手动为类型实现 `fmt::Display` trait。
+impl fmt::Display for Structure {
+    // 这个 trait 要求 `fmt` 使用与下面的函数完全一致的函数签名
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        // 仅将 self 的第一个元素写入到给定的输出流 `f`。返回 `fmt:Result`，此
+        // 结果表明操作成功或失败。注意 `write!` 的用法和 `println!` 很相似。
+        write!(f, &quot;{}&quot;, self.0)
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p><code>fmt::Display</code> 的效果可能比 <code>fmt::Debug</code> 简洁，但对于 <code>std</code> 库来说，这就有一个问
+题。模棱两可的类型该如何显示呢？举个例子，假设标准库对所有的 <code>Vec&lt;T&gt;</code> 都实现了同
+一种输出样式，那么它应该是哪种样式？下面两种中的一种吗？</p>
+<ul>
+<li><code>Vec&lt;path&gt;</code>：<code>/:/etc:/home/username:/bin</code>（使用 <code>:</code> 分割）</li>
+<li><code>Vec&lt;number&gt;</code>：<code>1,2,3</code>（使用 <code>,</code> 分割）</li>
+</ul>
+<p>我们没有这样做，因为没有一种合适的样式适用于所有类型，标准库也并不擅自规定一种样
+式。对于 <code>Vec&lt;T&gt;</code> 或其他任意泛型容器（generic container），<code>fmt::Display</code> 都没有
+实现。因此在这些泛型的情况下要用 <code>fmt::Debug</code>。</p>
+<p>这并不是一个问题，因为对于任何<strong>非</strong>泛型的<strong>容器</strong>类型， <code>fmt::Display</code> 都能够实
+现。</p>
+<pre><pre class="playground"><code class="language-rust editable">use std::fmt; // 导入 `fmt`
+
+// 带有两个数字的结构体。推导出 `Debug`，以便与 `Display` 的输出进行比较。
+#[derive(Debug)]
+struct MinMax(i64, i64);
+
+// 实现 `MinMax` 的 `Display`。
+impl fmt::Display for MinMax {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        // 使用 `self.number` 来表示各个数据。
+        write!(f, &quot;({}, {})&quot;, self.0, self.1)
+    }
+}
+
+// 为了比较，定义一个含有具名字段的结构体。
+#[derive(Debug)]
+struct Point2D {
+    x: f64,
+    y: f64,
+}
+
+// 类似地对 `Point2D` 实现 `Display`
+impl fmt::Display for Point2D {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        // 自定义格式，使得仅显示 `x` 和 `y` 的值。
+        write!(f, &quot;x: {}, y: {}&quot;, self.x, self.y)
+    }
+}
+
+fn main() {
+    let minmax = MinMax(0, 14);
+
+    println!(&quot;Compare structures:&quot;);
+    println!(&quot;Display: {}&quot;, minmax);
+    println!(&quot;Debug: {:?}&quot;, minmax);
+
+    let big_range =   MinMax(-300, 300);
+    let small_range = MinMax(-3, 3);
+
+    println!(&quot;The big range is {big} and the small is {small}&quot;,
+             small = small_range,
+             big = big_range);
+
+    let point = Point2D { x: 3.3, y: 7.2 };
+
+    println!(&quot;Compare points:&quot;);
+    println!(&quot;Display: {}&quot;, point);
+    println!(&quot;Debug: {:?}&quot;, point);
+
+    // 报错。`Debug` 和 `Display` 都被实现了，但 `{:b}` 需要 `fmt::Binary`
+    // 得到实现。这语句不能运行。
+    // println!(&quot;What does Point2D look like in binary: {:b}?&quot;, point);
+}
+</code></pre></pre>
+<p><code>fmt::Display</code> 被实现了，而 <code>fmt::Binary</code> 没有，因此 <code>fmt::Binary</code> 不能使用。
+<code>std::fmt</code> 有很多这样的 <a href="../../trait.html"><code>trait</code></a>，它们都要求有各自的实现。这些内容将在
+后面的 <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a> 章节中详细介绍。</p>
+<h3 id="动手试一试"><a class="header" href="#动手试一试">动手试一试</a></h3>
+<p>检验上面例子的输出，然后在示例程序中，仿照 <code>Point2D</code> 结构体增加一个复数结构体。
+使用一样的方式打印，输出结果要求是这个样子：</p>
+<pre><code class="language-txt">Display: 3.3 + 7.2i
+Debug: Complex { real: 3.3, imag: 7.2 }
+</code></pre>
+<h3 id="参见"><a class="header" href="#参见">参见：</a></h3>
+<p><a href="../../trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>, <a href="../../macros.html">macros</a>, <a href="../../custom_types/structs.html"><code>struct</code></a>,
+<a href="../../trait.html"><code>trait</code></a>, 和 <a href="../../mod/use.html">use</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../hello/print/print_debug.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../hello/print/print_display/testcase_list.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../hello/print/print_debug.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../hello/print/print_display/testcase_list.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../../language.js"></script>
+        
+
+        
+
+    </body>
+</html>
