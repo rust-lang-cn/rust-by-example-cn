@@ -48,14 +48,14 @@ fn main() {
     // 报错！变量的类型并不能改变。
     mutable = true;
     
-    // 但可以用掩蔽（shadow）来覆盖前面的变量。
+    // 但可以用遮蔽（shadow）来覆盖前面的变量。
     let mutable = true;
 }
 ```
 
 ### 参见：
 
-[`std` 库][std]、[`mut`][mut]、[类型推断][inference] 和[变量掩蔽](shadowing)。
+[`std` 库][std]、[`mut`][mut]、[类型推断][inference] 和[变量遮蔽](shadowing)。
 
 [std]: https://doc.rust-lang.org/std/
 [mut]: variable_bindings/mut.md

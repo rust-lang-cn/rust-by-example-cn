@@ -1,7 +1,7 @@
-# 作用域和掩蔽
+# 作用域和遮蔽
 
 变量绑定有一个作用域（scope），它被限定只在一个**代码块**（block）中生存（live）。
-代码块是一个被 `{}` 包围的语句集合。另外也允许[变量掩蔽][variable-shadow]（variable
+代码块是一个被 `{}` 包围的语句集合。另外也允许[变量遮蔽][variable-shadow]（variable
  shadowing）。
 
 ```rust,editable,ignore,mdbook-runnable
@@ -16,7 +16,7 @@ fn main() {
 
         println!("inner short: {}", short_lived_binding);
 
-        // 此绑定*掩蔽*了外面的绑定
+        // 此绑定*遮蔽*了外面的绑定
         let long_lived_binding = 5_f32;
 
         println!("inner long: {}", long_lived_binding);
@@ -29,7 +29,7 @@ fn main() {
 
     println!("outer long: {}", long_lived_binding);
 
-    // 此绑定同样*掩蔽*了前面的绑定
+    // 此绑定同样*遮蔽*了前面的绑定
     let long_lived_binding = 'a';
 
     println!("outer long: {}", long_lived_binding);
