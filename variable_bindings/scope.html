@@ -173,9 +173,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="作用域和掩蔽"><a class="header" href="#作用域和掩蔽">作用域和掩蔽</a></h1>
+                        <h1 id="作用域和遮蔽"><a class="header" href="#作用域和遮蔽">作用域和遮蔽</a></h1>
 <p>变量绑定有一个作用域（scope），它被限定只在一个<strong>代码块</strong>（block）中生存（live）。
-代码块是一个被 <code>{}</code> 包围的语句集合。另外也允许<a href="https://en.wikipedia.org/wiki/Variable_shadowing">变量掩蔽</a>（variable
+代码块是一个被 <code>{}</code> 包围的语句集合。另外也允许<a href="https://en.wikipedia.org/wiki/Variable_shadowing">变量遮蔽</a>（variable
 shadowing）。</p>
 <pre><pre class="playground"><code class="language-rust editable ignore mdbook-runnable">fn main() {
     // 此绑定生存于 main 函数中
@@ -188,7 +188,7 @@ shadowing）。</p>
 
         println!(&quot;inner short: {}&quot;, short_lived_binding);
 
-        // 此绑定*掩蔽*了外面的绑定
+        // 此绑定*遮蔽*了外面的绑定
         let long_lived_binding = 5_f32;
 
         println!(&quot;inner long: {}&quot;, long_lived_binding);
@@ -201,7 +201,7 @@ shadowing）。</p>
 
     println!(&quot;outer long: {}&quot;, long_lived_binding);
 
-    // 此绑定同样*掩蔽*了前面的绑定
+    // 此绑定同样*遮蔽*了前面的绑定
     let long_lived_binding = 'a';
 
     println!(&quot;outer long: {}&quot;, long_lived_binding);

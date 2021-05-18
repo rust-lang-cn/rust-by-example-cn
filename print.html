@@ -176,7 +176,7 @@
 <p>Chinese translation of the <a href="https://doc.rust-lang.org/rust-by-example/">Rust By Example</a></p>
 <ul>
 <li>本文档按照 <a href="https://rustwiki.org/zh-CN/rust-wiki/translate/rust-translation-guide.html"><strong>Rust 文档翻译指引</strong></a>规范进行翻译。<br></li>
-<li>《通过例子学 Rust》(Rust By Example 中文版)翻译自 <a href="https://doc.rust-lang.org/rust-by-example/">Rust By Example</a>，中文版最后更新时间：2021-5-10。查看此书的 <a href="https://github.com/rust-lang-cn/rust-by-example-cn">Github 翻译项目</a>。<br></li>
+<li>《通过例子学 Rust》(Rust By Example 中文版)翻译自 <a href="https://doc.rust-lang.org/rust-by-example/">Rust By Example</a>，中文版最后更新时间：2021-5-18。查看此书的 <a href="https://github.com/rust-lang-cn/rust-by-example-cn">Github 翻译项目</a>。<br></li>
 <li><a href="https://rustwiki.org/zh-CN/rust-by-example" style="color:red;">本站支持文档中英文切换</a>，点击页面右上角语言图标可切换到相同章节的英文页面，<strong>英文版每天都会自动同步一次官方的最新版本</strong>。</li>
 <li>若发现本页表达错误或帮助我们改进翻译，可点击右上角的编辑按钮打开本页对应源码文件进行编辑和修改，Rust 中文资源的开源组织发展离不开大家，感谢您的支持和帮助！</li>
 </ul>
@@ -742,12 +742,12 @@ RGB (0, 0, 0) 0x000000
     // 报错！变量的类型并不能改变。
     mutable = true;
     
-    // 但可以用掩蔽（shadow）来覆盖前面的变量。
+    // 但可以用遮蔽（shadow）来覆盖前面的变量。
     let mutable = true;
 }
 </code></pre></pre>
 <h3 id="参见-6"><a class="header" href="#参见-6">参见：</a></h3>
-<p><a href="https://doc.rust-lang.org/std/"><code>std</code> 库</a>、<a href="variable_bindings/mut.html"><code>mut</code></a>、<a href="types/inference.html">类型推断</a> 和<a href="shadowing">变量掩蔽</a>。</p>
+<p><a href="https://doc.rust-lang.org/std/"><code>std</code> 库</a>、<a href="variable_bindings/mut.html"><code>mut</code></a>、<a href="types/inference.html">类型推断</a> 和<a href="shadowing">变量遮蔽</a>。</p>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="字面量和运算符"><a class="header" href="#字面量和运算符">字面量和运算符</a></h1>
 <p>整数 <code>1</code>、浮点数 <code>1.2</code>、字符 <code>'a'</code>、字符串 <code>&quot;abc&quot;</code>、布尔值 <code>true</code> 和单元类型
 <code>()</code> 可以用数字、文字或符号之类的 “字面量”（literal）来表示。</p>
@@ -1307,9 +1307,9 @@ fn main() {
 }
 </code></pre></pre>
 <p>编译器会给出关于变量可变性的详细诊断信息。</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="作用域和掩蔽"><a class="header" href="#作用域和掩蔽">作用域和掩蔽</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="作用域和遮蔽"><a class="header" href="#作用域和遮蔽">作用域和遮蔽</a></h1>
 <p>变量绑定有一个作用域（scope），它被限定只在一个<strong>代码块</strong>（block）中生存（live）。
-代码块是一个被 <code>{}</code> 包围的语句集合。另外也允许<a href="https://en.wikipedia.org/wiki/Variable_shadowing">变量掩蔽</a>（variable
+代码块是一个被 <code>{}</code> 包围的语句集合。另外也允许<a href="https://en.wikipedia.org/wiki/Variable_shadowing">变量遮蔽</a>（variable
 shadowing）。</p>
 <pre><pre class="playground"><code class="language-rust editable ignore mdbook-runnable">fn main() {
     // 此绑定生存于 main 函数中
@@ -1322,7 +1322,7 @@ shadowing）。</p>
 
         println!(&quot;inner short: {}&quot;, short_lived_binding);
 
-        // 此绑定*掩蔽*了外面的绑定
+        // 此绑定*遮蔽*了外面的绑定
         let long_lived_binding = 5_f32;
 
         println!(&quot;inner long: {}&quot;, long_lived_binding);
@@ -1335,7 +1335,7 @@ shadowing）。</p>
 
     println!(&quot;outer long: {}&quot;, long_lived_binding);
 
-    // 此绑定同样*掩蔽*了前面的绑定
+    // 此绑定同样*遮蔽*了前面的绑定
     let long_lived_binding = 'a';
 
     println!(&quot;outer long: {}&quot;, long_lived_binding);
@@ -3149,12 +3149,12 @@ fn main() {
     println!(&quot;Entering block&quot;);
     {
         // 这和 `use deeply::nested::function as function` 等价。
-        // 此 `function()` 将掩蔽外部的同名函数。
+        // 此 `function()` 将遮蔽外部的同名函数。
         use deeply::nested::function;
         function();
 
         // `use` 绑定拥有局部作用域。在这个例子中，`function()`
-        // 的掩蔽只存在在这个代码块中。
+        // 的遮蔽只存在在这个代码块中。
         println!(&quot;Leaving block&quot;);
     }
 
