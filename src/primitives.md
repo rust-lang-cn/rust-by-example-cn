@@ -55,7 +55,7 @@ fn main() {
 
 ### 参见：
 
-[`std` 库][std]、[`mut`][mut]、[类型推断][inference] 和[变量遮蔽](shadowing)。
+[`std` 库][std]、[`mut`][mut]、[类型推断][inference] 和[变量遮蔽][shadowing]。
 
 [std]: https://doc.rust-lang.org/std/
 [mut]: variable_bindings/mut.md
