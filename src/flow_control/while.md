@@ -2,7 +2,7 @@
 
 `while` 关键字可以用作当型循环（当条件满足时循环）。
 
-让我们用 `while` 循环写一个并不出名的 [FizzBuzz][fizzbuzz] 程序。
+让我们用 `while` 循环写一下臭名昭著的 [FizzBuzz][fizzbuzz] 程序。
 
 ```rust,editable
 fn main() {
