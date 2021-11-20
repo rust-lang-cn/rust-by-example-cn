@@ -13,3 +13,6 @@ edit-url-template = "https://github.com/rust-lang-cn/rust-by-example-cn/edit/mas
 [output.html.playpen]
 editable = true
 editor = "ace"
+
+[output.html.fold]
+enable = true
