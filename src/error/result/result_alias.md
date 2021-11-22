@@ -38,7 +38,7 @@ fn main() {
 
 ### 参见：
 
-[`Result`][result] 和 [`io::Result`][io_result]
+[`io::Result`][io_result]
 
 [typealias]: ../../types/alias.md
 [io_result]: https://doc.rust-lang.org/std/io/type.Result.html
