@@ -34,7 +34,7 @@
   if (edit_id != null && edit_id.parentNode != null) {
     edit_id.parentNode.target = "_blank";
     if (lang != "en") {
-      edit_id.parentNode.title = "报告错误或改进本页翻";
+      edit_id.parentNode.title = "报告错误或改进本页翻译";
     }
   }
 
