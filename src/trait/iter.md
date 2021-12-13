@@ -54,7 +54,8 @@ fn main() {
     println!("> {:?}", sequence.next());
 
     // `for` 遍历 `Iterator` 直到返回 `None`，
-    // 并且每个 `Some` 值都被解包（unwrap），然后绑定给一个变量（这里是 `i`）。       println!("Iterate through 0..3 using `for`");
+    // 并且每个 `Some` 值都被解包（unwrap），然后绑定给一个变量（这里是 `i`）。       
+    println!("Iterate through 0..3 using `for`");
     for i in 0..3 {
         println!("> {}", i);
     }
