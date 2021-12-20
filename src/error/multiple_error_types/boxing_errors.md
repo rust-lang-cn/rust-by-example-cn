@@ -12,7 +12,7 @@ use std::error;
 use std::fmt;
 
 // 为 `Box<error::Error>` 取别名。
-type Result<T> = std::result::Result<T, Box<error::Error>>;
+type Result<T> = std::result::Result<T, Box<dyn error::Error>>;
 
 #[derive(Debug, Clone)]
 struct EmptyVec;
@@ -28,7 +28,7 @@ impl error::Error for EmptyVec {
         "invalid first item to double"
     }
 
-    fn cause(&self) -> Option<&error::Error> {
+    fn cause(&self) -> Option<&dyn error::Error> {
         // 泛型错误。没有记录其内部原因。
         None
     }
