@@ -40,13 +40,19 @@ fn main() {
         println!("`count`: {}", count);
     };
 
-    // 调用闭包。
-    inc();
+    // 使用可变借用调用闭包
     inc();
 
-    //let reborrow = &mut count;
+    // 因为之后调用闭包，所以仍然可变借用 `count`
+    // 试图重新借用将导致错误
+    // let _reborrow = &count;
     // ^ 试一试：将此行注释去掉。
-    
+    inc();
+
+    // 闭包不再借用 `&mut count`，因此可以正确地重新借用
+    let _count_reborrowed = &mut count;
+
+
     // 不可复制类型（non-copy type）。
     let movable = Box::new(3);
 
