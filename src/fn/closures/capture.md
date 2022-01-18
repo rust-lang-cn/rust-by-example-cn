@@ -1,34 +1,38 @@
 # 捕获
 
-闭包天生就是灵活的，它会自动满足函数功能的要求，使得闭包不需要类型说明就可以
-工作。这允许变量捕获（capture）灵活地适应使用场合，既可移动（move）又可
-借用（borrow）变量。闭包可以通过以下手段捕获变量：
+闭包本质上很灵活，能做功能要求的事情，使闭包在没有类型标注的情况下运行。这使得捕获（capture）能够灵活地适应用例，既可移动（move），又可借用（borrow）。闭包可以通过以下方式捕获变量：
 
 * 通过引用：`&T`
 * 通过可变引用：`&mut T`
 * 通过值：`T`
 
-闭包更倾向于通过引用来捕获变量，并且只在被要求时才使用其他手段。
+闭包优先通过引用来捕获变量，并且仅在需要时使用其他方式。
 
 ```rust,editable
 fn main() {
     use std::mem;
     
-    let color = "green";
+    let color = String::from("green");
 
     // 这个闭包打印 `color`。它会立即借用（通过引用，`&`）`color` 并将该借用和
     // 闭包本身存储到 `print` 变量中。`color` 会一直保持被借用状态直到
     // `print` 离开作用域。
+    //
     // `println!` 只需传引用就能使用，而这个闭包捕获的也是变量的引用，因此无需
     // 进一步处理就可以使用 `println!`。
     let print = || println!("`color`: {}", color);
 
-    // 调用闭包，闭包又借用 `color`。
+    // 使用借用来调用闭包 `color`。
     print();
+
+    // `color` 可再次被不可变借用，因为闭包只持有一个指向 `color` 的不可变引用。
+    let _reborrow = &color;
     print();
+
+    // 在最后使用 `print` 之后，移动或重新借用都是允许的。
+    let _color_moved = color;
 
     let mut count = 0;
-
     // 这个闭包使 `count` 值增加。要做到这点，它需要得到 `&mut count` 或者
     // `count` 本身，但 `&mut count` 的要求没那么严格，所以我们采取这种方式。
     // 该闭包立即借用 `count`。
@@ -51,7 +55,6 @@ fn main() {
 
     // 闭包不再借用 `&mut count`，因此可以正确地重新借用
     let _count_reborrowed = &mut count;
-
 
     // 不可复制类型（non-copy type）。
     let movable = Box::new(3);
