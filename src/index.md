@@ -1,9 +1,9 @@
 # 通过例子学 Rust
 
-> Chinese translation of the [Rust By Example][website]
+> 中文翻译注（Chinese translation of the [Rust By Example][website]）：
 >
-> - 本文档按照 [**Rust 文档翻译指引**](https://rustwiki.org/zh-CN/rust-wiki/translate/rust-translation-guide.html)规范进行翻译。<br>
-> - 《通过例子学 Rust》(Rust By Example 中文版)翻译自 [Rust By Example][website]，中文版最后更新时间：2021-11-20。查看此书的 [Github 翻译项目][home]。<br>
+> - 👉 查看更多 <a href="https://rustwiki.org/" style="color:#97ca00;font-weight:bold;">Rust 官方文档中英文双语教程</a>，包括双语版[《Rust 程序设计语言》][book-cn]（出版书名为《Rust 权威指南》）。
+> - 《通过例子学 Rust》(Rust By Example 中文版)翻译自 [Rust By Example][website]，中文版最后更新时间：2022-1-19。查看此书的 [Github 翻译项目和源码][home]。
 > - <a href="https://rustwiki.org/zh-CN/rust-by-example" style="color:red;">本站支持文档中英文切换</a>，点击页面右上角语言图标可切换到相同章节的英文页面，**英文版每天都会自动同步一次官方的最新版本**。
 > - 若发现本页表达错误或帮助我们改进翻译，可点击右上角的编辑按钮打开本页对应源码文件进行编辑和修改，Rust 中文资源的开源组织发展离不开大家，感谢您的支持和帮助！
 
@@ -62,6 +62,7 @@
 - [补充](meta.html) - 文档和基准测试
 
 [website]: https://doc.rust-lang.org/rust-by-example/
+[book-cn]: https://rustwiki.org/zh-CN/book/
 [rust]: http://www.rust-lang.org/
 [install]: https://www.rust-lang.org/tools/install
 [std]: http://doc.rust-lang.org/std/
