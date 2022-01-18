@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-
+        
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="通过例子学 Rust, Rust By Example 中文版，RBE 中文版，本书通过详细的可运行的 Rust 程序来讲解 Rust 语言有关的知识点，通俗易懂，是 Rust 初学者必备的学习参考书，同时也能作为 Rust 工程师日常工作中快速查找知识点的必备查询手册。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -197,7 +197,8 @@ fn main() {
     println!(&quot;&gt; {:?}&quot;, sequence.next());
 
     // `for` 遍历 `Iterator` 直到返回 `None`，
-    // 并且每个 `Some` 值都被解包（unwrap），然后绑定给一个变量（这里是 `i`）。       println!(&quot;Iterate through 0..3 using `for`&quot;);
+    // 并且每个 `Some` 值都被解包（unwrap），然后绑定给一个变量（这里是 `i`）。       
+    println!(&quot;Iterate through 0..3 using `for`&quot;);
     for i in 0..3 {
         println!(&quot;&gt; {}&quot;, i);
     }

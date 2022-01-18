@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-
+        
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="通过例子学 Rust, Rust By Example 中文版，RBE 中文版，本书通过详细的可运行的 Rust 程序来讲解 Rust 语言有关的知识点，通俗易懂，是 Rust 初学者必备的学习参考书，同时也能作为 Rust 工程师日常工作中快速查找知识点的必备查询手册。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -150,7 +150,7 @@
                     <main>
                         <h1 id="别名"><a class="header" href="#别名">别名</a></h1>
 <p>可以用 <code>type</code> 语句给已有的类型取个新的名字。类型的名字必须遵循驼峰命名法（像是
-<code>CamelCase</code> 这样），否则编译器将给出错误。原生类型是例外，比如：
+<code>CamelCase</code> 这样），否则编译器将给出警告。原生类型是例外，比如：
 <code>usize</code>、<code>f32</code>，等等。</p>
 <pre><pre class="playground"><code class="language-rust editable">// `NanoSecond` 是 `u64` 的新名字。
 type NanoSecond = u64;

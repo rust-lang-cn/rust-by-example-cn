@@ -8,7 +8,7 @@
 
 
         <!-- Custom HTML head -->
-
+        
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="通过例子学 Rust, Rust By Example 中文版，RBE 中文版，本书通过详细的可运行的 Rust 程序来讲解 Rust 语言有关的知识点，通俗易懂，是 Rust 初学者必备的学习参考书，同时也能作为 Rust 工程师日常工作中快速查找知识点的必备查询手册。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -90,7 +90,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -148,10 +148,10 @@
                     <main>
                         <h1 id="通过例子学-rust"><a class="header" href="#通过例子学-rust">通过例子学 Rust</a></h1>
 <blockquote>
-<p>Chinese translation of the <a href="https://doc.rust-lang.org/rust-by-example/">Rust By Example</a></p>
+<p>中文翻译注（Chinese translation of the <a href="https://doc.rust-lang.org/rust-by-example/">Rust By Example</a>）：</p>
 <ul>
-<li>本文档按照 <a href="https://rustwiki.org/zh-CN/rust-wiki/translate/rust-translation-guide.html"><strong>Rust 文档翻译指引</strong></a>规范进行翻译。<br></li>
-<li>《通过例子学 Rust》(Rust By Example 中文版)翻译自 <a href="https://doc.rust-lang.org/rust-by-example/">Rust By Example</a>，中文版最后更新时间：2021-11-20。查看此书的 <a href="https://github.com/rust-lang-cn/rust-by-example-cn">Github 翻译项目</a>。<br></li>
+<li>👉 查看更多 <a href="https://rustwiki.org/" style="color:#97ca00;font-weight:bold;">Rust 官方文档中英文双语教程</a>，包括双语版<a href="https://rustwiki.org/zh-CN/book/">《Rust 程序设计语言》</a>（出版书名为《Rust 权威指南》）。</li>
+<li>《通过例子学 Rust》(Rust By Example 中文版)翻译自 <a href="https://doc.rust-lang.org/rust-by-example/">Rust By Example</a>，中文版最后更新时间：2022-1-19。查看此书的 <a href="https://github.com/rust-lang-cn/rust-by-example-cn">Github 翻译项目和源码</a>。</li>
 <li><a href="https://rustwiki.org/zh-CN/rust-by-example" style="color:red;">本站支持文档中英文切换</a>，点击页面右上角语言图标可切换到相同章节的英文页面，<strong>英文版每天都会自动同步一次官方的最新版本</strong>。</li>
 <li>若发现本页表达错误或帮助我们改进翻译，可点击右上角的编辑按钮打开本页对应源码文件进行编辑和修改，Rust 中文资源的开源组织发展离不开大家，感谢您的支持和帮助！</li>
 </ul>
@@ -974,7 +974,7 @@ fn main() {
 <ol>
 <li>增加一个计算长方形面积的函数 <code>rect_area</code>（尝试使用嵌套的解构方式）。</li>
 <li>增加一个函数 <code>square</code>，接受的参数是一个 <code>Point</code> 和一个 <code>f32</code>，并返回一个
-<code>Rectangle</code>（长方形），其左下角的点等于 <code>Point</code> 参数，长和宽都等于 <code>f32</code>
+<code>Rectangle</code>（长方形），其左上角的点等于 <code>Point</code> 参数，长和宽都等于 <code>f32</code>
 参数。</li>
 </ol>
 <h3 id="参见-7"><a class="header" href="#参见-7">参见：</a></h3>
@@ -1480,7 +1480,7 @@ fn main() {
 <p>没有必要写类型说明，编译器和程序员皆大欢喜！</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="别名"><a class="header" href="#别名">别名</a></h1>
 <p>可以用 <code>type</code> 语句给已有的类型取个新的名字。类型的名字必须遵循驼峰命名法（像是
-<code>CamelCase</code> 这样），否则编译器将给出错误。原生类型是例外，比如：
+<code>CamelCase</code> 这样），否则编译器将给出警告。原生类型是例外，比如：
 <code>usize</code>、<code>f32</code>，等等。</p>
 <pre><pre class="playground"><code class="language-rust editable">// `NanoSecond` 是 `u64` 的新名字。
 type NanoSecond = u64;
@@ -2499,33 +2499,37 @@ fn main() {
 }
 </code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="捕获"><a class="header" href="#捕获">捕获</a></h1>
-<p>闭包天生就是灵活的，它会自动满足函数功能的要求，使得闭包不需要类型说明就可以
-工作。这允许变量捕获（capture）灵活地适应使用场合，既可移动（move）又可
-借用（borrow）变量。闭包可以通过以下手段捕获变量：</p>
+<p>闭包本质上很灵活，能做功能要求的事情，使闭包在没有类型标注的情况下运行。这使得捕获（capture）能够灵活地适应用例，既可移动（move），又可借用（borrow）。闭包可以通过以下方式捕获变量：</p>
 <ul>
 <li>通过引用：<code>&amp;T</code></li>
 <li>通过可变引用：<code>&amp;mut T</code></li>
 <li>通过值：<code>T</code></li>
 </ul>
-<p>闭包更倾向于通过引用来捕获变量，并且只在被要求时才使用其他手段。</p>
+<p>闭包优先通过引用来捕获变量，并且仅在需要时使用其他方式。</p>
 <pre><pre class="playground"><code class="language-rust editable">fn main() {
     use std::mem;
     
-    let color = &quot;green&quot;;
+    let color = String::from(&quot;green&quot;);
 
     // 这个闭包打印 `color`。它会立即借用（通过引用，`&amp;`）`color` 并将该借用和
     // 闭包本身存储到 `print` 变量中。`color` 会一直保持被借用状态直到
     // `print` 离开作用域。
+    //
     // `println!` 只需传引用就能使用，而这个闭包捕获的也是变量的引用，因此无需
     // 进一步处理就可以使用 `println!`。
     let print = || println!(&quot;`color`: {}&quot;, color);
 
-    // 调用闭包，闭包又借用 `color`。
+    // 使用借用来调用闭包 `color`。
     print();
+
+    // `color` 可再次被不可变借用，因为闭包只持有一个指向 `color` 的不可变引用。
+    let _reborrow = &amp;color;
     print();
+
+    // 在最后使用 `print` 之后，移动或重新借用都是允许的。
+    let _color_moved = color;
 
     let mut count = 0;
-
     // 这个闭包使 `count` 值增加。要做到这点，它需要得到 `&amp;mut count` 或者
     // `count` 本身，但 `&amp;mut count` 的要求没那么严格，所以我们采取这种方式。
     // 该闭包立即借用 `count`。
@@ -2537,13 +2541,18 @@ fn main() {
         println!(&quot;`count`: {}&quot;, count);
     };
 
-    // 调用闭包。
-    inc();
+    // 使用可变借用调用闭包
     inc();
 
-    //let reborrow = &amp;mut count;
+    // 因为之后调用闭包，所以仍然可变借用 `count`
+    // 试图重新借用将导致错误
+    // let _reborrow = &amp;count;
     // ^ 试一试：将此行注释去掉。
-    
+    inc();
+
+    // 闭包不再借用 `&amp;mut count`，因此可以正确地重新借用
+    let _count_reborrowed = &amp;mut count;
+
     // 不可复制类型（non-copy type）。
     let movable = Box::new(3);
 
@@ -5277,7 +5286,8 @@ fn main() {
     println!(&quot;&gt; {:?}&quot;, sequence.next());
 
     // `for` 遍历 `Iterator` 直到返回 `None`，
-    // 并且每个 `Some` 值都被解包（unwrap），然后绑定给一个变量（这里是 `i`）。       println!(&quot;Iterate through 0..3 using `for`&quot;);
+    // 并且每个 `Some` 值都被解包（unwrap），然后绑定给一个变量（这里是 `i`）。       
+    println!(&quot;Iterate through 0..3 using `for`&quot;);
     for i in 0..3 {
         println!(&quot;&gt; {}&quot;, i);
     }
@@ -6453,7 +6463,7 @@ fn main() {
 use std::fmt;
 
 // 为 `Box&lt;error::Error&gt;` 取别名。
-type Result&lt;T&gt; = std::result::Result&lt;T, Box&lt;error::Error&gt;&gt;;
+type Result&lt;T&gt; = std::result::Result&lt;T, Box&lt;dyn error::Error&gt;&gt;;
 
 #[derive(Debug, Clone)]
 struct EmptyVec;
@@ -6469,7 +6479,7 @@ impl error::Error for EmptyVec {
         &quot;invalid first item to double&quot;
     }
 
-    fn cause(&amp;self) -&gt; Option&lt;&amp;error::Error&gt; {
+    fn cause(&amp;self) -&gt; Option&lt;&amp;dyn error::Error&gt; {
         // 泛型错误。没有记录其内部原因。
         None
     }
@@ -7158,7 +7168,7 @@ fn main() {
 
     pub fn op(x: f64, y: f64) {
         match op_(x, y) {
-            Err(why) =&gt; panic!(match why {
+            Err(why) =&gt; panic!(&quot;{}&quot;,match why {
                 MathError::NegativeLogarithm
                     =&gt; &quot;logarithm of negative number&quot;,
                 MathError::DivisionByZero
