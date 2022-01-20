@@ -75,7 +75,7 @@ fn main() {
 
 [闭包][closures], [`Option`][option], 和 [`Option::map()`][map]
 
-[combinators]: https://doc.rust-lang.org/book/glossary.html#combinators
+[combinators]: https://rustwiki.org/zh-CN/reference/glossary.html#组合算子
 [closures]: ../../fn/closures.md
 [option]: https://rustwiki.org/zh-CN/std/option/enum.Option.html
 [map]: https://rustwiki.org/zh-CN/std/option/enum.Option.html#method.map

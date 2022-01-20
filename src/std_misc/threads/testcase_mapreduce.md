@@ -136,10 +136,10 @@ fn main() {
 [thread]: ../threads.md
 [vectors]: ../../std/vec.md
 [iterators]: ../../trait/iter.md
-[destructuring]: https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html#destructuring-to-break-apart-values
+[destructuring]: https://rustwiki.org/zh-CN/book/ch18-03-pattern-syntax.html#解构并分解值
 [closures]: ../../fn/closures.md
 [move]: ../../scope/move.md
-[move_closure]: https://doc.rust-lang.org/book/ch13-01-closures.html#closures-can-capture-their-environment
+[move_closure]: https://rustwiki.org/zh-CN/book/ch13-01-closures.html#closures-can-capture-their-environment
 [turbofish]: https://rustwiki.org/zh-CN/std/iter/trait.Iterator.html#method.collect
 [unwrap]: ../../error/option_unwrap.md
-[enumerate]: https://doc.rust-lang.org/book/loops.html#enumerate
+[enumerate]: https://rustwiki.org/zh-CN/book/ch03-05-control-flow.html#使用-loop-重复执行代码

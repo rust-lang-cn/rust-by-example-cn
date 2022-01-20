@@ -56,4 +56,4 @@ fn main() {
 
 [《Rust 程序设计语言》中关于“完全限定语法”的章节][trpl_fqsyntax]
 
-[trpl_fqsyntax]: https://rustwiki.org/zh-CN/book/ch19-03-advanced-traits.html#fully-qualified-syntax-for-disambiguation-calling-methods-with-the-same-name
+[trpl_fqsyntax]: https://rustwiki.org/zh-CN/book/ch19-03-advanced-traits.html#完全限定语法与消歧义调用相同名称的方法

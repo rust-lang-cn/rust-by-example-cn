@@ -21,5 +21,5 @@ Rust 也支持在测试中指定额外的依赖：
 [doc]: testing/doc_testing.md
 [integration]: testing/integration_testing.md
 [dev-dependencies]: testing/dev_dependencies.md
-[doc-testing]: https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html
+[doc-testing]: https://rustwiki.org/zh-CN/book/second-edition/ch11-00-testing.html
 [doc-nursery]: https://rust-lang-nursery.github.io/api-guidelines/documentation.html

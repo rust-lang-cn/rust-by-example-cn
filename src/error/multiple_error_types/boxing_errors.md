@@ -64,9 +64,9 @@ fn main() {
 
 ### 参见：
 
-[动态调度][dynamic_dispatch] and [`Error` trait][error]
+[动态分发][dynamic_dispatch] and [`Error` trait][error]
 
 [box]: https://rustwiki.org/zh-CN/std/boxed/struct.Box.html
-[dynamic_dispatch]: https://doc.rust-lang.org/book/second-edition/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch
+[dynamic_dispatch]: https://rustwiki.org/zh-CN/book/ch17-02-trait-objects.html#trait-对象执行动态分发
 [error]: https://rustwiki.org/zh-CN/std/error/trait.Error.html
 [from]: https://rustwiki.org/zh-CN/std/convert/trait.From.html

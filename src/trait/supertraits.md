@@ -40,4 +40,4 @@ fn main() {}
 
 [《Rust 程序设计语言》的“父级 trait”章节][trpl_supertraits]
 
-[trpl_supertraits]: https://rustwiki.org/zh-CN/book/ch19-03-advanced-traits.html#using-supertraits-to-require-one-traits-functionality-within-another-trait
+[trpl_supertraits]: https://rustwiki.org/zh-CN/book/ch19-03-advanced-traits.html#父-trait-用于在另一个-trait-中使用某-trait-的功能
