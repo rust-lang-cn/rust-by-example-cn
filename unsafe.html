@@ -173,7 +173,7 @@
 </code></pre></pre>
 <h3 id="调用不安全函数"><a class="header" href="#调用不安全函数">调用不安全函数</a></h3>
 <p>一些函数可以声明为不安全的（<code>unsafe</code>），这意味着在使用它时保证正确性不再是编译器
-的责任，而是程序员的。一个例子就是 <a href="https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html"><code>std::slice::from_raw_parts</code></a>，向它传入指向
+的责任，而是程序员的。一个例子就是 <a href="https://rustwiki.org/zh-CN/std/slice/fn.from_raw_parts.html"><code>std::slice::from_raw_parts</code></a>，向它传入指向
 第一个元素的指针和长度参数，它会创建一个切片。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::slice;
 

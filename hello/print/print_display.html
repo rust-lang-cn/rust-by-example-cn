@@ -150,7 +150,7 @@
                     <main>
                         <h1 id="显示display"><a class="header" href="#显示display">显示（Display）</a></h1>
 <p><code>fmt::Debug</code> 通常看起来不太简洁，因此自定义输出的外观经常是更可取的。这需要通过
-手动实现 <a href="https://doc.rust-lang.org/std/fmt/"><code>fmt::Display</code></a> 来做到。<code>fmt::Display</code> 采用 <code>{}</code> 标记。实现方式看
+手动实现 <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>fmt::Display</code></a> 来做到。<code>fmt::Display</code> 采用 <code>{}</code> 标记。实现方式看
 起来像这样：</p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
@@ -241,7 +241,7 @@ fn main() {
 </code></pre></pre>
 <p><code>fmt::Display</code> 被实现了，而 <code>fmt::Binary</code> 没有，因此 <code>fmt::Binary</code> 不能使用。
 <code>std::fmt</code> 有很多这样的 <a href="../../trait.html"><code>trait</code></a>，它们都要求有各自的实现。这些内容将在
-后面的 <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a> 章节中详细介绍。</p>
+后面的 <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a> 章节中详细介绍。</p>
 <h3 id="动手试一试"><a class="header" href="#动手试一试">动手试一试</a></h3>
 <p>检验上面例子的输出，然后在示例程序中，仿照 <code>Point2D</code> 结构体增加一个复数结构体。
 使用一样的方式打印，输出结果要求是这个样子：</p>
@@ -249,7 +249,7 @@ fn main() {
 Debug: Complex { real: 3.3, imag: 7.2 }
 </code></pre>
 <h3 id="参见"><a class="header" href="#参见">参见：</a></h3>
-<p><a href="../../trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>, <a href="../../macros.html">macros</a>, <a href="../../custom_types/structs.html"><code>struct</code></a>,
+<p><a href="../../trait/derive.html"><code>derive</code></a>, <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a>, <a href="../../macros.html">macros</a>, <a href="../../custom_types/structs.html"><code>struct</code></a>,
 <a href="../../trait.html"><code>trait</code></a>, 和 <a href="../../mod/use.html">use</a></p>
 
                     </main>

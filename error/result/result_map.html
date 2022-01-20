@@ -152,9 +152,9 @@
 <p>上一节的 <code>multiply</code> 函数的 panic 设计不是健壮的（robust）。一般地，我们希望把
 错误返回给调用者，这样它可以决定回应错误的正确方式。</p>
 <p>首先，我们需要了解需要处理的错误类型是什么。为了确定 <code>Err</code> 的类型，我们可以
-用 <a href="https://doc.rust-lang.org/std/primitive.str.html#method.parse"><code>parse()</code></a> 来试验。Rust 已经为 <a href="https://doc.rust-lang.org/std/primitive.i32.html"><code>i32</code></a> 类型使用
-<a href="https://doc.rust-lang.org/std/str/trait.FromStr.html"><code>FromStr</code></a> trait 实现了 <code>parse()</code>。结果表明，这里的 <code>Err</code> 类型被指定为
-<a href="https://doc.rust-lang.org/std/num/struct.ParseIntError.html"><code>ParseIntError</code></a>。</p>
+用 <a href="https://rustwiki.org/zh-CN/std/primitive.str.html#method.parse"><code>parse()</code></a> 来试验。Rust 已经为 <a href="https://rustwiki.org/zh-CN/std/primitive.i32.html"><code>i32</code></a> 类型使用
+<a href="https://rustwiki.org/zh-CN/std/str/trait.FromStr.html"><code>FromStr</code></a> trait 实现了 <code>parse()</code>。结果表明，这里的 <code>Err</code> 类型被指定为
+<a href="https://rustwiki.org/zh-CN/std/num/struct.ParseIntError.html"><code>ParseIntError</code></a>。</p>
 <blockquote>
 <p>译注：原文没有具体讲如何确定 <code>Err</code> 的类型。由于目前用于获取类型的函数仍然是不
 稳定的，我们可以用间接的方法。使用下面的代码：</p>
@@ -204,7 +204,7 @@ fn main() {
 }
 </code></pre></pre>
 <p>幸运的是，<code>Option</code> 的 <code>map</code>、<code>and_then</code>、以及很多其他组合算子也为 <code>Result</code> 实现
-了。官方文档的 <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> 一节包含完整的方法列表。</p>
+了。官方文档的 <a href="https://rustwiki.org/zh-CN/std/result/enum.Result.html"><code>Result</code></a> 一节包含完整的方法列表。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::num::ParseIntError;
 
 // 就像 `Option` 那样，我们可以使用 `map()` 之类的组合算子。

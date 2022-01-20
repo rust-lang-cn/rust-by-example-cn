@@ -149,7 +149,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="结果-result"><a class="header" href="#结果-result">结果 <code>Result</code></a></h1>
-<p><a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> 是 <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a> 类型的更丰富的版本，描述的是可能
+<p><a href="https://rustwiki.org/zh-CN/std/result/enum.Result.html"><code>Result</code></a> 是 <a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html"><code>Option</code></a> 类型的更丰富的版本，描述的是可能
 的<strong>错误</strong>而不是可能的<strong>不存在</strong>。</p>
 <p>也就是说，<code>Result&lt;T，E&gt;</code> 可以有两个结果的其中一个：</p>
 <ul>
@@ -159,7 +159,7 @@
 <p>按照约定，预期结果是 “Ok”，而意外结果是 “Err”。</p>
 <p><code>Result</code> 有很多类似 <code>Option</code> 的方法。例如 <code>unwrap()</code>，它要么举出元素
 <code>T</code>，要么就 <code>panic</code>。 对于事件的处理，<code>Result</code> 和 <code>Option</code> 有很多相同的组合算子。</p>
-<p>在使用 Rust 时，你可能会遇到返回 <code>Result</code> 类型的方法，例如 <a href="https://doc.rust-lang.org/std/primitive.str.html#method.parse"><code>parse()</code></a>
+<p>在使用 Rust 时，你可能会遇到返回 <code>Result</code> 类型的方法，例如 <a href="https://rustwiki.org/zh-CN/std/primitive.str.html#method.parse"><code>parse()</code></a>
 方法。它并不是总能把字符串解析成指定的类型，所以 <code>parse()</code> 返回一个
 <code>Result</code> 表示可能的失败。</p>
 <p>我们来看看当 <code>parse()</code> 字符串成功和失败时会发生什么：</p>

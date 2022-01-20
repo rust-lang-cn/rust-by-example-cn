@@ -152,9 +152,9 @@
 <p><code>Iterator</code> trait 用来对集合（collection）类型（比如数组）实现迭代器。</p>
 <p>这个 trait 只需定义一个返回 <code>next</code>（下一个）元素的方法，这可手动在 <code>impl</code> 代码块
 中定义，或者自动定义（比如在数组或区间中）。</p>
-<p>为方便起见，<code>for</code> 结构会使用 <a href="https://doc.rust-lang.org/std/iter/trait.IntoIterator.html"><code>.into_iterator()</code></a> 方法将一些集合类型
+<p>为方便起见，<code>for</code> 结构会使用 <a href="https://rustwiki.org/zh-CN/std/iter/trait.IntoIterator.html"><code>.into_iterator()</code></a> 方法将一些集合类型
 转换为迭代器。</p>
-<p>下面例子展示了如何使用 <code>Iterator</code> trait 的方法，更多可用的方法可以看<a href="http://doc.rust-lang.org/core/iter/trait.Iterator.html">这里</a>。</p>
+<p>下面例子展示了如何使用 <code>Iterator</code> trait 的方法，更多可用的方法可以看<a href="https://rustwiki.org/zh-CN/core/iter/trait.Iterator.html">这里</a>。</p>
 <pre><pre class="playground"><code class="language-rust editable">struct Fibonacci {
     curr: u32,
     next: u32,

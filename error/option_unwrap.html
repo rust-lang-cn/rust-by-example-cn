@@ -163,7 +163,7 @@
 </ul>
 <p>这些选项可以通过 <code>match</code> 显式地处理，或使用 <code>unwrap</code> 隐式地处理。隐式处理要么
 返回 <code>Some</code> 内部的元素，要么就 <code>panic</code>。</p>
-<p>请注意，手动使用 <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.expect">expect</a> 方法自定义 <code>panic</code> 信息是可能的，但相比显式
+<p>请注意，手动使用 <a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html#method.expect">expect</a> 方法自定义 <code>panic</code> 信息是可能的，但相比显式
 处理，<code>unwrap</code> 的输出仍显得不太有意义。在下面例子中，显式处理将举出更受控制的
 结果，同时如果需要的话，仍然可以使程序 <code>panic</code>。</p>
 <pre><pre class="playground"><code class="language-rust editable ignore mdbook-runnable">// 平民（commoner）们见多识广，收到什么礼物都能应对。

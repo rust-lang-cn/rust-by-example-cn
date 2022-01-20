@@ -150,7 +150,7 @@
                     <main>
                         <h1 id="raii"><a class="header" href="#raii">RAII</a></h1>
 <p>Rust 的变量不只是在栈中保存数据：它们也<strong>占有</strong>资源，比如 <code>Box&lt;T&gt;</code> 占有
-堆（heap）中的内存。Rust 强制实行 <a href="http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization">RAII</a>（Resource Acquisition Is
+堆（heap）中的内存。Rust 强制实行 <a href="https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization">RAII</a>（Resource Acquisition Is
 Initiallization，资源获取即初始化），所以任何对象在离开作用域时，它的析构
 函数（destructor）就被调用，然后它占有的资源就被释放。</p>
 <p>这种行为避免了<strong>资源泄漏</strong>（resource leak），所以你再也不用手动释放内存或者担心
@@ -184,7 +184,7 @@ fn main() {
     // `_box2` 在这里被销毁，内存得到释放    
 }
 </code></pre></pre>
-<p>当然我们可以使用 <a href="http://valgrind.org/info/"><code>valgrind</code></a> 对内存错误进行仔细检查：</p>
+<p>当然我们可以使用 <a href="https://valgrind.org/info/"><code>valgrind</code></a> 对内存错误进行仔细检查：</p>
 <pre><code class="language-bash">$ rustc raii.rs &amp;&amp; valgrind ./raii
 ==26873== Memcheck, a memory error detector
 ==26873== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
@@ -203,10 +203,10 @@ fn main() {
 </code></pre>
 <p>完全没有泄漏！</p>
 <h2 id="析构函数"><a class="header" href="#析构函数">析构函数</a></h2>
-<p>Rust 中的析构函数概念是通过 <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait 提供的。当资源离开作用域，就调用析构
-函数。你无需为每种类型都实现 <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait，只要为那些需要自己的析构函数逻辑的
+<p>Rust 中的析构函数概念是通过 <a href="https://rustwiki.org/zh-CN/std/ops/trait.Drop.html"><code>Drop</code></a> trait 提供的。当资源离开作用域，就调用析构
+函数。你无需为每种类型都实现 <a href="https://rustwiki.org/zh-CN/std/ops/trait.Drop.html"><code>Drop</code></a> trait，只要为那些需要自己的析构函数逻辑的
 类型实现就可以了。</p>
-<p>运行下列例子，看看 <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait 是怎样工作的。当 <code>main</code> 函数中的变量离开作用
+<p>运行下列例子，看看 <a href="https://rustwiki.org/zh-CN/std/ops/trait.Drop.html"><code>Drop</code></a> trait 是怎样工作的。当 <code>main</code> 函数中的变量离开作用
 域，自定义的析构函数就会被调用：</p>
 <pre><pre class="playground"><code class="language-rust editable">struct ToDrop;
 

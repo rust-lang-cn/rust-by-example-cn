@@ -157,7 +157,7 @@
 将 <code>&amp;str</code> 作为散列表的 <code>.get()</code> 方法的参数，以获取值）</li>
 </ul>
 <p>注意到 <code>f32</code> 和 <code>f64</code> <strong>没有</strong>实现 <code>Hash</code>，这很大程度上是由于若使用浮点数作为
-散列表的键，<a href="http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems">浮点精度误差</a>会很容易导致错误。</p>
+散列表的键，<a href="https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems">浮点精度误差</a>会很容易导致错误。</p>
 <p>对于所有的集合类（collection class），如果它们包含的类型都分别实现了 <code>Eq</code>
 和 <code>Hash</code>，那么这些集合类也就实现了 <code>Eq</code> 和 <code>Hash</code>。例如，若 <code>T</code> 实现了
 <code>Hash</code>，则 <code>Vec&lt;T&gt;</code> 也实现了 <code>Hash</code>。</p>

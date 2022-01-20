@@ -156,8 +156,8 @@
 <li>若发现本页表达错误或帮助我们改进翻译，可点击右上角的编辑按钮打开本页对应源码文件进行编辑和修改，Rust 中文资源的开源组织发展离不开大家，感谢您的支持和帮助！</li>
 </ul>
 </blockquote>
-<p><a href="http://www.rust-lang.org/">Rust</a> 是一门注重安全（safety）、速度（speed）和并发（concurrency）的现代系统编程语言。Rust 通过内存安全来实现以上目标，但不用垃圾回收机制（garbage collection, GC)。</p>
-<p>《通过例子学 Rust》（Rust By Example, RBE）内容由一系列可运行的实例组成，通过这些例子阐明了各种 Rust 的概念和基本库。想获取这些例子外的更多内容，不要忘了<a href="https://www.rust-lang.org/tools/install">安装 Rust 到本地</a>并查阅<a href="http://doc.rust-lang.org/std/">官方标准库文档</a>。另外为了满足您的好奇心，你可以<a href="https://github.com/rust-lang-cn/rust-by-example-cn">查阅本网站的源代码</a>。</p>
+<p><a href="https://www.rust-lang.org/">Rust</a> 是一门注重安全（safety）、速度（speed）和并发（concurrency）的现代系统编程语言。Rust 通过内存安全来实现以上目标，但不用垃圾回收机制（garbage collection, GC)。</p>
+<p>《通过例子学 Rust》（Rust By Example, RBE）内容由一系列可运行的实例组成，通过这些例子阐明了各种 Rust 的概念和基本库。想获取这些例子外的更多内容，不要忘了<a href="https://www.rust-lang.org/tools/install">安装 Rust 到本地</a>并查阅<a href="https://rustwiki.org/zh-CN/std/">官方标准库文档</a>。另外为了满足您的好奇心，你可以<a href="https://github.com/rust-lang-cn/rust-by-example-cn">查阅本网站的源代码</a>。</p>
 <p>现在让我们开始学习吧！</p>
 <ul>
 <li>
@@ -307,7 +307,7 @@ I'm a Rustacean!
 <h3 id="参见"><a class="header" href="#参见">参见:</a></h3>
 <p><a href="hello/../meta/doc.html">文档注释</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="格式化输出"><a class="header" href="#格式化输出">格式化输出</a></h1>
-<p>打印操作由 <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a> 里面所定义的一系列<a href="hello/../macros.html"><code>宏</code></a>来处理，包括：</p>
+<p>打印操作由 <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a> 里面所定义的一系列<a href="hello/../macros.html"><code>宏</code></a>来处理，包括：</p>
 <ul>
 <li><code>format!</code>：将格式化文本写到<a href="hello/../std/str.html"><code>字符串</code></a>（String）。（译注：<code>字符串</code>是返
 回值不是参数。）</li>
@@ -359,7 +359,7 @@ I'm a Rustacean!
     // 改正 ^ 注释掉此行。
 }
 </code></pre></pre>
-<p><a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a> 包含多种 <a href="hello/../trait.html"><code>traits</code></a>（trait 有 “特征，特性” 等意思）
+<p><a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a> 包含多种 <a href="hello/../trait.html"><code>traits</code></a>（trait 有 “特征，特性” 等意思）
 来控制文字显示，其中重要的两种 trait 的基本形式如下：</p>
 <ul>
 <li><code>fmt::Debug</code>：使用 <code>{:?}</code> 标记。格式化文本以供调试使用。</li>
@@ -375,11 +375,11 @@ I'm a Rustacean!
 <li>
 <p>再用一个 <code>println!</code> 宏，通过控制显示的小数位数来打印：<code>Pi is roughly 3.142</code>
 （Pi 约等于 3.142）。为了达到练习目的，使用 <code>let pi = 3.141592</code> 作为 Pi 的近似
-值（提示：设置小数位的显示格式可以参考文档 <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>）。</p>
+值（提示：设置小数位的显示格式可以参考文档 <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a>）。</p>
 </li>
 </ul>
 <h3 id="参见-1"><a class="header" href="#参见-1">参见：</a></h3>
-<p><a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>, <a href="hello/../macros.html"><code>macros</code></a>, <a href="hello/../custom_types/structs.html"><code>struct</code></a> 和 <a href="hello/../trait.html"><code>traits</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a>, <a href="hello/../macros.html"><code>macros</code></a>, <a href="hello/../custom_types/structs.html"><code>struct</code></a> 和 <a href="hello/../trait.html"><code>traits</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="调试debug"><a class="header" href="#调试debug">调试（Debug）</a></h1>
 <p>所有的类型，若想用 <code>std::fmt</code> 的格式化打印，都要求实现至少一个可打印的 <code>traits</code>。
 自动的实现只为一些类型提供，比如 <code>std</code> 库中的类型。所有其他类型
@@ -442,10 +442,10 @@ fn main() {
 </code></pre></pre>
 <p>你可以通过手动实现 <code>fmt::Display</code> 来控制显示效果。</p>
 <h3 id="参见-2"><a class="header" href="#参见-2">参见：</a></h3>
-<p><a href="https://doc.rust-lang.org/reference/attributes.html">attributes</a>, <a href="hello/print/../../trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a> 和 <a href="hello/print/../../custom_types/structs.html"><code>struct</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/reference/attributes.html">attributes</a>, <a href="hello/print/../../trait/derive.html"><code>derive</code></a>, <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a> 和 <a href="hello/print/../../custom_types/structs.html"><code>struct</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="显示display"><a class="header" href="#显示display">显示（Display）</a></h1>
 <p><code>fmt::Debug</code> 通常看起来不太简洁，因此自定义输出的外观经常是更可取的。这需要通过
-手动实现 <a href="https://doc.rust-lang.org/std/fmt/"><code>fmt::Display</code></a> 来做到。<code>fmt::Display</code> 采用 <code>{}</code> 标记。实现方式看
+手动实现 <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>fmt::Display</code></a> 来做到。<code>fmt::Display</code> 采用 <code>{}</code> 标记。实现方式看
 起来像这样：</p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
@@ -536,7 +536,7 @@ fn main() {
 </code></pre></pre>
 <p><code>fmt::Display</code> 被实现了，而 <code>fmt::Binary</code> 没有，因此 <code>fmt::Binary</code> 不能使用。
 <code>std::fmt</code> 有很多这样的 <a href="hello/print/../../trait.html"><code>trait</code></a>，它们都要求有各自的实现。这些内容将在
-后面的 <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a> 章节中详细介绍。</p>
+后面的 <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a> 章节中详细介绍。</p>
 <h3 id="动手试一试-2"><a class="header" href="#动手试一试-2">动手试一试</a></h3>
 <p>检验上面例子的输出，然后在示例程序中，仿照 <code>Point2D</code> 结构体增加一个复数结构体。
 使用一样的方式打印，输出结果要求是这个样子：</p>
@@ -544,7 +544,7 @@ fn main() {
 Debug: Complex { real: 3.3, imag: 7.2 }
 </code></pre>
 <h3 id="参见-3"><a class="header" href="#参见-3">参见：</a></h3>
-<p><a href="hello/print/../../trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>, <a href="hello/print/../../macros.html">macros</a>, <a href="hello/print/../../custom_types/structs.html"><code>struct</code></a>,
+<p><a href="hello/print/../../trait/derive.html"><code>derive</code></a>, <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a>, <a href="hello/print/../../macros.html">macros</a>, <a href="hello/print/../../custom_types/structs.html"><code>struct</code></a>,
 <a href="hello/print/../../trait.html"><code>trait</code></a>, 和 <a href="hello/print/../../mod/use.html">use</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="测试实例list"><a class="header" href="#测试实例list">测试实例：List</a></h1>
 <p>对一个结构体实现 <code>fmt::Display</code>，其中的元素需要一个接一个地处理到，这可能会很麻
@@ -657,7 +657,7 @@ fn main() {
     }
 }
 </code></pre></pre>
-<p>在 <a href="http://doc.rust-lang.org/std/fmt/"><code>fmt::fmt</code></a> 文档中可以查看<a href="http://doc.rust-lang.org/std/fmt/#formatting-traits">格式化 traits 一览表</a>和它们的参
+<p>在 <a href="https://rustwiki.org/zh-CN/std/fmt/"><code>fmt::fmt</code></a> 文档中可以查看<a href="https://rustwiki.org/zh-CN/std/fmt/#formatting-traits">格式化 traits 一览表</a>和它们的参
 数类型。</p>
 <h3 id="动手试一试-4"><a class="header" href="#动手试一试-4">动手试一试</a></h3>
 <p>为上面的 <code>Color</code> 结构体实现 <code>fmt::Display</code>，应得到如下的输出结果：</p>
@@ -667,11 +667,11 @@ RGB (0, 0, 0) 0x000000
 </code></pre>
 <p>如果感到疑惑，可看下面两条提示：</p>
 <ul>
-<li>你<a href="http://doc.rust-lang.org/std/fmt/#argument-types">可能需要多次列出每个颜色</a>，</li>
-<li>你可以使用 <code>:02</code> <a href="http://doc.rust-lang.org/std/fmt/#width">补零使位数为 2 位</a>。</li>
+<li>你<a href="https://rustwiki.org/zh-CN/std/fmt/#argument-types">可能需要多次列出每个颜色</a>，</li>
+<li>你可以使用 <code>:02</code> <a href="https://rustwiki.org/zh-CN/std/fmt/#width">补零使位数为 2 位</a>。</li>
 </ul>
 <h3 id="参见-5"><a class="header" href="#参见-5">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/fmt/"><code>std::fmt</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="原生类型"><a class="header" href="#原生类型">原生类型</a></h1>
 <p>Rust 提供了多种原生类型(primitive)，包括：</p>
 <h2 id="标量类型scalar-type"><a class="header" href="#标量类型scalar-type">标量类型（scalar type）</a></h2>
@@ -722,7 +722,7 @@ RGB (0, 0, 0) 0x000000
 }
 </code></pre></pre>
 <h3 id="参见-6"><a class="header" href="#参见-6">参见：</a></h3>
-<p><a href="https://doc.rust-lang.org/std/"><code>std</code> 库</a>、<a href="variable_bindings/mut.html"><code>mut</code></a>、<a href="types/inference.html">类型推断</a> 和<a href="variable_bindings/scope.html">变量遮蔽</a>。</p>
+<p><a href="https://rustwiki.org/zh-CN/std/"><code>std</code> 库</a>、<a href="variable_bindings/mut.html"><code>mut</code></a>、<a href="types/inference.html">类型推断</a> 和<a href="variable_bindings/scope.html">变量遮蔽</a>。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="字面量和运算符"><a class="header" href="#字面量和运算符">字面量和运算符</a></h1>
 <p>整数 <code>1</code>、浮点数 <code>1.2</code>、字符 <code>'a'</code>、字符串 <code>&quot;abc&quot;</code>、布尔值 <code>true</code> 和单元类型
 <code>()</code> 可以用数字、文字或符号之类的 “字面量”（literal）来表示。</p>
@@ -731,7 +731,7 @@ RGB (0, 0, 0) 0x000000
 <code>0.000_001</code> 等同于 <code>0.000001</code>。</p>
 <p>我们需要把字面量的类型告诉编译器。如前面学过的，我们使用 <code>u32</code> 后缀来表明字面量
 是一个 32 位无符号整数，<code>i32</code> 后缀表明字面量是一个 32 位有符号整数。</p>
-<p><a href="http://doc.rust-lang.org/reference.html#operator-precedence">Rust</a> 提供了一系列的运算符（operator），它们的优先级
+<p><a href="https://rustwiki.org/zh-CN/reference/expressions.html#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7">Rust</a> 提供了一系列的运算符（operator），它们的优先级
 和<a href="https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages">类 C 语言</a>的类似。（译注：类 C 语言包括 C/C++、Java、PHP 等语言。）</p>
 <pre><pre class="playground"><code class="language-rust editable">fn main() {
     // 整数相加
@@ -897,7 +897,7 @@ fn main() {
 <p>结构体（structure，缩写成 struct）有 3 种类型，使用 <code>struct</code> 关键字来创建：</p>
 <ul>
 <li>元组结构体（tuple struct），事实上就是具名元组而已。</li>
-<li>经典的 <a href="http://en.wikipedia.org/wiki/Struct_(C_programming_language)">C 语言风格结构体</a>（C struct）。</li>
+<li>经典的 <a href="https://en.wikipedia.org/wiki/Struct_(C_programming_language)">C 语言风格结构体</a>（C struct）。</li>
 <li>单元结构体（unit struct），不带字段，在泛型中很有用。</li>
 </ul>
 <pre><pre class="playground"><code class="language-rust editable">#[derive(Debug)]
@@ -1508,13 +1508,13 @@ fn main() {
 <h3 id="see-also"><a class="header" href="#see-also">See also:</a></h3>
 <p><a href="types/../attribute.html">Attributes</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="类型转换-1"><a class="header" href="#类型转换-1">类型转换</a></h1>
-<p>Rust 使用 <a href="trait.html">trait</a> 解决类型之间的转换问题。最一般的转换会用到 <a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From</code></a> 
-和 <a href="https://doc.rust-lang.org/std/convert/trait.Into.html"><code>into</code></a> 两个 trait。不过，即便常见的情况也可能会用到特别的 trait，尤其是
+<p>Rust 使用 <a href="trait.html">trait</a> 解决类型之间的转换问题。最一般的转换会用到 <a href="https://rustwiki.org/zh-CN/std/convert/trait.From.html"><code>From</code></a> 
+和 <a href="https://rustwiki.org/zh-CN/std/convert/trait.Into.html"><code>into</code></a> 两个 trait。不过，即便常见的情况也可能会用到特别的 trait，尤其是
 从 <code>String</code> 转换到别的类型，以及把别的类型转换到 <code>String</code> 时。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="from-和-into"><a class="header" href="#from-和-into"><code>From</code> 和 <code>Into</code></a></h1>
-<p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From</code></a> 和 <a href="https://doc.rust-lang.org/std/convert/trait.Into.html"><code>Into</code></a> 两个 trait 是内部相关联的，实际上这是它们实现的一部分。如果我们能够从类型 B 得到类型 A，那么很容易相信我们也能把类型 B 转换为类型 A。</p>
+<p><a href="https://rustwiki.org/zh-CN/std/convert/trait.From.html"><code>From</code></a> 和 <a href="https://rustwiki.org/zh-CN/std/convert/trait.Into.html"><code>Into</code></a> 两个 trait 是内部相关联的，实际上这是它们实现的一部分。如果我们能够从类型 B 得到类型 A，那么很容易相信我们也能把类型 B 转换为类型 A。</p>
 <h2 id="from"><a class="header" href="#from"><code>From</code></a></h2>
-<p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From</code></a> trait 允许一种类型定义 “怎么根据另一种类型生成自己”，因此它提供了一种类型转换的简单机制。在标准库中有无数 <code>From</code> 的实现，规定原生类型及其他常见类型的转换功能。</p>
+<p><a href="https://rustwiki.org/zh-CN/std/convert/trait.From.html"><code>From</code></a> trait 允许一种类型定义 “怎么根据另一种类型生成自己”，因此它提供了一种类型转换的简单机制。在标准库中有无数 <code>From</code> 的实现，规定原生类型及其他常见类型的转换功能。</p>
 <p>比如，可以很容易地把 <code>str</code> 转换成 <code>String</code>：</p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
@@ -1543,7 +1543,7 @@ fn main() {
 }
 </code></pre></pre>
 <h2 id="into"><a class="header" href="#into"><code>Into</code></a></h2>
-<p><a href="https://doc.rust-lang.org/std/convert/trait.Into.html"><code>Into</code></a> trait 就是把 <code>From</code> trait 倒过来而已。也就是说，如果你为你的类型实现了 <code>From</code>，那么同时你也就免费获得了 <code>Into</code>。</p>
+<p><a href="https://rustwiki.org/zh-CN/std/convert/trait.Into.html"><code>Into</code></a> trait 就是把 <code>From</code> trait 倒过来而已。也就是说，如果你为你的类型实现了 <code>From</code>，那么同时你也就免费获得了 <code>Into</code>。</p>
 <p>使用 <code>Into</code> trait 通常要求指明要转换到的类型，因为编译器大多数时候不能推断它。不过考虑到我们免费获得了 <code>Into</code>，这点代价不值一提。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::convert::From;
 
@@ -1566,8 +1566,8 @@ fn main() {
 }
 </code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tryfrom-and-tryinto"><a class="header" href="#tryfrom-and-tryinto"><code>TryFrom</code> and <code>TryInto</code></a></h1>
-<p>类似于 <a href="conversion/from_into.html"><code>From</code> 和 <code>Into</code></a>，<a href="https://doc.rust-lang.org/std/convert/trait.TryFrom.html"><code>TryFrom</code></a> 和 <a href="https://doc.rust-lang.org/std/convert/trait.TryInto.html"><code>TryInto</code></a> 是
-类型转换的通用 trait。不同于 <code>From</code>/<code>Into</code> 的是，<code>TryFrom</code> 和 <code>TryInto</code> trait 用于易出错的转换，也正因如此，其返回值是 <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> 型。</p>
+<p>类似于 <a href="conversion/from_into.html"><code>From</code> 和 <code>Into</code></a>，<a href="https://rustwiki.org/zh-CN/std/convert/trait.TryFrom.html"><code>TryFrom</code></a> 和 <a href="https://rustwiki.org/zh-CN/std/convert/trait.TryInto.html"><code>TryInto</code></a> 是
+类型转换的通用 trait。不同于 <code>From</code>/<code>Into</code> 的是，<code>TryFrom</code> 和 <code>TryInto</code> trait 用于易出错的转换，也正因如此，其返回值是 <a href="https://rustwiki.org/zh-CN/std/result/enum.Result.html"><code>Result</code></a> 型。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::convert::TryFrom;
 use std::convert::TryInto;
 
@@ -1602,7 +1602,7 @@ fn main() {
 </code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tostring-和-fromstr"><a class="header" href="#tostring-和-fromstr"><code>ToString</code> 和 <code>FromStr</code></a></h1>
 <h2 id="tostring"><a class="header" href="#tostring"><code>ToString</code></a></h2>
-<p>要把任何类型转换成 <code>String</code>，只需要实现那个类型的 <a href="https://doc.rust-lang.org/std/string/trait.ToString.html"><code>ToString</code></a> trait。然而不要直接这么做，您应该实现<a href="https://doc.rust-lang.org/std/fmt/trait.Display.html"><code>fmt::Display</code></a> trait，它会自动提供 <a href="https://doc.rust-lang.org/std/string/trait.ToString.html"><code>ToString</code></a>，并且还可以用来打印类型，就像 <a href="conversion/../hello/print.html"><code>print!</code></a> 一节中讨论的那样。</p>
+<p>要把任何类型转换成 <code>String</code>，只需要实现那个类型的 <a href="https://rustwiki.org/zh-CN/std/string/trait.ToString.html"><code>ToString</code></a> trait。然而不要直接这么做，您应该实现<a href="https://rustwiki.org/zh-CN/std/fmt/trait.Display.html"><code>fmt::Display</code></a> trait，它会自动提供 <a href="https://rustwiki.org/zh-CN/std/string/trait.ToString.html"><code>ToString</code></a>，并且还可以用来打印类型，就像 <a href="conversion/../hello/print.html"><code>print!</code></a> 一节中讨论的那样。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::string::ToString;
 
 struct Circle {
@@ -1621,10 +1621,10 @@ fn main() {
 }
 </code></pre></pre>
 <h2 id="解析字符串"><a class="header" href="#解析字符串">解析字符串</a></h2>
-<p>我们经常需要把字符串转成数字。完成这项工作的标准手段是用 <a href="https://doc.rust-lang.org/std/primitive.str.html#method.parse"><code>parse</code></a> 函数。我们得
+<p>我们经常需要把字符串转成数字。完成这项工作的标准手段是用 <a href="https://rustwiki.org/zh-CN/std/primitive.str.html#method.parse"><code>parse</code></a> 函数。我们得
 提供要转换到的类型，这可以通过不使用类型推断，或者用 “涡轮鱼” 语法（turbo
 fish，<code>&lt;&gt;</code>）实现。</p>
-<p>只要对目标类型实现了 <a href="https://doc.rust-lang.org/std/str/trait.FromStr.html"><code>FromStr</code></a> trait，就可以用 <code>parse</code> 把字符串转换成目标类型。
+<p>只要对目标类型实现了 <a href="https://rustwiki.org/zh-CN/std/str/trait.FromStr.html"><code>FromStr</code></a> trait，就可以用 <code>parse</code> 把字符串转换成目标类型。
 标准库中已经给无数种类型实现了 <code>FromStr</code>。如果要转换到用户定义类型，只要手动实现
 <code>FromStr</code> 就行。</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
@@ -1790,7 +1790,7 @@ fn main() {
 </code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="while-循环"><a class="header" href="#while-循环">while 循环</a></h1>
 <p><code>while</code> 关键字可以用作当型循环（当条件满足时循环）。</p>
-<p>让我们用 <code>while</code> 循环写一下臭名昭著的 <a href="http://en.wikipedia.org/wiki/Fizz_buzz">FizzBuzz</a> 程序。</p>
+<p>让我们用 <code>while</code> 循环写一下臭名昭著的 <a href="https://en.wikipedia.org/wiki/Fizz_buzz">FizzBuzz</a> 程序。</p>
 <pre><pre class="playground"><code class="language-rust editable">fn main() {
     // 计数器变量
     let mut n = 1;
@@ -1870,7 +1870,7 @@ fn main() {
     }
 }
 </code></pre></pre>
-<p>译注：Ferris 是 Rust 的<a href="http://www.rustacean.net/">非官方吉祥物</a>。</p>
+<p>译注：Ferris 是 Rust 的<a href="https://www.rustacean.net/">非官方吉祥物</a>。</p>
 <ul>
 <li><code>into_iter</code> - 会消耗集合。在每次迭代中，集合中的数据本身会被提供。一旦集合被消
 耗了，之后就无法再使用了，因为它已经在循环中被 “移除”（move）了。</li>
@@ -2005,7 +2005,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-14"><a class="header" href="#参见-14">参见：</a></h3>
-<p><a href="flow_control/match/destructuring/../../../attribute/unused.html"><code>#[allow(...)]</code></a>, <a href="http://en.wikipedia.org/wiki/Color_model">色彩模型</a> 和 <a href="flow_control/match/destructuring/../../../custom_types/enum.html"><code>enum</code></a> </p>
+<p><a href="flow_control/match/destructuring/../../../attribute/unused.html"><code>#[allow(...)]</code></a>, <a href="https://en.wikipedia.org/wiki/Color_model">色彩模型</a> 和 <a href="flow_control/match/destructuring/../../../custom_types/enum.html"><code>enum</code></a> </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="指针和引用"><a class="header" href="#指针和引用">指针和引用</a></h1>
 <p>对指针来说，解构（destructure）和解引用（dereference）要区分开，因为这两者的概念
 是不同的，和 <code>C</code> 那样的语言用法不一样。</p>
@@ -2589,7 +2589,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-20"><a class="header" href="#参见-20">参见：</a></h3>
-<p><a href="fn/closures/../../std/box.html"><code>Box</code></a> 和 <a href="https://doc.rust-lang.org/std/mem/fn.drop.html"><code>std::mem::drop</code></a></p>
+<p><a href="fn/closures/../../std/box.html"><code>Box</code></a> 和 <a href="https://rustwiki.org/zh-CN/std/mem/fn.drop.html"><code>std::mem::drop</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="作为输入参数"><a class="header" href="#作为输入参数">作为输入参数</a></h1>
 <p>虽然 Rust 无需类型说明就能在大多数时候完成变量捕获，但在编写函数时，这种模糊写法
 是不允许的。当以闭包作为输入参数时，必须指出闭包的完整类型，它是通过使用以下
@@ -2665,7 +2665,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-21"><a class="header" href="#参见-21">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/std/mem/fn.drop.html"><code>std::mem::drop</code></a>, <a href="http://doc.rust-lang.org/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="http://doc.rust-lang.org/std/ops/trait.FnMut.html"><code>FnMut</code></a>, 和 <a href="http://doc.rust-lang.org/std/ops/trait.FnOnce.html"><code>FnOnce</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/mem/fn.drop.html"><code>std::mem::drop</code></a>, <a href="https://rustwiki.org/zh-CN/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="https://rustwiki.org/zh-CN/std/ops/trait.FnMut.html"><code>FnMut</code></a>, 和 <a href="https://rustwiki.org/zh-CN/std/ops/trait.FnOnce.html"><code>FnOnce</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="类型匿名"><a class="header" href="#类型匿名">类型匿名</a></h1>
 <p>闭包从周围的作用域中捕获变量是简单明了的。这样会有某些后果吗？确实有。观察一下
 使用闭包作为函数参数，这要求闭包是<a href="fn/closures/../../generics.html">泛型</a>的，闭包定义的方式决定了这是
@@ -2705,8 +2705,8 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-22"><a class="header" href="#参见-22">参见：</a></h3>
-<p><a href="https://huonw.github.io/blog/2015/05/finding-closure-in-rust/">详尽分析</a>, <a href="https://doc.rust-lang.org/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="https://doc.rust-lang.org/std/ops/trait.FnMut.html"><code>FnMut</code></a>,
-和 <a href="https://doc.rust-lang.org/std/ops/trait.FnOnce.html"><code>FnOnce</code></a></p>
+<p><a href="https://huonw.github.io/blog/2015/05/finding-closure-in-rust/">详尽分析</a>, <a href="https://rustwiki.org/zh-CN/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="https://rustwiki.org/zh-CN/std/ops/trait.FnMut.html"><code>FnMut</code></a>,
+和 <a href="https://rustwiki.org/zh-CN/std/ops/trait.FnOnce.html"><code>FnOnce</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="输入函数"><a class="header" href="#输入函数">输入函数</a></h1>
 <p>既然闭包可以作为参数，你很可能想知道函数是否也可以呢。确实可以！如果你声明一个
 接受闭包作为参数的函数，那么任何满足该闭包的 trait 约束的函数都可以作为其参数。</p>
@@ -2731,7 +2731,7 @@ fn main() {
 <p>多说一句，<code>Fn</code>、<code>FnMut</code> 和 <code>FnOnce</code> 这些 <code>trait</code> 明确了闭包如何从周围的作用域
 中捕获变量。</p>
 <h3 id="参见-23"><a class="header" href="#参见-23">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="http://doc.rust-lang.org/std/ops/trait.FnMut.html"><code>FnMut</code></a>, 和 <a href="http://doc.rust-lang.org/std/ops/trait.FnOnce.html"><code>FnOnce</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="https://rustwiki.org/zh-CN/std/ops/trait.FnMut.html"><code>FnMut</code></a>, 和 <a href="https://rustwiki.org/zh-CN/std/ops/trait.FnOnce.html"><code>FnOnce</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="作为输出参数"><a class="header" href="#作为输出参数">作为输出参数</a></h1>
 <p>闭包作为输入参数是可能的，所以返回闭包作为输出参数（output parameter）也应该是
 可能的。然而返回闭包类型会有问题，因为目前 Rust 只支持返回具体（非泛型）的
@@ -2773,7 +2773,7 @@ fn main() {
 
 </code></pre></pre>
 <h3 id="参见-24"><a class="header" href="#参见-24">参见：</a></h3>
-<p><a href="https://doc.rust-lang.org/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="https://doc.rust-lang.org/std/ops/trait.FnMut.html"><code>FnMut</code></a>, <a href="fn/closures/../../generics.html">泛型</a> 和 <a href="fn/closures/../../trait/impl_trait.html">impl Trait</a>.</p>
+<p><a href="https://rustwiki.org/zh-CN/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="https://rustwiki.org/zh-CN/std/ops/trait.FnMut.html"><code>FnMut</code></a>, <a href="fn/closures/../../generics.html">泛型</a> 和 <a href="fn/closures/../../trait/impl_trait.html">impl Trait</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="std-中的例子"><a class="header" href="#std-中的例子"><code>std</code> 中的例子</a></h1>
 <p>本小节列出几个标准库中使用闭包的例子。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="iteratorany"><a class="header" href="#iteratorany">Iterator::any</a></h1>
@@ -2817,7 +2817,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-25"><a class="header" href="#参见-25">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any"><code>std::iter::Iterator::any</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/iter/trait.Iterator.html#method.any"><code>std::iter::Iterator::any</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="iteratorfind"><a class="header" href="#iteratorfind">Iterator::find</a></h1>
 <p><code>Iterator::find</code> 是一个函数，在传给它一个迭代器时，将用 <code>Option</code> 类型返回第一个
 满足谓词的元素。它的签名如下：</p>
@@ -2859,7 +2859,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-26"><a class="header" href="#参见-26">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find"><code>std::iter::Iterator::find</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/iter/trait.Iterator.html#method.find"><code>std::iter::Iterator::find</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="高阶函数"><a class="header" href="#高阶函数">高阶函数</a></h1>
 <p>Rust 提供了高阶函数（Higher Order Function, HOF），指那些输入一个或多个
 函数，并且/或者产生一个更有用的函数的函数。HOF 和惰性迭代器（lazy iterator）给
@@ -2899,7 +2899,7 @@ fn main() {
     println!(&quot;functional style: {}&quot;, sum_of_squared_odd_numbers);
 }
 </code></pre></pre>
-<p><a href="http://doc.rust-lang.org/core/option/enum.Option.html">Option</a> 和 <a href="http://doc.rust-lang.org/core/iter/trait.Iterator.html">迭代器</a> 都实现了不少高阶函数。</p>
+<p><a href="https://rustwiki.org/zh-CN/core/option/enum.Option.html">Option</a> 和 <a href="https://rustwiki.org/zh-CN/core/iter/trait.Iterator.html">迭代器</a> 都实现了不少高阶函数。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="发散函数"><a class="header" href="#发散函数">发散函数</a></h1>
 <p>发散函数（diverging function）绝不会返回。 它们使用 <code>!</code> 标记，这是一个空类型。</p>
 <pre><pre class="playground"><code class="language-rust">
@@ -3360,7 +3360,7 @@ authors = [&quot;mark&quot;]
 [dependencies]
 </code></pre>
 <p><code>package</code> 下面的 <code>name</code> 字段表明项目的名称。 如果您发布 crate（后面将做更多介绍），那么 <code>crates.io</code> 将使用此字段标明的名称。 这也是编译时输出的二进制可执行文件的名称。</p>
-<p><code>version</code> 字段是使用<a href="http://semver.org/">语义版本控制</a>（Semantic
+<p><code>version</code> 字段是使用<a href="https://semver.org/">语义版本控制</a>（Semantic
 Versioning）的 crate 版本号。</p>
 <p><code>authors</code> 字段表明发布 crate 时的作者列表。</p>
 <p><code>dependencies</code> 这部分可以让你为项目添加依赖。</p>
@@ -3399,7 +3399,7 @@ bar = { path = &quot;../bar&quot; } # 来自本地文件系统的路径
 <p>除了可添加其他二进制可执行文件外，<code>cargo</code> 还支持<a href="https://doc.rust-lang.org/cargo/guide/project-layout.html">更多功能</a>，如基准测试，测试和示例。</p>
 <p>在下一节中，我们将更仔细地学习测试的内容。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="测试"><a class="header" href="#测试">测试</a></h1>
-<p>我们知道测试是任何软件不可缺少的一部分！Rust 对单元和集成测试提供一流的支持（参见《Rust 程序设计语言》中的关于<a href="https://doc.rust-lang.org/book/ch11-00-testing.html">测试的章节</a>）。</p>
+<p>我们知道测试是任何软件不可缺少的一部分！Rust 对单元和集成测试提供一流的支持（参见《Rust 程序设计语言》中的关于<a href="https://rustwiki.org/zh-CN/book/ch11-00-testing.html">测试的章节</a>）。</p>
 <p>通过上面链接的关于测试章节，我们看到了如何编写单元测试和集成测试。在代码目录组织上，我们可以将单元测试放在需要测试的模块中，并将集成测试放在源码中 <code>tests/</code> 目录中：</p>
 <pre><code class="language-txt">foo
 ├── Cargo.toml
@@ -3560,7 +3560,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-28"><a class="header" href="#参见-28">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/reference.html#conditional-compilation">引用</a>, <a href="http://doc.rust-lang.org/std/macro.cfg!.html"><code>cfg!</code></a>, 和 <a href="attribute/../macros.html">宏</a>.</p>
+<p><a href="https://rustwiki.org/zh-CN/reference/conditional-compilation.html">引用</a>, <a href="https://rustwiki.org/zh-CN/std/macro.cfg!.html"><code>cfg!</code></a>, 和 <a href="attribute/../macros.html">宏</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="自定义条件"><a class="header" href="#自定义条件">自定义条件</a></h1>
 <p>有部分条件如 <code>target_os</code> 是由 <code>rustc</code> 隐式地提供的，但是自定义条件必须使用
 <code>--cfg</code> 标记来传给 <code>rustc</code>。</p>
@@ -3748,7 +3748,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-32"><a class="header" href="#参见-32">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a>, <a href="generics/../custom_types/structs.html"><code>struct</code></a>, 和 <a href="generics/../trait.html"><code>trait</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/ops/trait.Drop.html"><code>Drop</code></a>, <a href="generics/../custom_types/structs.html"><code>struct</code></a>, 和 <a href="generics/../trait.html"><code>trait</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="约束"><a class="header" href="#约束">约束</a></h1>
 <p>在使用泛型时，类型参数常常必须使用 trait 作为<strong>约束</strong>（bound）来明确规定
 类型应实现哪些功能。例如下面的例子用到了 <code>Display</code> trait 来打印，所以它用
@@ -3839,7 +3839,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-34"><a class="header" href="#参见-34">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/std/cmp/trait.Eq.html"><code>std::cmp::Eq</code></a>, <a href="http://doc.rust-lang.org/std/cmp/trait.Ord.html"><code>std::cmp::Ord</code></a>, 和 <a href="generics/bounds/../../trait.html"><code>trait</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/cmp/trait.Eq.html"><code>std::cmp::Eq</code></a>, <a href="https://rustwiki.org/zh-CN/std/cmp/trait.Ord.html"><code>std::cmp::Ord</code></a>, 和 <a href="generics/bounds/../../trait.html"><code>trait</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="多重约束"><a class="header" href="#多重约束">多重约束</a></h1>
 <p>多重约束（multiple bounds）可以用 <code>+</code> 连接。和平常一样，类型之间使用 <code>,</code> 隔开。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::fmt::{Debug, Display};
@@ -3949,16 +3949,16 @@ fn main() {
 <h3 id="see-also-1"><a class="header" href="#see-also-1">See also:</a></h3>
 <p><a href="generics/../custom_types/structs.html"><code>structs</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="关联项"><a class="header" href="#关联项">关联项</a></h1>
-<p>“关联项”（associated item）指与多种类型的<a href="http://doc.rust-lang.org/reference.html#items">项</a>有关的一组规则。它是 <code>trait</code>
+<p>“关联项”（associated item）指与多种类型的<a href="https://rustwiki.org/zh-CN/reference/items.html">项</a>有关的一组规则。它是 <code>trait</code>
 泛型的扩展，允许在 <code>trait</code> 内部定义新的项。</p>
 <p>一个这样的项就叫做一个关联类型。当 <code>trait</code> 对于实现了它的容器类型是泛型的，关联
 项就提供了简单的使用方法。</p>
 <blockquote>
-<p>译注：「关联项」这个说法实际上只在 RFC 里出现了，官方的《The Rust Programming
-Language》第一版和第二版都只有「关联类型」的说法。如果觉得这里的说法很别扭的话
-不要理会就是了。TRPL 对关联类型的定义是：「一种将类型占位符与 trait 联系起来的
+<p>译注：“关联项”这个说法实际上只在 RFC 里出现了，官方的《The Rust Programming
+Language》第一版和第二版都只有“关联类型”的说法。如果觉得这里的说法很别扭的话
+不要理会就是了。TRPL 对关联类型的定义是：“一种将类型占位符与 trait 联系起来的
 做法，这样 trait 中的方法签名中就可以使用这些占位符类型。trait 的实现会指定在
-该实现中那些占位符对应什么具体类型。」等看完这一节再回头看这个定义就很明白了。</p>
+该实现中那些占位符对应什么具体类型。”等看完这一节再回头看这个定义就很明白了。</p>
 </blockquote>
 <h3 id="参见-37"><a class="header" href="#参见-37">参见：</a></h3>
 <p><a href="https://github.com/rust-lang/rfcs/blob/master/text/0195-associated-items.md">RFC</a></p>
@@ -4100,7 +4100,7 @@ fn main() {
 的类型参数。</p>
 <p>可以用额外的泛型类型参数指定数据类型，这类型可以充当标记，也可以供编译时类型检查
 使用。这些额外的参数没有存储值，也没有运行时行为。</p>
-<p>在下面例子中，我们使用 <a href="https://doc.rust-lang.org/std/marker/struct.PhantomData.html">std::marker::PhantomData</a> 作为虚类型参数的类型，创建
+<p>在下面例子中，我们使用 <a href="https://rustwiki.org/zh-CN/std/marker/struct.PhantomData.html">std::marker::PhantomData</a> 作为虚类型参数的类型，创建
 包含不同数据类型的元组。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::marker::PhantomData;
 
@@ -4221,7 +4221,7 @@ fn main() {
 变量何时被创建或销毁。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="raii"><a class="header" href="#raii">RAII</a></h1>
 <p>Rust 的变量不只是在栈中保存数据：它们也<strong>占有</strong>资源，比如 <code>Box&lt;T&gt;</code> 占有
-堆（heap）中的内存。Rust 强制实行 <a href="http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization">RAII</a>（Resource Acquisition Is
+堆（heap）中的内存。Rust 强制实行 <a href="https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization">RAII</a>（Resource Acquisition Is
 Initiallization，资源获取即初始化），所以任何对象在离开作用域时，它的析构
 函数（destructor）就被调用，然后它占有的资源就被释放。</p>
 <p>这种行为避免了<strong>资源泄漏</strong>（resource leak），所以你再也不用手动释放内存或者担心
@@ -4255,7 +4255,7 @@ fn main() {
     // `_box2` 在这里被销毁，内存得到释放    
 }
 </code></pre></pre>
-<p>当然我们可以使用 <a href="http://valgrind.org/info/"><code>valgrind</code></a> 对内存错误进行仔细检查：</p>
+<p>当然我们可以使用 <a href="https://valgrind.org/info/"><code>valgrind</code></a> 对内存错误进行仔细检查：</p>
 <pre><code class="language-bash">$ rustc raii.rs &amp;&amp; valgrind ./raii
 ==26873== Memcheck, a memory error detector
 ==26873== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
@@ -4274,10 +4274,10 @@ fn main() {
 </code></pre>
 <p>完全没有泄漏！</p>
 <h2 id="析构函数"><a class="header" href="#析构函数">析构函数</a></h2>
-<p>Rust 中的析构函数概念是通过 <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait 提供的。当资源离开作用域，就调用析构
-函数。你无需为每种类型都实现 <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait，只要为那些需要自己的析构函数逻辑的
+<p>Rust 中的析构函数概念是通过 <a href="https://rustwiki.org/zh-CN/std/ops/trait.Drop.html"><code>Drop</code></a> trait 提供的。当资源离开作用域，就调用析构
+函数。你无需为每种类型都实现 <a href="https://rustwiki.org/zh-CN/std/ops/trait.Drop.html"><code>Drop</code></a> trait，只要为那些需要自己的析构函数逻辑的
 类型实现就可以了。</p>
-<p>运行下列例子，看看 <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait 是怎样工作的。当 <code>main</code> 函数中的变量离开作用
+<p>运行下列例子，看看 <a href="https://rustwiki.org/zh-CN/std/ops/trait.Drop.html"><code>Drop</code></a> trait 是怎样工作的。当 <code>main</code> 函数中的变量离开作用
 域，自定义的析构函数就会被调用：</p>
 <pre><pre class="playground"><code class="language-rust editable">struct ToDrop;
 
@@ -4751,7 +4751,7 @@ fn main() {
 </code></pre></pre>
 <blockquote>
 <p>译注：方法一般是不需要标明生命周期的，因为 <code>self</code> 的生命周期会赋给所有的输出
-生命周期参数，详见 <a href="https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#lifetime-elision">TRPL</a>。</p>
+生命周期参数，详见 <a href="https://rustwiki.org/zh-CN/book/ch10-03-lifetime-syntax.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9C%81%E7%95%A5lifetime-elision">TRPL</a>。</p>
 </blockquote>
 <h3 id="参见-46"><a class="header" href="#参见-46">参见：</a></h3>
 <p><a href="scope/lifetime/../../fn/methods.html">方法</a></p>
@@ -4933,7 +4933,7 @@ fn main() {
 <p>有些生命周期的模式太常用了，所以借用检查器将会隐式地添加它们以减少程序输入量
 和增强可读性。这种隐式添加生命周期的过程称为省略（elision）。在 Rust 使用省略
 仅仅是因为这些模式太普遍了。</p>
-<p>下面代码展示了一些省略的例子。对于省略的详细描述，可以参考官方文档的<a href="http://doc.rust-lang.org/book/lifetimes.html#lifetime-elision">生命周期省略</a>。</p>
+<p>下面代码展示了一些省略的例子。对于省略的详细描述，可以参考官方文档的<a href="https://rustwiki.org/zh-CN/book/ch10-03-lifetime-syntax.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9C%81%E7%95%A5lifetime-elision">生命周期省略</a>。</p>
 <pre><pre class="playground"><code class="language-rust editable">// `elided_input` 和 `annotated_input` 事实上拥有相同的签名，
 // `elided_input` 的生命周期会被编译器自动添加：
 fn elided_input(x: &amp;i32) {
@@ -4961,7 +4961,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-51"><a class="header" href="#参见-51">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/book/lifetimes.html#lifetime-elision">省略</a></p>
+<p><a href="https://rustwiki.org/zh-CN/book/ch10-03-lifetime-syntax.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9C%81%E7%95%A5lifetime-elision">省略</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="特质-trait"><a class="header" href="#特质-trait">特质 trait</a></h1>
 <p><code>trait</code> 是对未知类型 <code>Self</code> 定义的方法集。该类型也可以访问同一个 trait 中定义的
 其他方法。</p>
@@ -5043,12 +5043,12 @@ fn main() {
 <p>下面是可以自动派生的 trait：</p>
 <ul>
 <li>比较 trait:
-<a href="https://doc.rust-lang.org/std/cmp/trait.Eq.html"><code>Eq</code></a>, <a href="https://doc.rust-lang.org/std/cmp/trait.PartialEq.html"><code>PartialEq</code></a>, <a href="https://doc.rust-lang.org/std/cmp/trait.Ord.html"><code>Ord</code></a>, <a href="https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html"><code>PartialOrd</code></a></li>
-<li><a href="https://doc.rust-lang.org/std/clone/trait.Clone.html"><code>Clone</code></a>, 用来从 <code>&amp;T</code> 创建副本 <code>T</code>。</li>
-<li><a href="https://doc.rust-lang.org/core/marker/trait.Copy.html"><code>Copy</code></a>，使类型具有 “复制语义”（copy semantics）而非 “移动语义”（move semantics）。</li>
-<li><a href="https://doc.rust-lang.org/std/hash/trait.Hash.html"><code>Hash</code></a>，从 <code>&amp;T</code> 计算哈希值（hash）。</li>
-<li><a href="https://doc.rust-lang.org/std/default/trait.Default.html"><code>Default</code></a>, 创建数据类型的一个空实例。</li>
-<li><a href="https://doc.rust-lang.org/std/fmt/trait.Debug.html"><code>Debug</code></a>，使用 <code>{:?}</code> formatter 来格式化一个值。</li>
+<a href="https://rustwiki.org/zh-CN/std/cmp/trait.Eq.html"><code>Eq</code></a>, <a href="https://rustwiki.org/zh-CN/std/cmp/trait.PartialEq.html"><code>PartialEq</code></a>, <a href="https://rustwiki.org/zh-CN/std/cmp/trait.Ord.html"><code>Ord</code></a>, <a href="https://rustwiki.org/zh-CN/std/cmp/trait.PartialOrd.html"><code>PartialOrd</code></a></li>
+<li><a href="https://rustwiki.org/zh-CN/std/clone/trait.Clone.html"><code>Clone</code></a>, 用来从 <code>&amp;T</code> 创建副本 <code>T</code>。</li>
+<li><a href="https://rustwiki.org/zh-CN/core/marker/trait.Copy.html"><code>Copy</code></a>，使类型具有 “复制语义”（copy semantics）而非 “移动语义”（move semantics）。</li>
+<li><a href="https://rustwiki.org/zh-CN/std/hash/trait.Hash.html"><code>Hash</code></a>，从 <code>&amp;T</code> 计算哈希值（hash）。</li>
+<li><a href="https://rustwiki.org/zh-CN/std/default/trait.Default.html"><code>Default</code></a>, 创建数据类型的一个空实例。</li>
+<li><a href="https://rustwiki.org/zh-CN/std/fmt/trait.Debug.html"><code>Debug</code></a>，使用 <code>{:?}</code> formatter 来格式化一个值。</li>
 </ul>
 <pre><pre class="playground"><code class="language-rust editable">// `Centimeters`，可以比较的元组结构体
 #[derive(PartialEq, PartialOrd)]
@@ -5097,7 +5097,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-52"><a class="header" href="#参见-52">参见</a></h3>
-<p><a href="https://doc.rust-lang.org/reference/attributes.html#derive"><code>derive</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/reference/attributes.html#%E6%B4%BE%E7%94%9F"><code>derive</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="使用-dyn-返回-trait"><a class="header" href="#使用-dyn-返回-trait">使用 <code>dyn</code> 返回 trait</a></h1>
 <p>Rust 编译器需要知道每个函数的返回类型需要多少空间。这意味着所有函数都必须返回一个具体类型。与其他语言不同，如果你有个像 <code>Animal</code> 那样的的 trait，则不能编写返回 <code>Animal</code> 的函数，因为其不同的实现将需要不同的内存量。</p>
 <p>但是，有一个简单的解决方法。相比于直接返回一个 trait 对象，我们的函数返回一个包含一些 <code>Animal</code> 的 <code>Box</code>。<code>box</code> 只是对堆中某些内存的引用。因为引用的大小是静态已知的，并且编译器可以保证引用指向已分配的堆 <code>Animal</code>，所以我们可以从函数中返回 trait！</p>
@@ -5145,7 +5145,7 @@ fn main() {
 输入参数来完成不同的任务。这之所以可行，是因为运算符就是方法调用的语法糖。例
 如，<code>a + b</code> 中的 <code>+</code> 运算符会调用 <code>add</code> 方法（也就是 <code>a.add(b)</code>）。这个 <code>add</code> 方
 法是 <code>Add</code> trait 的一部分。因此，<code>+</code> 运算符可以被任何 <code>Add</code> trait 的实现者使用。</p>
-<p>会重载运算符的 <code>trait</code>（比如 <code>Add</code> 这种）可以在<a href="http://doc.rust-lang.org/core/ops/">这里</a>查看。</p>
+<p>会重载运算符的 <code>trait</code>（比如 <code>Add</code> 这种）可以在<a href="https://rustwiki.org/zh-CN/core/ops/">这里</a>查看。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::ops;
 
 struct Foo;
@@ -5189,9 +5189,9 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-53"><a class="header" href="#参见-53">参见：</a></h3>
-<p><a href="http://doc.rust-lang.org/core/ops/trait.Add.html">Add</a>, <a href="https://doc.rust-lang.org/book/syntax-index.html">语法索引</a></p>
+<p><a href="https://rustwiki.org/zh-CN/core/ops/trait.Add.html">Add</a>, <a href="https://rustwiki.org/zh-CN/book/appendix-02-operators.html">语法索引</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="drop"><a class="header" href="#drop">Drop</a></h1>
-<p><a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait 只有一个方法：<code>drop</code>，当对象离开作用域时会自动调用该
+<p><a href="https://rustwiki.org/zh-CN/std/ops/trait.Drop.html"><code>Drop</code></a> trait 只有一个方法：<code>drop</code>，当对象离开作用域时会自动调用该
 方法。<code>Drop</code> trait 的主要作用是释放实现者的实例拥有的资源。</p>
 <p><code>Box</code>，<code>Vec</code>，<code>String</code>，<code>File</code>，以及 <code>Process</code> 是一些实现了 <code>Drop</code> trait 来释放
 资源的类型。<code>Drop</code> trait 也可以为任何自定义数据类型手动实现。</p>
@@ -5241,9 +5241,9 @@ fn main() {
 <p><code>Iterator</code> trait 用来对集合（collection）类型（比如数组）实现迭代器。</p>
 <p>这个 trait 只需定义一个返回 <code>next</code>（下一个）元素的方法，这可手动在 <code>impl</code> 代码块
 中定义，或者自动定义（比如在数组或区间中）。</p>
-<p>为方便起见，<code>for</code> 结构会使用 <a href="https://doc.rust-lang.org/std/iter/trait.IntoIterator.html"><code>.into_iterator()</code></a> 方法将一些集合类型
+<p>为方便起见，<code>for</code> 结构会使用 <a href="https://rustwiki.org/zh-CN/std/iter/trait.IntoIterator.html"><code>.into_iterator()</code></a> 方法将一些集合类型
 转换为迭代器。</p>
-<p>下面例子展示了如何使用 <code>Iterator</code> trait 的方法，更多可用的方法可以看<a href="http://doc.rust-lang.org/core/iter/trait.Iterator.html">这里</a>。</p>
+<p>下面例子展示了如何使用 <code>Iterator</code> trait 的方法，更多可用的方法可以看<a href="https://rustwiki.org/zh-CN/core/iter/trait.Iterator.html">这里</a>。</p>
 <pre><pre class="playground"><code class="language-rust editable">struct Fibonacci {
     curr: u32,
     next: u32,
@@ -5371,7 +5371,7 @@ fn main() {
 <div style="break-before: page; page-break-before: always;"></div><h1 id="clone"><a class="header" href="#clone">Clone</a></h1>
 <p>当处理资源时，默认的行为是在赋值或函数调用的同时将它们转移。但是我们有时候也需要
 把资源复制一份。</p>
-<p><a href="https://doc.rust-lang.org/std/clone/trait.Clone.html"><code>Clone</code></a> trait 正好帮助我们完成这任务。通常，我们可以使用由 <code>Clone</code>
+<p><a href="https://rustwiki.org/zh-CN/std/clone/trait.Clone.html"><code>Clone</code></a> trait 正好帮助我们完成这任务。通常，我们可以使用由 <code>Clone</code>
 trait 定义的 <code>.clone()</code> 方法。</p>
 <pre><pre class="playground"><code class="language-rust editable">// 不含资源的单元结构体
 #[derive(Debug, Clone, Copy)]
@@ -5451,7 +5451,7 @@ fn comp_sci_student_greeting(student: &amp;dyn CompSciStudent) -&gt; String {
 fn main() {}
 </code></pre></pre>
 <h3 id="参见-54"><a class="header" href="#参见-54">参见：</a></h3>
-<p><a href="https://rustwiki.org/zh-CN/book/ch19-03-advanced-traits.html#using-supertraits-to-require-one-traits-functionality-within-another-trait">《Rust 程序设计语言》的“父级 trait”章节</a></p>
+<p><a href="https://rustwiki.org/zh-CN/book/ch19-03-advanced-traits.html#%E7%88%B6-trait-%E7%94%A8%E4%BA%8E%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA-trait-%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%9F%90-trait-%E7%9A%84%E5%8A%9F%E8%83%BD">《Rust 程序设计语言》的“父级 trait”章节</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="消除重叠-trait"><a class="header" href="#消除重叠-trait">消除重叠 trait</a></h1>
 <p>一个类型可以实现许多不同的 trait。如果两个 trait 都需要相同的名称怎么办？例如，许多 trait 可能拥有名为 <code>get()</code> 的方法。他们甚至可能有不同的返回类型！</p>
 <p>有个好消息：由于每个 trait 实现都有自己的 <code>impl</code> 块，因此很清楚您要实现哪个 trait 的 <code>get</code> 方法。</p>
@@ -5501,7 +5501,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-55"><a class="header" href="#参见-55">参见：</a></h3>
-<p><a href="https://rustwiki.org/zh-CN/book/ch19-03-advanced-traits.html#fully-qualified-syntax-for-disambiguation-calling-methods-with-the-same-name">《Rust 程序设计语言》中关于“完全限定语法”的章节</a></p>
+<p><a href="https://rustwiki.org/zh-CN/book/ch19-03-advanced-traits.html#%E5%AE%8C%E5%85%A8%E9%99%90%E5%AE%9A%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%B6%88%E6%AD%A7%E4%B9%89%E8%B0%83%E7%94%A8%E7%9B%B8%E5%90%8C%E5%90%8D%E7%A7%B0%E7%9A%84%E6%96%B9%E6%B3%95">《Rust 程序设计语言》中关于“完全限定语法”的章节</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="使用-macro_rules-来创建宏"><a class="header" href="#使用-macro_rules-来创建宏">使用 <code>macro_rules!</code> 来创建宏</a></h1>
 <p>Rust 提供了一个强大的宏系统，可进行元编程（metaprogramming）。你已经在前面的
 章节中看到，宏看起来和函数很像，只不过名称末尾有一个感叹号 <code>!</code> 。宏并不产
@@ -5798,7 +5798,7 @@ fn main() {
 <li>当错误有可能发生，且应当由调用者处理时，使用 <code>Result</code>。你也可以 <code>unwrap</code> 然后
 使用 <code>expect</code>，但是除了在测试或者原型开发中，请不要这样做。</li>
 </ul>
-<p>有关错误处理的更多内容，可参考<a href="https://doc.rust-lang.org/book/error-handling.html">官方文档</a>的错误处理的章节。</p>
+<p>有关错误处理的更多内容，可参考<a href="https://rustwiki.org/zh-CN/book/error-handling.html">官方文档</a>的错误处理的章节。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="panic"><a class="header" href="#panic"><code>panic</code></a></h1>
 <p>我们将要看到的最简单的错误处理机制就是 <code>panic</code>。它会打印一个错误消息，开始
 回退（unwind）任务，且通常会退出程序。这里我们显式地在错误条件下调用 <code>panic</code>：</p>
@@ -5829,7 +5829,7 @@ fn main() {
 </ul>
 <p>这些选项可以通过 <code>match</code> 显式地处理，或使用 <code>unwrap</code> 隐式地处理。隐式处理要么
 返回 <code>Some</code> 内部的元素，要么就 <code>panic</code>。</p>
-<p>请注意，手动使用 <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.expect">expect</a> 方法自定义 <code>panic</code> 信息是可能的，但相比显式
+<p>请注意，手动使用 <a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html#method.expect">expect</a> 方法自定义 <code>panic</code> 信息是可能的，但相比显式
 处理，<code>unwrap</code> 的输出仍显得不太有意义。在下面例子中，显式处理将举出更受控制的
 结果，同时如果需要的话，仍然可以使程序 <code>panic</code>。</p>
 <pre><pre class="playground"><code class="language-rust editable ignore mdbook-runnable">// 平民（commoner）们见多识广，收到什么礼物都能应对。
@@ -5919,7 +5919,7 @@ fn main() {
 </code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="组合算子map"><a class="header" href="#组合算子map">组合算子：<code>map</code></a></h1>
 <p><code>match</code> 是处理 <code>Option</code> 的一个可用的方法，但你会发现大量使用它会很繁琐，特别是当
-操作只对一种输入是有效的时。这时，可以使用<a href="https://doc.rust-lang.org/book/glossary.html#combinators">组合算子</a>（combinator），以
+操作只对一种输入是有效的时。这时，可以使用<a href="https://rustwiki.org/zh-CN/reference/glossary.html#%E7%BB%84%E5%90%88%E7%AE%97%E5%AD%90">组合算子</a>（combinator），以
 模块化的风格来管理控制流。</p>
 <p><code>Option</code> 有一个内置方法 <code>map()</code>，这个组合算子可用于 <code>Some -&gt; Some</code> 和
 <code>None -&gt; None</code> 这样的简单映射。多个不同的 <code>map()</code> 调用可以串起来，这样更加灵活。</p>
@@ -5985,7 +5985,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-56"><a class="header" href="#参见-56">参见：</a></h3>
-<p><a href="error/option_unwrap/../../fn/closures.html">闭包</a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a>, 和 <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.map"><code>Option::map()</code></a></p>
+<p><a href="error/option_unwrap/../../fn/closures.html">闭包</a>, <a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html"><code>Option</code></a>, 和 <a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html#method.map"><code>Option::map()</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="组合算子and_then"><a class="header" href="#组合算子and_then">组合算子：<code>and_then</code></a></h1>
 <p><code>map()</code> 以链式调用的方式来简化 <code>match</code> 语句。然而，如果以返回类型是 <code>Option&lt;T&gt;</code>
 的函数作为 <code>map()</code> 的参数，会导致出现嵌套形式 <code>Option&lt;Option&lt;T&gt;&gt;</code>。这样多层串联
@@ -6050,9 +6050,9 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-57"><a class="header" href="#参见-57">参见：</a></h3>
-<p><a href="error/option_unwrap/../../fn/closures.html">闭包</a>，<a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.map"><code>Option::map()</code></a>, 和 <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then"><code>Option::and_then()</code></a></p>
+<p><a href="error/option_unwrap/../../fn/closures.html">闭包</a>，<a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html#method.map"><code>Option::map()</code></a>, 和 <a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html#method.and_then"><code>Option::and_then()</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="结果-result"><a class="header" href="#结果-result">结果 <code>Result</code></a></h1>
-<p><a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> 是 <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a> 类型的更丰富的版本，描述的是可能
+<p><a href="https://rustwiki.org/zh-CN/std/result/enum.Result.html"><code>Result</code></a> 是 <a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html"><code>Option</code></a> 类型的更丰富的版本，描述的是可能
 的<strong>错误</strong>而不是可能的<strong>不存在</strong>。</p>
 <p>也就是说，<code>Result&lt;T，E&gt;</code> 可以有两个结果的其中一个：</p>
 <ul>
@@ -6062,7 +6062,7 @@ fn main() {
 <p>按照约定，预期结果是 “Ok”，而意外结果是 “Err”。</p>
 <p><code>Result</code> 有很多类似 <code>Option</code> 的方法。例如 <code>unwrap()</code>，它要么举出元素
 <code>T</code>，要么就 <code>panic</code>。 对于事件的处理，<code>Result</code> 和 <code>Option</code> 有很多相同的组合算子。</p>
-<p>在使用 Rust 时，你可能会遇到返回 <code>Result</code> 类型的方法，例如 <a href="https://doc.rust-lang.org/std/primitive.str.html#method.parse"><code>parse()</code></a>
+<p>在使用 Rust 时，你可能会遇到返回 <code>Result</code> 类型的方法，例如 <a href="https://rustwiki.org/zh-CN/std/primitive.str.html#method.parse"><code>parse()</code></a>
 方法。它并不是总能把字符串解析成指定的类型，所以 <code>parse()</code> 返回一个
 <code>Result</code> 表示可能的失败。</p>
 <p>我们来看看当 <code>parse()</code> 字符串成功和失败时会发生什么：</p>
@@ -6088,9 +6088,9 @@ fn main() {
 <p>上一节的 <code>multiply</code> 函数的 panic 设计不是健壮的（robust）。一般地，我们希望把
 错误返回给调用者，这样它可以决定回应错误的正确方式。</p>
 <p>首先，我们需要了解需要处理的错误类型是什么。为了确定 <code>Err</code> 的类型，我们可以
-用 <a href="https://doc.rust-lang.org/std/primitive.str.html#method.parse"><code>parse()</code></a> 来试验。Rust 已经为 <a href="https://doc.rust-lang.org/std/primitive.i32.html"><code>i32</code></a> 类型使用
-<a href="https://doc.rust-lang.org/std/str/trait.FromStr.html"><code>FromStr</code></a> trait 实现了 <code>parse()</code>。结果表明，这里的 <code>Err</code> 类型被指定为
-<a href="https://doc.rust-lang.org/std/num/struct.ParseIntError.html"><code>ParseIntError</code></a>。</p>
+用 <a href="https://rustwiki.org/zh-CN/std/primitive.str.html#method.parse"><code>parse()</code></a> 来试验。Rust 已经为 <a href="https://rustwiki.org/zh-CN/std/primitive.i32.html"><code>i32</code></a> 类型使用
+<a href="https://rustwiki.org/zh-CN/std/str/trait.FromStr.html"><code>FromStr</code></a> trait 实现了 <code>parse()</code>。结果表明，这里的 <code>Err</code> 类型被指定为
+<a href="https://rustwiki.org/zh-CN/std/num/struct.ParseIntError.html"><code>ParseIntError</code></a>。</p>
 <blockquote>
 <p>译注：原文没有具体讲如何确定 <code>Err</code> 的类型。由于目前用于获取类型的函数仍然是不
 稳定的，我们可以用间接的方法。使用下面的代码：</p>
@@ -6140,7 +6140,7 @@ fn main() {
 }
 </code></pre></pre>
 <p>幸运的是，<code>Option</code> 的 <code>map</code>、<code>and_then</code>、以及很多其他组合算子也为 <code>Result</code> 实现
-了。官方文档的 <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> 一节包含完整的方法列表。</p>
+了。官方文档的 <a href="https://rustwiki.org/zh-CN/std/result/enum.Result.html"><code>Result</code></a> 一节包含完整的方法列表。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::num::ParseIntError;
 
 // 就像 `Option` 那样，我们可以使用 `map()` 之类的组合算子。
@@ -6174,7 +6174,7 @@ fn main() {
 创建<a href="error/result/../../types/alias.html">别名</a>。若某个 <code>Result</code> 有可能被重用，我们可以方便地给它取一个别名。</p>
 <p>在模块的层面上创建别名特别有帮助。同一模块中的错误常常会有相同的 <code>Err</code> 类
 型，所以单个别名就能简便地定义<strong>所有</strong>相关的 <code>Result</code>。这太有用了，以至于标准库
-也提供了一个别名： <a href="https://doc.rust-lang.org/std/io/type.Result.html"><code>io::Result</code></a>！</p>
+也提供了一个别名： <a href="https://rustwiki.org/zh-CN/std/io/type.Result.html"><code>io::Result</code></a>！</p>
 <p>下面给出一个简短的示例来展示语法：</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::num::ParseIntError;
 
@@ -6202,7 +6202,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-58"><a class="header" href="#参见-58">参见：</a></h3>
-<p><a href="https://doc.rust-lang.org/std/io/type.Result.html"><code>io::Result</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/io/type.Result.html"><code>io::Result</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="提前返回"><a class="header" href="#提前返回">提前返回</a></h1>
 <p>在上一个例子中，我们显式地使用组合算子处理了错误。另一种处理错误的方式是使用
 <code>match</code> 语句和<strong>提前返回</strong>（early return）的结合。</p>
@@ -6454,10 +6454,10 @@ fn main() {
 }
 </code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="把错误-装箱"><a class="header" href="#把错误-装箱">把错误 “装箱”</a></h1>
-<p>如果又想写简单的代码，又想保存原始错误信息，一个方法是把它们<a href="https://doc.rust-lang.org/std/boxed/struct.Box.html">装箱</a>（<code>Box</code>）。这
-样做的坏处就是，被包装的错误类型只能在运行时了解，而不能被<a href="https://doc.rust-lang.org/book/second-edition/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch">静态地
+<p>如果又想写简单的代码，又想保存原始错误信息，一个方法是把它们<a href="https://rustwiki.org/zh-CN/std/boxed/struct.Box.html">装箱</a>（<code>Box</code>）。这
+样做的坏处就是，被包装的错误类型只能在运行时了解，而不能被<a href="https://rustwiki.org/zh-CN/book/ch17-02-trait-objects.html#trait-%E5%AF%B9%E8%B1%A1%E6%89%A7%E8%A1%8C%E5%8A%A8%E6%80%81%E5%88%86%E5%8F%91">静态地
 判别</a>。</p>
-<p>对任何实现了 <code>Error</code> trait 的类型，标准库的 <code>Box</code> 通过 <a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From</code></a> 为它们提供了
+<p>对任何实现了 <code>Error</code> trait 的类型，标准库的 <code>Box</code> 通过 <a href="https://rustwiki.org/zh-CN/std/convert/trait.From.html"><code>From</code></a> 为它们提供了
 到 <code>Box&lt;Error&gt;</code> 的转换。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::error;
 use std::fmt;
@@ -6513,7 +6513,7 @@ fn main() {
 }
 </code></pre></pre>
 <h3 id="参见-59"><a class="header" href="#参见-59">参见：</a></h3>
-<p><a href="https://doc.rust-lang.org/book/second-edition/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch">动态调度</a> and <a href="https://doc.rust-lang.org/std/error/trait.Error.html"><code>Error</code> trait</a></p>
+<p><a href="https://rustwiki.org/zh-CN/book/ch17-02-trait-objects.html#trait-%E5%AF%B9%E8%B1%A1%E6%89%A7%E8%A1%8C%E5%8A%A8%E6%80%81%E5%88%86%E5%8F%91">动态分发</a> and <a href="https://rustwiki.org/zh-CN/std/error/trait.Error.html"><code>Error</code> trait</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-的其他用法"><a class="header" href="#-的其他用法"><code>?</code> 的其他用法</a></h1>
 <p>注意在上一个例子中，我们调用 <code>parse</code> 后总是立即把错误从标准库错误 <code>map</code>
 到装箱的错误。</p>
@@ -6583,7 +6583,7 @@ fn main() {
 成 <code>?</code> 一样。与 <code>panic</code> 相比，这样做的区别在于返回类型是 <code>Result</code>，因而必须在顶层
 解构它们。</p>
 <h3 id="参见-60"><a class="header" href="#参见-60">参见：</a></h3>
-<p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From::from</code></a> and <a href="https://doc.rust-lang.org/reference/expressions/operator-expr.html#the--operator"><code>?</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/convert/trait.From.html"><code>From::from</code></a> and <a href="https://rustwiki.org/zh-CN/reference/expressions/operator-expr.html#%E9%97%AE%E5%8F%B7%E6%93%8D%E4%BD%9C%E7%AC%A6"><code>?</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="包裹错误"><a class="header" href="#包裹错误">包裹错误</a></h1>
 <p>把错误装箱这种做法也可以改成把它包裹到你自己的错误类型中。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::error;
@@ -6665,7 +6665,7 @@ fn main() {
 <p>这种做法会在错误处理中增加一些模板化的代码，而且也不是所有的应用都需要这样做。一些
 库可以帮你处理模板化代码的问题。</p>
 <h3 id="see-also-2"><a class="header" href="#see-also-2">See also:</a></h3>
-<p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From::from</code></a> and <a href="error/multiple_error_types/../../custom_types/enum.html"><code>枚举类型</code></a></p>
+<p><a href="https://rustwiki.org/zh-CN/std/convert/trait.From.html"><code>From::from</code></a> and <a href="error/multiple_error_types/../../custom_types/enum.html"><code>枚举类型</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="遍历-result"><a class="header" href="#遍历-result">遍历 <code>Result</code></a></h1>
 <p><code>Iter::map</code> 操作可能失败，比如：</p>
 <pre><pre class="playground"><code class="language-rust editable">fn main() {
@@ -6739,7 +6739,7 @@ fn main() {
 <li>堆分配的指针（heap allocated pointers）: <code>Box&lt;i32&gt;</code></li>
 </ul>
 <h3 id="参见-61"><a class="header" href="#参见-61">参见：</a></h3>
-<p><a href="primitives.html">原生类型</a> 和 <a href="https://doc.rust-lang.org/std/">标准库</a></p>
+<p><a href="primitives.html">原生类型</a> 和 <a href="https://rustwiki.org/zh-CN/std/">标准库</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="箱子栈和堆"><a class="header" href="#箱子栈和堆">箱子、栈和堆</a></h1>
 <p>在 Rust 中，所有值默认都是栈分配的。通过创建 <code>Box&lt;T&gt;</code>，可以把值<strong>装箱</strong>（boxed）来
 使它在堆上分配。箱子（box，即 <code>Box&lt;T&gt;</code> 类型的实例）是一个智能指针，指向堆分配
@@ -6865,7 +6865,7 @@ fn main() {
     println!(&quot;Updated vector: {:?}&quot;, xs);
 }
 </code></pre></pre>
-<p>更多 <code>Vec</code> 方法可以在 <a href="http://doc.rust-lang.org/std/vec/">std::vec</a> 模块中找到。</p>
+<p>更多 <code>Vec</code> 方法可以在 <a href="https://rustwiki.org/zh-CN/std/vec/">std::vec</a> 模块中找到。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="字符串"><a class="header" href="#字符串">字符串</a></h1>
 <p>Rust 中有两种字符串类型：<code>String</code> 和 <code>&amp;str</code>。</p>
 <p><code>String</code> 被存储为由字节组成的 vector（<code>Vec&lt;u8&gt;</code>），但保证了它一定是一个有效的
@@ -6911,7 +6911,7 @@ UTF-8 序列。<code>String</code> 是堆分配的，可增长的，且不是零
     println!(&quot;Bob says: {}&quot;, bob);
 }
 </code></pre></pre>
-<p>更多 <code>str</code>/<code>String</code> 方法可以在 <a href="http://doc.rust-lang.org/std/str/">std::str</a> 和 <a href="http://doc.rust-lang.org/std/string/">std::string</a> 模块中
+<p>更多 <code>str</code>/<code>String</code> 方法可以在 <a href="https://rustwiki.org/zh-CN/std/str/">std::str</a> 和 <a href="https://rustwiki.org/zh-CN/std/string/">std::string</a> 模块中
 找到。</p>
 <h2 id="字面量与转义字符"><a class="header" href="#字面量与转义字符">字面量与转义字符</a></h2>
 <p>书写含有特殊字符的字符串字面量有很多种方法。它们都会产生类似的 <code>&amp;str</code>，所以最好
@@ -6999,7 +6999,7 @@ fn main() {
 
 </code></pre></pre>
 <p>若需要在编码间转换，请使用 <a href="https://crates.io/crates/encoding">encoding</a> crate。</p>
-<p>Rust 参考中的 <a href="https://doc.rust-lang.org/reference/tokens.html">Tokens</a> 一章详细地列出了书写字符串字面量和转义字符的方法。</p>
+<p>Rust 参考中的 <a href="https://rustwiki.org/zh-CN/reference/tokens.html">Tokens</a> 一章详细地列出了书写字符串字面量和转义字符的方法。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="选项-option"><a class="header" href="#选项-option">选项 <code>Option</code></a></h1>
 <p>有时候想要捕捉到程序某部分的失败信息，而不是调用 <code>panic!</code>；这可使用 <code>Option</code>
 枚举类型来实现。</p>
@@ -7185,7 +7185,7 @@ fn main() {
     checked::op(1.0, 10.0);
 }
 </code></pre></pre>
-<p>记得查阅<a href="https://doc.rust-lang.org/std/result/index.html">文档</a>，里面有很多匹配/组合 <code>Result</code> 的方法。</p>
+<p>记得查阅<a href="https://rustwiki.org/zh-CN/std/result/index.html">文档</a>，里面有很多匹配/组合 <code>Result</code> 的方法。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="panic-1"><a class="header" href="#panic-1"><code>panic!</code></a></h1>
 <p><code>panic!</code> 宏可用于产生一个 panic （恐慌），并开始回退（unwind）它的栈。在回退栈
 的同时，运行时将会释放该线程所<strong>拥有</strong>的所有资源，这是通过调用线程中所有对象的
@@ -7284,7 +7284,7 @@ fn main() {
 }
 </code></pre></pre>
 <p>想要了解更多关于散列（hash）与散列表（hash map）（有时也称作 hash table）的
-工作原理，可以查看 Wikipedia 的<a href="http://en.wikipedia.org/wiki/Hash_table">散列表</a>词条。</p>
+工作原理，可以查看 Wikipedia 的<a href="https://en.wikipedia.org/wiki/Hash_table">散列表</a>词条。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="更改或自定义关键字类型"><a class="header" href="#更改或自定义关键字类型">更改或自定义关键字类型</a></h1>
 <p>任何实现了 <code>Eq</code> 和 <code>Hash</code> trait 的类型都可以充当 <code>HashMap</code> 的键。这包括：</p>
 <ul>
@@ -7294,7 +7294,7 @@ fn main() {
 将 <code>&amp;str</code> 作为散列表的 <code>.get()</code> 方法的参数，以获取值）</li>
 </ul>
 <p>注意到 <code>f32</code> 和 <code>f64</code> <strong>没有</strong>实现 <code>Hash</code>，这很大程度上是由于若使用浮点数作为
-散列表的键，<a href="http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems">浮点精度误差</a>会很容易导致错误。</p>
+散列表的键，<a href="https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems">浮点精度误差</a>会很容易导致错误。</p>
 <p>对于所有的集合类（collection class），如果它们包含的类型都分别实现了 <code>Eq</code>
 和 <code>Hash</code>，那么这些集合类也就实现了 <code>Eq</code> 和 <code>Hash</code>。例如，若 <code>T</code> 实现了
 <code>Hash</code>，则 <code>Vec&lt;T&gt;</code> 也实现了 <code>Hash</code>。</p>
@@ -7364,7 +7364,7 @@ fn main(){
 实际上只是对 <code>HashMap&lt;T, ()&gt;</code> 的封装）。</p>
 <p>你可能会问：“这有什么意义呢？我完全可以将键存储到一个 <code>Vec</code> 中呀。”</p>
 <p><code>HashSet</code> 的独特之处在于，它保证了不会出现重复的元素。这是任何 set 集合类型（set
-collection）遵循的规定。<code>HashSet</code> 只是它的一个实现。（参见：<a href="http://doc.rust-lang.org/std/collections/struct.BTreeSet.html"><code>BTreeSet</code></a>）</p>
+collection）遵循的规定。<code>HashSet</code> 只是它的一个实现。（参见：<a href="https://rustwiki.org/zh-CN/std/collections/struct.BTreeSet.html"><code>BTreeSet</code></a>）</p>
 <p>如果插入的值已经存在于 <code>HashSet</code> 中（也就是，新值等于已存在的值，并且拥有相同
 的散列值），那么新值将会替换旧的值。</p>
 <p>如果你不想要一样东西出现多于一次，或者你要判断一样东西是不是已经存在，这种做法
@@ -7421,7 +7421,7 @@ fn main() {
              a.symmetric_difference(&amp;b).collect::&lt;Vec&lt;&amp;i32&gt;&gt;());
 }
 </code></pre></pre>
-<p>（例子改编自<a href="http://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference">文档</a>。）</p>
+<p>（例子改编自<a href="https://rustwiki.org/zh-CN/std/collections/struct.HashSet.html#method.difference">文档</a>。）</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="标准库更多介绍"><a class="header" href="#标准库更多介绍">标准库更多介绍</a></h1>
 <p>标准库也提供了很多其他类型来支持某些功能，例如：</p>
 <ul>
@@ -7431,7 +7431,7 @@ fn main() {
 </ul>
 <p>这些内容在<a href="primitives.html">原生类型</a>之外进行了有效扩充。</p>
 <h3 id="参见-62"><a class="header" href="#参见-62">参见：</a></h3>
-<p><a href="primitives.html">原生类型</a> 和 <a href="https://doc.rust-lang.org/std/">标准库类型</a></p>
+<p><a href="primitives.html">原生类型</a> 和 <a href="https://rustwiki.org/zh-CN/std/">标准库类型</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="线程"><a class="header" href="#线程">线程</a></h1>
 <p>Rust 通过 <code>spawn</code> 函数提供了创建本地操作系统（native OS）线程的机制，该函数的参数是一个通过值捕获变量的闭包（moving closure）。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::thread;
@@ -7577,11 +7577,11 @@ fn main() {
 <ul>
 <li><a href="std_misc/threads/../threads.html">线程</a></li>
 <li><a href="std_misc/threads/../../std/vec.html">向量</a>和<a href="std_misc/threads/../../trait/iter.html">迭代器</a></li>
-<li><a href="std_misc/threads/../../fn/closures.html">闭包</a>、<a href="std_misc/threads/../../scope/move.html">移动</a>语义和<a href="https://doc.rust-lang.org/book/ch13-01-closures.html#closures-can-capture-their-environment"><code>move</code>闭包</a></li>
-<li><a href="https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html#destructuring-to-break-apart-values">解构</a>赋值</li>
-<li>使用<a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect">涡轮鱼写法</a>帮助类型推断</li>
+<li><a href="std_misc/threads/../../fn/closures.html">闭包</a>、<a href="std_misc/threads/../../scope/move.html">移动</a>语义和<a href="https://rustwiki.org/zh-CN/book/ch13-01-closures.html#closures-can-capture-their-environment"><code>move</code>闭包</a></li>
+<li><a href="https://rustwiki.org/zh-CN/book/ch18-03-pattern-syntax.html#%E8%A7%A3%E6%9E%84%E5%B9%B6%E5%88%86%E8%A7%A3%E5%80%BC">解构</a>赋值</li>
+<li>使用<a href="https://rustwiki.org/zh-CN/std/iter/trait.Iterator.html#method.collect">涡轮鱼写法</a>帮助类型推断</li>
 <li><a href="std_misc/threads/../../error/option_unwrap.html">unwrap vs. expect</a></li>
-<li><a href="https://doc.rust-lang.org/book/loops.html#enumerate">枚举类型</a></li>
+<li><a href="https://rustwiki.org/zh-CN/book/ch03-05-control-flow.html#%E4%BD%BF%E7%94%A8-loop-%E9%87%8D%E5%A4%8D%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81">枚举类型</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="通道"><a class="header" href="#通道">通道</a></h1>
 <p>Rust 为线程之间的通信提供了异步的通道（<code>channel</code>）。通道允许两个端点之间信息的
@@ -7660,7 +7660,7 @@ fn main() {
 <p>记得看看其他的 <code>Path</code> 方法（<code>posix::Path</code> 或 <code>windows::Path</code> 的），还有
 <code>Metadata</code> 结构体类型。</p>
 <h3 id="参见-64"><a class="header" href="#参见-64">参见</a></h3>
-<p><a href="https://doc.rust-lang.org/std/ffi/struct.OsStr.html">OsStr</a> 和 <a href="https://doc.rust-lang.org/std/fs/struct.Metadata.html">Metadata</a>。</p>
+<p><a href="https://rustwiki.org/zh-CN/std/ffi/struct.OsStr.html">OsStr</a> 和 <a href="https://rustwiki.org/zh-CN/std/fs/struct.Metadata.html">Metadata</a>。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="文件输入输出io"><a class="header" href="#文件输入输出io">文件输入输出（I/O）</a></h1>
 <p><code>File</code> 结构体表示一个被打开的文件（它包裹了一个文件描述符），并赋予了对所表示的
 文件的读写能力。</p>
@@ -8195,7 +8195,7 @@ impl fmt::Debug for Complex {
 </ul>
 <h2 id="参见-66"><a class="header" href="#参见-66">参见</a></h2>
 <ul>
-<li><a href="https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html">TRPL</a> 中关于测试的章节</li>
+<li><a href="https://rustwiki.org/zh-CN/book/second-edition/ch11-00-testing.html">TRPL</a> 中关于测试的章节</li>
 <li><a href="https://rust-lang-nursery.github.io/api-guidelines/documentation.html">API 指导原则</a>中关于文档测试的部分</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="单元测试"><a class="header" href="#单元测试">单元测试</a></h1>
@@ -8576,7 +8576,7 @@ mod tests {
 }
 </code></pre>
 <h2 id="参见-68"><a class="header" href="#参见-68">参见</a></h2>
-<p><a href="http://doc.crates.io/specifying-dependencies.html">Cargo</a> 文档中关于指定依赖的部分。</p>
+<p><a href="https://doc.crates.io/specifying-dependencies.html">Cargo</a> 文档中关于指定依赖的部分。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="不安全操作"><a class="header" href="#不安全操作">不安全操作</a></h1>
 <p>在本章一开始，我们借用<a href="unsafe">官方文档</a>的一句话，“在整个代码库（code base，指
 构建一个软件系统所使用的全部代码）中，要尽可能减少不安全代码的量”。记住这句
@@ -8602,7 +8602,7 @@ mod tests {
 </code></pre></pre>
 <h3 id="调用不安全函数"><a class="header" href="#调用不安全函数">调用不安全函数</a></h3>
 <p>一些函数可以声明为不安全的（<code>unsafe</code>），这意味着在使用它时保证正确性不再是编译器
-的责任，而是程序员的。一个例子就是 <a href="https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html"><code>std::slice::from_raw_parts</code></a>，向它传入指向
+的责任，而是程序员的。一个例子就是 <a href="https://rustwiki.org/zh-CN/std/slice/fn.from_raw_parts.html"><code>std::slice::from_raw_parts</code></a>，向它传入指向
 第一个元素的指针和长度参数，它会创建一个切片。</p>
 <pre><pre class="playground"><code class="language-rust editable">use std::slice;
 
@@ -8659,7 +8659,7 @@ fn main() {
 <li>基准测试（benchmark）：对功能进行基准测试，保证其运行速度足够快。</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="文档"><a class="header" href="#文档">文档</a></h1>
-<p>文档注释对于需要文档的大型项目来说非常重要。当运行 <a href="http://doc.rust-lang.org/book/documentation.html">Rustdoc</a>，文档注释就会
+<p>文档注释对于需要文档的大型项目来说非常重要。当运行 <a href="https://rustwiki.org/zh-CN/book/documentation.html">Rustdoc</a>，文档注释就会
 编译成文档。它们使用 <code>///</code> 标记，并支持 <a href="https://en.wikipedia.org/wiki/Markdown"><code>Markdown</code></a>。</p>
 <pre><pre class="playground"><code class="language-rust editable ignore mdbook-runnable">#![crate_name = &quot;doc&quot;]
 
@@ -8729,7 +8729,7 @@ $ rustdoc --test --extern doc=&quot;libdoc.rlib&quot; doc.rs
 ```
 </code></pre>
 <h2 id="在文档中使用"><a class="header" href="#在文档中使用">在文档中使用</a></h2>
-<p>可能你已经在某些 <a href="https://doc.rust-lang.org/core/">Rust 官方文档</a>中注意到了一个名为 “Run” 的按钮，该按钮在 Rust Playground 的新选项卡中打开了代码示例。如果使用名为的 <a href="https://doc.rust-lang.org/rustdoc/the-doc-attribute.html#html_playground_url"><code>html_playground_url</code></a> 的 #[doc] 属性，则启用此功能。</p>
+<p>可能你已经在某些 <a href="https://rustwiki.org/zh-CN/core/">Rust 官方文档</a>中注意到了一个名为 “Run” 的按钮，该按钮在 Rust Playground 的新选项卡中打开了代码示例。如果使用名为的 <a href="https://doc.rust-lang.org/rustdoc/the-doc-attribute.html#html_playground_url"><code>html_playground_url</code></a> 的 #[doc] 属性，则启用此功能。</p>
 <h3 id="参见-69"><a class="header" href="#参见-69">参见：</a></h3>
 <ul>
 <li><a href="https://play.rust-lang.org/">The Rust Playground</a></li>
