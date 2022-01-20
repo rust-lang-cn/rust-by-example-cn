@@ -90,5 +90,5 @@ fn main() {
 [`attributes`][attributes] 和 [解构][destructuring]
 
 [attributes]: ../attribute.md
-[c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
+[c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [destructuring]: ../flow_control/match/destructuring.md

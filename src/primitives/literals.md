@@ -40,5 +40,5 @@ fn main() {
 }
 ```
 
-[rust op-prec]: http://doc.rust-lang.org/reference.html#operator-precedence
+[rust op-prec]: https://rustwiki.org/zh-CN/reference/expressions.html#表达式的优先级
 [op-prec]: https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages

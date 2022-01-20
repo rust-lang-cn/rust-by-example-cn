@@ -67,5 +67,5 @@ fn main() {
 
 （例子改编自[文档][hash-set]。）
 
-[treeset]: http://doc.rust-lang.org/std/collections/struct.BTreeSet.html
-[hash-set]: http://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference
+[treeset]: https://rustwiki.org/zh-CN/std/collections/struct.BTreeSet.html
+[hash-set]: https://rustwiki.org/zh-CN/std/collections/struct.HashSet.html#method.difference

@@ -63,7 +63,7 @@
 
 [website]: https://doc.rust-lang.org/rust-by-example/
 [book-cn]: https://rustwiki.org/zh-CN/book/
-[rust]: http://www.rust-lang.org/
+[rust]: https://www.rust-lang.org/
 [install]: https://www.rust-lang.org/tools/install
-[std]: http://doc.rust-lang.org/std/
+[std]: https://rustwiki.org/zh-CN/std/
 [home]: https://github.com/rust-lang-cn/rust-by-example-cn

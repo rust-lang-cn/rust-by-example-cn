@@ -39,4 +39,4 @@ mod tests {
 ## 参见
 [Cargo][cargo] 文档中关于指定依赖的部分。
 
-[cargo]: http://doc.crates.io/specifying-dependencies.html
+[cargo]: https://doc.crates.io/specifying-dependencies.html

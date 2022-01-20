@@ -81,7 +81,7 @@ fn main() {
 
 [`std::mem::drop`][drop], [`Fn`][fn], [`FnMut`][fnmut], 和 [`FnOnce`][fnonce]
 
-[drop]: http://doc.rust-lang.org/std/mem/fn.drop.html
-[fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
-[fnmut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fnonce]: http://doc.rust-lang.org/std/ops/trait.FnOnce.html
+[drop]: https://rustwiki.org/zh-CN/std/mem/fn.drop.html
+[fn]: https://rustwiki.org/zh-CN/std/ops/trait.Fn.html
+[fnmut]: https://rustwiki.org/zh-CN/std/ops/trait.FnMut.html
+[fnonce]: https://rustwiki.org/zh-CN/std/ops/trait.FnOnce.html

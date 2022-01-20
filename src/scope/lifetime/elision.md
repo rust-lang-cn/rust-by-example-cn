@@ -38,4 +38,4 @@ fn main() {
 
 [省略][elision]
 
-[elision]: http://doc.rust-lang.org/book/lifetimes.html#lifetime-elision
+[elision]: https://rustwiki.org/zh-CN/book/ch10-03-lifetime-syntax.html#生命周期省略lifetime-elision

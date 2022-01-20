@@ -48,4 +48,4 @@ fn main() {
 
 [`std::iter::Iterator::any`][any]
 
-[any]: http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any
+[any]: https://rustwiki.org/zh-CN/std/iter/trait.Iterator.html#method.any

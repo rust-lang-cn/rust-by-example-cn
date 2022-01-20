@@ -96,7 +96,7 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
 [`match`][match], [`fn`][fn], 和 [`String`][str], [“类型别名枚举变量” 的 RFC][type_alias_rfc]
 
 [attributes]: ../attribute.md
-[c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
+[c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [match]: ../flow_control/match.md
 [fn]: ../fn.md
 [str]: ../std/str.md

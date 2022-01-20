@@ -36,6 +36,6 @@ fn main() {
 
 [`std::cmp::Eq`][eq], [`std::cmp::Ord`][ord], 和 [`trait`][traits]
 
-[eq]: http://doc.rust-lang.org/std/cmp/trait.Eq.html
-[ord]: http://doc.rust-lang.org/std/cmp/trait.Ord.html
+[eq]: https://rustwiki.org/zh-CN/std/cmp/trait.Eq.html
+[ord]: https://rustwiki.org/zh-CN/std/cmp/trait.Ord.html
 [traits]: ../../trait.md

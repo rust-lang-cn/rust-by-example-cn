@@ -58,5 +58,5 @@ $ rustdoc --test --extern doc="libdoc.rlib" doc.rs
 （当你对库 crate 上运行 `cargo test` 时，Cargo 将自动生成并运行正确的 `rustc`
 和 `rustdoc` 命令。）
 
-[1]: http://doc.rust-lang.org/book/documentation.html
+[1]: https://rustwiki.org/zh-CN/book/documentation.html
 [2]: https://en.wikipedia.org/wiki/Markdown

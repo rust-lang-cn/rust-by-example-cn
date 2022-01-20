@@ -48,4 +48,4 @@ fn main() {
 
 [`std::iter::Iterator::find`][find]
 
-[find]: http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find
+[find]: https://rustwiki.org/zh-CN/std/iter/trait.Iterator.html#method.find

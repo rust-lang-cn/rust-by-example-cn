@@ -80,5 +80,5 @@ fn main(){
 }
 ```
 
-[hash]: http://en.wikipedia.org/wiki/Hash_function
-[floating]: http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems
+[hash]: https://en.wikipedia.org/wiki/Hash_function
+[floating]: https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems

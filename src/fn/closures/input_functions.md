@@ -30,6 +30,6 @@ fn main() {
 
 [`Fn`][fn], [`FnMut`][fn_mut], 和 [`FnOnce`][fn_once]
 
-[fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
-[fn_mut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fn_once]: http://doc.rust-lang.org/std/ops/trait.FnOnce.html
+[fn]: https://rustwiki.org/zh-CN/std/ops/trait.Fn.html
+[fn_mut]: https://rustwiki.org/zh-CN/std/ops/trait.FnMut.html
+[fn_once]: https://rustwiki.org/zh-CN/std/ops/trait.FnOnce.html

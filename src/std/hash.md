@@ -57,4 +57,4 @@ fn main() {
 想要了解更多关于散列（hash）与散列表（hash map）（有时也称作 hash table）的
 工作原理，可以查看 Wikipedia 的[散列表][wiki-hash]词条。
 
-[wiki-hash]: http://en.wikipedia.org/wiki/Hash_table
+[wiki-hash]: https://en.wikipedia.org/wiki/Hash_table

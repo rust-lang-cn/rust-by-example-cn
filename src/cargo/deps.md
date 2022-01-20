@@ -36,7 +36,7 @@ authors = ["mark"]
 
 `package` 下面的 `name` 字段表明项目的名称。 如果您发布 crate（后面将做更多介绍），那么 `crates.io` 将使用此字段标明的名称。 这也是编译时输出的二进制可执行文件的名称。
 
-`version` 字段是使用[语义版本控制](http://semver.org/)（Semantic
+`version` 字段是使用[语义版本控制](https://semver.org/)（Semantic
 Versioning）的 crate 版本号。
 
 `authors` 字段表明发布 crate 时的作者列表。

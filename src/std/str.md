@@ -153,7 +153,7 @@ fn main() {
 
 Rust 参考中的 [Tokens][tokens] 一章详细地列出了书写字符串字面量和转义字符的方法。
 
-[str]: http://doc.rust-lang.org/std/str/
-[string]: http://doc.rust-lang.org/std/string/
+[str]: https://rustwiki.org/zh-CN/std/str/
+[string]: https://rustwiki.org/zh-CN/std/string/
 [tokens]: https://rustwiki.org/zh-CN/reference/tokens.html
 [encoding-crate]: https://crates.io/crates/encoding

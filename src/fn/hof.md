@@ -43,5 +43,5 @@ fn main() {
 
 [Option][option] 和 [迭代器][iter] 都实现了不少高阶函数。
 
-[option]: http://doc.rust-lang.org/core/option/enum.Option.html
-[iter]: http://doc.rust-lang.org/core/iter/trait.Iterator.html
+[option]: https://rustwiki.org/zh-CN/core/option/enum.Option.html
+[iter]: https://rustwiki.org/zh-CN/core/iter/trait.Iterator.html

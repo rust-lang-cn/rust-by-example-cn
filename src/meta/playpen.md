@@ -41,6 +41,6 @@ fn main() {
 [rust-playground]: https://play.rust-lang.org/
 [next-gen-playpen]: https://github.com/integer32llc/rust-playground/
 [mdbook]: https://github.com/rust-lang/mdBook
-[official-rust-docs]: https://doc.rust-lang.org/core/
+[official-rust-docs]: https://rustwiki.org/zh-CN/core/
 [rustdoc-book]: https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html
 [html-playground-url]: https://doc.rust-lang.org/rustdoc/the-doc-attribute.html#html_playground_url

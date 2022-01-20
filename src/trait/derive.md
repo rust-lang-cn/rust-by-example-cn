@@ -71,7 +71,7 @@ fn main() {
 [ord]: https://rustwiki.org/zh-CN/std/cmp/trait.Ord.html
 [partial-ord]: https://rustwiki.org/zh-CN/std/cmp/trait.PartialOrd.html
 [clone]: https://rustwiki.org/zh-CN/std/clone/trait.Clone.html
-[copy]: https://doc.rust-lang.org/core/marker/trait.Copy.html
+[copy]: https://rustwiki.org/zh-CN/core/marker/trait.Copy.html
 [hash]: https://rustwiki.org/zh-CN/std/hash/trait.Hash.html
 [default]: https://rustwiki.org/zh-CN/std/default/trait.Default.html
 [debug]: https://rustwiki.org/zh-CN/std/fmt/trait.Debug.html

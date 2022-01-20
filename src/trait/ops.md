@@ -55,6 +55,6 @@ fn main() {
 
 [Add][add], [语法索引][syntax]
 
-[add]: http://doc.rust-lang.org/core/ops/trait.Add.html
-[ops]: http://doc.rust-lang.org/core/ops/
+[add]: https://rustwiki.org/zh-CN/core/ops/trait.Add.html
+[ops]: https://rustwiki.org/zh-CN/core/ops/
 [syntax]: https://rustwiki.org/zh-CN/book/appendix-02-operators.html

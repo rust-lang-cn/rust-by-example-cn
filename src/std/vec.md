@@ -59,4 +59,4 @@ fn main() {
 
 更多 `Vec` 方法可以在 [std::vec][vec] 模块中找到。
 
-[vec]: http://doc.rust-lang.org/std/vec/
+[vec]: https://rustwiki.org/zh-CN/std/vec/
