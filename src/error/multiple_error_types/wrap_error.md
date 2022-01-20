@@ -88,5 +88,4 @@ fn main() {
 [`From::from`][from] and [`枚举类型`][enums]
 
 [from]: https://rustwiki.org/zh-CN/std/convert/trait.From.html
-[q_mark]: https://doc.rust-lang.org/reference/expressions/operator-expr.html#the--operator
 [enums]: ../../custom_types/enum.md

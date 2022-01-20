@@ -75,4 +75,4 @@ fn main() {
 [hash]: https://rustwiki.org/zh-CN/std/hash/trait.Hash.html
 [default]: https://rustwiki.org/zh-CN/std/default/trait.Default.html
 [debug]: https://rustwiki.org/zh-CN/std/fmt/trait.Debug.html
-[derive]: https://doc.rust-lang.org/reference/attributes.html#derive
+[derive]: https://rustwiki.org/zh-CN/reference/attributes.html#派生

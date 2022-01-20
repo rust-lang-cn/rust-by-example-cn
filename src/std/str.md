@@ -155,5 +155,5 @@ Rust 参考中的 [Tokens][tokens] 一章详细地列出了书写字符串字面
 
 [str]: http://doc.rust-lang.org/std/str/
 [string]: http://doc.rust-lang.org/std/string/
-[tokens]: https://doc.rust-lang.org/reference/tokens.html
+[tokens]: https://rustwiki.org/zh-CN/reference/tokens.html
 [encoding-crate]: https://crates.io/crates/encoding
