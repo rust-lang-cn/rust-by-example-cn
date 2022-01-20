@@ -73,5 +73,5 @@ fn main() {
 
 [attributes]: https://doc.rust-lang.org/reference/attributes.html
 [derive]: ../../trait/derive.md
-[fmt]: https://doc.rust-lang.org/std/fmt/
+[fmt]: https://rustwiki.org/zh-CN/std/fmt/
 [structs]: ../../custom_types/structs.md

@@ -140,6 +140,6 @@ fn main() {
 [closures]: ../../fn/closures.md
 [move]: ../../scope/move.md
 [move_closure]: https://doc.rust-lang.org/book/ch13-01-closures.html#closures-can-capture-their-environment
-[turbofish]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect
+[turbofish]: https://rustwiki.org/zh-CN/std/iter/trait.Iterator.html#method.collect
 [unwrap]: ../../error/option_unwrap.md
 [enumerate]: https://doc.rust-lang.org/book/loops.html#enumerate

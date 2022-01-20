@@ -77,5 +77,5 @@ fn main() {
 
 [combinators]: https://doc.rust-lang.org/book/glossary.html#combinators
 [closures]: ../../fn/closures.md
-[option]: https://doc.rust-lang.org/std/option/enum.Option.html
-[map]: https://doc.rust-lang.org/std/option/enum.Option.html#method.map
+[option]: https://rustwiki.org/zh-CN/std/option/enum.Option.html
+[map]: https://rustwiki.org/zh-CN/std/option/enum.Option.html#method.map

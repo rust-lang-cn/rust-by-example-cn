@@ -97,8 +97,8 @@ fn main() {
 }
 ```
 
-[parse]: https://doc.rust-lang.org/std/primitive.str.html#method.parse
-[from_str]: https://doc.rust-lang.org/std/str/trait.FromStr.html
-[i32]: https://doc.rust-lang.org/std/primitive.i32.html
-[parse_int_error]: https://doc.rust-lang.org/std/num/struct.ParseIntError.html
-[result]: https://doc.rust-lang.org/std/result/enum.Result.html
+[parse]: https://rustwiki.org/zh-CN/std/primitive.str.html#method.parse
+[from_str]: https://rustwiki.org/zh-CN/std/str/trait.FromStr.html
+[i32]: https://rustwiki.org/zh-CN/std/primitive.i32.html
+[parse_int_error]: https://rustwiki.org/zh-CN/std/num/struct.ParseIntError.html
+[result]: https://rustwiki.org/zh-CN/std/result/enum.Result.html

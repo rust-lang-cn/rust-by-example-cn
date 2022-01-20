@@ -4,9 +4,9 @@
 类型转换的通用 trait。不同于 `From`/`Into` 的是，`TryFrom` 和 `TryInto` trait 用于易出错的转换，也正因如此，其返回值是 [`Result`] 型。
 
 [from-into]: from_into.html
-[`TryFrom`]: https://doc.rust-lang.org/std/convert/trait.TryFrom.html
-[`TryInto`]: https://doc.rust-lang.org/std/convert/trait.TryInto.html
-[`Result`]: https://doc.rust-lang.org/std/result/enum.Result.html
+[`TryFrom`]: https://rustwiki.org/zh-CN/std/convert/trait.TryFrom.html
+[`TryInto`]: https://rustwiki.org/zh-CN/std/convert/trait.TryInto.html
+[`Result`]: https://rustwiki.org/zh-CN/std/result/enum.Result.html
 
 ```rust,editable
 use std::convert::TryFrom;

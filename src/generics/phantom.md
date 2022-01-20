@@ -58,4 +58,4 @@ fn main() {
 [Derive]: ../trait/derive.md
 [struct]: ../custom_types/structs.md
 [TupleStructs]: ../custom_types/structs.md
-[std::marker::PhantomData]: https://doc.rust-lang.org/std/marker/struct.PhantomData.html
+[std::marker::PhantomData]: https://rustwiki.org/zh-CN/std/marker/struct.PhantomData.html

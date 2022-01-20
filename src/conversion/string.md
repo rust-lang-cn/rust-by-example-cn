@@ -43,8 +43,8 @@ fn main() {
 }
 ```
 
-[`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html
-[Display]: https://doc.rust-lang.org/std/fmt/trait.Display.html
+[`ToString`]: https://rustwiki.org/zh-CN/std/string/trait.ToString.html
+[Display]: https://rustwiki.org/zh-CN/std/fmt/trait.Display.html
 [print]: ../hello/print.md
-[`parse`]: https://doc.rust-lang.org/std/primitive.str.html#method.parse
-[`FromStr`]: https://doc.rust-lang.org/std/str/trait.FromStr.html
+[`parse`]: https://rustwiki.org/zh-CN/std/primitive.str.html#method.parse
+[`FromStr`]: https://rustwiki.org/zh-CN/std/str/trait.FromStr.html

@@ -51,4 +51,4 @@ fn main() {
 }
 ```
 
-[clone]: https://doc.rust-lang.org/std/clone/trait.Clone.html
+[clone]: https://rustwiki.org/zh-CN/std/clone/trait.Clone.html

@@ -5,5 +5,5 @@ Rust 使用 [trait][traits] 解决类型之间的转换问题。最一般的转�
 从 `String` 转换到别的类型，以及把别的类型转换到 `String` 时。
 
 [traits]: trait.html
-[`From`]: https://doc.rust-lang.org/std/convert/trait.From.html
-[`Into`]: https://doc.rust-lang.org/std/convert/trait.Into.html
+[`From`]: https://rustwiki.org/zh-CN/std/convert/trait.From.html
+[`Into`]: https://rustwiki.org/zh-CN/std/convert/trait.Into.html

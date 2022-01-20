@@ -42,5 +42,5 @@ fn main() {
 
 [OsStr][1] 和 [Metadata][2]。
 
-[1]: https://doc.rust-lang.org/std/ffi/struct.OsStr.html
-[2]: https://doc.rust-lang.org/std/fs/struct.Metadata.html
+[1]: https://rustwiki.org/zh-CN/std/ffi/struct.OsStr.html
+[2]: https://rustwiki.org/zh-CN/std/fs/struct.Metadata.html

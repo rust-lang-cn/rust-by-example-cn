@@ -46,7 +46,7 @@ fn main() {
 和 [`FnOnce`][fn_once]
 
 [generics]: ../../generics.md
-[fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
-[fn_mut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fn_once]: https://doc.rust-lang.org/std/ops/trait.FnOnce.html
+[fn]: https://rustwiki.org/zh-CN/std/ops/trait.Fn.html
+[fn_mut]: https://rustwiki.org/zh-CN/std/ops/trait.FnMut.html
+[fn_once]: https://rustwiki.org/zh-CN/std/ops/trait.FnOnce.html
 [thorough_analysis]: https://huonw.github.io/blog/2015/05/finding-closure-in-rust/

@@ -51,4 +51,4 @@ fn main() {
 }
 ```
 
-[Drop]: https://doc.rust-lang.org/std/ops/trait.Drop.html
+[Drop]: https://rustwiki.org/zh-CN/std/ops/trait.Drop.html

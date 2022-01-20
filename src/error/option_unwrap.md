@@ -60,4 +60,4 @@ fn main() {
 }
 ```
 
-[expect]: https://doc.rust-lang.org/std/option/enum.Option.html#method.expect
+[expect]: https://rustwiki.org/zh-CN/std/option/enum.Option.html#method.expect

@@ -54,4 +54,4 @@ fn main() {
 我们就不能预测会发生些什么了。
 
 [unsafe]: https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html
-[`std::slice::from_raw_parts`]: https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html
+[`std::slice::from_raw_parts`]: https://rustwiki.org/zh-CN/std/slice/fn.from_raw_parts.html

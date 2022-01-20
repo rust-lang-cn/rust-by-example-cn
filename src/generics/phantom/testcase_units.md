@@ -86,4 +86,4 @@ fn main() {
 [ref]: ../../scope/borrow/ref.md
 [Traits (`X for Y`)]: ../../trait.md
 [TupleStructs]: ../../custom_types/structs.md
-[std::marker::PhantomData]: https://doc.rust-lang.org/std/marker/struct.PhantomData.html
+[std::marker::PhantomData]: https://rustwiki.org/zh-CN/std/marker/struct.PhantomData.html

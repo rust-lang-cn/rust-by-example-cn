@@ -66,13 +66,13 @@ fn main() {
 [`derive`][derive]
 
 [attribute]: ../attribute.md
-[eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
-[partial-eq]: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
-[ord]: https://doc.rust-lang.org/std/cmp/trait.Ord.html
-[partial-ord]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
-[clone]: https://doc.rust-lang.org/std/clone/trait.Clone.html
+[eq]: https://rustwiki.org/zh-CN/std/cmp/trait.Eq.html
+[partial-eq]: https://rustwiki.org/zh-CN/std/cmp/trait.PartialEq.html
+[ord]: https://rustwiki.org/zh-CN/std/cmp/trait.Ord.html
+[partial-ord]: https://rustwiki.org/zh-CN/std/cmp/trait.PartialOrd.html
+[clone]: https://rustwiki.org/zh-CN/std/clone/trait.Clone.html
 [copy]: https://doc.rust-lang.org/core/marker/trait.Copy.html
-[hash]: https://doc.rust-lang.org/std/hash/trait.Hash.html
-[default]: https://doc.rust-lang.org/std/default/trait.Default.html
-[debug]: https://doc.rust-lang.org/std/fmt/trait.Debug.html
+[hash]: https://rustwiki.org/zh-CN/std/hash/trait.Hash.html
+[default]: https://rustwiki.org/zh-CN/std/default/trait.Default.html
+[debug]: https://rustwiki.org/zh-CN/std/fmt/trait.Debug.html
 [derive]: https://doc.rust-lang.org/reference/attributes.html#derive

@@ -76,7 +76,7 @@ fn main() {
 
 [`std::fmt`][fmt], [`macros`][macros], [`struct`][structs] 和 [`traits`][traits]
 
-[fmt]: https://doc.rust-lang.org/std/fmt/
+[fmt]: https://rustwiki.org/zh-CN/std/fmt/
 [macros]: ../macros.md
 [string]: ../std/str.md
 [structs]: ../custom_types/structs.md

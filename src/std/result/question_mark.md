@@ -74,4 +74,4 @@ fn main() {
 
 记得查阅[文档][docs]，里面有很多匹配/组合 `Result` 的方法。
 
-[docs]: https://doc.rust-lang.org/std/result/index.html
+[docs]: https://rustwiki.org/zh-CN/std/result/index.html

@@ -41,4 +41,4 @@ fn main() {
 [`io::Result`][io_result]
 
 [typealias]: ../../types/alias.md
-[io_result]: https://doc.rust-lang.org/std/io/type.Result.html
+[io_result]: https://rustwiki.org/zh-CN/std/io/type.Result.html

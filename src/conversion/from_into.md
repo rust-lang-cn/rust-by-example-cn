@@ -63,5 +63,5 @@ fn main() {
 }
 ```
 
-[`From`]: https://doc.rust-lang.org/std/convert/trait.From.html
-[`Into`]: https://doc.rust-lang.org/std/convert/trait.Into.html
+[`From`]: https://rustwiki.org/zh-CN/std/convert/trait.From.html
+[`Into`]: https://rustwiki.org/zh-CN/std/convert/trait.Into.html

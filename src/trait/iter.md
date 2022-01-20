@@ -82,5 +82,5 @@ fn main() {
 }
 ```
 
-[intoiter]: https://doc.rust-lang.org/std/iter/trait.IntoIterator.html
+[intoiter]: https://rustwiki.org/zh-CN/std/iter/trait.IntoIterator.html
 [iter]: http://doc.rust-lang.org/core/iter/trait.Iterator.html

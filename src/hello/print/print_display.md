@@ -113,7 +113,7 @@ Debug: Complex { real: 3.3, imag: 7.2 }
 [`trait`][traits], 和 [use][use]
 
 [derive]: ../../trait/derive.md
-[fmt]: https://doc.rust-lang.org/std/fmt/
+[fmt]: https://rustwiki.org/zh-CN/std/fmt/
 [macros]: ../../macros.md
 [structs]: ../../custom_types/structs.md
 [traits]: ../../trait.md

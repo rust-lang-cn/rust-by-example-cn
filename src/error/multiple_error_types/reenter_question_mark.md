@@ -80,5 +80,5 @@ fn main() {
 
 [`From::from`][from] and [`?`][q_mark]
 
-[from]: https://doc.rust-lang.org/std/convert/trait.From.html
+[from]: https://rustwiki.org/zh-CN/std/convert/trait.From.html
 [q_mark]: https://doc.rust-lang.org/reference/expressions/operator-expr.html#the--operator

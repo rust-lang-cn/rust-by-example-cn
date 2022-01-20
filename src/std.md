@@ -14,4 +14,4 @@
 [原生类型][primitives] 和 [标准库][std]
 
 [primitives]: primitives.md
-[std]: https://doc.rust-lang.org/std/
+[std]: https://rustwiki.org/zh-CN/std/
