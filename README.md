@@ -37,17 +37,17 @@ $ mdbook serve
 
 ## 其他语言版本
 
-* [英语](https://github.com/rust-lang/rust-by-example)
-* [法语](https://github.com/Songbird0/FR_RBE)
-* [日语](https://github.com/rust-lang-ja/rust-by-example-ja)
-* [俄语](https://github.com/ruRust/rust-by-example)
+- [英语](https://github.com/rust-lang/rust-by-example)
+- [法语](https://github.com/Songbird0/FR_RBE)
+- [日语](https://github.com/rust-lang-ja/rust-by-example-ja)
+- [俄语](https://github.com/ruRust/rust-by-example)
 
 ## 授权协议
 
 《通过例子学 Rust》（中文版与英文版 Rust By Example 均） 使用以下两种协议的任一种进行授权：
 
-* Apache 2.0 授权协议，（[LICENSE-APACHE](LICENSE-APACHE) 或 http://www.apache.org/licenses/LICENSE-2.0）
-* MIT 授权协议 ([LICENSE-MIT](LICENSE-MIT) 或 http://opensource.org/licenses/MIT)
+- Apache 2.0 授权协议，（[LICENSE-APACHE](LICENSE-APACHE) 或 http://www.apache.org/licenses/LICENSE-2.0）
+- MIT 授权协议 ([LICENSE-MIT](LICENSE-MIT) 或 http://opensource.org/licenses/MIT)
 
 可以根据自己选择来定。
 
