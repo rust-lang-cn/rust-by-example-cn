@@ -20,4 +20,4 @@
 
 有关错误处理的更多内容，可参考[官方文档][book]的错误处理的章节。
 
-[book]: https://rustwiki.org/zh-CN/book/error-handling.html
+[book]: https://rustwiki.org/zh-CN/book/ch09-00-error-handling.html
