@@ -30,6 +30,6 @@ fn main() {
 别名的主要用途是避免写出冗长的模板化代码（boilerplate code）。如 `IoResult<T>`
  是 `Result<T, IoError>` 类型的别名。
 
-### See also:
+## 参见
 
-[Attributes](../attribute.md)
+[属性](../attribute.md)
