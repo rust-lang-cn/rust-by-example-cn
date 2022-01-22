@@ -1,14 +1,14 @@
 # 格式化输出
 
-打印操作由 [`std::fmt`][fmt] 里面所定义的一系列[`宏`][macros]来处理，包括：
+打印操作由 [`std::fmt`][fmt] 里面所定义的一系列[宏][macros]来处理，包括：
 
-- `format!`：将格式化文本写到 [`字符串`][string]（String）。（译注：`字符串`是返回值不是参数）
+- `format!`：将格式化文本写到[字符串][string]。
 - `print!`：与 `format!` 类似，但将文本输出到控制台（io::stdout）。
 - `println!`: 与 `print!` 类似，但输出结果追加一个换行符。
 - `eprint!`：与 `print!` 类似，但将文本输出到标准错误（io::stderr）。
 - `eprintln!`：与 `eprint!` 类似，但输出结果追加一个换行符。
 
-这些宏都以相同的做法解析（parse）文本。另外有个优点是格式化的正确性会在编译时检查。
+这些宏都以相同的做法解析文本。有个额外优点是格式化的正确性会在编译时检查。
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -54,7 +54,7 @@ fn main() {
 }
 ```
 
-[`std::fmt`][fmt] 包含多种 [`traits`][traits]（trait 有 “特征，特性” 等意思）来控制文字显示，其中重要的两种 trait 的基本形式如下：
+[`std::fmt`][fmt] 包含多种 [`trait`][traits]（特质）来控制文字显示，其中重要的两种 trait 的基本形式如下：
 
 - `fmt::Debug`：使用 `{:?}` 标记。格式化文本以供调试使用。
 - `fmt::Display`：使用 `{}` 标记。以更优雅和友好的风格来格式化文本。
@@ -68,7 +68,7 @@ fn main() {
 
 ### 参见：
 
-[`std::fmt`][fmt], [`macros`][macros], [`struct`][structs] 和 [`traits`][traits]
+[`std::fmt`][fmt], [`macros`][macros], [`struct`][structs] 和 [`trait`][traits]
 
 [fmt]: https://rustwiki.org/zh-CN/std/fmt/
 [macros]: ../macros.md
