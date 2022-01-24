@@ -1,7 +1,6 @@
 # while let
 
-和 `if let` 类似，`while let` 也可以把别扭的 `match` 改写得好看一些。考虑下面这
-段使 `i` 不断增加的代码：
+和 `if let` 类似，`while let` 也可以把别扭的 `match` 改写得好看一些。考虑下面这段使 `i` 不断增加的代码：
 
 ```rust
 // 将 `optional` 设为 `Option<i32>` 类型

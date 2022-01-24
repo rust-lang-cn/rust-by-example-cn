@@ -46,7 +46,7 @@ fn main() {
 
 ### 参见：
 
-[`#[allow(...)]`][allow], [色彩模型][color_models] 和 [`enum`][enum] 
+[`#[allow(...)]`][allow], [色彩模型][color_models] 和 [`enum`][enum]
 
 [allow]: ../../../attribute/unused.md
 [color_models]: https://en.wikipedia.org/wiki/Color_model
