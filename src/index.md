@@ -7,9 +7,9 @@
 > - <a href="https://rustwiki.org/en/rust-by-example" style="color:red;">本站支持文档中英文切换</a>，点击页面右上角语言图标可切换到相同章节的英文页面，**英文版每天都会自动同步一次官方的最新版本**。
 > - 若发现本页表达错误或帮助我们改进翻译，可点击右上角的编辑按钮打开本页对应源码文件进行编辑和修改，Rust 中文资源的开源组织发展离不开大家，感谢您的支持和帮助！
 
-[Rust][rust] 是一门注重安全（safety）、速度（speed）和并发（concurrency）的现代系统编程语言。Rust 通过内存安全来实现以上目标，但不用垃圾回收机制（garbage collection, GC)。
+[Rust][rust] 是一门注重安全（safety）、速度（speed）和并发（concurrency）的现代系统编程语言。Rust 通过内存安全来实现以上目标，但不使用垃圾回收机制（garbage collection, GC）。
 
-《通过例子学 Rust》（Rust By Example, RBE）内容由一系列可运行的实例组成，通过这些例子阐明了各种 Rust 的概念和基本库。想获取这些例子外的更多内容，不要忘了[安装 Rust 到本地][install]并查阅[官方标准库文档][std]。另外为了满足您的好奇心，你可以[查阅本网站的源代码][home]。
+《通过例子学 Rust》（Rust By Example, RBE）内容由一系列可运行的实例组成，通过这些例子阐明了各种 Rust 的概念和基本库。想获取这些例子外的更多内容，不要忘了[安装 Rust 到本地][install]并查阅[官方标准库文档][std]。另外为了满足您的好奇心，您还可以[查阅本网站的源代码][home]。
 
 现在让我们开始学习吧！
 
@@ -33,17 +33,17 @@
 
 - [模块](mod.html) - 使用模块来组织代码。
 
-- [`crate`](crates.html) - crate 是 Rust 中的编译单元。学习创建一个库。
+- [Crate](crates.html) - crate 是 Rust 中的编译单元。学习创建一个库。
 
-- [cargo](cargo.html) - 学习官方的 Rust 包管理工具的一些基本功能。
+- [Cargo](cargo.html) - 学习官方的 Rust 包管理工具的一些基本功能。
 
 - [属性](attribute.html) - 属性是应用于某些模块、crate 或项的元数据（metadata）。
 
-- [泛型](generics.html) - 学习编写能够适用于多类型参数的函数或数据类型。
+- [泛型](generics.html) - 学习编写能够适用于多种类型参数的函数或数据类型。
 
 - [作用域规则](scope.html) - 作用域在所有权（ownership）、借用（borrowing）和生命周期（lifetime）中起着重要作用。
 
-- [特性 trait](trait.html) - trait 是对未知类型(`Self`)定义的方法集。
+- [特性 trait](trait.html) - trait 是对未知类型（`Self`）定义的方法集。
 
 - [宏](macros.html)
 
