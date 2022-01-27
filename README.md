@@ -1,5 +1,6 @@
 # 通过例子学 Rust
 
+![Build Status](https://github.com/rust-lang-cn/rust-by-example-cn/workflows/CI/badge.svg)
 [![Build Status][travis-image]][travis-link]
 [![LICENSE-MIT](https://img.shields.io/badge/license-MIT-green)](https://raw.githubusercontent.com/rust-lang-cn/rust-by-example-cn/master/LICENSE-MIT)
 [![LICENSE-APACHE](https://img.shields.io/badge/license-Apache%202-blue)](https://raw.githubusercontent.com/rust-lang-cn/rust-by-example-cn/master/LICENSE-APACHE)

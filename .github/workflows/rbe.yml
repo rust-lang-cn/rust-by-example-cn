@@ -1,0 +1,51 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Update rustup
+      run: rustup self update
+
+    - name: Install Rust
+      run: |
+        rustup set profile minimal
+        rustup toolchain install nightly -c rust-docs
+        rustup default nightly
+
+    - name: Install mdbook
+      run: |
+        mkdir bin
+        curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.15/mdbook-v0.4.15-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
+        echo "$(pwd)/bin" >> ${GITHUB_PATH}
+
+    - name: Report versions
+      run: |
+        rustup --version
+        rustc -Vv
+        mdbook --version
+
+    - name: Run tests
+      run: mdbook test
+
+    - name: Build HTML
+      run: mdbook build
+  
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            ./tools/rust-deploy/update-cn.sh >/dev/null 2>&1
