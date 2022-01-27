@@ -1,7 +1,6 @@
 # 通过例子学 Rust
 
 ![Build Status](https://github.com/rust-lang-cn/rust-by-example-cn/workflows/CI/badge.svg)
-[![Build Status][travis-image]][travis-link]
 [![LICENSE-MIT](https://img.shields.io/badge/license-MIT-green)](https://raw.githubusercontent.com/rust-lang-cn/rust-by-example-cn/master/LICENSE-MIT)
 [![LICENSE-APACHE](https://img.shields.io/badge/license-Apache%202-blue)](https://raw.githubusercontent.com/rust-lang-cn/rust-by-example-cn/master/LICENSE-APACHE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/rust-lang-cn/rust-by-example-cn?color=gold)](https://github.com/rust-lang-cn/rust-by-example-cn/commits/master)
@@ -56,8 +55,6 @@ $ mdbook serve
 
 [install Rust]: https://www.rust-lang.org/tools/install
 [rust-by-example]: https://github.com/rust-lang/rust-by-example
-[travis-image]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn.svg?branch=master
-[travis-link]: https://travis-ci.org/rust-lang-cn/rust-by-example-cn
 [website]: https://doc.rust-lang.org/rust-by-example/
 [website-cn]: https://rustwiki.org/zh-CN/rust-by-example/
 [how-to-contribute]: CONTRIBUTING.md
