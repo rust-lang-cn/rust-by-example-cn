@@ -2,7 +2,7 @@
 
 `while` 关键字可以用作当型循环（当条件满足时循环）。
 
-让我们用 `while` 循环写一下臭名昭著的 [FizzBuzz][fizzbuzz] 程序。
+让我们用 `while` 循环写一下臭名昭著的 [FizzBuzz][fizzbuzz]（译者补充：[LeetCode 上的 FizzBuzz 问题描述][fizzbuzz-leetcode]） 程序。
 
 ```rust,editable
 fn main() {
@@ -28,3 +28,4 @@ fn main() {
 ```
 
 [fizzbuzz]: https://en.wikipedia.org/wiki/Fizz_buzz
+[fizzbuzz-leetcode]: https://leetcode-cn.com/problems/fizz-buzz/

@@ -1,6 +1,6 @@
 # match 匹配
 
-Rust 通过 `match` 关键字来提供模式匹配，用法和 C 语言的的 `switch` 类似。
+Rust 通过 `match` 关键字来提供模式匹配，和 C 语言的 `switch` 用法类似。第一个匹配分支会被比对，并且所有可能的值都必须被覆盖。
 
 ```rust,editable
 fn main() {
@@ -13,10 +13,12 @@ fn main() {
         1 => println!("One!"),
         // 匹配多个值
         2 | 3 | 5 | 7 | 11 => println!("This is a prime"),
+        // 试一试 ^ 将 13 添加到质数列表中
         // 匹配一个闭区间范围
         13..=19 => println!("A teen"),
         // 处理其他情况
         _ => println!("Ain't special"),
+        // 试一试 ^ 注释掉这个总括性的分支
     }
 
     let boolean = true;
