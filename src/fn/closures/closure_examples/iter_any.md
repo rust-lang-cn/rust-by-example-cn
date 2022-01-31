@@ -1,8 +1,6 @@
 # Iterator::any
 
-`Iterator::any` 是一个函数，若传给它一个迭代器（iterator），当其中任一元素满足
-谓词（predicate）时它将返回 `true`，否则返回 `false`（译注：谓词是闭包规定
-的， `true`/`false` 是闭包作用在元素上的返回值）。它的签名如下：
+`Iterator::any` 是一个函数，若传给它一个迭代器（iterator），当其中任一元素满足谓词（predicate）时它将返回 `true`，否则返回 `false`（译注：谓词是闭包规定的， `true`/`false` 是闭包作用在元素上的返回值）。它的签名如下：
 
 ```rust,ignore
 pub trait Iterator {
@@ -15,7 +13,7 @@ pub trait Iterator {
         // `FnMut` 表示被捕获的变量最多只能被修改，而不能被消耗。
         // `Self::Item` 指明了被捕获变量的类型（译注：是迭代器的元素本身的类型）
         F: FnMut(Self::Item) -> bool {}
-        
+
         // 译注：原文说 `Self::Item` 表明变量是通过值传递给闭包的，这是说错了。
         // `FnMut` 就表示闭包只能通过引用捕获变量。把类型为 `T` 的变量作为闭包
         // 的参数不代表闭包会拿走它的值，也可能是拿走它的引用。
