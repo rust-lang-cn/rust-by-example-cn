@@ -1,7 +1,6 @@
 # Iterator::find
 
-`Iterator::find` 是一个函数，在传给它一个迭代器时，将用 `Option` 类型返回第一个
-满足谓词的元素。它的签名如下：
+`Iterator::find` 是一个函数，在传给它一个迭代器时，将用 `Option` 类型返回第一个满足谓词的元素。它的签名如下：
 
 ```rust,ignore
 pub trait Iterator {
@@ -12,7 +11,7 @@ pub trait Iterator {
     // 但不会被消耗。
     fn find<P>(&mut self, predicate: P) -> Option<Self::Item> where
         // `FnMut` 表示被捕获的变量最多只能被修改，而不能被消耗。
-        // `&Self::Item` 指明了被捕获变量的类型（译注：是对迭代器元素的引用类型） 
+        // `&Self::Item` 指明了被捕获变量的类型（译注：是对迭代器元素的引用类型）
         P: FnMut(&Self::Item) -> bool {}
 }
 ```
