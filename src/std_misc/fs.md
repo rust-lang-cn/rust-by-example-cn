@@ -12,7 +12,7 @@ use std::path::Path;
 
 // `% cat path` 的简单实现
 fn cat(path: &Path) -> io::Result<String> {
-    let mut f = try!(File::open(path));
+    let mut f = File::open(path)?;
     let mut s = String::new();
     match f.read_to_string(&mut s) {
         Ok(_) => Ok(s),
@@ -22,7 +22,7 @@ fn cat(path: &Path) -> io::Result<String> {
 
 // `% echo s > path` 的简单实现
 fn echo(s: &str, path: &Path) -> io::Result<()> {
-    let mut f = try!(File::create(path));
+    let mut f = File::create(path)?;
 
     f.write_all(s.as_bytes())
 }
@@ -109,14 +109,8 @@ $ rustc fs.rs && ./fs
 `cat a/c/b.txt`
 > hello
 `ls a`
-> a/b.txt
-> a/c
-`walk a`
-> a/c
-> a/c/b.txt
-> a/c/e.txt
-> a/c/d
-> a/b.txt
+> "a/b.txt"
+> "a/c"
 `rm a/c/e.txt`
 `rmdir a/c/d`
 ```
