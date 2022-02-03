@@ -10,17 +10,12 @@
 ```ignore
 # 这里省略了标准的 crate 数据
 [dev-dependencies]
-pretty_assertions = "0.4.0"
+pretty_assertions = "1"
 ```
 
 文件 `src/lib.rs`:
 
 ```rust,ignore
-// 仅用于测试的外部 crate
-#[cfg(test)]
-#[macro_use]
-extern crate pretty_assertions;
-
 pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
@@ -28,6 +23,7 @@ pub fn add(a: i32, b: i32) -> i32 {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use pretty_assertions::assert_eq; // 仅用于测试, 不能在非测试代码中使用
 
     #[test]
     fn test_add() {
