@@ -182,6 +182,8 @@
   - [散列表 HashMap](std/hash.md)
     - [更改或自定义关键字类型](std/hash/alt_key_types.md)
     - [散列集 HashSet](std/hash/hashset.md)
+  - [RC计数引用 Rc](std/rc.md)
+  - [ARC共享计数引用 Arc](std/arc.md)
 
 - [标准库更多介绍](std_misc.md)
   - [线程](std_misc/threads.md)
