@@ -100,4 +100,5 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
 [match]: ../flow_control/match.md
 [fn]: ../fn.md
 [str]: ../std/str.md
+[aliasreport]: https://github.com/rust-lang/rust/pull/61682/#issuecomment-502472847
 [type_alias_rfc]: https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html
