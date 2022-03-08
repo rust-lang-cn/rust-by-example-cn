@@ -29,15 +29,7 @@ impl fmt::Display for DoubleError {
 }
 
 impl error::Error for DoubleError {
-    fn description(&self) -> &str {
-        match *self {
-            DoubleError::EmptyVec => "empty vectors not allowed",
-            // 这已经实现了 `Error`，所以采用它自己的实现。
-            DoubleError::Parse(ref e) => e.description(),
-        }
-    }
-
-    fn cause(&self) -> Option<&error::Error> {
+    fn source(&self) -> Option<&(dyn error::Error + 'static)> {
         match *self {
             DoubleError::EmptyVec => None,
             // 原因采取内部对错误类型的实现。它隐式地转换成了 trait 对象 `&error:Error`。
