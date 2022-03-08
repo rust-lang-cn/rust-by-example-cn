@@ -17,3 +17,6 @@ editor = "ace"
 [output.html.fold]
 # 将书籍导航展开，作为书籍目录，收缩起来不便于章节快速查找 —— 2022-01-26
 enable = false
+
+[rust]
+edition = "2021"

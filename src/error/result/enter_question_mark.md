@@ -40,7 +40,7 @@ fn main() {
 在老代码中仍然会看到 `try!`。如果使用 `try!` 的话，上一个例子中的 `multiply` 函数
 看起来会像是这样：
 
-```rust,editable
+```rust,editable,edition2015
 use std::num::ParseIntError;
 
 fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {

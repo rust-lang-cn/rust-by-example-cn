@@ -11,7 +11,7 @@ trait Contains {
     type B;
 
 	// 这种语法能够泛型地表示这些新类型。
-    fn contains(&self, &Self::A, &Self::B) -> bool;
+    fn contains(&self, _: &Self::A, _: &Self::B) -> bool;
 }
 ```
 

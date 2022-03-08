@@ -36,9 +36,9 @@ fn main() {
     let array2 = [4, 5, 6];
 
     // 对数组的 `iter()` 举出 `&i32`。
-    println!("2 in array1: {}", array1.iter()     .any(|&x| x == 2));
+    println!("2 in array1: {}", array1.iter().any(|&x| x == 2));
     // 对数组的 `into_iter()` 通常举出 `&i32`。
-    println!("2 in array2: {}", array2.into_iter().any(|&x| x == 2));
+    println!("2 in array2: {}", array2.iter().any(|&x| x == 2));
 }
 ```
 
