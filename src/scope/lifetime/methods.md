@@ -21,8 +21,7 @@ fn main() {
 }
 ```
 
-> 译注：方法一般是不需要标明生命周期的，因为 `self` 的生命周期会赋给所有的输出
-> 生命周期参数，详见 [TRPL](https://rustwiki.org/zh-CN/book/ch10-03-lifetime-syntax.html#生命周期省略lifetime-elision)。
+> 译注：方法一般是不需要标明生命周期的，因为 `self` 的生命周期会赋给所有的输出生命周期参数，详见 [TRPL](https://rustwiki.org/zh-CN/book/ch10-03-lifetime-syntax.html#生命周期省略lifetime-elision)。
 
 ### 参见：
 

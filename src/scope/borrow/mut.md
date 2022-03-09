@@ -1,8 +1,6 @@
 # 可变性
 
-可变数据可以使用 `&mut T` 进行可变借用。这叫做**可变引用**（mutable
-reference），它使借用者可以读/写数据。相反，`&T` 通过不可变引用（immutable
-reference）来借用数据，借用者可以读数据而不能更改数据：
+可变数据可以使用 `&mut T` 进行可变借用。这叫做**可变引用**（mutable reference），它使借用者可以读/写数据。相反，`&T` 通过不可变引用（immutable reference）来借用数据，借用者可以读数据而不能更改数据：
 
 ```rust,editable,ignore,mdbook-runnable
 #[allow(dead_code)]
@@ -36,16 +34,16 @@ fn main() {
 
     // 创建一个 `immutabook` 的可变拷贝，命名为 `mutabook`
     let mut mutabook = immutabook;
-    
+
     // 不可变地借用一个不可变对象
     borrow_book(&immutabook);
 
     // 不可变地借用一个可变对象
     borrow_book(&mutabook);
-    
+
     // 可变地借用一个可变对象
     new_edition(&mut mutabook);
-    
+
     // 报错！不能可变地借用一个不可变对象
     new_edition(&mut immutabook);
     // 改正 ^ 注释掉此行
@@ -53,6 +51,7 @@ fn main() {
 ```
 
 ### 参见：
+
 [`static`][static]
 
 [static]: ../lifetime/static_lifetime.md

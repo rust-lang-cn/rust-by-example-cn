@@ -1,11 +1,9 @@
 # static
 
-`'static` 生命周期是可能的生命周期中最长的，它会在整个程序运行的时期中
-存在。`'static` 生命周期也可被强制转换成一个更短的生命周期。有两种方式使变量
-拥有 `'static` 生命周期，它们都把数据保存在可执行文件的只读内存区：
+`'static` 生命周期是可能的生命周期中最长的，它会在整个程序运行的时期中存在。`'static` 生命周期也可被强制转换成一个更短的生命周期。有两种方式使变量拥有 `'static` 生命周期，它们都把数据保存在可执行文件的只读内存区：
 
-* 使用 `static` 声明来产生常量（constant）。
-* 产生一个拥有 `&'static str` 类型的 `string` 字面量。
+- 使用 `static` 声明来产生常量（constant）。
+- 产生一个拥有 `&'static str` 类型的 `string` 字面量。
 
 看下面的例子，了解列举到的各个方法：
 
@@ -28,7 +26,7 @@ fn main() {
         // 当 `static_string` 离开作用域时，该引用不能再使用，不过
         // 数据仍然存在于二进制文件里面。
     }
-    
+
     {
         // 产生一个整型给 `coerce_static` 使用：
         let lifetime_num = 9;
@@ -38,7 +36,7 @@ fn main() {
 
         println!("coerced_static: {}", coerced_static);
     }
-    
+
     println!("NUM: {} stays accessible!", NUM);
 }
 ```
