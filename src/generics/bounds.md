@@ -23,7 +23,7 @@ let s = S(vec![1]);
 
 约束的另一个作用是泛型的实例可以访问作为约束的 trait 的方法。例如：
 
-```rust,editalbe
+```rust,editable
 // 这个 trait 用来实现打印标记：`{:?}`。
 use std::fmt::Debug;
 
