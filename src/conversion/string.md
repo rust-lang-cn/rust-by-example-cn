@@ -24,7 +24,8 @@ fn main() {
 }
 ```
 
-译注：一个实现`ToString`的例子
+译注：一个实现 `ToString` 的例子
+
 ```rust,editable
 use std::string::ToString;
 
