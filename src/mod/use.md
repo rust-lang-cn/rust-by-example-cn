@@ -30,7 +30,7 @@ fn main() {
         function();
 
         // `use` 绑定拥有局部作用域。在这个例子中，`function()`
-        // 的遮蔽只存在在这个代码块中。
+        // 的遮蔽只存在这个代码块中。
         println!("Leaving block");
     }
 

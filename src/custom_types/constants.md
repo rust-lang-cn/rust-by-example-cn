@@ -12,7 +12,7 @@ Rust 有两种常量，可以在任意作用域声明，包括全局作用域。
 为无论如何，`static` 变量都得显式地声明。
 
 ```rust,editable,ignore,mdbook-runnable
-// 全局变量是在在所有其他作用域之外声明的。
+// 全局变量是在所有其他作用域之外声明的。
 static LANGUAGE: &'static str = "Rust";
 const  THRESHOLD: i32 = 10;
 
