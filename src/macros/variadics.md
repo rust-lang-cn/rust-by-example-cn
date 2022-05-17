@@ -3,7 +3,7 @@
 可变参数接口可以接受任意数目的参数。比如说 `println` 就可以，其参数的数目是由
 格式化字符串指定的。
 
-我们可以把之前的 `calculater!` 宏改写成可变参数接口：
+我们可以把之前的 `calculate!` 宏改写成可变参数接口：
 
 ```rust,editable
 macro_rules! calculate {
