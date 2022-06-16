@@ -11,7 +11,7 @@ pub trait Iterator {
     // 表明函数的调用者可以被借用和修改，但不会被消耗。
     fn any<F>(&mut self, f: F) -> bool where
         // `FnMut` 表示被捕获的变量最多只能被修改，而不能被消耗。
-        //  `Self::Item` 表明变量是通过值传递给闭包（译注：是迭代器对应的元素的类型）
+        // `Self::Item` 表明变量是通过值传递给闭包（译注：是迭代器对应的元素的类型）
         F: FnMut(Self::Item) -> bool {}
 }
 ```
