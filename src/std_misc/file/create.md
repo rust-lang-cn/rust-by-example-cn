@@ -13,7 +13,6 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ";
 
-use std::error::Error;
 use std::io::prelude::*;
 use std::fs::File;
 use std::path::Path;
@@ -24,17 +23,14 @@ fn main() {
 
     // 以只写模式打开文件，返回 `io::Result<File>`
     let mut file = match File::create(&path) {
-        Err(why) => panic!("couldn't create {}: {}",
-                           display,
-                           why.description()),
+        Err(why) => panic!("couldn't create {}: {:?}", display, why),
         Ok(file) => file,
     };
 
     // 将 `LOREM_IPSUM` 字符串写进 `file`，返回 `io::Result<()>`
     match file.write_all(LOREM_IPSUM.as_bytes()) {
         Err(why) => {
-            panic!("couldn't write to {}: {}", display,
-                                               why.description())
+            panic!("couldn't write to {}: {:?}", display, why)
         },
         Ok(_) => println!("successfully wrote to {}", display),
     }
@@ -59,4 +55,4 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 （和前面例子一样，我们鼓励你在失败条件下测试这个例子。）
 
 还有一个更通用的 `open_mode` 方法，这能够以其他方式来来打开
-文件，如：read+write（读+写），追加（append），等等。
+文件，如：read+write（读 + 写），追加（append），等等。

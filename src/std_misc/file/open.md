@@ -5,7 +5,6 @@
 `File` 拥有资源，即文件描述符（file descriptor），它会在自身被 `drop` 时关闭文件。
 
 ```rust,editable,ignore
-use std::error::Error;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
@@ -18,16 +17,14 @@ fn main() {
     // 以只读方式打开路径，返回 `io::Result<File>`
     let mut file = match File::open(&path) {
         // `io::Error` 的 `description` 方法返回一个描述错误的字符串。
-        Err(why) => panic!("couldn't open {}: {}", display,
-                                                   why.description()),
+        Err(why) => panic!("couldn't open {}: {:?}", display, why),
         Ok(file) => file,
     };
 
     // 读取文件内容到一个字符串，返回 `io::Result<usize>`
     let mut s = String::new();
     match file.read_to_string(&mut s) {
-        Err(why) => panic!("couldn't read {}: {}", display,
-                                                   why.description()),
+        Err(why) => panic!("couldn't read {}: {:?}", display, why),
         Ok(_) => print!("{} contains:\n{}", display, s),
     }
 

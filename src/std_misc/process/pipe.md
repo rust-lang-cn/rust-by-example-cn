@@ -1,11 +1,10 @@
 # 管道
 
 `std::Child` 结构体代表了一个正在运行的子进程，它暴露了 `stdin`（标准
-输入），`stdout`（标准输出） 和 `stderr`（标准错误） 句柄，从而可以通过管道与
+输入），`stdout`（标准输出）和 `stderr`（标准错误）句柄，从而可以通过管道与
 所代表的进程交互。
 
 ```rust,editable
-use std::error::Error;
 use std::io::prelude::*;
 use std::process::{Command, Stdio};
 
@@ -18,7 +17,7 @@ fn main() {
                                 .stdin(Stdio::piped())
                                 .stdout(Stdio::piped())
                                 .spawn() {
-        Err(why) => panic!("couldn't spawn wc: {}", why.description()),
+        Err(why) => panic!("couldn't spawn wc: {:?}", why),
         Ok(process) => process,
     };
 
@@ -27,8 +26,7 @@ fn main() {
     // `stdin` 拥有 `Option<ChildStdin>` 类型，不过我们已经知道这个实例不为空值，
     // 因而可以直接 `unwrap 它。
     match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
-        Err(why) => panic!("couldn't write to wc stdin: {}",
-                           why.description()),
+        Err(why) => panic!("couldn't write to wc stdin: {:?}", why),
         Ok(_) => println!("sent pangram to wc"),
     }
 
@@ -39,8 +37,7 @@ fn main() {
     // `stdout` 字段也拥有 `Option<ChildStdout>` 类型，所以必需解包。
     let mut s = String::new();
     match process.stdout.unwrap().read_to_string(&mut s) {
-        Err(why) => panic!("couldn't read wc stdout: {}",
-                           why.description()),
+        Err(why) => panic!("couldn't read wc stdout: {:?}", why),
         Ok(_) => print!("wc responded with:\n{}", s),
     }
 }
