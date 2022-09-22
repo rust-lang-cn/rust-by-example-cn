@@ -52,7 +52,7 @@ fn main() {
     // 这样可以用到之前的 point 的字段
     let bottom_right = Point { x: 5.2, ..point };
 
-    // `new_point.y` 与 `point.y` 一样，因为这个字段就是从 `point` 中来的
+    // `bottom_right.y` 与 `point.y` 一样，因为这个字段就是从 `point` 中来的
     println!("second point: ({}, {})", bottom_right.x, bottom_right.y);
 
     // 使用 `let` 绑定来解构 point
