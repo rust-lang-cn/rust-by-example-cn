@@ -61,12 +61,11 @@ enum VeryVerboseEnumOfThingsToDoWithNumbers {
     Subtract,
 }
 
-// Creates a type alias
+// 创建一个类型别名
 type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
 
 fn main() {
-    // We can refer to each variant via its alias, not its long and inconvenient
-    // name.
+    // 我们可以通过别名引用每个枚举变量，避免使用太长的或者不方便的枚举名字
     let x = Operations::Add;
 }
 ```
