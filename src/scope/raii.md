@@ -1,6 +1,6 @@
 # RAII
 
-Rust 的变量不只是在栈中保存数据：它们也**占有**资源，比如 `Box<T>` 占有堆（heap）中的内存。Rust 强制实行 [RAII][raii]（Resource Acquisition Is Initiallization，资源获取即初始化），所以任何对象在离开作用域时，它的析构函数（destructor）就被调用，然后它占有的资源就被释放。
+Rust 的变量不只是在栈中保存数据：它们也**占有**资源，比如 `Box<T>` 占有堆（heap）中的内存。Rust 强制实行 [RAII][raii]（Resource Acquisition Is Initialization，资源获取即初始化），所以任何对象在离开作用域时，它的析构函数（destructor）就被调用，然后它占有的资源就被释放。
 
 这种行为避免了**资源泄漏**（resource leak），所以你再也不用手动释放内存或者担心内存泄漏（memory leak）！下面是个快速入门示例：
 
