@@ -63,7 +63,8 @@ fn main() {
 
 在 [`fmt::fmt`][fmt] 文档中可以查看[格式化 traits 一览表][fmt_traits]和它们的参数类型。
 
-### 动手试一试为上面的 `Color` 结构体实现 `fmt::Display`，应得到如下的输出结果：
+### 动手试一试
+为上面的 `Color` 结构体实现 `fmt::Display`，应得到如下的输出结果：
 
 ```text
 RGB (128, 255, 90) 0x80FF5A
