@@ -24,7 +24,6 @@ $ ls lib*
 library.rlib
 ```
 
-默认情况下，库会使用 crate 文件的名字，前面加上 “lib” 前缀，但这个默认名称可以
-使用 [`crate_name` 属性][crate-name] 覆盖。
+默认情况下，库会使用 crate 文件的名字，前面加上 “lib” 前缀，但这个默认名称可以使用 [`crate_name` 属性][crate-name] 覆盖。
 
 [crate-name]: ../attribute/crate.md

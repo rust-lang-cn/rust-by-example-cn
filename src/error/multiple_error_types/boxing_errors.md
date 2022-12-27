@@ -1,11 +1,8 @@
 # 把错误 “装箱”
 
-如果又想写简单的代码，又想保存原始错误信息，一个方法是把它们[装箱][box]（`Box`）。这
-样做的坏处就是，被包装的错误类型只能在运行时了解，而不能被[静态地
-判别][dynamic_dispatch]。
+如果又想写简单的代码，又想保存原始错误信息，一个方法是把它们[装箱][box]（`Box`）。这样做的坏处就是，被包装的错误类型只能在运行时了解，而不能被[静态地判别][dynamic_dispatch]。
 
-对任何实现了 `Error` trait 的类型，标准库的 `Box` 通过 [`From`][from] 为它们提供了
-到 `Box<Error>` 的转换。
+对任何实现了 `Error` trait 的类型，标准库的 `Box` 通过 [`From`][from] 为它们提供了到 `Box<Error>` 的转换。
 
 ```rust,editable
 use std::error;

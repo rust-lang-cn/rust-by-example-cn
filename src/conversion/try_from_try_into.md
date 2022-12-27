@@ -1,7 +1,6 @@
 # `TryFrom` and `TryInto`
 
-类似于 [`From` 和 `Into`][from-into]，[`TryFrom`] 和 [`TryInto`] 是
-类型转换的通用 trait。不同于 `From`/`Into` 的是，`TryFrom` 和 `TryInto` trait 用于易出错的转换，也正因如此，其返回值是 [`Result`] 型。
+类似于 [`From` 和 `Into`][from-into]，[`TryFrom`] 和 [`TryInto`] 是类型转换的通用 trait。不同于 `From`/`Into` 的是，`TryFrom` 和 `TryInto` trait 用于易出错的转换，也正因如此，其返回值是 [`Result`] 型。
 
 [from-into]: from_into.html
 [`TryFrom`]: https://rustwiki.org/zh-CN/std/convert/trait.TryFrom.html
