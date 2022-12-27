@@ -1,8 +1,6 @@
 # 显示（Display）
 
-`fmt::Debug` 通常看起来不太简洁，因此自定义输出的外观经常是更可取的。这需要通过
-手动实现 [`fmt::Display`][fmt] 来做到。`fmt::Display` 采用 `{}` 标记。实现方式看
-起来像这样：
+`fmt::Debug` 通常看起来不太简洁，因此自定义输出的外观经常是更可取的。这需要通过手动实现 [`fmt::Display`][fmt] 来做到。`fmt::Display` 采用 `{}` 标记。实现方式看起来像这样：
 
 ```rust
 // （使用 `use`）导入 `fmt` 模块使 `fmt::Display` 可用
@@ -23,19 +21,14 @@ impl fmt::Display for Structure {
 }
 ```
 
-`fmt::Display` 的效果可能比 `fmt::Debug` 简洁，但对于 `std` 库来说，这就有一个问
-题。模棱两可的类型该如何显示呢？举个例子，假设标准库对所有的 `Vec<T>` 都实现了同
-一种输出样式，那么它应该是哪种样式？下面两种中的一种吗？
+`fmt::Display` 的效果可能比 `fmt::Debug` 简洁，但对于 `std` 库来说，这就有一个问题。模棱两可的类型该如何显示呢？举个例子，假设标准库对所有的 `Vec<T>` 都实现了同一种输出样式，那么它应该是哪种样式？下面两种中的一种吗？
 
 * `Vec<path>`：`/:/etc:/home/username:/bin`（使用 `:` 分割）
 * `Vec<number>`：`1,2,3`（使用 `,` 分割）
 
-我们没有这样做，因为没有一种合适的样式适用于所有类型，标准库也并不擅自规定一种样
-式。对于 `Vec<T>` 或其他任意泛型容器（generic container），`fmt::Display` 都没有
-实现。因此在这些泛型的情况下要用 `fmt::Debug`。
+我们没有这样做，因为没有一种合适的样式适用于所有类型，标准库也并不擅自规定一种样式。对于 `Vec<T>` 或其他任意泛型容器（generic container），`fmt::Display` 都没有实现。因此在这些泛型的情况下要用 `fmt::Debug`。
 
-这并不是一个问题，因为对于任何**非**泛型的**容器**类型， `fmt::Display` 都能够实
-现。
+这并不是一个问题，因为对于任何**非**泛型的**容器**类型， `fmt::Display` 都能够实现。
 
 ```rust,editable
 use std::fmt; // 导入 `fmt`
@@ -94,8 +87,7 @@ fn main() {
 ```
 
 `fmt::Display` 被实现了，而 `fmt::Binary` 没有，因此 `fmt::Binary` 不能使用。
-`std::fmt` 有很多这样的 [`trait`][traits]，它们都要求有各自的实现。这些内容将在
-后面的 [`std::fmt`][fmt] 章节中详细介绍。
+`std::fmt` 有很多这样的 [`trait`][traits]，它们都要求有各自的实现。这些内容将在后面的 [`std::fmt`][fmt] 章节中详细介绍。
 
 ### 动手试一试
 
