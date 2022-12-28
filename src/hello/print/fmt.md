@@ -7,11 +7,9 @@
   [`"0xDEADBEEF"`][deadbeef]
 * `format!("0o{:o}", foo)` -> `"0o33653337357"`
 
-根据使用的**参数类型**是 `X`、`o` 还是**未指定**，同样的变量（`foo`）能够格式化
-成不同的形式。
+根据使用的**参数类型**是 `X`、`o` 还是**未指定**，同样的变量（`foo`）能够格式化成不同的形式。
 
-这个格式化的功能是通过 trait 实现的，每种参数类型都对应一种 trait。最常见的格式
-化 trait 就是 `Display`，它可以处理参数类型为未指定的情况，比如 `{}`。
+这个格式化的功能是通过 trait 实现的，每种参数类型都对应一种 trait。最常见的格式化 trait 就是 `Display`，它可以处理参数类型为未指定的情况，比如 `{}`。
 
 ```rust,editable
 use std::fmt::{self, Formatter, Display};
@@ -63,10 +61,10 @@ fn main() {
 }
 ```
 
-在 [`fmt::fmt`][fmt] 文档中可以查看[格式化 traits 一览表][fmt_traits]和它们的参
-数类型。
+在 [`fmt::fmt`][fmt] 文档中可以查看[格式化 traits 一览表][fmt_traits]和它们的参数类型。
 
 ### 动手试一试
+
 为上面的 `Color` 结构体实现 `fmt::Display`，应得到如下的输出结果：
 
 ```text
@@ -76,10 +74,12 @@ RGB (0, 0, 0) 0x000000
 ```
 
 如果感到疑惑，可看下面两条提示：
+
  * 你[可能需要多次列出每个颜色][argument_types]，
  * 你可以使用 `:02` [补零使位数为 2 位][fmt_width]。
 
 ### 参见：
+
 [`std::fmt`][fmt]
 
 [argument_types]: https://rustwiki.org/zh-CN/std/fmt/#argument-types

@@ -1,10 +1,8 @@
 # 特质 trait
 
-`trait` 是对未知类型 `Self` 定义的方法集。该类型也可以访问同一个 trait 中定义的
-其他方法。
+`trait` 是对未知类型 `Self` 定义的方法集。该类型也可以访问同一个 trait 中定义的其他方法。
 
-对任何数据类型都可以实现 trait。在下面例子中，我们定义了包含一系列方法
-的 `Animal`。然后针对 `Sheep` 数据类型实现 `Animal` `trait`，因而 `Sheep`
+对任何数据类型都可以实现 trait。在下面例子中，我们定义了包含一系列方法的 `Animal`。然后针对 `Sheep` 数据类型实现 `Animal` `trait`，因而 `Sheep`
  的实例可以使用 `Animal` 中的所有方法。
 
 ```rust,editable
