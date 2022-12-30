@@ -1,7 +1,6 @@
 # 变量先声明
 
-可以先声明（declare）变量绑定，后面才将它们初始化（initialize）。但是这种做法很
-少用，因为这样可能导致使用未初始化的变量。
+可以先声明（declare）变量绑定，后面才将它们初始化（initialize）。但是这种做法很少用，因为这样可能导致使用未初始化的变量。
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
