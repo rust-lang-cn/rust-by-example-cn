@@ -32,8 +32,7 @@ fn main() {
 
 ## 使用 `collect()` 使整个操作失败
 
-`Result` 实现了 `FromIter`，因此结果的向量（`Vec<Result<T, E>>`）可以被转换成
-结果包裹着向量（`Result<Vec<T>, E>`）。一旦找到一个 `Result::Err` ，遍历就被终止。
+`Result` 实现了 `FromIter`，因此结果的向量（`Vec<Result<T, E>>`）可以被转换成结果包裹着向量（`Result<Vec<T>, E>`）。一旦找到一个 `Result::Err` ，遍历就被终止。
 
 ```rust,editable
 fn main() {
@@ -62,8 +61,7 @@ fn main() {
 }
 ```
 
-当你看着这些结果时，你会发现所有东西还在 `Result` 中保存着。要取出它们，需要一些
-模板化的代码。
+当你看着这些结果时，你会发现所有东西还在 `Result` 中保存着。要取出它们，需要一些模板化的代码。
 
 ```rust,editable
 fn main() {

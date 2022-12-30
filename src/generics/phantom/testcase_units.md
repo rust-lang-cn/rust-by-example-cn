@@ -1,7 +1,6 @@
 # 测试实例：单位说明
 
-通过实现一个带虚类型参数的 `Add` trait 可以实现单位检查。这种 `Add` trait 的
-代码如下：
+通过实现一个带虚类型参数的 `Add` trait 可以实现单位检查。这种 `Add` trait 的代码如下：
 
 ```rust,ignore
 // 这个 `trait` 会要求 `Self + RHS = Output`。`<RHS = Self>` 表示 RHS 的默认值
