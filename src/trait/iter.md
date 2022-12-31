@@ -8,7 +8,6 @@
 
 下面例子展示了如何使用 `Iterator` trait 的方法，更多可用的方法可以看[这里][iter]。
 
-
 ```rust,editable
 struct Fibonacci {
     curr: u32,

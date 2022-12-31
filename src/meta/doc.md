@@ -100,7 +100,7 @@ pub use crate::mem::drop;
 pub use self::async_await::*;
 ```
 
-对文档来说， `rustdoc` 被社区广泛采用。[标准库文档](https://doc.rust-lang.org/std/)也是用它生成的。
+对文档来说，`rustdoc` 被社区广泛采用。[标准库文档](https://doc.rust-lang.org/std/)也是用它生成的。
 
 ### 参见:
 

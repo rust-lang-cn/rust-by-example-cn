@@ -7,8 +7,7 @@
 
 `Path` 可从 `OsStr` 类型创建，并且它提供数种方法，用于获取路径指向的文件/目录的信息。
 
-注意 `Path` 在内部并不是用 UTF-8 字符串表示的，而是存储为若干字节（`Vec<u8>`）的
-vector。因此，将 `Path` 转化成 `&str` 并非零开销的（free），且可能失败（因此它返回一个 `Option`）。
+注意 `Path` 在内部并不是用 UTF-8 字符串表示的，而是存储为若干字节（`Vec<u8>`）的 vector。因此，将 `Path` 转化成 `&str` 并非零开销的（free），且可能失败（因此它返回一个 `Option`）。
 
 ```rust,editable
 use std::path::Path;
@@ -31,8 +30,7 @@ fn main() {
 }
 ```
 
-记得看看其他的 `Path` 方法（`posix::Path` 或 `windows::Path` 的），还有
-`Metadata` 结构体类型。
+记得看看其他的 `Path` 方法（`posix::Path` 或 `windows::Path` 的），还有 `Metadata` 结构体类型。
 
 ### 参见
 
