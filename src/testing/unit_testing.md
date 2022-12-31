@@ -1,14 +1,10 @@
 # 单元测试
 
-测试（test）是这样一种 Rust 函数：它保证其他部分的代码按照所希望的行为正常
-运行。测试函数的函数体通常会进行一些配置，运行我们想要测试的代码，然后
-断言（assert）结果是不是我们所期望的。
+测试（test）是这样一种 Rust 函数：它保证其他部分的代码按照所希望的行为正常运行。测试函数的函数体通常会进行一些配置，运行我们想要测试的代码，然后断言（assert）结果是不是我们所期望的。
 
-大多数单元测试都会被放到一个叫 `tests` 的、带有 `#[cfg(test)]` 属性
-的[模块][mod]中，测试函数要加上 `#[test]` 属性。
+大多数单元测试都会被放到一个叫 `tests` 的、带有 `#[cfg(test)]` 属性的[模块][mod]中，测试函数要加上 `#[test]` 属性。
 
-当测试函数中有什么东西 [panic][panic] 了，测试就失败。有一些这方面的
-辅助[宏][macros]：
+当测试函数中有什么东西 [panic][panic] 了，测试就失败。有一些这方面的辅助[宏][macros]：
 
 * `assert!(expression)` - 如果表达式的值是 `false` 则 panic。
 * `assert_eq!(left, right)` 和 `assert_ne!(left, right)` - 检验左右两边是否
@@ -69,8 +65,7 @@ test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 
 ## 测试 panic
 
-一些函数应当在特定条件下 panic。为测试这种行为，请使用 `#[should_panic]` 属性。这
-个属性接受可选参数 `expected = ` 以指定 panic 时的消息。如果你的函数能以多种方式
+一些函数应当在特定条件下 panic。为测试这种行为，请使用 `#[should_panic]` 属性。这个属性接受可选参数 `expected = ` 以指定 panic 时的消息。如果你的函数能以多种方式
 panic，这个属性就保证了你在测试的确实是所指定的 panic。
 
 ```rust,ignore

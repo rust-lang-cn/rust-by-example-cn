@@ -1,7 +1,6 @@
 # 指示符
 
-宏的参数使用一个美元符号 `$` 作为前缀，并使用一个**指示符**（designator）来
-注明类型：
+宏的参数使用一个美元符号 `$` 作为前缀，并使用一个**指示符**（designator）来注明类型：
 
 ```rust,editable
 macro_rules! create_function {

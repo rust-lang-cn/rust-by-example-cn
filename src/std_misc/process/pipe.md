@@ -1,8 +1,6 @@
 # 管道
 
-`std::Child` 结构体代表了一个正在运行的子进程，它暴露了 `stdin`（标准
-输入），`stdout`（标准输出）和 `stderr`（标准错误）句柄，从而可以通过管道与
-所代表的进程交互。
+`std::Child` 结构体代表了一个正在运行的子进程，它暴露了 `stdin`（标准输入），`stdout`（标准输出）和 `stderr`（标准错误）句柄，从而可以通过管道与所代表的进程交互。
 
 ```rust,editable
 use std::io::prelude::*;

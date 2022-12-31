@@ -8,8 +8,7 @@
 
 ## 文档注释
 
-文档注释对于需要文档的大型项目来说非常重要。当运行 `rustdoc`，文档注释就会
-编译成文档。它们使用 `///` 标记，并支持 [Markdown]。
+文档注释对于需要文档的大型项目来说非常重要。当运行 `rustdoc`，文档注释就会编译成文档。它们使用 `///` 标记，并支持 [Markdown]。
 
 ```rust,editable,ignore
 #![crate_name = "doc"]
@@ -55,8 +54,7 @@ fn main() {
 }
 ```
 
-要运行测试，首先将代码构建为库，然后告诉 `rustdoc` 在哪里找到库，这样它就可以
-使每个文档中的程序链接到库：
+要运行测试，首先将代码构建为库，然后告诉 `rustdoc` 在哪里找到库，这样它就可以使每个文档中的程序链接到库：
 
 ```shell
 $ rustc doc.rs --crate-type lib
@@ -102,7 +100,7 @@ pub use crate::mem::drop;
 pub use self::async_await::*;
 ```
 
-对文档来说， `rustdoc` 被社区广泛采用。[标准库文档](https://doc.rust-lang.org/std/)也是用它生成的。
+对文档来说，`rustdoc` 被社区广泛采用。[标准库文档](https://doc.rust-lang.org/std/)也是用它生成的。
 
 ### 参见:
 
