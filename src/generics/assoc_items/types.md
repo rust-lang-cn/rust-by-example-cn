@@ -61,7 +61,9 @@ impl Contains for Container {
     fn last(&self) -> i32 { self.1 }
 }
 
-fn difference<C: Contains>(container: &C) -> i32 {
+fn difference<T>(container: &T) -> i32 
+    where T: Contains 
+{
     container.last() - container.first()
 }
 
