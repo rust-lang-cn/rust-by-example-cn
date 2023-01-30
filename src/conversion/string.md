@@ -53,7 +53,7 @@ fn main() {
 标准库中已经给无数种类型实现了 `FromStr`。如果要转换到用户定义类型，只要手动实现
  `FromStr` 就行。
 
-```rust
+```rust,editable
 fn main() {
     let parsed: i32 = "5".parse().unwrap();
     let turbo_parsed = "10".parse::<i32>().unwrap();
