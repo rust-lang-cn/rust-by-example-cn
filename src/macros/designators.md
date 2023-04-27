@@ -52,8 +52,14 @@ fn main() {
 * `expr` 用于表达式
 * `ident` 用于变量名或函数名
 * `item`
+* `literal` 用于字面常量
 * `pat` (**模式** *pattern*)
 * `path`
 * `stmt` (**语句** *statement*)
 * `tt` (**标记树** *token tree*)
 * `ty` (**类型** *type*)
+* `vis` (*可见性描述符*)
+
+完整列表详见 [Rust Reference]。
+
+[Rust Reference]: https://doc.rust-lang.org/reference/macros-by-example.html
