@@ -60,6 +60,6 @@ fn main() {
 * `ty` (**类型** *type*)
 * `vis` (*可见性描述符*)
 
-完整列表详见 [Rust Reference].
+完整列表详见 [Rust Reference]。
 
 [Rust Reference]: https://doc.rust-lang.org/reference/macros-by-example.html
