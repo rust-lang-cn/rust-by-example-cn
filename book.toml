@@ -18,5 +18,13 @@ editor = "ace"
 # 将书籍导航展开，作为书籍目录，收缩起来不便于章节快速查找 —— 2022-01-26
 enable = false
 
+# [output.pdf]
+# scale = 1
+# paper-width = 10
+# paper-height = 12
+# margin-top = 1
+# margin-bottom = 1
+# margin-left = 1
+
 [rust]
 edition = "2021"

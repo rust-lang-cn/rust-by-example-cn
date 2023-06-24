@@ -31,6 +31,15 @@ $ mdbook serve
 
 为了能够运行这些示例，你必须要连接到网络；当然你可以离线阅读所有这些内容。
 
+如果想生成 pdf 文件，修改 book.toml 文件，将 \[output.pdf\] 节的注释取消，再执行如下操作：
+```bash
+$ cd rust-by-example-cn
+$ cargo install mdbook-pdf
+$ mdbook build
+```
+
+PDF 文件生会生成到 `book/pdf/output.pdf`，如果对生成的样式文件不满意，可以调整 book.toml 中 \[output.pdf\] 段内容，具体可以参考 [mdbook-pdf 中文说明](https://github.com/HollowMan6/mdbook-pdf/blob/main/README_CN.md)。
+
 ## 如何贡献
 
 请查看 [CONTRIBUTING.md][how-to-contribute] 文件了解详细内容。
