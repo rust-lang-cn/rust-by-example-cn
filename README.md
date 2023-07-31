@@ -17,7 +17,7 @@
 
 ## 使用说明
 
-如果想阅读《通过例子学 Rust》，可以直接访问 [https://rustwiki.org/zh-CN/rust-by-example/][website-cn] 进行在线上阅读（**支持同一页面中英双语切换**）。（英文阅读地址：[https://doc.rust-lang.org/rust-by-example/][website]）
+如果想阅读《通过例子学 Rust》，可以直接访问 Rust 文档网的国际站点 [https://rustwiki.org/zh-CN/rust-by-example/][website-cn] 或国内站点 [https://www.rustwiki.org.cn/zh-CN/rust-by-example/][website-cn-zh]进行在线上阅读（**均支持同一页面中英双语切换**）。（英文阅读地址：[https://doc.rust-lang.org/rust-by-example/][website]）
 
 若想在本地阅读，请先[安装 Rust][install Rust]，然后进行下面操作：
 
@@ -57,4 +57,5 @@ $ mdbook serve
 [rust-by-example]: https://github.com/rust-lang/rust-by-example
 [website]: https://doc.rust-lang.org/rust-by-example/
 [website-cn]: https://rustwiki.org/zh-CN/rust-by-example/
+[website-cn-zh]: https://www.rustwiki.org.cn/zh-CN/rust-by-example/
 [how-to-contribute]: CONTRIBUTING.md
