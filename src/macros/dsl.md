@@ -6,12 +6,12 @@ DSL 是 Rust 的宏中集成的微型 “语言”。这种语言是完全合法
 
 ```rust,editable
 macro_rules! calculate {
-    (eval $e:expr) => {{
+    (eval $e:expr) => {
         {
             let val: usize = $e; // 强制类型为整型
             println!("{} = {}", stringify!{$e}, val);
         }
-    }};
+    };
 }
 
 fn main() {
