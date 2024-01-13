@@ -28,7 +28,7 @@ macro_rules! print_result {
         println!("{:?} = {:?}",
                  stringify!($expression),
                  $expression)
-    }
+    };
 }
 
 fn main() {
