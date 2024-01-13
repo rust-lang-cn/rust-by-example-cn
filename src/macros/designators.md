@@ -12,7 +12,7 @@ macro_rules! create_function {
             println!("You called {:?}()",
                      stringify!($func_name))
         }
-    }
+    };
 }
 
 // 借助上述宏来创建名为 `foo` 和 `bar` 的函数。
