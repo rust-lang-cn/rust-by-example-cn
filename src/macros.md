@@ -13,7 +13,7 @@ macro_rules! say_hello {
     () => {
         // 此宏将会展开成这个代码块里面的内容。
         println!("Hello!");
-    }
+    };
 }
 
 fn main() {
