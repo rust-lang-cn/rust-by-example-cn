@@ -14,7 +14,7 @@ macro_rules! assert_equal_len {
                 ($a.len(),),
                 stringify!($op),
                 ($b.len(),));
-    }
+    };
 }
 
 macro_rules! op {
@@ -27,7 +27,7 @@ macro_rules! op {
                 // *x = x.$method(*y);
             }
         }
-    }
+    };
 }
 
 // 实现 `add_assign`、`mul_assign` 和 `sub_assign` 等函数。
