@@ -78,6 +78,7 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 /// # fn main() { // 开始主函数，其中将展开 `try_main` 函数
 /// #    try_main().unwrap(); // 调用并展开 try_main，这样出错时测试会 panic
 /// # }
+/// ```
 pub fn try_div(a: i32, b: i32) -> Result<i32, String> {
     if b == 0 {
         Err(String::from("Divide-by-zero"))
