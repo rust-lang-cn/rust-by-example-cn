@@ -10,7 +10,7 @@ use std::io::{self, BufRead};
 use std::path::Path;
 
 fn main() {
-    // 在生成输出之前，文件主机必须存在于当前路径中
+    // 在生成输出之前，文件 `hosts` 必须存在于当前路径中
     if let Ok(lines) = read_lines("./hosts") {
         // 使用迭代器，返回一个（可选）字符串
         for line in lines {
