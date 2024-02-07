@@ -103,7 +103,7 @@ fn main() {
     //my_mod::nested::private_function();
     // 试一试 ^ 取消此行的注释
 
-    // Error! `private_nested` is a private module
+    // 报错！`private_nested` 是私有的
     //my_mod::private_nested::function();
     // 试一试 ^ 取消此行的注释
 }
