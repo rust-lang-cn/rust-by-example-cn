@@ -2,7 +2,7 @@
 
 所有的类型，若想用 `std::fmt` 的格式化打印，都要求实现至少一个可打印的 `traits`。仅有一些类型提供了自动实现，比如 `std` 库中的类型。所有其他类型都**必须**手动实现。
 
-`fmt::Debug` 这个 `trait` 使这项工作变得相当简单。所有类型都能推导（`derive`，即自动创建）`fmt::Debug` 的实现。但是 `fmt::Display` 需要手动实现。
+`fmt::Debug` 这个 `trait` 使这项工作变得相当简单。所有类型都能派生（`derive`，即自动创建）`fmt::Debug` 的实现。但是 `fmt::Display` 需要手动实现。
 
 ```rust
 // 这个结构体不能使用 `fmt::Display` 或 `fmt::Debug` 来进行打印。
