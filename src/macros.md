@@ -17,7 +17,7 @@ macro_rules! say_hello {
 }
 
 fn main() {
-    // 这个调用将会展开成 `println("Hello");`!
+    // 这个调用将会展开成 `println!("Hello!");`
     say_hello!()
 }
 ```
