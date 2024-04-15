@@ -59,7 +59,7 @@ fn main() {
     // println!("This struct `{}` won't print...", Structure(3));
     // TODO ^ 注释掉此行。
 
-    // 对于 Rust 1.58 及更高版本，您可以直接从周围变量捕获参数。
+    // 对于 Rust 1.58 及更高版本，你可以直接从周围变量捕获参数。
     // 就像上面一样，这将输出“    1”，4 个空格和 1 个“1”。
     let number: f64 = 1.0;
     let width: usize = 5;
