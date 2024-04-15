@@ -54,7 +54,7 @@ fn main() {
     #[allow(dead_code)]  // 禁用对未使用模块发出警告的' dead_code '
     struct Structure(i32);
 
-    // 这将不会编译，因为`Structure`没有实现
+    // 这将不会编译，因为 `Structure` 没有实现
     // 下面语句无法运行。
     // println!("This struct `{}` won't print...", Structure(3));
     // TODO ^ 注释掉此行。
