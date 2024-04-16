@@ -8,7 +8,7 @@
 struct Sheep { naked: bool, name: &'static str }
 
 trait Animal {
-    // 静态方法签名；`Self` 表示实现者类型（implementor type）。
+    // 关联函数签名；`Self` 表示实现者类型（implementor type）。
     fn new(name: &'static str) -> Self;
 
     // 实例方法签名；这些方法将返回一个字符串。
