@@ -11,7 +11,7 @@ trait Animal {
     // 关联函数签名；`Self` 表示实现者类型（implementor type）。
     fn new(name: &'static str) -> Self;
 
-    // 实例方法签名；这些方法将返回一个字符串。
+    // 方法签名；这些方法将返回一个字符串。
     fn name(&self) -> &'static str;
     fn noise(&self) -> &'static str;
 
