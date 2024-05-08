@@ -52,6 +52,7 @@
   - [match 匹配](flow_control/match.md)
     - [解构](flow_control/match/destructuring.md)
       - [元组](flow_control/match/destructuring/destructure_tuple.md)
+      - [数组/切片](flow_control/match/destructuring/destructure_slice.md)
       - [枚举](flow_control/match/destructuring/destructure_enum.md)
       - [指针和引用](flow_control/match/destructuring/destructure_pointers.md)
       - [结构体](flow_control/match/destructuring/destructure_structures.md)
