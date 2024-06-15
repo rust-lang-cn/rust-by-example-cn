@@ -22,7 +22,7 @@ foo
         └── my_other_bin.rs
 ```
 
-为了使得 `cargo` 编译或运行这个二进制可执行文件而不是默认或其他二进制可执行文件，我们只需给 `cargo` 增加一个参数 `--bin my_other_bin`，其中 `my_other_bin` 是我们想要使用的二进制可执行文件的名称。
+为了使得 `cargo` 只编译或运行这个二进制可执行文件，我们只需给 `cargo` 增加一个参数 `--bin my_other_bin`，其中 `my_other_bin` 是我们想要使用的二进制可执行文件的名称。
 
 除了可添加其他二进制可执行文件外，`cargo` 还支持[更多功能][more features]，如基准测试，测试和示例。
 
