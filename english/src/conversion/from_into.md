@@ -51,22 +51,22 @@ convert into as the compiler is unable to determine this most of the time.
 However this is a small trade-off considering we get the functionality for free.
 
 ```rust,editable
-use std::convert::From;
+use std::convert::Into;
 
 #[derive(Debug)]
 struct Number {
     value: i32,
 }
 
-impl From<i32> for Number {
-    fn from(item: i32) -> Self {
-        Number { value: item }
+impl Into<Number> for i32 {
+    fn into(self) -> Number {
+        Number { value: self }
     }
 }
 
 fn main() {
     let int = 5;
-    // Try removing the type declaration
+    // Try removing the type annotation
     let num: Number = int.into();
     println!("My number is {:?}", num);
 }
