@@ -6,37 +6,37 @@
 // 该属性用于隐藏对未使用代码的警告。
 #![allow(dead_code)]
 
-enum Status {
-    Rich,
-    Poor,
+enum Stage {
+    Beginner,
+    Advanced,
 }
 
-enum Work {
-    Civilian,
-    Soldier,
+enum Role {
+    Student,
+    Teacher,
 }
 
 fn main() {
-    // 显式地 `use` 各个名称使他们直接可用，而不需要指定它们来自 `Status`。
-    use Status::{Poor, Rich};
-    // 自动地 `use` `Work` 内部的各个名称。
-    use Work::*;
+    // 明确地使用每个`use`，以便它们可以在没有指定作用域的情况下使用。
+    use crate::Stage::{Beginner, Advanced};
+    // 自动地使用`Role`内部定义的所有名称。
+    use crate::Role::*;
 
-    // `Poor` 等价于 `Status::Poor`。
-    let status = Poor;
-    // `Civilian` 等价于 `Work::Civilian`。
-    let work = Civilian;
+    // `Beginner` 等价于 `Stage::Beginner`。
+    let stage = Beginner;
+    // `Student` 等价于 `Role::Student`。
+    let role = Student;
 
-    match status {
+    match stage {
         // 注意这里没有用完整路径，因为上面显式地使用了 `use`。
-        Rich => println!("The rich have lots of money!"),
-        Poor => println!("The poor have no money..."),
+        Beginner => println!("Beginners are starting their learning journey!"),
+        Advanced => println!("Advanced learners are mastering their subjects..."),
     }
 
-    match work {
+    match role {
         // 再次注意到没有用完整路径。
-        Civilian => println!("Civilians work!"),
-        Soldier  => println!("Soldiers fight!"),
+        Student => println!("Students are acquiring knowledge!"),
+        Teacher => println!("Teachers are spreading knowledge!"),
     }
 }
 ```
