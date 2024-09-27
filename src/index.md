@@ -23,9 +23,9 @@
 
 - [类型系统](types.html) - 学习改变和定义类型。
 
-- [类型转换](conversion.html)
+- [类型转换](conversion.html) - 在不同类型之间进行转换，例如字符串、整数和浮点数。
 
-- [表达式](expression.html)
+- [表达式](expression.html) - 了解表达式以及如何使用。
 
 - [流程控制](flow_control.html) - `if`/`else`，`for`，以及其他流程控制有关内容。
 
@@ -45,7 +45,7 @@
 
 - [特性 trait](trait.html) - trait 是对未知类型（`Self`）定义的方法集。
 
-- [宏](macros.html)
+- [宏](macros.html) - 宏是一种编写代码来编写其他代码的方法，这称为元编程（metaprogramming）。
 
 - [错误处理](error.html) - 学习 Rust 语言处理失败的方式。
 
@@ -55,9 +55,9 @@
 
 - [测试](testing.html) - Rust 语言的各种测试手段。
 
-- [不安全操作](unsafe.html)
+- [不安全操作](unsafe.html) - 了解如何进入不安全操作块。
 
-- [兼容性](compatibility.html)
+- [兼容性](compatibility.html) - 处理 Rust 的演变和潜在的兼容性问题。
 
 - [补充](meta.html) - 文档和基准测试
 
