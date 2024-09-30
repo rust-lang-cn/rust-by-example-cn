@@ -22,7 +22,8 @@ fn difference<A, B, C>(container: &C) -> i32 where
     C: Contains<A, B> { ... }
 
 // 使用关联类型
-fn difference<C: Contains>(container: &C) -> i32 { ... }
+fn difference<C>(container: &C) -> i32 where 
+    C: Contains { ... }
 ```
 
 让我们使用关联类型来重写上一小节的例子：
@@ -61,7 +62,9 @@ impl Contains for Container {
     fn last(&self) -> i32 { self.1 }
 }
 
-fn difference<C: Contains>(container: &C) -> i32 {
+fn difference<C>(container: &C) -> i32 
+    where C: Contains 
+{
     container.last() - container.first()
 }
 
