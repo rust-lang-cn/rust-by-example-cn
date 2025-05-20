@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "\u901A\u8FC7\u4F8B\u5B50\u5B66\u4E60Rust - by docfx",
+      "_appTitle": "\u901A\u8FC7\u4F8B\u5B50\u5B66\u4E60Rust - by docfx",
+      "_enableSearch": true,
+      "pdf": true
+    }
+  }
+}
