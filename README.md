@@ -31,6 +31,13 @@ $ mdbook serve
 
 为了能够运行这些示例，你必须要连接到网络；当然你可以离线阅读所有这些内容。
 
+## 生成PDF格式的离线文档
+
+兼容Docfx文档工具，可以使用 [Docfx](https://dotnet.github.io/docfx/index.html) 来生成本地离线文档，本项目已经添加docfx配置，不影响mdbook工具，可以直接使用下面的命令打开docfx生成的文档页面以及生成PDF格式离线文档(带目录的PDF文件)。
+```bash
+docfx docfx.json --serve -p 8900
+```
+
 ## 如何贡献
 
 请查看 [CONTRIBUTING.md][how-to-contribute] 文件了解详细内容。
