@@ -333,7 +333,7 @@
           href: error/multiple_error_types/define_error_type.md
         - name: 把错误 “装箱”
           href: error/multiple_error_types/boxing_errors.md
-        - name: “?” 的其他用法
+        - name: "? 的其他用法"
           href: error/multiple_error_types/reenter_question_mark.md
         - name: 包裹错误
           href: error/multiple_error_types/wrap_error.md
@@ -353,7 +353,7 @@
     - name: 结果 Result
       href: std/result.md
       items:
-        - name: “?” 用法
+        - name: "? 用法"
           href: std/result/question_mark.md
     - name: panic!
       href: std/panic.md
