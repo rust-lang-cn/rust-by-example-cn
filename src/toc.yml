@@ -1,0 +1,432 @@
+- name: 简介
+  href: index.md
+- name: Hello World
+  href: hello.md
+  items:
+    - name: 注释
+      href: hello/comment.md
+    - name: 格式化输出
+      href: hello/print.md
+      items:
+        - name: 调试（debug）
+          href: hello/print/print_debug.md
+        - name: 显示（display）
+          href: hello/print/print_display.md
+        - name: 测试实例：List
+          href: hello/print/print_display/testcase_list.md
+        - name: 格式化
+          href: hello/print/fmt.md
+- name: 原生类型
+  href: primitives.md
+  items:
+    - name: 字面量和运算符
+      href: primitives/literals.md
+    - name: 元组
+      href: primitives/tuples.md
+    - name: 数组和切片
+      href: primitives/array.md
+- name: 自定义类型
+  href: custom_types.md
+  items:
+    - name: 结构体
+      href: custom_types/structs.md
+    - name: 枚举
+      href: custom_types/enum.md
+      items:
+        - name: 使用 use
+          href: custom_types/enum/enum_use.md
+        - name: C 风格用法
+          href: custom_types/enum/c_like.md
+        - name: 测试实例：链表
+          href: custom_types/enum/testcase_linked_list.md
+    - name: 常量
+      href: custom_types/constants.md
+- name: 变量绑定
+  href: variable_bindings.md
+  items:
+    - name: 可变变量
+      href: variable_bindings/mut.md
+    - name: 作用域和遮蔽
+      href: variable_bindings/scope.md
+    - name: 变量先声明
+      href: variable_bindings/declare.md
+    - name: 冻结
+      href: variable_bindings/freeze.md
+- name: 类型系统
+  href: types.md
+  items:
+    - name: 类型转换
+      href: types/cast.md
+    - name: 字面量
+      href: types/literals.md
+    - name: 类型推断
+      href: types/inference.md
+    - name: 别名
+      href: types/alias.md
+- name: 类型转换
+  href: conversion.md
+  items:
+    - name: From 和 Into
+      href: conversion/from_into.md
+    - name: TryFrom 和 TryInto
+      href: conversion/try_from_try_into.md
+    - name: ToString 和 FromStr
+      href: conversion/string.md
+- name: 表达式
+  href: expression.md
+- name: 流程控制
+  href: flow_control.md
+  items:
+    - name: if/else
+      href: flow_control/if_else.md
+    - name: loop 循环
+      href: flow_control/loop.md
+      items:
+        - name: 嵌套循环和标签
+          href: flow_control/loop/nested.md
+        - name: 从 loop 循环返回
+          href: flow_control/loop/return.md
+    - name: while 循环
+      href: flow_control/while.md
+    - name: for 循环和区间
+      href: flow_control/for.md
+    - name: match 匹配
+      href: flow_control/match.md
+      items:
+        - name: 解构
+          href: flow_control/match/destructuring.md
+          items:
+            - name: 元组
+              href: flow_control/match/destructuring/destructure_tuple.md
+            - name: 数组/切片
+              href: flow_control/match/destructuring/destructure_slice.md
+            - name: 枚举
+              href: flow_control/match/destructuring/destructure_enum.md
+            - name: 指针和引用
+              href: flow_control/match/destructuring/destructure_pointers.md
+            - name: 结构体
+              href: flow_control/match/destructuring/destructure_structures.md
+        - name: 卫语句
+          href: flow_control/match/guard.md
+        - name: 绑定
+          href: flow_control/match/binding.md
+    - name: if let
+      href: flow_control/if_let.md
+    - name: while let
+      href: flow_control/while_let.md
+- name: 函数
+  href: fn.md
+  items:
+    - name: 方法
+      href: fn/methods.md
+    - name: 闭包
+      href: fn/closures.md
+      items:
+        - name: 捕获
+          href: fn/closures/capture.md
+        - name: 作为输入参数
+          href: fn/closures/input_parameters.md
+        - name: 类型匿名
+          href: fn/closures/anonymity.md
+        - name: 输入函数
+          href: fn/closures/input_functions.md
+        - name: 作为输出参数
+          href: fn/closures/output_parameters.md
+        - name: std 中的例子
+          href: fn/closures/closure_examples.md
+          items:
+            - name: Iterator::any
+              href: fn/closures/closure_examples/iter_any.md
+            - name: Iterator::find
+              href: fn/closures/closure_examples/iter_find.md
+    - name: 高阶函数
+      href: fn/hof.md
+    - name: 发散函数
+      href: fn/diverging.md
+- name: 模块
+  href: mod.md
+  items:
+    - name: 可见性
+      href: mod/visibility.md
+    - name: 结构体的可见性
+      href: mod/struct_visibility.md
+    - name: use 声明
+      href: mod/use.md
+    - name: super 和 self
+      href: mod/super.md
+    - name: 文件分层
+      href: mod/split.md
+- name: crate
+  href: crates.md
+  items:
+    - name: 库
+      href: crates/lib.md
+    - name: 使用库
+      href: crates/using_lib.md
+- name: cargo
+  href: cargo.md
+  items:
+    - name: 依赖
+      href: cargo/deps.md
+    - name: 约定规范
+      href: cargo/conventions.md
+    - name: 测试
+      href: cargo/test.md
+    - name: 构建脚本
+      href: cargo/build_scripts.md
+- name: 属性
+  href: attribute.md
+  items:
+    - name: 死代码 dead_code
+      href: attribute/unused.md
+    - name: crate
+      href: attribute/crate.md
+    - name: cfg
+      href: attribute/cfg.md
+      items:
+        - name: 自定义条件
+          href: attribute/cfg/custom.md
+- name: 泛型
+  href: generics.md
+  items:
+    - name: 函数
+      href: generics/gen_fn.md
+    - name: 实现
+      href: generics/impl.md
+    - name: trait
+      href: generics/gen_trait.md
+    - name: 约束
+      href: generics/bounds.md
+      items:
+        - name: 测试实例：空约束
+          href: generics/bounds/testcase_empty.md
+    - name: 多重约束
+      href: generics/multi_bounds.md
+    - name: where 子句
+      href: generics/where.md
+    - name: newtype 惯用法
+      href: generics/new_types.md
+    - name: 关联项
+      href: generics/assoc_items.md
+      items:
+        - name: 存在问题
+          href: generics/assoc_items/the_problem.md
+        - name: 关联类型
+          href: generics/assoc_items/types.md
+    - name: 虚类型参数
+      href: generics/phantom.md
+      items:
+        - name: 测试实例：单位检查
+          href: generics/phantom/testcase_units.md
+- name: 作用域规则
+  href: scope.md
+  items:
+    - name: RAII
+      href: scope/raii.md
+    - name: 所有权和移动
+      href: scope/move.md
+      items:
+        - name: 可变性
+          href: scope/move/mut.md
+        - name: 部分移动
+          href: scope/move/partial_move.md
+    - name: 借用
+      href: scope/borrow.md
+      items:
+        - name: 可变性
+          href: scope/borrow/mut.md
+        - name: 别名使用
+          href: scope/borrow/alias.md
+        - name: ref 模式
+          href: scope/borrow/ref.md
+    - name: 生命周期
+      href: scope/lifetime.md
+      items:
+        - name: 显式标注
+          href: scope/lifetime/explicit.md
+        - name: 函数
+          href: scope/lifetime/fn.md
+        - name: 方法
+          href: scope/lifetime/methods.md
+        - name: 结构体
+          href: scope/lifetime/struct.md
+        - name: trait
+          href: scope/lifetime/trait.md
+        - name: 约束
+          href: scope/lifetime/lifetime_bounds.md
+        - name: 强制转换
+          href: scope/lifetime/lifetime_coercion.md
+        - name: static
+          href: scope/lifetime/static_lifetime.md
+        - name: 省略
+          href: scope/lifetime/elision.md
+- name: 特质 trait
+  href: trait.md
+  items:
+    - name: 派生
+      href: trait/derive.md
+    - name: 使用 dyn 返回 trait
+      href: trait/dyn.md
+    - name: 运算符重载
+      href: trait/ops.md
+    - name: Drop
+      href: trait/drop.md
+    - name: Iterator
+      href: trait/iter.md
+    - name: impl Trait
+      href: trait/impl_trait.md
+    - name: Clone
+      href: trait/clone.md
+    - name: 父 trait
+      href: trait/supertraits.md
+    - name: 消除重叠 trait
+      href: trait/disambiguating.md
+- name: 使用 macro_rules! 来创建宏
+  href: macros.md
+  items:
+    - name: 语法
+      href: macros/syntax.md
+      items:
+        - name: 指示符
+          href: macros/designators.md
+        - name: 重载
+          href: macros/overload.md
+        - name: 重复
+          href: macros/repeat.md
+    - name: DRY (不写重复代码)
+      href: macros/dry.md
+    - name: DSL (领域专用语言)
+      href: macros/dsl.md
+    - name: 可变参数接口
+      href: macros/variadics.md
+- name: 错误处理
+  href: error.md
+  items:
+    - name: panic
+      href: error/panic.md
+    - name: Option 和 unwrap
+      href: error/option_unwrap.md
+      items:
+        - name: 使用 ? 解开 Option
+          href: error/option_unwrap/question_mark.md
+        - name: 组合算子：map
+          href: error/option_unwrap/map.md
+        - name: 组合算子：and_then
+          href: error/option_unwrap/and_then.md
+    - name: 结果 Result
+      href: error/result.md
+      items:
+        - name: Result 的 map
+          href: error/result/result_map.md
+        - name: 给 Result 取别名
+          href: error/result/result_alias.md
+        - name: 提前返回
+          href: error/result/early_returns.md
+        - name: 引入 ?
+          href: error/result/enter_question_mark.md
+    - name: 处理多种错误类型
+      href: error/multiple_error_types.md
+      items:
+        - name: 从 Option 中取出 Result
+          href: error/multiple_error_types/option_result.md
+        - name: 定义一种错误类型
+          href: error/multiple_error_types/define_error_type.md
+        - name: 把错误 “装箱”
+          href: error/multiple_error_types/boxing_errors.md
+        - name: "? 的其他用法"
+          href: error/multiple_error_types/reenter_question_mark.md
+        - name: 包裹错误
+          href: error/multiple_error_types/wrap_error.md
+    - name: 遍历 Result
+      href: error/iter_result.md
+- name: 标准库类型
+  href: std.md
+  items:
+    - name: 箱子、栈和堆
+      href: std/box.md
+    - name: 动态数组 vector
+      href: std/vec.md
+    - name: 字符串 String
+      href: std/str.md
+    - name: 选项 Option
+      href: std/option.md
+    - name: 结果 Result
+      href: std/result.md
+      items:
+        - name: "? 用法"
+          href: std/result/question_mark.md
+    - name: panic!
+      href: std/panic.md
+    - name: 散列表 HashMap
+      href: std/hash.md
+      items:
+        - name: 更改或自定义关键字类型
+          href: std/hash/alt_key_types.md
+        - name: 散列集 HashSet
+          href: std/hash/hashset.md
+    - name: 引用计数 Rc
+      href: std/rc.md
+    - name: 共享引用计数 Arc
+      href: std/arc.md
+- name: 标准库更多介绍
+  href: std_misc.md
+  items:
+    - name: 线程
+      href: std_misc/threads.md
+      items:
+        - name: 测试实例：map-reduce
+          href: std_misc/threads/testcase_mapreduce.md
+    - name: 通道
+      href: std_misc/channels.md
+    - name: 路径
+      href: std_misc/path.md
+    - name: 文件输入输出（I/O）
+      href: std_misc/file.md
+      items:
+        - name: 打开文件 open
+          href: std_misc/file/open.md
+        - name: 创建文件 create
+          href: std_misc/file/create.md
+        - name: 读取行 read lines
+          href: std_misc/file/read_lines.md
+    - name: 子进程
+      href: std_misc/process.md
+      items:
+        - name: 管道
+          href: std_misc/process/pipe.md
+        - name: 等待
+          href: std_misc/process/wait.md
+    - name: 文件系统操作
+      href: std_misc/fs.md
+    - name: 程序参数
+      href: std_misc/arg.md
+      items:
+        - name: 参数解析
+          href: std_misc/arg/matching.md
+    - name: 外部语言函数接口
+      href: std_misc/ffi.md
+- name: 测试
+  href: testing.md
+  items:
+    - name: 单元测试
+      href: testing/unit_testing.md
+    - name: 文档测试
+      href: testing/doc_testing.md
+    - name: 集成测试
+      href: testing/integration_testing.md
+    - name: 开发依赖
+      href: testing/dev_dependencies.md
+- name: 不安全操作
+  href: unsafe.md
+- name: 兼容性
+  href: compatibility.md
+  items:
+    - name: 原始标志符
+      href: compatibility/raw_identifiers.md
+- name: 补充
+  href: meta.md
+  items:
+    - name: 文档
+      href: meta/doc.md
+    - name: Playpen
+      href: meta/playpen.md

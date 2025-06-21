@@ -18,5 +18,11 @@ editor = "ace"
 # 将书籍导航展开，作为书籍目录，收缩起来不便于章节快速查找 —— 2022-01-26
 enable = false
 
+[output.pdf]
+# mdbook-pdf 插件 生成pdf 带目录
+
+[output.epub]
+# mdbook-epub 插件 生成epub
+
 [rust]
 edition = "2021"
