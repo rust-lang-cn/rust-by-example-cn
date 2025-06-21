@@ -19,7 +19,10 @@ editor = "ace"
 enable = false
 
 [output.pdf]
-# mdbook-pdf 插件 生成pdf
+# mdbook-pdf 插件 生成pdf 带目录
+
+[output.epub]
+# mdbook-epub 插件 生成epub
 
 [rust]
 edition = "2021"
