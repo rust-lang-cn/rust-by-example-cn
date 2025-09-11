@@ -32,7 +32,7 @@ fn main() {
     //
     // 这点非常重要，因为否则 `wc` 就不会开始处理我们刚刚发送的输入。
 
-    // `stdout` 字段也拥有 `Option<ChildStdout>` 类型，所以必需解包。
+    // `stdout` 字段也拥有 `Option<ChildStdout>` 类型，所以必须解包。
     let mut s = String::new();
     match process.stdout.unwrap().read_to_string(&mut s) {
         Err(why) => panic!("couldn't read wc stdout: {:?}", why),
